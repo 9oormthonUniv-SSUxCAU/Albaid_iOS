@@ -16,6 +16,16 @@ public enum AlbaidImage {
     public static var onboarding1: UIImage { .load(name: "onboarding1")}
     public static var onboarding2: UIImage { .load(name: "onboarding2")}
     public static var onboarding3: UIImage { .load(name: "onboarding3")}
+
+    /// character
+    public static var character0: UIImage { .load(name: "character0")}
+    public static var character1: UIImage { .load(name: "character1")}
+
+    public static var ad: UIImage { .load(name: "ad")}
+
+    public static var coffeeGreen: UIImage { .load(name: "coffee_green")}
+    public static var coffeeBlue: UIImage { .load(name: "coffee_blue")}
+    public static var coffeePink: UIImage { .load(name: "coffee_pink")}
 }
 
 public enum AlbaidButton {
@@ -54,6 +64,10 @@ public enum AlbaidButton {
 
     /// etc
     public static var detail: UIImage { .load(name: "ic_detail") }
+
+    public static var payment: UIImage { .load(name: "payment")}
+    public static var pig: UIImage { .load(name: "pig")}
+    public static var tax: UIImage { .load(name: "tax")}
 }
 
 extension UIImage {
