@@ -65,6 +65,7 @@
 		95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */; };
 		95BF199D2CA6864E00CA53AC /* AlbaidColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */; };
 		95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */; };
+		95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */; };
 		95BF19B12CA6A04700CA53AC /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */; };
 		95BF19B22CA6A04700CA53AC /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */; };
 		95BF19B32CA6A04700CA53AC /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AA2CA6A04700CA53AC /* Pretendard-Black.ttf */; };
@@ -140,6 +141,7 @@
 		95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlbaidColor.xcassets; sourceTree = "<group>"; };
 		95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		95BF19AA2CA6A04700CA53AC /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 				9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */,
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
+				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
 				9556DE9A2CA5D74E00A43A78 /* CalendarDetailView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
