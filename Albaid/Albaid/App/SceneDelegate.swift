@@ -36,6 +36,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
 //            window.rootViewController = UINavigationController(rootViewController: LoginViewController())
         }
+        // TODO: 
+        window.rootViewController = UINavigationController(rootViewController: LoginViewController())
         UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
      }
 

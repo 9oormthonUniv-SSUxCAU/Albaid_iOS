@@ -5,7 +5,7 @@
 //  Created by 박지윤 on 9/27/24.
 //
 
-import Foundation
+import UIKit
 
 class SplashViewController: BaseViewController {
 
@@ -15,6 +15,15 @@ class SplashViewController: BaseViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.8) {
+            let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+            sceneDelegate?.changeRootViewController()
+        }
     }
 
     // MARK: Configuration
