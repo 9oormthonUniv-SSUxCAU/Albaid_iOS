@@ -61,6 +61,7 @@
 		95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19902CA65B2600CA53AC /* BaseButton.swift */; };
 		95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19922CA65CB000CA53AC /* AppDependency.swift */; };
 		95BF19952CA65CD000CA53AC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19942CA65CD000CA53AC /* Storage.swift */; };
+		95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19982CA67B7600CA53AC /* SplashView.swift */; };
 		95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */; };
 		95BF199D2CA6864E00CA53AC /* AlbaidColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */; };
 		95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */; };
@@ -126,6 +127,7 @@
 		95BF19902CA65B2600CA53AC /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		95BF19922CA65CB000CA53AC /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		95BF19942CA65CD000CA53AC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		95BF19982CA67B7600CA53AC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlbaidColor.xcassets; sourceTree = "<group>"; };
 		95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		9556DE332CA5D21D00A43A78 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				95BF19982CA67B7600CA53AC /* SplashView.swift */,
 				9556DE3A2CA5D2A700A43A78 /* SplashViewController.swift */,
 			);
 			path = Splash;
@@ -637,6 +640,7 @@
 				95BF19952CA65CD000CA53AC /* Storage.swift in Sources */,
 				95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */,
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
+				95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */,
 				95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,
 				9556DE452CA5D2CC00A43A78 /* CardViewController.swift in Sources */,
