@@ -28,6 +28,12 @@ public enum AlbaidButton {
     public static var myPage: UIImage { .load(name: "ic_tabbar_mypage") }
     public static var myPageFilled: UIImage { .load(name: "ic_tabbar_mypage_filled") }
 
+    /// login
+    public static var naver: UIImage { .load(name: "ic_login_naver") }
+    public static var kakao: UIImage { .load(name: "ic_login_kakao") }
+    public static var google: UIImage { .load(name: "ic_login_google") }
+    public static var apple: UIImage { .load(name: "ic_login_apple") }
+
     /// navigation
     public static var back: UIImage { .load(name: "ic_navigation_back") }
     public static var close: UIImage { .load(name: "ic_navigation_close") }
