@@ -10,6 +10,7 @@ import UIKit
 public enum AlbaidImage {
     public static var splash: UIImage { .load(name: "splash")}
     public static var logo: UIImage { .load(name: "logo")}
+    public static var loginLogo: UIImage { .load(name: "login_logo")}
 
     /// onboarding
     public static var onboarding1: UIImage { .load(name: "onboarding1")}
