@@ -26,19 +26,19 @@ final class LoginView: BaseView {
         $0.spacing = 15
     }
 
-    let naverLoginButton = BaseButton().then {
+    private(set) var naverLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.naver, title: "네이버 로그인", titleColor: .white, backgroundColor: .naver ?? .green)
     }
 
-    let kakaoLoginButton = BaseButton().then {
+    private(set) var kakaoLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.kakao, title: "카카오 로그인", titleColor: .gray30 ?? .black, backgroundColor: .kakao ?? .yellow)
     }
 
-    let googleLoginButton = BaseButton().then {
+    private(set) var googleLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.google, title: "구글 로그인", titleColor: .gray10 ?? .black, backgroundColor: .white)
     }
 
-    let appleLoginButton = BaseButton().then {
+    private(set) var appleLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.apple, title: "애플 로그인", titleColor: .white, backgroundColor: .black)
     }
 

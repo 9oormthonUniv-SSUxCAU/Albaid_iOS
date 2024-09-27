@@ -55,6 +55,13 @@
 		9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */; };
 		9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
+		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
+		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
+		95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */; };
+		95BCFFD02CA7131B0001F339 /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */; };
+		95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD12CA7132C0001F339 /* HomeAdView.swift */; };
+		95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD32CA718C80001F339 /* HomeMenuView.swift */; };
+		95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD52CA71A330001F339 /* HomeContentView.swift */; };
 		95BF198A2CA658B500CA53AC /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19892CA658B500CA53AC /* Contract.swift */; };
 		95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198C2CA65AE500CA53AC /* BaseView.swift */; };
 		95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198E2CA65B1300CA53AC /* BaseViewController.swift */; };
@@ -134,6 +141,13 @@
 		9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWageViewController.swift; sourceTree = "<group>"; };
 		9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
+		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
+		95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		95BCFFD12CA7132C0001F339 /* HomeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdView.swift; sourceTree = "<group>"; };
+		95BCFFD32CA718C80001F339 /* HomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
+		95BCFFD52CA71A330001F339 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		95BF19892CA658B500CA53AC /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		95BF198C2CA65AE500CA53AC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95BF198E2CA65B1300CA53AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -298,6 +312,7 @@
 			children = (
 				9556DE492CA5D44A00A43A78 /* HomeView.swift */,
 				9556DE402CA5D2BF00A43A78 /* HomeViewController.swift */,
+				95BCFFC22CA6DD840001F339 /* HomeView */,
 				9556DE562CA5D4CC00A43A78 /* ScanContract */,
 				9556DE792CA5D5F900A43A78 /* Contract */,
 				9556DE882CA5D6A700A43A78 /* Resume */,
@@ -340,6 +355,7 @@
 		9556DE482CA5D42C00A43A78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95BCFFCB2CA6E2060001F339 /* User.swift */,
 				95BF19892CA658B500CA53AC /* Contract.swift */,
 			);
 			path = Model;
@@ -524,6 +540,19 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		95BCFFC22CA6DD840001F339 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */,
+				95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */,
+				95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */,
+				95BCFFD12CA7132C0001F339 /* HomeAdView.swift */,
+				95BCFFD32CA718C80001F339 /* HomeMenuView.swift */,
+				95BCFFD52CA71A330001F339 /* HomeContentView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		95BF198B2CA65ADD00CA53AC /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -658,22 +687,27 @@
 				9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */,
 				95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */,
 				95BF19BB2CA6A6A300CA53AC /* UIStackView+Extension.swift in Sources */,
+				95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */,
 				9556DE432CA5D2C600A43A78 /* CalendarViewController.swift in Sources */,
 				95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */,
 				9556DE4C2CA5D45000A43A78 /* CalendarView.swift in Sources */,
 				9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */,
+				95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */,
 				9556DEA52CA5D78600A43A78 /* CardDetailViewController.swift in Sources */,
 				9556DE532CA5D48F00A43A78 /* LoginView.swift in Sources */,
 				9556DE902CA5D6FE00A43A78 /* ResumeEditView.swift in Sources */,
+				95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */,
 				9556DE6E2CA5D57800A43A78 /* ScanCompleteViewController.swift in Sources */,
 				9556DE722CA5D58A00A43A78 /* ScanMemoViewController.swift in Sources */,
 				9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */,
+				95BCFFCC2CA6E2060001F339 /* User.swift in Sources */,
 				95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */,
 				9556DE662CA5D53000A43A78 /* ScanLoadingViewController.swift in Sources */,
 				9556DE872CA5D68A00A43A78 /* ContractDetailViewController.swift in Sources */,
 				9556DE642CA5D52700A43A78 /* ScanLoadingView.swift in Sources */,
 				9556DE8E2CA5D6F500A43A78 /* ResumeViewController.swift in Sources */,
 				95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */,
+				95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */,
 				95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */,
 				9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */,
 				95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */,
@@ -685,6 +719,7 @@
 				9556DE8C2CA5D6ED00A43A78 /* ResumeView.swift in Sources */,
 				9556DE502CA5D46500A43A78 /* MyPageView.swift in Sources */,
 				9556DE6C2CA5D57200A43A78 /* ScanCompleteView.swift in Sources */,
+				95BCFFD02CA7131B0001F339 /* HomeCardCollectionViewCell.swift in Sources */,
 				9556DE622CA5D51A00A43A78 /* ScanCameraViewController.swift in Sources */,
 				9556DE4E2CA5D45D00A43A78 /* CardView.swift in Sources */,
 				95BF19952CA65CD000CA53AC /* Storage.swift in Sources */,
@@ -711,6 +746,7 @@
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
 				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
+				95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */,
 				9556DE9A2CA5D74E00A43A78 /* CalendarDetailView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
 				95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */,
