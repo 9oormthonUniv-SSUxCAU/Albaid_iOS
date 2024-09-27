@@ -10,7 +10,10 @@ import UIKit
 class MyPageViewController: BaseViewController {
 
     // MARK: UI Components
-    
+    private let notificationButton = BaseButton().then {
+        $0.setImage(AlbaidButton.bell, for: .normal)
+    }
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +25,9 @@ class MyPageViewController: BaseViewController {
 
     // MARK: Layout
     override func makeConstraints() {
+    }
+
+    override func setNavigationItem() {
+        setDefaultNavigationItem(title: "마이페이지", leftBarButton: nil, rightBarButton: notificationButton)
     }
 }

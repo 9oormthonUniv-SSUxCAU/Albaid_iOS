@@ -13,10 +13,13 @@ final class LoginViewController: BaseViewController {
     private let loginView = LoginView()
 
     // MARK: Environment
-    
+    private let router = BaseRouter()
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        router.viewController = self
     }
     
     // MARK: Configuration
@@ -29,6 +32,15 @@ final class LoginViewController: BaseViewController {
         loginView.snp.makeConstraints {
             $0.verticalEdges.equalToSuperview()
             $0.horizontalEdges.equalToSuperview().inset(20)
+        }
+    }
+
+    // MARK: View Transition
+    override func viewTransition() {
+        loginView.tapNaverLogin = { [weak self] in
+            guard let self else { return }
+            print("tapNaverLoginButton")
+            router.presentTabBarViewController()
         }
     }
 }

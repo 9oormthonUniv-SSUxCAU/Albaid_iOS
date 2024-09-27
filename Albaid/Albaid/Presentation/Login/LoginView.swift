@@ -26,23 +26,27 @@ final class LoginView: BaseView {
         $0.spacing = 15
     }
 
-    private let naverLoginButton = BaseButton().then {
+    let naverLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.naver, title: "네이버 로그인", titleColor: .white, backgroundColor: .naver ?? .green)
     }
 
-    private let kakaoLoginButton = BaseButton().then {
+    let kakaoLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.kakao, title: "카카오 로그인", titleColor: .gray30 ?? .black, backgroundColor: .kakao ?? .yellow)
     }
 
-    private let googleLoginButton = BaseButton().then {
+    let googleLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.google, title: "구글 로그인", titleColor: .gray10 ?? .black, backgroundColor: .white)
     }
 
-    private let appleLoginButton = BaseButton().then {
+    let appleLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.apple, title: "애플 로그인", titleColor: .white, backgroundColor: .black)
     }
 
     // MARK: Properties
+    var tapNaverLogin: (() -> Void)?
+    var tapKakaoLogin: (() -> Void)?
+    var tapGoogleLogin: (() -> Void)?
+    var tapAppleLogin: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -55,6 +59,8 @@ final class LoginView: BaseView {
                                                  kakaoLoginButton,
                                                  googleLoginButton,
                                                  appleLoginButton)
+
+        addButtonEvent()
     }
     
     // MARK: Layout
@@ -78,4 +84,30 @@ final class LoginView: BaseView {
     }
     
     // MARK: Event
+    private func addButtonEvent() {
+        naverLoginButton.addTarget(self, action: #selector(tapNaverLoginButton), for: .touchUpInside)
+        kakaoLoginButton.addTarget(self, action: #selector(tapKakaoLoginButton), for: .touchUpInside)
+        googleLoginButton.addTarget(self, action: #selector(tapGoogleLoginButton), for: .touchUpInside)
+        appleLoginButton.addTarget(self, action: #selector(tapAppleLoginButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func tapNaverLoginButton() {
+        tapNaverLogin?()
+    }
+
+    @objc
+    private func tapKakaoLoginButton() {
+        tapKakaoLogin?()
+    }
+
+    @objc
+    private func tapGoogleLoginButton() {
+        tapGoogleLogin?()
+    }
+
+    @objc
+    private func tapAppleLoginButton() {
+        tapAppleLogin?()
+    }
 }

@@ -10,7 +10,7 @@ import UIKit
 class CardViewController: BaseViewController {
 
     // MARK: UI Components
-    
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,5 +22,9 @@ class CardViewController: BaseViewController {
 
     // MARK: Layout
     override func makeConstraints() {
+    }
+
+    override func setNavigationItem() {
+        setDefaultNavigationItem(title: "알바 카드", leftBarButton: nil, rightBarButton: nil)
     }
 }
