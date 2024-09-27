@@ -55,6 +55,7 @@
 		9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */; };
 		9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
+		95BF198A2CA658B500CA53AC /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19892CA658B500CA53AC /* Contract.swift */; };
 		95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */; };
 		95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */; };
 		95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733DA2CA5CF9D00D454E8 /* ViewController.swift */; };
@@ -111,6 +112,7 @@
 		9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWageViewController.swift; sourceTree = "<group>"; };
 		9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		95BF19892CA658B500CA53AC /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		95C733D32CA5CF9D00D454E8 /* Albaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		9556DE482CA5D42C00A43A78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95BF19892CA658B500CA53AC /* Contract.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 			packageReferences = (
 				95C733EA2CA5D06800D454E8 /* XCRemoteSwiftPackageReference "Then" */,
 				95A6FDF82CA5D0F400D44B21 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				9556DEB02CA5D80A00A43A78 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 95C733D42CA5CF9D00D454E8 /* Products */;
 			projectDirPath = "";
@@ -597,6 +601,7 @@
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,
 				9556DE452CA5D2CC00A43A78 /* CardViewController.swift in Sources */,
+				95BF198A2CA658B500CA53AC /* Contract.swift in Sources */,
 				9556DEA32CA5D78000A43A78 /* CardDetailView.swift in Sources */,
 				9556DE6A2CA5D54F00A43A78 /* ScanResultViewController.swift in Sources */,
 				9556DE702CA5D58200A43A78 /* ScanMemoView.swift in Sources */,
@@ -831,6 +836,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9556DEB02CA5D80A00A43A78 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		95A6FDF82CA5D0F400D44B21 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
