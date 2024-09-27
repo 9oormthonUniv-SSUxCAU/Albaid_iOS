@@ -59,6 +59,8 @@
 		95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198C2CA65AE500CA53AC /* BaseView.swift */; };
 		95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198E2CA65B1300CA53AC /* BaseViewController.swift */; };
 		95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19902CA65B2600CA53AC /* BaseButton.swift */; };
+		95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19922CA65CB000CA53AC /* AppDependency.swift */; };
+		95BF19952CA65CD000CA53AC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19942CA65CD000CA53AC /* Storage.swift */; };
 		95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */; };
 		95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */; };
 		95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733DA2CA5CF9D00D454E8 /* ViewController.swift */; };
@@ -119,6 +121,8 @@
 		95BF198C2CA65AE500CA53AC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95BF198E2CA65B1300CA53AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		95BF19902CA65B2600CA53AC /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		95BF19922CA65CB000CA53AC /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		95BF19942CA65CD000CA53AC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		95C733D32CA5CF9D00D454E8 /* Albaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 			children = (
 				95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */,
 				95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */,
+				95BF19922CA65CB000CA53AC /* AppDependency.swift */,
+				95BF19942CA65CD000CA53AC /* Storage.swift */,
 				95C733DA2CA5CF9D00D454E8 /* ViewController.swift */,
 			);
 			path = App;
@@ -599,6 +605,7 @@
 				9556DE6E2CA5D57800A43A78 /* ScanCompleteViewController.swift in Sources */,
 				9556DE722CA5D58A00A43A78 /* ScanMemoViewController.swift in Sources */,
 				9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */,
+				95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */,
 				9556DE662CA5D53000A43A78 /* ScanLoadingViewController.swift in Sources */,
 				9556DE872CA5D68A00A43A78 /* ContractDetailViewController.swift in Sources */,
 				9556DE642CA5D52700A43A78 /* ScanLoadingView.swift in Sources */,
@@ -616,6 +623,7 @@
 				9556DE6C2CA5D57200A43A78 /* ScanCompleteView.swift in Sources */,
 				9556DE622CA5D51A00A43A78 /* ScanCameraViewController.swift in Sources */,
 				9556DE4E2CA5D45D00A43A78 /* CardView.swift in Sources */,
+				95BF19952CA65CD000CA53AC /* Storage.swift in Sources */,
 				95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */,
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,
@@ -787,7 +795,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4P6BZ8CR69;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Albaid/Info.plist;
+				INFOPLIST_FILE = Albaid/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -814,7 +822,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4P6BZ8CR69;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Albaid/Info.plist;
+				INFOPLIST_FILE = Albaid/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
