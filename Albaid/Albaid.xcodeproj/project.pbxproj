@@ -76,6 +76,7 @@
 		95BF19B82CA6A04700CA53AC /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AF2CA6A04700CA53AC /* Pretendard-Light.ttf */; };
 		95BF19B92CA6A04700CA53AC /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19B02CA6A04700CA53AC /* Pretendard-Thin.ttf */; };
 		95BF19BB2CA6A6A300CA53AC /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */; };
+		95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */; };
 		95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */; };
 		95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */; };
 		95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733DA2CA5CF9D00D454E8 /* ViewController.swift */; };
@@ -153,6 +154,7 @@
 		95BF19AF2CA6A04700CA53AC /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
 		95BF19B02CA6A04700CA53AC /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
 		95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		95C733D32CA5CF9D00D454E8 /* Albaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */,
+				95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */,
 				95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */,
 				95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */,
 				9556DE2E2CA5D19B00A43A78 /* Literal */,
@@ -667,6 +670,7 @@
 				9556DE872CA5D68A00A43A78 /* ContractDetailViewController.swift in Sources */,
 				9556DE642CA5D52700A43A78 /* ScanLoadingView.swift in Sources */,
 				9556DE8E2CA5D6F500A43A78 /* ResumeViewController.swift in Sources */,
+				95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */,
 				95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */,
 				9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */,
 				95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */,
