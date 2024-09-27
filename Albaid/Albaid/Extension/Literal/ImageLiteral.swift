@@ -36,6 +36,7 @@ public enum AlbaidButton {
     public static var apple: UIImage { .load(name: "ic_login_apple") }
 
     /// navigation
+    public static var add: UIImage { .load(name: "ic_navigation_add") }
     public static var back: UIImage { .load(name: "ic_navigation_back") }
     public static var close: UIImage { .load(name: "ic_navigation_close") }
     public static var bell: UIImage { .load(name: "ic_navigation_bell") }
@@ -53,9 +54,6 @@ public enum AlbaidButton {
 
     /// etc
     public static var detail: UIImage { .load(name: "ic_detail") }
-}
-
-public enum AlabidIcon {
 }
 
 extension UIImage {
