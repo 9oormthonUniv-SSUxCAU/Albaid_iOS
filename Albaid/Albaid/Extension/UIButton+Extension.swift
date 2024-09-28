@@ -9,8 +9,11 @@ import UIKit.UIButton
 
 extension UIButton {
     func setLoginButton(image: UIImage, title: String, titleColor: UIColor, backgroundColor: UIColor) {
-        setDefaultButton()
-        
+        layer.cornerRadius = 12
+        snp.makeConstraints {
+            $0.height.equalTo(54)
+        }
+
         var attributedTitle = AttributedString(title)
         attributedTitle.font = UIFont(name: "Pretendard-SemiBold", size: 15.0)
         attributedTitle.foregroundColor = titleColor
@@ -24,12 +27,16 @@ extension UIButton {
         self.backgroundColor = backgroundColor
     }
 
-    func setDefaultButton() {
+    func setTextButton(title: String, titleColor: UIColor, backgroundColor: UIColor) {
         layer.cornerRadius = 12
         snp.makeConstraints {
-            $0.height.equalTo(54)
+            $0.height.equalTo(56)
         }
+
+        setTitle(title, for: .normal)
+        setTitleColor(titleColor, for: .normal)
         titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16.0)
+        self.backgroundColor = backgroundColor
     }
 
     func setMenuButton(image: UIImage, title: String) {
