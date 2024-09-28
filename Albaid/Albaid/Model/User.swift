@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct User {
+    let name: String
+    let card: [Card]?
+}
+
+struct Card {
+    let index: Int
+    let workPlace: String
+    let monthWage: Int
+}

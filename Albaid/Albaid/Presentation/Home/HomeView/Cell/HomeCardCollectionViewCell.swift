@@ -18,7 +18,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var detailButton = BaseButton().then {
-        $0.setImage(AlbaidButton.detail, for: .normal)
+        $0.setImage(AlbaidButton.detail.withTintColor(.white), for: .normal)
     }
 
     private(set) var workplaceLabel = UILabel().then {
@@ -27,6 +27,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var wageTextLabel = UILabel().then {
+        $0.text = "이번 달 알바비"
         $0.textColor = .gray100
         $0.font = UIFont(name: "Pretendard-Medium", size: 13)
     }
@@ -54,7 +55,10 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
 
     // MARK: Configuration
     private func configureSubviews() {
+        contentView.layer.cornerRadius = 16
+
         contentView.addSubview(indexLabel)
+        contentView.addSubview(detailButton)
         contentView.addSubview(workplaceLabel)
         contentView.addSubview(wageTextLabel)
         contentView.addSubview(wageLabel)
@@ -64,28 +68,56 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     // MARK: Layout
     private func makeConstraints() {
         indexLabel.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
+            $0.top.equalToSuperview().inset(15)
+            $0.leading.equalToSuperview().inset(20)
+        }
+
+        detailButton.snp.makeConstraints {
+            $0.centerY.equalTo(indexLabel)
+            $0.leading.equalTo(indexLabel.snp.trailing).offset(5)
+            $0.width.height.equalTo(24)
         }
 
         workplaceLabel.snp.makeConstraints {
-            $0.top.equalTo(indexLabel.snp.bottom).offset(3)
-            $0.leading.equalToSuperview()
+            $0.top.equalTo(detailButton.snp.bottom).offset(5)
+            $0.leading.equalToSuperview().inset(20)
         }
 
         wageTextLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.bottom.equalTo(wageLabel.snp.top).inset(3)
+            $0.leading.equalToSuperview().inset(20)
+            $0.bottom.equalTo(wageLabel.snp.top).offset(-7)
         }
 
         wageLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(15)
         }
 
         coffeeImageView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(21)
+            $0.trailing.equalToSuperview().inset(41)
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(60)
+        }
+    }
+
+    func setData(data: Card?) {
+        indexLabel.text = "알바 카드" + "\(data?.index ?? 0)"
+        workplaceLabel.text = data?.workPlace
+        wageLabel.text = (data?.monthWage.toPriceFormat ?? "nil") + "원"
+
+        switch (data?.index ?? 0) % 3 {
+        case 0:
+            contentView.backgroundColor = .subPink
+            coffeeImageView.image = AlbaidImage.coffeePink
+        case 1:
+            contentView.backgroundColor = .mainGreen
+            coffeeImageView.image = AlbaidImage.coffeeGreen
+        case 2:
+            contentView.backgroundColor = .subBlue
+            coffeeImageView.image = AlbaidImage.coffeeBlue
+        default:
+            contentView.backgroundColor = .mainGreen
+            coffeeImageView.image = AlbaidImage.coffeeGreen
         }
     }
 }
-
