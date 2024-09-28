@@ -21,11 +21,15 @@ class HomeViewController: BaseViewController {
 
     let homeView = HomeView()
 
+    // MARK: Environment
+    private let router = BaseRouter()
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setData(data: User.dummyUser)
+        router.viewController = self
     }
 
     // MARK: Configuration
@@ -49,6 +53,14 @@ class HomeViewController: BaseViewController {
         setDefaultNavigationItem(title: nil, leftBarButton: nil, rightBarButton: notificationButton)
         navigationItem.title = nil
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: logoImageView)
+    }
+
+    // MARK: View Transition
+    override func viewTransition() {
+        homeView.homeMenuView.tapScan = { [weak self] in
+            guard let self else { return }
+            router.presentScanGuideViewController()
+        }
     }
 
     // MARK: data binding

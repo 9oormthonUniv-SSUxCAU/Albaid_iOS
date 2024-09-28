@@ -39,7 +39,6 @@ final class LoginViewController: BaseViewController {
     override func viewTransition() {
         loginView.tapNaverLogin = { [weak self] in
             guard let self else { return }
-            print("tapNaverLoginButton")
             router.presentTabBarViewController()
         }
     }

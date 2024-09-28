@@ -86,29 +86,29 @@ final class LoginView: BaseView {
     
     // MARK: Event
     private func addButtonEvent() {
-        naverLoginButton.addTarget(self, action: #selector(tapNaverLoginButton), for: .touchUpInside)
-        kakaoLoginButton.addTarget(self, action: #selector(tapKakaoLoginButton), for: .touchUpInside)
-        googleLoginButton.addTarget(self, action: #selector(tapGoogleLoginButton), for: .touchUpInside)
-        appleLoginButton.addTarget(self, action: #selector(tapAppleLoginButton), for: .touchUpInside)
+        naverLoginButton.addTarget(self, action: #selector(handleNaverLoginButton), for: .touchUpInside)
+        kakaoLoginButton.addTarget(self, action: #selector(handleKakaoLoginButton), for: .touchUpInside)
+        googleLoginButton.addTarget(self, action: #selector(handleGoogleLoginButton), for: .touchUpInside)
+        appleLoginButton.addTarget(self, action: #selector(handleAppleLoginButton), for: .touchUpInside)
     }
 
     @objc
-    private func tapNaverLoginButton() {
+    private func handleNaverLoginButton() {
         tapNaverLogin?()
     }
 
     @objc
-    private func tapKakaoLoginButton() {
+    private func handleKakaoLoginButton() {
         tapKakaoLogin?()
     }
 
     @objc
-    private func tapGoogleLoginButton() {
+    private func handleGoogleLoginButton() {
         tapGoogleLogin?()
     }
 
     @objc
-    private func tapAppleLoginButton() {
+    private func handleAppleLoginButton() {
         tapAppleLogin?()
     }
 }

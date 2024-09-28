@@ -5,4 +5,19 @@
 //  Created by 박지윤 on 9/27/24.
 //
 
-import Foundation
+import UIKit
+
+final class ScanCameraView: BaseView {
+    
+    // MARK: UI Components
+
+    // MARK: Properties
+
+    // MARK: Configuration
+    override func configureSubviews() {
+    }
+    
+    // MARK: Layout
+    override func makeConstraints() {
+    }
+}
