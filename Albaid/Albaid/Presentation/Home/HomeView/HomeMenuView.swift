@@ -40,8 +40,6 @@ final class HomeMenuView: BaseView {
         
         backgroundColor = .gray100
         layer.cornerRadius = 12
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
     }
     
     // MARK: Layout

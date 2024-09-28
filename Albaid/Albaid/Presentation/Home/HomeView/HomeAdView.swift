@@ -28,8 +28,6 @@ final class HomeAdView: BaseView {
         addSubview(adImageView)
 
         backgroundColor = .skyblue
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
     }
 
     // MARK: Layout

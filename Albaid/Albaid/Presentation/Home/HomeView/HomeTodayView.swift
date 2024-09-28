@@ -30,9 +30,6 @@ final class HomeTodayView: BaseView {
         addSubview(userLabel)
         addSubview(dateLabel)
         addSubview(characterImageView)
-
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
     }
 
     // MARK: Layout

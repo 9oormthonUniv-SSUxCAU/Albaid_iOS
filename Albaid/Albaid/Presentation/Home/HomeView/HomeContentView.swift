@@ -11,7 +11,6 @@ final class HomeContentView: BaseView {
 
     // MARK: UI Components
     private(set) var userLabel = UILabel().then {
-        $0.text = "김알바님을 위한 알바 내역"
         $0.textColor = .gray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
@@ -31,7 +30,6 @@ final class HomeContentView: BaseView {
     }
 
     private(set) var monthTotalWageTextLabel = UILabel().then {
-        $0.text = "9월 월급 총계"
         $0.textColor = .gray30
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
@@ -82,7 +80,6 @@ final class HomeContentView: BaseView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
 
-
     // MARK: Configuration
     override func configureSubviews() {
         addSubview(userLabel)
@@ -105,10 +102,6 @@ final class HomeContentView: BaseView {
         yearTotalView.addSubview(yearTotalTaxLabel)
 
         setViewLayer()
-//        backgroundColor = .gray95
-
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
     }
 
     // MARK: Layout
