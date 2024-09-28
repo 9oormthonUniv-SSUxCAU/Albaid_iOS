@@ -36,12 +36,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
 //            window.rootViewController = UINavigationController(rootViewController: LoginViewController())
         }
+        // TODO: 
+        window.rootViewController = UINavigationController(rootViewController: LoginViewController())
         UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
      }
 
-    func changeRootViewToMain() {
-         guard let window = window else { return }
-//         window.rootViewController = UINavigationController(rootViewController: MainViewController())
-         UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
-     }
+    func changeRootViewToTabBarViewController() {
+        guard let window = window else { return }
+        window.rootViewController = TabBarViewController()
+        UIView.transition(with: window, duration: 0.1, options: [.transitionCrossDissolve], animations: nil)
+    }
 }

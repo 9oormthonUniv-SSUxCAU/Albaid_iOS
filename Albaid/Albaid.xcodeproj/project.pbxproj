@@ -55,12 +55,38 @@
 		9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */; };
 		9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
+		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
+		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
+		95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */; };
+		95BCFFD02CA7131B0001F339 /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */; };
+		95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD12CA7132C0001F339 /* HomeAdView.swift */; };
+		95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD32CA718C80001F339 /* HomeMenuView.swift */; };
+		95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD52CA71A330001F339 /* HomeContentView.swift */; };
+		95BCFFDF2CA837060001F339 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFDE2CA837060001F339 /* DummyData.swift */; };
+		95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE02CA83AC70001F339 /* Int+Extension.swift */; };
 		95BF198A2CA658B500CA53AC /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19892CA658B500CA53AC /* Contract.swift */; };
 		95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198C2CA65AE500CA53AC /* BaseView.swift */; };
 		95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198E2CA65B1300CA53AC /* BaseViewController.swift */; };
 		95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19902CA65B2600CA53AC /* BaseButton.swift */; };
 		95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19922CA65CB000CA53AC /* AppDependency.swift */; };
 		95BF19952CA65CD000CA53AC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19942CA65CD000CA53AC /* Storage.swift */; };
+		95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19982CA67B7600CA53AC /* SplashView.swift */; };
+		95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */; };
+		95BF199D2CA6864E00CA53AC /* AlbaidColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */; };
+		95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */; };
+		95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */; };
+		95BF19B12CA6A04700CA53AC /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */; };
+		95BF19B22CA6A04700CA53AC /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */; };
+		95BF19B32CA6A04700CA53AC /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AA2CA6A04700CA53AC /* Pretendard-Black.ttf */; };
+		95BF19B42CA6A04700CA53AC /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AB2CA6A04700CA53AC /* Pretendard-ExtraLight.ttf */; };
+		95BF19B52CA6A04700CA53AC /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AC2CA6A04700CA53AC /* Pretendard-Medium.ttf */; };
+		95BF19B62CA6A04700CA53AC /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AD2CA6A04700CA53AC /* Pretendard-Bold.ttf */; };
+		95BF19B72CA6A04700CA53AC /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AE2CA6A04700CA53AC /* Pretendard-Regular.ttf */; };
+		95BF19B82CA6A04700CA53AC /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19AF2CA6A04700CA53AC /* Pretendard-Light.ttf */; };
+		95BF19B92CA6A04700CA53AC /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19B02CA6A04700CA53AC /* Pretendard-Thin.ttf */; };
+		95BF19BB2CA6A6A300CA53AC /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */; };
+		95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19BC2CA6AE4C00CA53AC /* BaseRouter.swift */; };
+		95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */; };
 		95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */; };
 		95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */; };
 		95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C733DA2CA5CF9D00D454E8 /* ViewController.swift */; };
@@ -117,12 +143,38 @@
 		9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWageViewController.swift; sourceTree = "<group>"; };
 		9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
+		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
+		95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		95BCFFD12CA7132C0001F339 /* HomeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdView.swift; sourceTree = "<group>"; };
+		95BCFFD32CA718C80001F339 /* HomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
+		95BCFFD52CA71A330001F339 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
+		95BCFFDE2CA837060001F339 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		95BCFFE02CA83AC70001F339 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		95BF19892CA658B500CA53AC /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		95BF198C2CA65AE500CA53AC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95BF198E2CA65B1300CA53AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		95BF19902CA65B2600CA53AC /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		95BF19922CA65CB000CA53AC /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		95BF19942CA65CD000CA53AC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		95BF19982CA67B7600CA53AC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
+		95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlbaidColor.xcassets; sourceTree = "<group>"; };
+		95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		95BF19AA2CA6A04700CA53AC /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		95BF19AB2CA6A04700CA53AC /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
+		95BF19AC2CA6A04700CA53AC /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		95BF19AD2CA6A04700CA53AC /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		95BF19AE2CA6A04700CA53AC /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		95BF19AF2CA6A04700CA53AC /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		95BF19B02CA6A04700CA53AC /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
+		95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		95BF19BC2CA6AE4C00CA53AC /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		95C733D32CA5CF9D00D454E8 /* Albaid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albaid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C733D62CA5CF9D00D454E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C733D82CA5CF9D00D454E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				95C733DF2CA5CF9E00D454E8 /* Assets.xcassets */,
+				95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */,
 				9556DE322CA5D1E900A43A78 /* Fonts */,
 			);
 			path = Resource;
@@ -165,6 +218,11 @@
 		9556DE2D2CA5D19500A43A78 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				95BCFFE02CA83AC70001F339 /* Int+Extension.swift */,
+				95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */,
+				95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */,
+				95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */,
+				95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */,
 				9556DE2E2CA5D19B00A43A78 /* Literal */,
 			);
 			path = Extension;
@@ -173,6 +231,7 @@
 		9556DE2E2CA5D19B00A43A78 /* Literal */ = {
 			isa = PBXGroup;
 			children = (
+				95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */,
 			);
 			path = Literal;
 			sourceTree = "<group>";
@@ -215,6 +274,15 @@
 		9556DE322CA5D1E900A43A78 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				95BF19AA2CA6A04700CA53AC /* Pretendard-Black.ttf */,
+				95BF19AD2CA6A04700CA53AC /* Pretendard-Bold.ttf */,
+				95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */,
+				95BF19AB2CA6A04700CA53AC /* Pretendard-ExtraLight.ttf */,
+				95BF19AF2CA6A04700CA53AC /* Pretendard-Light.ttf */,
+				95BF19AC2CA6A04700CA53AC /* Pretendard-Medium.ttf */,
+				95BF19AE2CA6A04700CA53AC /* Pretendard-Regular.ttf */,
+				95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */,
+				95BF19B02CA6A04700CA53AC /* Pretendard-Thin.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -222,6 +290,7 @@
 		9556DE332CA5D21D00A43A78 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				95BF19982CA67B7600CA53AC /* SplashView.swift */,
 				9556DE3A2CA5D2A700A43A78 /* SplashViewController.swift */,
 			);
 			path = Splash;
@@ -248,6 +317,7 @@
 			children = (
 				9556DE492CA5D44A00A43A78 /* HomeView.swift */,
 				9556DE402CA5D2BF00A43A78 /* HomeViewController.swift */,
+				95BCFFC22CA6DD840001F339 /* HomeView */,
 				9556DE562CA5D4CC00A43A78 /* ScanContract */,
 				9556DE792CA5D5F900A43A78 /* Contract */,
 				9556DE882CA5D6A700A43A78 /* Resume */,
@@ -290,7 +360,9 @@
 		9556DE482CA5D42C00A43A78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95BCFFCB2CA6E2060001F339 /* User.swift */,
 				95BF19892CA658B500CA53AC /* Contract.swift */,
+				95BCFFDE2CA837060001F339 /* DummyData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,12 +546,34 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		95BCFFC22CA6DD840001F339 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */,
+				95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */,
+				95BCFFD72CA81F1C0001F339 /* Cell */,
+				95BCFFD12CA7132C0001F339 /* HomeAdView.swift */,
+				95BCFFD32CA718C80001F339 /* HomeMenuView.swift */,
+				95BCFFD52CA71A330001F339 /* HomeContentView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		95BCFFD72CA81F1C0001F339 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		95BF198B2CA65ADD00CA53AC /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				95BF198C2CA65AE500CA53AC /* BaseView.swift */,
 				95BF198E2CA65B1300CA53AC /* BaseViewController.swift */,
 				95BF19902CA65B2600CA53AC /* BaseButton.swift */,
+				95BF19BC2CA6AE4C00CA53AC /* BaseRouter.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -582,8 +676,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BF19B92CA6A04700CA53AC /* Pretendard-Thin.ttf in Resources */,
+				95BF19B82CA6A04700CA53AC /* Pretendard-Light.ttf in Resources */,
+				95BF19B52CA6A04700CA53AC /* Pretendard-Medium.ttf in Resources */,
+				95BF19B12CA6A04700CA53AC /* Pretendard-SemiBold.ttf in Resources */,
+				95BF19B72CA6A04700CA53AC /* Pretendard-Regular.ttf in Resources */,
 				95C733E02CA5CF9E00D454E8 /* Assets.xcassets in Resources */,
+				95BF19B22CA6A04700CA53AC /* Pretendard-ExtraBold.ttf in Resources */,
+				95BF19B62CA6A04700CA53AC /* Pretendard-Bold.ttf in Resources */,
+				95BF199D2CA6864E00CA53AC /* AlbaidColor.xcassets in Resources */,
+				95BF19B42CA6A04700CA53AC /* Pretendard-ExtraLight.ttf in Resources */,
 				95C733E32CA5CF9E00D454E8 /* Base in Resources */,
+				95BF19B32CA6A04700CA53AC /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,21 +699,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */,
+				95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */,
+				95BF19BB2CA6A6A300CA53AC /* UIStackView+Extension.swift in Sources */,
+				95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */,
 				9556DE432CA5D2C600A43A78 /* CalendarViewController.swift in Sources */,
 				95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */,
 				9556DE4C2CA5D45000A43A78 /* CalendarView.swift in Sources */,
 				9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */,
+				95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */,
 				9556DEA52CA5D78600A43A78 /* CardDetailViewController.swift in Sources */,
 				9556DE532CA5D48F00A43A78 /* LoginView.swift in Sources */,
 				9556DE902CA5D6FE00A43A78 /* ResumeEditView.swift in Sources */,
+				95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */,
 				9556DE6E2CA5D57800A43A78 /* ScanCompleteViewController.swift in Sources */,
 				9556DE722CA5D58A00A43A78 /* ScanMemoViewController.swift in Sources */,
 				9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */,
+				95BCFFCC2CA6E2060001F339 /* User.swift in Sources */,
 				95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */,
 				9556DE662CA5D53000A43A78 /* ScanLoadingViewController.swift in Sources */,
 				9556DE872CA5D68A00A43A78 /* ContractDetailViewController.swift in Sources */,
 				9556DE642CA5D52700A43A78 /* ScanLoadingView.swift in Sources */,
 				9556DE8E2CA5D6F500A43A78 /* ResumeViewController.swift in Sources */,
+				95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */,
+				95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */,
 				95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */,
 				9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */,
 				95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */,
@@ -621,11 +733,15 @@
 				9556DE8C2CA5D6ED00A43A78 /* ResumeView.swift in Sources */,
 				9556DE502CA5D46500A43A78 /* MyPageView.swift in Sources */,
 				9556DE6C2CA5D57200A43A78 /* ScanCompleteView.swift in Sources */,
+				95BCFFDF2CA837060001F339 /* DummyData.swift in Sources */,
+				95BCFFD02CA7131B0001F339 /* HomeCardCollectionViewCell.swift in Sources */,
 				9556DE622CA5D51A00A43A78 /* ScanCameraViewController.swift in Sources */,
 				9556DE4E2CA5D45D00A43A78 /* CardView.swift in Sources */,
 				95BF19952CA65CD000CA53AC /* Storage.swift in Sources */,
 				95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */,
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
+				95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */,
+				95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,
 				9556DE452CA5D2CC00A43A78 /* CardViewController.swift in Sources */,
 				95BF198A2CA658B500CA53AC /* Contract.swift in Sources */,
@@ -639,13 +755,17 @@
 				95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */,
 				9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */,
 				9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */,
+				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
 				9556DE412CA5D2BF00A43A78 /* HomeViewController.swift in Sources */,
 				9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */,
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
+				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
+				95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */,
 				9556DE9A2CA5D74E00A43A78 /* CalendarDetailView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
+				95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */,
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
 				9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */,
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,
