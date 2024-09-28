@@ -60,7 +60,7 @@ public enum AlbaidButton {
     /// home
     public static var camera: UIImage { .load(name: "ic_home_camera") }
     public static var contract: UIImage { .load(name: "ic_home_contract") }
-    public static var resume: UIImage { .load(name: "ic_home_resemu") }
+    public static var resume: UIImage { .load(name: "ic_home_resume") }
 
     /// etc
     public static var detail: UIImage { .load(name: "ic_detail") }
