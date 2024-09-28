@@ -19,10 +19,13 @@ final class HomeContentView: BaseView {
     private(set) var guideLabel = UILabel().then {
         $0.text = "근로계약서 내용을 토대로 계산했어요"
         $0.textColor = .gray50
-        $0.font = UIFont(name: "Pretendard-Regular", size: 18)
+        $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
 
-    private(set) var monthTotalWageView = UIView()
+    private(set) var monthTotalWageView = UIView().then {
+        $0.backgroundColor = .gray100
+    }
+
     private(set) var monthTotalWageImageView = UIImageView().then {
         $0.image = AlbaidButton.payment
     }
@@ -43,7 +46,10 @@ final class HomeContentView: BaseView {
         $0.backgroundColor = .gray70
     }
     
-    private(set) var yearTotalView = UIView()
+    private(set) var yearTotalView = UIView().then {
+        $0.backgroundColor = .gray100
+    }
+
     private(set) var yearTotalWageImageView = UIImageView().then {
         $0.image = AlbaidButton.pig
     }
@@ -57,7 +63,7 @@ final class HomeContentView: BaseView {
     private(set) var yearTotalWageLabel = UILabel().then {
         $0.text = "20,054,000원"
         $0.textColor = .gray30
-        $0.font = UIFont(name: "Pretendard-Bold", size: 17)
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
 
     private(set) var yearTotalTaxImageView = UIImageView().then {
@@ -73,7 +79,7 @@ final class HomeContentView: BaseView {
     private(set) var yearTotalTaxLabel = UILabel().then {
         $0.text = "154,000원"
         $0.textColor = .gray30
-        $0.font = UIFont(name: "Pretendard-Bold", size: 17)
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
 
 
@@ -88,17 +94,18 @@ final class HomeContentView: BaseView {
         monthTotalWageView.addSubview(monthTotalWageLabel)
 
         addSubview(yearTotalView)
-        monthTotalWageView.addSubview(yearTotalWageImageView)
-        monthTotalWageView.addSubview(yearTotalWageTextLabel)
-        monthTotalWageView.addSubview(yearTotalWageLabel)
+        yearTotalView.addSubview(yearTotalWageImageView)
+        yearTotalView.addSubview(yearTotalWageTextLabel)
+        yearTotalView.addSubview(yearTotalWageLabel)
 
-        monthTotalWageView.addSubview(verticalDividerView)
+        yearTotalView.addSubview(verticalDividerView)
 
-        monthTotalWageView.addSubview(yearTotalTaxImageView)
-        monthTotalWageView.addSubview(yearTotalTaxTextLabel)
-        monthTotalWageView.addSubview(yearTotalTaxLabel)
+        yearTotalView.addSubview(yearTotalTaxImageView)
+        yearTotalView.addSubview(yearTotalTaxTextLabel)
+        yearTotalView.addSubview(yearTotalTaxLabel)
 
         setViewLayer()
+//        backgroundColor = .gray95
 
         layer.borderWidth = 1
         layer.borderColor = UIColor.black.cgColor
@@ -107,18 +114,18 @@ final class HomeContentView: BaseView {
     // MARK: Layout
     override func makeConstraints() {
         userLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalToSuperview().inset(26)
+            $0.leading.equalToSuperview()
         }
 
         guideLabel.snp.makeConstraints {
-            $0.top.equalTo(userLabel.snp.bottom)
-            $0.leading.equalToSuperview().inset(20)
+            $0.top.equalTo(userLabel.snp.bottom).offset(3)
+            $0.leading.equalToSuperview()
         }
 
         monthTotalWageView.snp.makeConstraints {
             $0.top.equalTo(guideLabel.snp.bottom).offset(10)
-            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(82)
         }
 
@@ -140,7 +147,7 @@ final class HomeContentView: BaseView {
 
         yearTotalView.snp.makeConstraints {
             $0.top.equalTo(monthTotalWageView.snp.bottom).offset(15)
-            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(126)
         }
 
@@ -156,7 +163,7 @@ final class HomeContentView: BaseView {
         }
 
         yearTotalWageLabel.snp.makeConstraints {
-            $0.top.equalTo(yearTotalWageTextLabel.snp.bottom)
+            $0.top.equalTo(yearTotalWageTextLabel.snp.bottom).offset(3)
             $0.leading.equalToSuperview().inset(20)
         }
 
@@ -177,7 +184,7 @@ final class HomeContentView: BaseView {
         }
 
         yearTotalTaxLabel.snp.makeConstraints {
-            $0.top.equalTo(yearTotalTaxTextLabel.snp.bottom)
+            $0.top.equalTo(yearTotalTaxTextLabel.snp.bottom).offset(3)
             $0.leading.equalTo(verticalDividerView.snp.trailing).offset(20)
         }
     }

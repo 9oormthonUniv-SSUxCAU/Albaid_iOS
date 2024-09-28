@@ -37,7 +37,7 @@ class HomeViewController: BaseViewController {
     override func makeConstraints() {
         homeView.snp.makeConstraints {
             $0.verticalEdges.equalToSuperview()
-            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview()
         }
 
         logoImageView.snp.makeConstraints {

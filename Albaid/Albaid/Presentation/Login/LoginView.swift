@@ -36,6 +36,7 @@ final class LoginView: BaseView {
 
     private(set) var googleLoginButton = BaseButton().then {
         $0.setLoginButton(image: AlbaidButton.google, title: "구글 로그인", titleColor: .gray10 ?? .black, backgroundColor: .white)
+        $0.setBorder()
     }
 
     private(set) var appleLoginButton = BaseButton().then {
