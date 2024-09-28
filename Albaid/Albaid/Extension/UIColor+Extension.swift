@@ -35,4 +35,5 @@ extension UIColor {
     static let kakao = UIColor(named: "albaid_login_kakao")
 
     static let navy = UIColor(named: "albaid_navy")
+    static let skyblue = UIColor(named: "albaid_skyblue")
 }
