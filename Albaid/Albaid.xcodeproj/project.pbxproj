@@ -64,6 +64,10 @@
 		95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD52CA71A330001F339 /* HomeContentView.swift */; };
 		95BCFFDF2CA837060001F339 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFDE2CA837060001F339 /* DummyData.swift */; };
 		95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE02CA83AC70001F339 /* Int+Extension.swift */; };
+		95BCFFE32CA84AE30001F339 /* StringLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE22CA84AE30001F339 /* StringLiteral.swift */; };
+		95BCFFE52CA863050001F339 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE42CA863050001F339 /* UILabel+Extension.swift */; };
+		95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE92CA86BBF0001F339 /* ScanResultTopContentView.swift */; };
+		95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */; };
 		95BF198A2CA658B500CA53AC /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19892CA658B500CA53AC /* Contract.swift */; };
 		95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198C2CA65AE500CA53AC /* BaseView.swift */; };
 		95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198E2CA65B1300CA53AC /* BaseViewController.swift */; };
@@ -115,7 +119,7 @@
 		9556DE612CA5D51A00A43A78 /* ScanCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCameraViewController.swift; sourceTree = "<group>"; };
 		9556DE632CA5D52700A43A78 /* ScanLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLoadingView.swift; sourceTree = "<group>"; };
 		9556DE652CA5D53000A43A78 /* ScanLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanLoadingViewController.swift; sourceTree = "<group>"; };
-		9556DE672CA5D54700A43A78 /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; };
+		9556DE672CA5D54700A43A78 /* ScanResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9556DE692CA5D54F00A43A78 /* ScanResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultViewController.swift; sourceTree = "<group>"; };
 		9556DE6B2CA5D57200A43A78 /* ScanCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCompleteView.swift; sourceTree = "<group>"; };
 		9556DE6D2CA5D57800A43A78 /* ScanCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCompleteViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,10 @@
 		95BCFFD52CA71A330001F339 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
 		95BCFFDE2CA837060001F339 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		95BCFFE02CA83AC70001F339 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		95BCFFE22CA84AE30001F339 /* StringLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiteral.swift; sourceTree = "<group>"; };
+		95BCFFE42CA863050001F339 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		95BCFFE92CA86BBF0001F339 /* ScanResultTopContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultTopContentView.swift; sourceTree = "<group>"; };
+		95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultBottomContentView.swift; sourceTree = "<group>"; };
 		95BF19892CA658B500CA53AC /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		95BF198C2CA65AE500CA53AC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95BF198E2CA65B1300CA53AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +231,7 @@
 				95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */,
 				95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */,
 				95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */,
+				95BCFFE42CA863050001F339 /* UILabel+Extension.swift */,
 				9556DE2E2CA5D19B00A43A78 /* Literal */,
 			);
 			path = Extension;
@@ -232,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */,
+				95BCFFE22CA84AE30001F339 /* StringLiteral.swift */,
 			);
 			path = Literal;
 			sourceTree = "<group>";
@@ -420,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				9556DE672CA5D54700A43A78 /* ScanResultView.swift */,
+				95BCFFE62CA86BA10001F339 /* View */,
 				9556DE692CA5D54F00A43A78 /* ScanResultViewController.swift */,
 			);
 			path = ScanResult;
@@ -437,8 +448,8 @@
 		9556DE782CA5D5D900A43A78 /* ScanMemo */ = {
 			isa = PBXGroup;
 			children = (
-				9556DE712CA5D58A00A43A78 /* ScanMemoViewController.swift */,
 				9556DE6F2CA5D58200A43A78 /* ScanMemoView.swift */,
+				9556DE712CA5D58A00A43A78 /* ScanMemoViewController.swift */,
 			);
 			path = ScanMemo;
 			sourceTree = "<group>";
@@ -565,6 +576,15 @@
 				95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		95BCFFE62CA86BA10001F339 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95BCFFE92CA86BBF0001F339 /* ScanResultTopContentView.swift */,
+				95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		95BF198B2CA65ADD00CA53AC /* Base */ = {
@@ -720,6 +740,7 @@
 				9556DE872CA5D68A00A43A78 /* ContractDetailViewController.swift in Sources */,
 				9556DE642CA5D52700A43A78 /* ScanLoadingView.swift in Sources */,
 				9556DE8E2CA5D6F500A43A78 /* ResumeViewController.swift in Sources */,
+				95BCFFE52CA863050001F339 /* UILabel+Extension.swift in Sources */,
 				95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */,
 				95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */,
 				95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */,
@@ -744,6 +765,7 @@
 				95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,
 				9556DE452CA5D2CC00A43A78 /* CardViewController.swift in Sources */,
+				95BCFFE32CA84AE30001F339 /* StringLiteral.swift in Sources */,
 				95BF198A2CA658B500CA53AC /* Contract.swift in Sources */,
 				9556DEA32CA5D78000A43A78 /* CardDetailView.swift in Sources */,
 				9556DE6A2CA5D54F00A43A78 /* ScanResultViewController.swift in Sources */,
@@ -757,7 +779,9 @@
 				9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
+				95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */,
 				9556DE412CA5D2BF00A43A78 /* HomeViewController.swift in Sources */,
+				95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */,
 				9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */,
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,

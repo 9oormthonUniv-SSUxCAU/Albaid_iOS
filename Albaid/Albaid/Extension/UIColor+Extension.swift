@@ -36,4 +36,14 @@ extension UIColor {
 
     static let navy = UIColor(named: "albaid_navy")
     static let skyblue = UIColor(named: "albaid_skyblue")
+
+    /// scan result
+    static let lightGreen = UIColor(named: "albaid_light_green")
+    static let lightOrange = UIColor(named: "albaid_light_orange")
+    static let lightRed = UIColor(named: "albaid_light_red")
+
+    /// safety
+    static let safetyGreen = UIColor(named: "albaid_safety_green")
+    static let safetyOrange = UIColor(named: "albaid_safety_orange")
+    static let safetyRed = UIColor(named: "albaid_safety_red")
 }

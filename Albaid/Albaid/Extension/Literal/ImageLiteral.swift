@@ -26,6 +26,20 @@ public enum AlbaidImage {
     public static var coffeeGreen: UIImage { .load(name: "coffee_green")}
     public static var coffeeBlue: UIImage { .load(name: "coffee_blue")}
     public static var coffeePink: UIImage { .load(name: "coffee_pink")}
+
+    public static var contractGuide: UIImage { .load(name: "contract_guide")}
+    public static var scanLoading: UIImage { .load(name: "scan_loading")}
+
+    /// safety level
+    public static var safety: UIImage { .load(name: "safety")}
+    public static var warning: UIImage { .load(name: "warning")}
+    public static var danger: UIImage { .load(name: "danger")}
+
+    public static var success: UIImage { .load(name: "success")}
+    public static var failure: UIImage { .load(name: "failure")}
+
+    public static var complete: UIImage { .load(name: "complete")}
+    public static var memo: UIImage { .load(name: "memo")}
 }
 
 public enum AlbaidButton {
@@ -68,6 +82,8 @@ public enum AlbaidButton {
     public static var payment: UIImage { .load(name: "payment")}
     public static var pig: UIImage { .load(name: "pig")}
     public static var tax: UIImage { .load(name: "tax")}
+
+    public static var shoot: UIImage { .load(name: "shoot")}
 }
 
 extension UIImage {
