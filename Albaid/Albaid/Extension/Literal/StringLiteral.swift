@@ -26,4 +26,17 @@ struct AlbaidString {
                         주요 근로 조건들이 명시되어 있는 안전한
                         근로 계약서예요.
                         """
+
+    /// scan complete
+    static let completeGuide = """
+                               근로계약서는 최대 3개까지
+                               알바 카드에 자동으로 등록돼요.
+                               """
+
+
+    /// scan memo
+    static let memoGuide = """
+                            최대 50자까지 입력 가능한
+                            나만 볼 수 있는 메모에요.
+                            """
 }
