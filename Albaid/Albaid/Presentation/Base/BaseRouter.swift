@@ -20,6 +20,7 @@ final class BaseRouter {
         sceneDelegate?.changeRootViewToTabBarViewController()
     }
 
+    /// scanContract
     func presentScanGuideViewController() {
         let scanGuideViewController = ScanGuideViewController()
         scanGuideViewController.hidesBottomBarWhenPushed = true
@@ -49,6 +50,12 @@ final class BaseRouter {
     func presentScanMemoViewController() {
         let scanMemoViewController = ScanMemoViewController()
         viewController?.navigationController?.pushViewController(scanMemoViewController, animated: true)
+    }
+
+    /// scanContract
+    func presentContractViewController() {
+        let contractViewController = ContractViewController()
+        viewController?.navigationController?.pushViewController(contractViewController, animated: true)
     }
 
     func popViewController() {

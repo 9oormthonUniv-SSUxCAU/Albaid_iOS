@@ -56,17 +56,6 @@ extension HomeCardCollectionView: UICollectionViewDataSource, UICollectionViewDe
         cardCollectionView.showsHorizontalScrollIndicator = false
     }
 
-    func createLayout() -> UICollectionViewLayout {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 172)
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-
-        return flowLayout
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }

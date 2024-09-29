@@ -68,6 +68,8 @@
 		95BCFFE52CA863050001F339 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE42CA863050001F339 /* UILabel+Extension.swift */; };
 		95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFE92CA86BBF0001F339 /* ScanResultTopContentView.swift */; };
 		95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */; };
+		95BCFFEF2CA974DF0001F339 /* ContractCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */; };
+		95BCFFF12CA974E60001F339 /* ContractCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */; };
 		95BF198A2CA658B500CA53AC /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19892CA658B500CA53AC /* Contract.swift */; };
 		95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198C2CA65AE500CA53AC /* BaseView.swift */; };
 		95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198E2CA65B1300CA53AC /* BaseViewController.swift */; };
@@ -160,6 +162,8 @@
 		95BCFFE42CA863050001F339 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		95BCFFE92CA86BBF0001F339 /* ScanResultTopContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultTopContentView.swift; sourceTree = "<group>"; };
 		95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultBottomContentView.swift; sourceTree = "<group>"; };
+		95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCollectionView.swift; sourceTree = "<group>"; };
+		95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCollectionViewCell.swift; sourceTree = "<group>"; };
 		95BF19892CA658B500CA53AC /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		95BF198C2CA65AE500CA53AC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95BF198E2CA65B1300CA53AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -459,6 +463,7 @@
 			children = (
 				9556DE7A2CA5D63400A43A78 /* ContractView.swift */,
 				9556DE7C2CA5D63D00A43A78 /* ContractViewController.swift */,
+				95BCFFED2CA974D20001F339 /* View */,
 				9556DE7E2CA5D64700A43A78 /* ContractEdit */,
 				9556DE7F2CA5D66000A43A78 /* ContractDetail */,
 			);
@@ -583,6 +588,15 @@
 			children = (
 				95BCFFE92CA86BBF0001F339 /* ScanResultTopContentView.swift */,
 				95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95BCFFED2CA974D20001F339 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */,
+				95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -752,6 +766,7 @@
 				9556DE4A2CA5D44A00A43A78 /* HomeView.swift in Sources */,
 				9556DE682CA5D54700A43A78 /* ScanResultView.swift in Sources */,
 				9556DE8C2CA5D6ED00A43A78 /* ResumeView.swift in Sources */,
+				95BCFFF12CA974E60001F339 /* ContractCollectionViewCell.swift in Sources */,
 				9556DE502CA5D46500A43A78 /* MyPageView.swift in Sources */,
 				9556DE6C2CA5D57200A43A78 /* ScanCompleteView.swift in Sources */,
 				95BCFFDF2CA837060001F339 /* DummyData.swift in Sources */,
@@ -772,6 +787,7 @@
 				9556DE702CA5D58200A43A78 /* ScanMemoView.swift in Sources */,
 				9556DEAA2CA5D7BA00A43A78 /* TotalWageViewController.swift in Sources */,
 				9556DE552CA5D49700A43A78 /* LoginViewController.swift in Sources */,
+				95BCFFEF2CA974DF0001F339 /* ContractCollectionView.swift in Sources */,
 				9556DE602CA5D51500A43A78 /* ScanCameraView.swift in Sources */,
 				9556DE3F2CA5D2BA00A43A78 /* TabBarViewController.swift in Sources */,
 				95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */,

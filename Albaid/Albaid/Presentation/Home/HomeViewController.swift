@@ -61,6 +61,11 @@ class HomeViewController: BaseViewController {
             guard let self else { return }
             router.presentScanGuideViewController()
         }
+
+        homeView.homeMenuView.tapContract = { [weak self] in
+            guard let self else { return }
+            router.presentContractViewController()
+        }
     }
 
     // MARK: data binding
