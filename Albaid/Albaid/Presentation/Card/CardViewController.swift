@@ -10,6 +10,7 @@ import UIKit
 class CardViewController: BaseViewController {
 
     // MARK: UI Components
+    private let cardView = CardView()
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -18,10 +19,14 @@ class CardViewController: BaseViewController {
 
     // MARK: Configuration
     override func configureSubviews() {
+        view.addSubview(cardView)
     }
 
     // MARK: Layout
     override func makeConstraints() {
+        cardView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 
     override func setNavigationItem() {

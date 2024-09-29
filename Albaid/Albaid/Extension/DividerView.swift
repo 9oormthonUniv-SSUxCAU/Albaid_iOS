@@ -19,14 +19,21 @@ enum Divider {
             return 8.0
         }
     }
+
+    var color: UIColor {
+        switch self {
+        case .thin:
+            return .albaidGray70
+        case .thick:
+            return .albaidGray95
+        }
+    }
 }
 
 class DividerView: BaseView {
 
     // MARK: UI Component
-    private let dividerView = UIView().then {
-        $0.backgroundColor = .albaidGray70
-    }
+    private let dividerView = UIView()
 
     // MARK: Properties
     private var dividerType: Divider
@@ -48,6 +55,8 @@ class DividerView: BaseView {
     override func configureSubviews() {
         super.configureSubviews()
 
+        dividerView.backgroundColor = dividerType.color
+
         addSubview(dividerView)
     }
 
@@ -56,7 +65,7 @@ class DividerView: BaseView {
         super.makeConstraints()
 
         dividerView.snp.makeConstraints {
-            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview()
             $0.height.equalTo(dividerType.height)
         }
     }

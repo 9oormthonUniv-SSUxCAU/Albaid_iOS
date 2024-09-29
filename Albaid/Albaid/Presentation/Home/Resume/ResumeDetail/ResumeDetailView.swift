@@ -142,7 +142,7 @@ final class ResumeDetailView: BaseView {
 
         dividerView1.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(20)
-            $0.horizontalEdges.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
 
         infoLabel.snp.makeConstraints {
@@ -157,9 +157,9 @@ final class ResumeDetailView: BaseView {
 
         dividerView2.snp.makeConstraints {
             $0.top.equalTo(infoContentLabel.snp.bottom).offset(30)
-            $0.horizontalEdges.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
-    
+
         phoneStackView.snp.makeConstraints {
             $0.top.equalTo(dividerView2.snp.bottom).offset(30)
             $0.leading.equalToSuperview().inset(20)
@@ -177,7 +177,7 @@ final class ResumeDetailView: BaseView {
 
         dividerView3.snp.makeConstraints {
             $0.top.equalTo(emailStackView.snp.bottom).offset(30)
-            $0.horizontalEdges.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
 
         educationStackView.snp.makeConstraints {
@@ -197,7 +197,7 @@ final class ResumeDetailView: BaseView {
 
         dividerView4.snp.makeConstraints {
             $0.top.equalTo(certificateStackView.snp.bottom).offset(30)
-            $0.horizontalEdges.equalToSuperview()
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
 
         careerLabel.snp.makeConstraints {
