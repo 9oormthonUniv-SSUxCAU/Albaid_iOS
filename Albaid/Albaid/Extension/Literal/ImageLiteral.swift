@@ -37,6 +37,9 @@ public enum AlbaidImage {
 
     public static var success: UIImage { .load(name: "success")}
     public static var failure: UIImage { .load(name: "failure")}
+
+    public static var complete: UIImage { .load(name: "complete")}
+    public static var memo: UIImage { .load(name: "memo")}
 }
 
 public enum AlbaidButton {
@@ -79,6 +82,8 @@ public enum AlbaidButton {
     public static var payment: UIImage { .load(name: "payment")}
     public static var pig: UIImage { .load(name: "pig")}
     public static var tax: UIImage { .load(name: "tax")}
+
+    public static var shoot: UIImage { .load(name: "shoot")}
 }
 
 extension UIImage {
