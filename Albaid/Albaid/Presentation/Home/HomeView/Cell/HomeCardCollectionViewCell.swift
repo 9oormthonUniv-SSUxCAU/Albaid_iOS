@@ -41,6 +41,16 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
         $0.contentMode = .scaleAspectFit
     }
 
+    private(set) var addImageView = UIImageView().then {
+        $0.image = AlbaidImage.add
+    }
+
+    private(set) var addLabel = UILabel().then {
+        $0.text = "알바 카드 추가하기"
+        $0.textColor = .albaidGray60
+        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+    }
+
     // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -118,6 +128,31 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
         default:
             contentView.backgroundColor = .albaidMainGreen
             coffeeImageView.image = AlbaidImage.coffeeGreen
+        }
+    }
+
+    func setaddCardCell() {
+        indexLabel.removeFromSuperview()
+        detailButton.removeFromSuperview()
+        workplaceLabel.removeFromSuperview()
+        wageTextLabel.removeFromSuperview()
+        wageLabel.removeFromSuperview()
+        coffeeImageView.removeFromSuperview()
+
+        contentView.backgroundColor = .albaidGray95
+
+        contentView.addSubview(addImageView)
+        contentView.addSubview(addLabel)
+
+        addImageView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(46)
+            $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(50)
+        }
+
+        addLabel.snp.makeConstraints {
+            $0.top.equalTo(addImageView.snp.bottom).offset(5)
+            $0.centerX.equalToSuperview()
         }
     }
 }

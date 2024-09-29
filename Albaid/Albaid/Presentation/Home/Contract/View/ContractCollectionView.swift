@@ -64,7 +64,7 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
         contractCollectionView.delegate = self
         contractCollectionView.register(ContractCollectionViewCell.self, forCellWithReuseIdentifier: ContractCollectionViewCell.identifier)
         contractCollectionView.isPagingEnabled = false
-        contractCollectionView.showsHorizontalScrollIndicator = false
+        contractCollectionView.showsVerticalScrollIndicator = false
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

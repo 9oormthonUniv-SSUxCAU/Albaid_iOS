@@ -48,6 +48,7 @@ public enum AlbaidImage {
     public static var certification: UIImage { .load(name: "certification")}
     public static var calendar: UIImage { .load(name: "calendar2")}
     public static var payment: UIImage { .load(name: "payments")}
+    public static var add: UIImage { .load(name: "add") }
 }
 
 public enum AlbaidButton {

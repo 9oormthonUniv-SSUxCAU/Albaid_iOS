@@ -67,7 +67,7 @@ extension ResumeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
         resumeCollectionView.delegate = self
         resumeCollectionView.register(ResumeCollectionViewCell.self, forCellWithReuseIdentifier: ResumeCollectionViewCell.identifier)
         resumeCollectionView.isPagingEnabled = false
-        resumeCollectionView.showsHorizontalScrollIndicator = false
+        resumeCollectionView.showsVerticalScrollIndicator = false
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
