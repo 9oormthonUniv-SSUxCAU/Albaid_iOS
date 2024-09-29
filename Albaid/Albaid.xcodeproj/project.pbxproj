@@ -81,7 +81,6 @@
 		95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19982CA67B7600CA53AC /* SplashView.swift */; };
 		95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */; };
 		95BF199D2CA6864E00CA53AC /* AlbaidColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */; };
-		95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */; };
 		95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */; };
 		95BF19B12CA6A04700CA53AC /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */; };
 		95BF19B22CA6A04700CA53AC /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */; };
@@ -177,7 +176,6 @@
 		95BF19982CA67B7600CA53AC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		95BF199A2CA67CF200CA53AC /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		95BF199C2CA6864E00CA53AC /* AlbaidColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AlbaidColor.xcassets; sourceTree = "<group>"; };
-		95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		95BF19A82CA6A04700CA53AC /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		95BF19A92CA6A04700CA53AC /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -235,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				95BCFFE02CA83AC70001F339 /* Int+Extension.swift */,
-				95BF19A42CA6884A00CA53AC /* UIColor+Extension.swift */,
 				95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */,
 				95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */,
 				95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */,
@@ -739,7 +736,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */,
-				95BF19A52CA6884A00CA53AC /* UIColor+Extension.swift in Sources */,
 				95BF19BB2CA6A6A300CA53AC /* UIStackView+Extension.swift in Sources */,
 				95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */,
 				9556DE432CA5D2C600A43A78 /* CalendarViewController.swift in Sources */,

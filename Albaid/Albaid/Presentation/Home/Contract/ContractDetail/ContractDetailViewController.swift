@@ -48,6 +48,11 @@ final class ContractDetailViewController: BaseViewController {
             guard let self else { return }
             router.popViewController()
         }
+
+        optionButton.tap = { [weak self] in
+            guard let self else { return }
+            router.presentModalViewController()
+        }
     }
 
     // MARK: Navigation Item

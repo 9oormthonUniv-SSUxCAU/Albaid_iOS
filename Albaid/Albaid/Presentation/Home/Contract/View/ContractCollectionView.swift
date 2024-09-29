@@ -12,7 +12,7 @@ final class ContractCollectionView: BaseView {
     // MARK: UI Components
     private(set) var contractNumberLabel = UILabel().then {
         $0.text = "총 3건"
-        $0.textColor = .albaidGray70
+        $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
 
