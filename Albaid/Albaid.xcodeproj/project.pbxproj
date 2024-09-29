@@ -70,6 +70,8 @@
 		95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */; };
 		95BCFFEF2CA974DF0001F339 /* ContractCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */; };
 		95BCFFF12CA974E60001F339 /* ContractCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */; };
+		95BCFFF32CA992B30001F339 /* OptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFF22CA992B30001F339 /* OptionModalView.swift */; };
+		95BCFFF72CA99E100001F339 /* OptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFF62CA99E100001F339 /* OptionModalViewController.swift */; };
 		95BF198A2CA658B500CA53AC /* Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF19892CA658B500CA53AC /* Contract.swift */; };
 		95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198C2CA65AE500CA53AC /* BaseView.swift */; };
 		95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BF198E2CA65B1300CA53AC /* BaseViewController.swift */; };
@@ -164,6 +166,8 @@
 		95BCFFEB2CA86BCA0001F339 /* ScanResultBottomContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanResultBottomContentView.swift; sourceTree = "<group>"; };
 		95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCollectionView.swift; sourceTree = "<group>"; };
 		95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractCollectionViewCell.swift; sourceTree = "<group>"; };
+		95BCFFF22CA992B30001F339 /* OptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModalView.swift; sourceTree = "<group>"; };
+		95BCFFF62CA99E100001F339 /* OptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionModalViewController.swift; sourceTree = "<group>"; };
 		95BF19892CA658B500CA53AC /* Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contract.swift; sourceTree = "<group>"; };
 		95BF198C2CA65AE500CA53AC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95BF198E2CA65B1300CA53AC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -597,6 +601,8 @@
 			children = (
 				95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */,
 				95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */,
+				95BCFFF22CA992B30001F339 /* OptionModalView.swift */,
+				95BCFFF62CA99E100001F339 /* OptionModalViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -747,6 +753,7 @@
 				95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */,
 				9556DE6E2CA5D57800A43A78 /* ScanCompleteViewController.swift in Sources */,
 				9556DE722CA5D58A00A43A78 /* ScanMemoViewController.swift in Sources */,
+				95BCFFF72CA99E100001F339 /* OptionModalViewController.swift in Sources */,
 				9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */,
 				95BCFFCC2CA6E2060001F339 /* User.swift in Sources */,
 				95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */,
@@ -795,6 +802,7 @@
 				9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
+				95BCFFF32CA992B30001F339 /* OptionModalView.swift in Sources */,
 				95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */,
 				9556DE412CA5D2BF00A43A78 /* HomeViewController.swift in Sources */,
 				95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */,

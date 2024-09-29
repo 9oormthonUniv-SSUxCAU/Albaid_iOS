@@ -11,7 +11,7 @@ final class ContractViewController: BaseViewController {
 
     // MARK: UI Components
     private(set) var backButton = BaseButton().then {
-        $0.setImage(AlbaidButton.back.withTintColor(.gray30 ?? .black), for: .normal)
+        $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
     private let contractView = ContractView()
@@ -43,6 +43,16 @@ final class ContractViewController: BaseViewController {
         backButton.tap = { [weak self] in
             guard let self else { return }
             router.popViewController()
+        }
+
+        contractView.contractCollectionView.tapCell = { [weak self] in
+            guard let self else { return }
+            router.presentContractDetailViewController()
+        }
+
+        contractView.contractCollectionView.tapOption = { [weak self] in
+            guard let self else { return }
+            router.presentModalViewController()
         }
     }
 

@@ -19,7 +19,7 @@ final class HomeView: BaseView {
     private(set) var homeCardCollectionView = HomeCardCollectionView()
     private(set) var homeAdView = HomeAdView()
     private(set) var homeBottomView = UIView().then {
-        $0.backgroundColor = .gray95
+        $0.backgroundColor = .albaidGray95
     }
 
     private(set) var homeMenuView = HomeMenuView()

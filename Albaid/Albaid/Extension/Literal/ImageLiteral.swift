@@ -87,6 +87,7 @@ public enum AlbaidButton {
     public static var tax: UIImage { .load(name: "tax")}
 
     public static var shoot: UIImage { .load(name: "shoot")}
+    public static var magnifier: UIImage { .load(name: "magnifier")}
 }
 
 extension UIImage {

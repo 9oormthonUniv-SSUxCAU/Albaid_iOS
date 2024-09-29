@@ -58,6 +58,22 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(contractViewController, animated: true)
     }
 
+    func presentContractDetailViewController() {
+        let contractDetailViewController = ContractDetailViewController()
+        contractDetailViewController.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
+    }
+
+    func presentModalViewController() {
+        let optionModalViewController = OptionModalViewController()
+        optionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = optionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 180 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(optionModalViewController, animated: true, completion: nil)
+    }
+
     func popViewController() {
         viewController?.navigationController?.popViewController(animated: true)
     }

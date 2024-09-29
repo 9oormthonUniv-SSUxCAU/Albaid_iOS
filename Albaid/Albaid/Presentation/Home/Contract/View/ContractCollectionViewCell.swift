@@ -19,7 +19,7 @@ final class ContractCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var contractSubView = UIView().then {
-        $0.backgroundColor = .gray30
+        $0.backgroundColor = .albaidGray30
         $0.layer.cornerRadius = 12
         $0.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
@@ -33,12 +33,16 @@ final class ContractCollectionViewCell: UICollectionViewCell {
         $0.setImage(AlbaidButton.menu.withTintColor(.white), for: .normal)
     }
 
+    // MARK: Properties
+    var tapOption: (() -> Void)?
+
     // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         configureSubviews()
         makeConstraints()
+        addButtonEvent()
     }
 
     required init?(coder: NSCoder) {
@@ -82,5 +86,15 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     func setData(data: Card?) {
         contractNameLabel.text = "근로계약서" + "\(data?.index ?? 0)"
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        optionButton.addTarget(self, action: #selector(handleOptionButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleOptionButton() {
+        tapOption?()
     }
 }

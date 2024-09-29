@@ -12,7 +12,7 @@ final class ContractCollectionView: BaseView {
     // MARK: UI Components
     private(set) var contractNumberLabel = UILabel().then {
         $0.text = "총 3건"
-        $0.textColor = .gray30
+        $0.textColor = .albaidGray70
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
 
@@ -32,6 +32,8 @@ final class ContractCollectionView: BaseView {
     }()
 
     // MARK: Properties
+    var tapCell: (() -> Void)?
+    var tapOption: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -40,7 +42,7 @@ final class ContractCollectionView: BaseView {
         addSubview(contractNumberLabel)
         addSubview(contractCollectionView)
 
-        backgroundColor = .gray95
+        backgroundColor = .albaidGray95
     }
     
     // MARK: Layout
@@ -75,6 +77,7 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
             for: indexPath) as? ContractCollectionViewCell else { return UICollectionViewCell() }
 
         cell.setData(data: User.dummyUser.card?[indexPath.row])
+        cell.tapOption = self.tapOption
 
         return cell
     }
@@ -94,5 +97,9 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = (UIScreen.main.bounds.width - 40 - 11)/2
         return CGSize(width: itemWidth, height: 150)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tapCell?()
     }
 }

@@ -13,7 +13,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
 
     // MARK: UI Components
     private(set) var indexLabel = UILabel().then {
-        $0.textColor = .gray100
+        $0.textColor = .albaidGray100
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
 
@@ -22,18 +22,18 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var workplaceLabel = UILabel().then {
-        $0.textColor = .gray100
+        $0.textColor = .albaidGray100
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
 
     private(set) var wageTextLabel = UILabel().then {
         $0.text = "이번 달 알바비"
-        $0.textColor = .gray100
+        $0.textColor = .albaidGray100
         $0.font = UIFont(name: "Pretendard-Medium", size: 13)
     }
 
     private(set) var wageLabel = UILabel().then {
-        $0.textColor = .gray100
+        $0.textColor = .albaidGray100
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 36)
     }
 
@@ -107,16 +107,16 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
 
         switch (data?.index ?? 0) % 3 {
         case 0:
-            contentView.backgroundColor = .subPink
+            contentView.backgroundColor = .albaidSubPink
             coffeeImageView.image = AlbaidImage.coffeePink
         case 1:
-            contentView.backgroundColor = .mainGreen
+            contentView.backgroundColor = .albaidMainGreen
             coffeeImageView.image = AlbaidImage.coffeeGreen
         case 2:
-            contentView.backgroundColor = .subBlue
+            contentView.backgroundColor = .albaidSubBlue
             coffeeImageView.image = AlbaidImage.coffeeBlue
         default:
-            contentView.backgroundColor = .mainGreen
+            contentView.backgroundColor = .albaidMainGreen
             coffeeImageView.image = AlbaidImage.coffeeGreen
         }
     }

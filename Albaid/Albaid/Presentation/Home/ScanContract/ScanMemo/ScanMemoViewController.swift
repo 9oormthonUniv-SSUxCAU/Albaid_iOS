@@ -11,12 +11,12 @@ final class ScanMemoViewController: BaseViewController {
 
     // MARK: UI Components
     private(set) var closeButton = BaseButton().then {
-        $0.setImage(AlbaidButton.close.withTintColor(.gray30 ?? .black), for: .normal)
+        $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
     }
 
     private(set) var confirmButton = BaseButton().then {
         $0.setTitle("완료", for: .normal)
-        $0.setTitleColor(.gray30, for: .normal)
+        $0.setTitleColor(.albaidGray30, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-Medium", size: 18)
     }
 

@@ -78,12 +78,12 @@ class TabBarViewController: UITabBarController {
 
         tabBarItem.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: Metric.titleFontSize),
-            .foregroundColor: UIColor.gray70 ?? .gray
+            .foregroundColor: UIColor.albaidGray70
         ], for: .normal)
         
         tabBarItem.setTitleTextAttributes([
             .font: UIFont.systemFont(ofSize: Metric.titleFontSize),
-            .foregroundColor: UIColor.gray20 ?? .black
+            .foregroundColor: UIColor.albaidGray20
         ], for: .selected)
 
         tabBarItem.imageInsets = UIEdgeInsets(top: Metric.imageTopInset, left: 0, bottom: Metric.imageBottomInset, right: 0)
@@ -93,8 +93,8 @@ class TabBarViewController: UITabBarController {
 
     private func setupTabBarUI() {
         tabBar.backgroundColor = .white
-        tabBar.tintColor = .gray20
-        tabBar.unselectedItemTintColor = .gray70
+        tabBar.tintColor = .albaidGray20
+        tabBar.unselectedItemTintColor = .albaidGray70
 
         tabBar.layer.borderColor = UIColor.black.withAlphaComponent(0.08).cgColor
         tabBar.layer.borderWidth = 1

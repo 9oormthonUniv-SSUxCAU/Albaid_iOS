@@ -11,7 +11,7 @@ final class ScanCameraViewController: BaseViewController {
 
     // MARK: UI Components
     private(set) var closeButton = BaseButton().then {
-        $0.setImage(AlbaidButton.close.withTintColor(.gray30 ?? .black), for: .normal)
+        $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
     }
 
     private let scanCameraView = ScanCameraView()

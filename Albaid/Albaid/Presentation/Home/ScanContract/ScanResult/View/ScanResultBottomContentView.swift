@@ -32,7 +32,7 @@ final class ScanResultBottomContentView: BaseView {
     // MARK: Configuration
     override func configureSubviews() {
         layer.cornerRadius = 12
-        backgroundColor = .gray95
+        backgroundColor = .albaidGray95
 
         addSubview(resultStackView)
 

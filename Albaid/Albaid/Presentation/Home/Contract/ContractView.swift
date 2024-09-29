@@ -13,7 +13,7 @@ final class ContractView: BaseView {
     private(set) var contractSearchBar = UISearchBar().then {
         $0.placeholder = "근로계약서 검색"
         $0.searchBarStyle = .minimal
-        $0.barTintColor = .gray95
+        $0.barTintColor = .albaidGray95
     }
 
     private(set) var contractCollectionView = ContractCollectionView()

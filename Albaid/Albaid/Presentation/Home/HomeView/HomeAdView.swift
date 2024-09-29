@@ -12,7 +12,7 @@ final class HomeAdView: BaseView {
     // MARK: UI Components
     private(set) var adLabel = UILabel().then {
         $0.text = "알바몬 제트로\n1시간에 2건씩 맞춤 알바를 추천받아요!"
-        $0.textColor = .navy
+        $0.textColor = .albaidNavy
         $0.font = UIFont(name: "Pretendard-Bold", size: 15)
         $0.numberOfLines = 2
     }
@@ -27,7 +27,7 @@ final class HomeAdView: BaseView {
         addSubview(adLabel)
         addSubview(adImageView)
 
-        backgroundColor = .skyblue
+        backgroundColor = .albaidSkyblue
     }
 
     // MARK: Layout
