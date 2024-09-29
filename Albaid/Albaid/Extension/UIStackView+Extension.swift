@@ -27,6 +27,51 @@ extension UIStackView {
         addArrangedSubviews(titleLabel, emptyView, contentLabel)
     }
 
+    func resumeLabelStackView(title: String, content: String) {
+        spacing = 11
+        axis = .horizontal
+        distribution = .fill
+
+        let titleLabel = UILabel().then {
+            $0.setResumeTitleLabel(title: title)
+        }
+        let dividerView = UIView().then {
+            $0.backgroundColor = .albaidGray70
+        }
+        let contentLabel = UILabel().then {
+            $0.setResumeContentLabel(content: content)
+        }
+        let emptyView = UIView()
+
+        dividerView.snp.makeConstraints {
+            $0.width.equalTo(1)
+            $0.height.equalTo(11)
+        }
+
+        addArrangedSubviews(titleLabel, dividerView, contentLabel, emptyView)
+    }
+
+    func resumeDetailStackView(title: String, content: String) {
+        spacing = 0
+        axis = .horizontal
+        distribution = .fill
+
+        let titleLabel = UILabel().then {
+            $0.setContractTitleLabel(title: title)
+        }
+
+        let contentLabel = UILabel().then {
+            $0.setResumeDetailContentLabel(content: content)
+        }
+        let emptyView = UIView()
+
+        titleLabel.snp.makeConstraints {
+            $0.width.equalTo(100)
+        }
+
+        addArrangedSubviews(titleLabel, contentLabel, emptyView)
+    }
+
     func contractButtonStackView(title: String, content: String) {
         axis = .horizontal
         distribution = .fill

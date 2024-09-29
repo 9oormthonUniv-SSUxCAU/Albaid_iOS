@@ -43,6 +43,11 @@ public enum AlbaidImage {
 
     /// dummy
     public static var dummyContract: UIImage { .load(name: "dummy_contract")}
+    public static var twosome: UIImage { .load(name: "twosome")}
+
+    public static var certification: UIImage { .load(name: "certification")}
+    public static var calendar: UIImage { .load(name: "calendar2")}
+
 }
 
 public enum AlbaidButton {

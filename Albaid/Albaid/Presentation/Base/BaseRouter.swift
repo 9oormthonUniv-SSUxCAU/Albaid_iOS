@@ -74,6 +74,27 @@ final class BaseRouter {
         viewController?.present(optionModalViewController, animated: true, completion: nil)
     }
 
+    /// resume
+    func presentResumeViewController() {
+        let resumeViewController = ResumeViewController()
+        viewController?.navigationController?.pushViewController(resumeViewController, animated: true)
+    }
+
+    func presentResumeOptionModalViewController() {
+        let resumeOptionModalViewController = ResumeOptionModalViewController()
+        resumeOptionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = resumeOptionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 220 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(resumeOptionModalViewController, animated: true, completion: nil)
+    }
+
+    func presentResumeDetailViewController() {
+        let resumeDetailViewController = ResumeDetailViewController()
+        viewController?.navigationController?.pushViewController(resumeDetailViewController, animated: true)
+    }
+
     func popViewController() {
         viewController?.navigationController?.popViewController(animated: true)
     }
