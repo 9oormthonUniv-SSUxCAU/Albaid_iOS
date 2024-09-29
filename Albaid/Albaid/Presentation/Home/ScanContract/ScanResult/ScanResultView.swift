@@ -34,16 +34,13 @@ final class ScanResultView: BaseView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
 
-    private(set) var scanResultTopContentView = UIView().then {
-        $0.layer.cornerRadius = 12
-        $0.backgroundColor = .gray95
-    }
+    private(set) var scanResultTopContentView = ScanResultTopContentView()
     
     private(set) var dividerView = UIView().then {
         $0.backgroundColor = .gray70
     }
 
-    private(set) var scanResultBottomContentView = UIView().then {
+    private(set) var scanResultBottomContentView = ScanResultBottomContentView().then {
         $0.layer.cornerRadius = 12
         $0.backgroundColor = .gray95
     }
@@ -57,6 +54,7 @@ final class ScanResultView: BaseView {
     }
 
     // MARK: Properties
+    var tapRegister: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -71,6 +69,8 @@ final class ScanResultView: BaseView {
         addSubview(scanResultBottomContentView)
         addSubview(reScanButton)
         addSubview(registerButton)
+
+        addButtonEvent()
     }
 
     // MARK: Layout
@@ -129,5 +129,15 @@ final class ScanResultView: BaseView {
             $0.trailing.equalToSuperview()
             $0.width.equalTo(buttonWidth)
         }
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        registerButton.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleRegisterButton() {
+        tapRegister?()
     }
 }

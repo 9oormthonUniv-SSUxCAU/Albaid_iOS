@@ -52,16 +52,19 @@ final class ScanResultViewController: BaseViewController {
 
         closeButton.tap = { [weak self] in
             guard let self else { return }
-            router.popViewController()
+            router.dismissViewController()
         }
 
-//        scanGuideView.tapCamera = { [weak self] in
-//            guard let self else { return }
-//            router.presentScanResultViewController()
-//        }
+        scanResultView.tapRegister = { [weak self] in
+            guard let self else { return }
+            router.presentScanCompleteViewController()
+        }
     }
 
+    // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: nil, leftBarButton: backButton, rightBarButton: closeButton)
+        setDefaultNavigationItem(title: nil,
+                                 leftBarButton: backButton,
+                                 rightBarButton: closeButton)
     }
 }

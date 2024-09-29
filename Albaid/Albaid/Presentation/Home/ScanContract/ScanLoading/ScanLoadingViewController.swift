@@ -26,7 +26,7 @@ final class ScanLoadingViewController: BaseViewController {
     override func configureSubviews() {
         view.addSubview(scanLoadingView)
     }
-    
+
     // MARK: Layout
     override func makeConstraints() {
         scanLoadingView.snp.makeConstraints {
@@ -37,10 +37,17 @@ final class ScanLoadingViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
+        postScan()
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        navigationController?.isNavigationBarHidden = true
+        navigationItem.hidesBackButton = true
+    }
+
+    private func postScan() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+            router.presentScanResultViewController()
+        }
     }
 }

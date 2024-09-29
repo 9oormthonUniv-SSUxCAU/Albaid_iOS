@@ -48,7 +48,7 @@ final class ScanGuideViewController: BaseViewController {
 
         scanGuideView.tapCamera = { [weak self] in
             guard let self else { return }
-            router.presentScanResultViewController()
+            router.presentScanCameraViewController()
         }
     }
 
