@@ -38,6 +38,24 @@ extension UILabel {
         font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
 
+    func setResumeTitleLabel(title: String) {
+        text = title
+        textColor = .albaidGray60
+        font = UIFont(name: "Pretendard-SemiBold", size: 13)
+    }
+
+    func setResumeContentLabel(content: String) {
+        text = content
+        textColor = .albaidGray20
+        font = UIFont(name: "Pretendard-Regular", size: 12)
+    }
+
+    func setResumeDetailContentLabel(content: String) {
+        text = content
+        textColor = .albaidGray20
+        font = UIFont(name: "Pretendard-Medium", size: 15)
+    }
+
     func setCheckLabel(title: String) {
         text = title
         textColor = .albaidGray40

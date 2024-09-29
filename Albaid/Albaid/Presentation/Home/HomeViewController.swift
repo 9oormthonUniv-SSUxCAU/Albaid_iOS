@@ -66,6 +66,11 @@ class HomeViewController: BaseViewController {
             guard let self else { return }
             router.presentContractViewController()
         }
+
+        homeView.homeMenuView.tapResume = { [weak self] in
+            guard let self else { return }
+            router.presentResumeViewController()
+        }
     }
 
     // MARK: data binding
