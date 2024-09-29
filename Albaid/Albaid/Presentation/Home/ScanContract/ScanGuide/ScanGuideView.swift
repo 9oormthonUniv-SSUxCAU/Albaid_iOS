@@ -12,7 +12,7 @@ final class ScanGuideView: BaseView {
     // MARK: UI Components
     private(set) var contractGuideLabel = UILabel().then {
         $0.text = AlbaidString.contractGuide
-        $0.textColor = .gray20
+        $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 28)
     }
 
@@ -23,20 +23,20 @@ final class ScanGuideView: BaseView {
 
     private(set) var cameraGuideLabel = UILabel().then {
         $0.text = AlbaidString.cameraGuide
-        $0.textColor = .gray30
+        $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 20)
     }
 
     private(set) var cameraGuideDetailLabel = UILabel().then {
         $0.text = AlbaidString.cameraGuideDetail
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.numberOfLines = 0
         $0.font = UIFont(name: "Pretendard-Regular", size: 15)
         $0.setLineSpacing(lineSpacing: 8)
     }
 
     private(set) var cameraButton = BaseButton().then {
-        $0.setTextButton(title: "근로계약서 촬영하기", titleColor: .white, backgroundColor: .gray20 ?? .black)
+        $0.setTextButton(title: "근로계약서 촬영하기", titleColor: .white, backgroundColor: .albaidGray20)
     }
 
     // MARK: Properties

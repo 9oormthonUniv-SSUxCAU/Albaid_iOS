@@ -23,11 +23,11 @@ final class HomeMenuView: BaseView {
     }
 
     private(set) var dividerView = UIView().then {
-        $0.backgroundColor = .gray70
+        $0.backgroundColor = .albaidGray70
     }
 
     private(set) var dividerView2 = UIView().then {
-        $0.backgroundColor = .gray70
+        $0.backgroundColor = .albaidGray70
     }
 
     // MARK: Properties
@@ -43,7 +43,7 @@ final class HomeMenuView: BaseView {
         addSubview(dividerView)
         addSubview(dividerView2)
 
-        backgroundColor = .gray100
+        backgroundColor = .albaidGray100
         layer.cornerRadius = 12
 
         addButtonEvent()

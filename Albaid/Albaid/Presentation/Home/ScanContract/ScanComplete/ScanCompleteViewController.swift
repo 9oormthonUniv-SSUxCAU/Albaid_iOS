@@ -11,7 +11,7 @@ final class ScanCompleteViewController: BaseViewController {
 
     // MARK: UI Components
     private(set) var backButton = BaseButton().then {
-        $0.setImage(AlbaidButton.back.withTintColor(.gray30 ?? .black), for: .normal)
+        $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
     private let scanCompleteView = ScanCompleteView()

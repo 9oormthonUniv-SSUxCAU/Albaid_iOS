@@ -11,18 +11,18 @@ final class HomeContentView: BaseView {
 
     // MARK: UI Components
     private(set) var userLabel = UILabel().then {
-        $0.textColor = .gray20
+        $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
 
     private(set) var guideLabel = UILabel().then {
         $0.text = "근로계약서 내용을 토대로 계산했어요"
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
 
     private(set) var monthTotalWageView = UIView().then {
-        $0.backgroundColor = .gray100
+        $0.backgroundColor = .albaidGray100
     }
 
     private(set) var monthTotalWageImageView = UIImageView().then {
@@ -30,22 +30,22 @@ final class HomeContentView: BaseView {
     }
 
     private(set) var monthTotalWageTextLabel = UILabel().then {
-        $0.textColor = .gray30
+        $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
 
     private(set) var monthTotalWageLabel = UILabel().then {
         $0.text = "1,054,000원"
-        $0.textColor = .gray40
+        $0.textColor = .albaidGray40
         $0.font = UIFont(name: "Pretendard-Medium", size: 18)
     }
 
     private(set) var verticalDividerView = UIView().then {
-        $0.backgroundColor = .gray70
+        $0.backgroundColor = .albaidGray70
     }
     
     private(set) var yearTotalView = UIView().then {
-        $0.backgroundColor = .gray100
+        $0.backgroundColor = .albaidGray100
     }
 
     private(set) var yearTotalWageImageView = UIImageView().then {
@@ -54,13 +54,13 @@ final class HomeContentView: BaseView {
 
     private(set) var yearTotalWageTextLabel = UILabel().then {
         $0.text = "올해 총 수입"
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Medium", size: 14)
     }
 
     private(set) var yearTotalWageLabel = UILabel().then {
         $0.text = "20,054,000원"
-        $0.textColor = .gray30
+        $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
 
@@ -70,13 +70,13 @@ final class HomeContentView: BaseView {
 
     private(set) var yearTotalTaxTextLabel = UILabel().then {
         $0.text = "올해 낸 세금"
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Medium", size: 14)
     }
 
     private(set) var yearTotalTaxLabel = UILabel().then {
         $0.text = "154,000원"
-        $0.textColor = .gray30
+        $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 17)
     }
 

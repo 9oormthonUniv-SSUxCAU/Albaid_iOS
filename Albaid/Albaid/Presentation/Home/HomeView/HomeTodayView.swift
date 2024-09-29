@@ -11,12 +11,12 @@ final class HomeTodayView: BaseView {
 
     // MARK: UI Components
     private(set) var userLabel = UILabel().then {
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
 
     private(set) var dateLabel = UILabel().then {
-        $0.textColor = .gray20
+        $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-Semibold", size: 18)
     }
 

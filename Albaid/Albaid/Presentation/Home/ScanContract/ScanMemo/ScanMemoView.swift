@@ -12,13 +12,13 @@ final class ScanMemoView: BaseView {
     // MARK: UI Components
     private(set) var memoLabel = UILabel().then {
         $0.text = "간단한 메모를 입력할 수 있어요"
-        $0.textColor = .gray10
+        $0.textColor = .albaidGray10
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 24)
     }
 
     private(set) var memoGuideLabel = UILabel().then {
         $0.text = AlbaidString.memoGuide
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.numberOfLines = 2
         $0.textAlignment = .center
         $0.font = UIFont(name: "Pretendard-Regular", size: 15)
@@ -26,10 +26,10 @@ final class ScanMemoView: BaseView {
 
     private(set) var memoTextView = UITextView().then {
         $0.text = "10분 전에 미리 도착하기"
-        $0.textColor = .gray20
+        $0.textColor = .albaidGray20
         $0.textAlignment = .center
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
-        $0.backgroundColor = .gray95
+        $0.backgroundColor = .albaidGray95
         $0.layer.cornerRadius = 12
         $0.contentInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     }

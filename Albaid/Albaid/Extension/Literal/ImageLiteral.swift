@@ -40,6 +40,9 @@ public enum AlbaidImage {
 
     public static var complete: UIImage { .load(name: "complete")}
     public static var memo: UIImage { .load(name: "memo")}
+
+    /// dummy
+    public static var dummyContract: UIImage { .load(name: "dummy_contract")}
 }
 
 public enum AlbaidButton {
@@ -84,6 +87,7 @@ public enum AlbaidButton {
     public static var tax: UIImage { .load(name: "tax")}
 
     public static var shoot: UIImage { .load(name: "shoot")}
+    public static var magnifier: UIImage { .load(name: "magnifier")}
 }
 
 extension UIImage {

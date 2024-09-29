@@ -17,13 +17,13 @@ final class ScanCompleteView: BaseView {
 
     private(set) var completeLabel = UILabel().then {
         $0.text = "근로계약서 등록 완료!"
-        $0.textColor = .gray20
+        $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 28)
     }
 
     private(set) var completeGuideLabel = UILabel().then {
         $0.text = AlbaidString.completeGuide
-        $0.textColor = .gray50
+        $0.textColor = .albaidGray50
         $0.numberOfLines = 2
         $0.textAlignment = .center
         $0.font = UIFont(name: "Pretendard-Regular", size: 15)
@@ -32,11 +32,11 @@ final class ScanCompleteView: BaseView {
     private(set) var memoButton = BaseButton().then {
         $0.setMemoButton(content: "메모 남기기")
         $0.setImage(AlbaidImage.memo, for: .normal)
-        $0.backgroundColor = .gray95
+        $0.backgroundColor = .albaidGray95
     }
 
     private(set) var confirmButton = BaseButton().then {
-        $0.setTextButton(title: "확인", titleColor: .white, backgroundColor: .gray20 ?? .white)
+        $0.setTextButton(title: "확인", titleColor: .albaidGray100, backgroundColor: .albaidGray20)
     }
 
     // MARK: Properties

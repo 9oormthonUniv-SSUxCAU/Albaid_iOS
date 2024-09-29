@@ -16,7 +16,7 @@ final class SplashView: BaseView {
 
     // MARK: Configuration
     override func configureSubviews() {
-        backgroundColor = .mainGreen
+        backgroundColor = .albaidMainGreen
 
         addSubview(splashImageView)
     }

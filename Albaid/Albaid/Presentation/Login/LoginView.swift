@@ -17,7 +17,7 @@ final class LoginView: BaseView {
 
     private let logoLabel = UILabel().then {
         $0.text = "나한테 맞춘 가장 쉬운 알바 관리"
-        $0.textColor = .mainGreen
+        $0.textColor = .albaidMainGreen
         $0.font = UIFont(name: "Pretendard-Medium", size: 18)
     }
 
@@ -27,20 +27,20 @@ final class LoginView: BaseView {
     }
 
     private(set) var naverLoginButton = BaseButton().then {
-        $0.setLoginButton(image: AlbaidButton.naver, title: "네이버 로그인", titleColor: .white, backgroundColor: .naver ?? .green)
+        $0.setLoginButton(image: AlbaidButton.naver, title: "네이버 로그인", titleColor: .albaidGray100, backgroundColor: .albaidLoginNaver)
     }
 
     private(set) var kakaoLoginButton = BaseButton().then {
-        $0.setLoginButton(image: AlbaidButton.kakao, title: "카카오 로그인", titleColor: .gray30 ?? .black, backgroundColor: .kakao ?? .yellow)
+        $0.setLoginButton(image: AlbaidButton.kakao, title: "카카오 로그인", titleColor: .albaidGray30, backgroundColor: .albaidLoginKakao)
     }
 
     private(set) var googleLoginButton = BaseButton().then {
-        $0.setLoginButton(image: AlbaidButton.google, title: "구글 로그인", titleColor: .gray10 ?? .black, backgroundColor: .white)
+        $0.setLoginButton(image: AlbaidButton.google, title: "구글 로그인", titleColor: .albaidGray10, backgroundColor: .albaidGray100)
         $0.setBorder()
     }
 
     private(set) var appleLoginButton = BaseButton().then {
-        $0.setLoginButton(image: AlbaidButton.apple, title: "애플 로그인", titleColor: .white, backgroundColor: .black)
+        $0.setLoginButton(image: AlbaidButton.apple, title: "애플 로그인", titleColor: .albaidGray100, backgroundColor: .albaidGray10)
     }
 
     // MARK: Properties

@@ -20,6 +20,7 @@ final class BaseRouter {
         sceneDelegate?.changeRootViewToTabBarViewController()
     }
 
+    /// scanContract
     func presentScanGuideViewController() {
         let scanGuideViewController = ScanGuideViewController()
         scanGuideViewController.hidesBottomBarWhenPushed = true
@@ -49,6 +50,28 @@ final class BaseRouter {
     func presentScanMemoViewController() {
         let scanMemoViewController = ScanMemoViewController()
         viewController?.navigationController?.pushViewController(scanMemoViewController, animated: true)
+    }
+
+    /// scanContract
+    func presentContractViewController() {
+        let contractViewController = ContractViewController()
+        viewController?.navigationController?.pushViewController(contractViewController, animated: true)
+    }
+
+    func presentContractDetailViewController() {
+        let contractDetailViewController = ContractDetailViewController()
+        contractDetailViewController.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
+    }
+
+    func presentModalViewController() {
+        let optionModalViewController = OptionModalViewController()
+        optionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = optionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 180 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(optionModalViewController, animated: true, completion: nil)
     }
 
     func popViewController() {

@@ -42,7 +42,7 @@ extension UIButton {
     func setMenuButton(image: UIImage, title: String) {
         var attributedTitle = AttributedString(title)
         attributedTitle.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        attributedTitle.foregroundColor = .gray30
+        attributedTitle.foregroundColor = UIColor.albaidGray30
 
         var configuration = UIButton.Configuration.plain()
         configuration.attributedTitle = attributedTitle
@@ -59,14 +59,14 @@ extension UIButton {
 
     func setContractButton(content: String) {
         setTitle(content, for: .normal)
-        setTitleColor(.gray60, for: .normal)
+        setTitleColor(.albaidGray60, for: .normal)
         titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
 
     func setMemoButton(content: String) {
         var attributedTitle = AttributedString(content)
         attributedTitle.font = UIFont(name: "Pretendard-Medium", size: 14)
-        attributedTitle.foregroundColor = .gray40
+        attributedTitle.foregroundColor = UIColor.albaidGray40
 
         var configuration = UIButton.Configuration.plain()
         configuration.attributedTitle = attributedTitle
@@ -75,12 +75,49 @@ extension UIButton {
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10)
         configuration.imagePlacement = .leading
         self.configuration = configuration
-        backgroundColor = .gray95
+        backgroundColor = .albaidGray95
         layer.cornerRadius = 6
+    }
+
+    func setOptionButton(optionImage: UIImage, title: String) {
+        let optionImageView = UIImageView().then {
+            $0.image = optionImage
+        }
+        let optionTitleLabel = UILabel().then {
+            $0.text = title
+            $0.textColor = .albaidGray40
+            $0.font = UIFont(name: "Pretendard-Medium", size: 18)
+        }
+        let detailImageView = UIImageView().then {
+            $0.image = AlbaidButton.detail
+        }
+
+        addSubview(optionImageView)
+        addSubview(optionTitleLabel)
+        addSubview(detailImageView)
+
+        self.snp.makeConstraints {
+            $0.height.equalTo(24)
+        }
+
+        optionImageView.snp.makeConstraints {
+            $0.centerY.leading.equalToSuperview()
+            $0.height.width.equalTo(24)
+        }
+
+        optionTitleLabel.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(optionImageView.snp.trailing).offset(10)
+        }
+
+        detailImageView.snp.makeConstraints {
+            $0.centerY.trailing.equalToSuperview()
+            $0.height.width.equalTo(24)
+        }
     }
 
     func setBorder() {
         layer.borderWidth = 1
-        layer.borderColor = UIColor.gray80?.cgColor
+        layer.borderColor = UIColor.albaidGray80.cgColor
     }
 }

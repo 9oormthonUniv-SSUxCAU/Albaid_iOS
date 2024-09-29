@@ -12,7 +12,7 @@ final class ScanLoadingView: BaseView {
     // MARK: UI Components
     private(set) var scanLoadingLabel = UILabel().then {
         $0.text = AlbaidString.scanLoading
-        $0.textColor = .gray20
+        $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 28)
     }
 
