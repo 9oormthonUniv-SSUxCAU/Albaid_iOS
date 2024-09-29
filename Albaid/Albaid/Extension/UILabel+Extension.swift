@@ -25,4 +25,22 @@ extension UILabel {
 
         self.attributedText = attributedString
     }
+
+    func setContractTitleLabel(title: String) {
+        text = title
+        textColor = .gray60
+        font = UIFont(name: "Pretendard-Medium", size: 16)
+    }
+
+    func setContractContentLabel(content: String) {
+        text = content
+        textColor = .gray60
+        font = UIFont(name: "Pretendard-SemiBold", size: 16)
+    }
+
+    func setCheckLabel(title: String) {
+        text = title
+        textColor = .gray40
+        font = UIFont(name: "Pretendard-Medium", size: 16)
+    }
 }
