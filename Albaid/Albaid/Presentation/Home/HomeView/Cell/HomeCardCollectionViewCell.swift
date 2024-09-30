@@ -151,7 +151,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
         }
 
         addLabel.snp.makeConstraints {
-            $0.top.equalTo(addImageView.snp.bottom).offset(5)
+            $0.top.equalTo(addImageView.snp.bottom).offset(7)
             $0.centerX.equalToSuperview()
         }
     }

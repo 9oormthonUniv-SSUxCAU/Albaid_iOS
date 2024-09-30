@@ -10,7 +10,7 @@ import UIKit
 final class CardView: BaseView {
 
     // MARK: UI Components
-    private let cardCollectionView = CardCollectionView()
+    private(set) var cardCollectionView = CardCollectionView()
 
     // MARK: Configuration
     override func configureSubviews() {

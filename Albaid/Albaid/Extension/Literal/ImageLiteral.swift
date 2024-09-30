@@ -79,6 +79,7 @@ public enum AlbaidButton {
     public static var share: UIImage { .load(name: "ic_menu_share") }
     public static var edit: UIImage { .load(name: "ic_menu_edit") }
     public static var delete: UIImage { .load(name: "ic_menu_delete") }
+    public static var end: UIImage { .load(name: "shut_down") }
 
     /// home
     public static var camera: UIImage { .load(name: "ic_home_camera") }

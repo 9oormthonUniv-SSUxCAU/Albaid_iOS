@@ -63,6 +63,8 @@
 		959F91D42CA9C6550047C7B2 /* CareerListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91D32CA9C6550047C7B2 /* CareerListStackView.swift */; };
 		959F91D62CA9D8920047C7B2 /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91D52CA9D8920047C7B2 /* CardCollectionView.swift */; };
 		959F91D82CA9DA820047C7B2 /* CardCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91D72CA9DA820047C7B2 /* CardCollectionViewHeader.swift */; };
+		959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91DA2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift */; };
+		959F91DD2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91DC2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -168,6 +170,8 @@
 		959F91D32CA9C6550047C7B2 /* CareerListStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerListStackView.swift; sourceTree = "<group>"; };
 		959F91D52CA9D8920047C7B2 /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
 		959F91D72CA9DA820047C7B2 /* CardCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewHeader.swift; sourceTree = "<group>"; };
+		959F91DA2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailOptionModalView.swift; sourceTree = "<group>"; };
+		959F91DC2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailOptionModalViewController.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -565,6 +569,7 @@
 			children = (
 				9556DEA22CA5D78000A43A78 /* CardDetailView.swift */,
 				9556DEA42CA5D78600A43A78 /* CardDetailViewController.swift */,
+				959F91D92CAA3ECA0047C7B2 /* Modal */,
 			);
 			path = CardDetail;
 			sourceTree = "<group>";
@@ -612,6 +617,15 @@
 				959F91D02CA9BD760047C7B2 /* CareerContentView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		959F91D92CAA3ECA0047C7B2 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				959F91DA2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift */,
+				959F91DC2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		95BCFFC22CA6DD840001F339 /* HomeView */ = {
@@ -844,6 +858,7 @@
 				95BF198A2CA658B500CA53AC /* Contract.swift in Sources */,
 				9556DEA32CA5D78000A43A78 /* CardDetailView.swift in Sources */,
 				9556DE6A2CA5D54F00A43A78 /* ScanResultViewController.swift in Sources */,
+				959F91DD2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift in Sources */,
 				9556DE702CA5D58200A43A78 /* ScanMemoView.swift in Sources */,
 				9556DEAA2CA5D7BA00A43A78 /* TotalWageViewController.swift in Sources */,
 				9556DE552CA5D49700A43A78 /* LoginViewController.swift in Sources */,
@@ -853,6 +868,7 @@
 				95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */,
 				9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */,
 				9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */,
+				959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */,
 				959F91CF2CA9BCE60047C7B2 /* CareerListView.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
