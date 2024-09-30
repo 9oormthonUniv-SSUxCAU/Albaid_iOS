@@ -98,6 +98,7 @@ final class BaseRouter {
     /// card
     func presentCardDetailViewController() {
         let cardDetailViewController = CardDetailViewController()
+        cardDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(cardDetailViewController, animated: true)
     }
 
@@ -116,7 +117,6 @@ final class BaseRouter {
     }
 
     func dismissViewController() {
-//        viewController?.dismiss(animated: true)
         viewController?.navigationController?.dismiss(animated: true)
     }
 }

@@ -31,7 +31,8 @@ class CardDetailViewController: BaseViewController {
     }
 
     // MARK: Configuration
-    override func configureSubviews() {        view.addSubview(cardDetailView)
+    override func configureSubviews() {        
+        view.addSubview(cardDetailView)
     }
 
     // MARK: Layout
@@ -61,4 +62,3 @@ class CardDetailViewController: BaseViewController {
                                  rightBarButton: optionButton)
     }
 }
-

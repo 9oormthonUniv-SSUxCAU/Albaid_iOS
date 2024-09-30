@@ -20,6 +20,7 @@ public enum AlbaidImage {
     /// character
     public static var character0: UIImage { .load(name: "character0")}
     public static var character1: UIImage { .load(name: "character1")}
+    public static var cardCharacter: UIImage { .load(name: "card_character")}
 
     public static var ad: UIImage { .load(name: "ad")}
 
@@ -96,6 +97,7 @@ public enum AlbaidButton {
     public static var shoot: UIImage { .load(name: "shoot")}
     public static var magnifier: UIImage { .load(name: "magnifier")}
     public static var guide: UIImage { .load(name: "guide")}
+    public static var file: UIImage { .load(name: "file")}
 }
 
 extension UIImage {

@@ -65,6 +65,8 @@
 		959F91D82CA9DA820047C7B2 /* CardCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91D72CA9DA820047C7B2 /* CardCollectionViewHeader.swift */; };
 		959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91DA2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift */; };
 		959F91DD2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91DC2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift */; };
+		959F91DF2CAA53260047C7B2 /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91DE2CAA53260047C7B2 /* CardContentView.swift */; };
+		959F91E12CAA586B0047C7B2 /* CardContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91E02CAA586B0047C7B2 /* CardContentDetailView.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -172,6 +174,8 @@
 		959F91D72CA9DA820047C7B2 /* CardCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewHeader.swift; sourceTree = "<group>"; };
 		959F91DA2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailOptionModalView.swift; sourceTree = "<group>"; };
 		959F91DC2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailOptionModalViewController.swift; sourceTree = "<group>"; };
+		959F91DE2CAA53260047C7B2 /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		959F91E02CAA586B0047C7B2 /* CardContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentDetailView.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -569,6 +573,8 @@
 			children = (
 				9556DEA22CA5D78000A43A78 /* CardDetailView.swift */,
 				9556DEA42CA5D78600A43A78 /* CardDetailViewController.swift */,
+				959F91DE2CAA53260047C7B2 /* CardContentView.swift */,
+				959F91E02CAA586B0047C7B2 /* CardContentDetailView.swift */,
 				959F91D92CAA3ECA0047C7B2 /* Modal */,
 			);
 			path = CardDetail;
@@ -810,6 +816,7 @@
 				95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */,
 				9556DE4C2CA5D45000A43A78 /* CalendarView.swift in Sources */,
 				9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */,
+				959F91DF2CAA53260047C7B2 /* CardContentView.swift in Sources */,
 				95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */,
 				9556DEA52CA5D78600A43A78 /* CardDetailViewController.swift in Sources */,
 				9556DE532CA5D48F00A43A78 /* LoginView.swift in Sources */,
@@ -848,6 +855,7 @@
 				95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */,
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
 				95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */,
+				959F91E12CAA586B0047C7B2 /* CardContentDetailView.swift in Sources */,
 				95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */,
 				959F91D42CA9C6550047C7B2 /* CareerListStackView.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,

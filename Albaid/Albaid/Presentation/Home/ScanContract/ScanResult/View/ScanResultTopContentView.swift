@@ -16,7 +16,7 @@ final class ScanResultTopContentView: BaseView {
     }
 
     private(set) var workPlaceStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "근무지", content: "텍스트를 입력해주세요")
+        $0.contractGuideLabelStackView(title: "근무지", content: "텍스트를 입력해주세요")
     }
 
     private(set) var contractDateStackView = UIStackView().then {
@@ -36,7 +36,7 @@ final class ScanResultTopContentView: BaseView {
     }
 
     private(set) var workingStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "업무 내용", content: "텍스트를 입력해주세요")
+        $0.contractGuideLabelStackView(title: "업무 내용", content: "텍스트를 입력해주세요")
     }
 
     // MARK: Properties

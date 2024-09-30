@@ -12,6 +12,21 @@ extension UIStackView {
         views.forEach { addArrangedSubview($0) }
     }
 
+    func contractGuideLabelStackView(title: String, content: String) {
+        axis = .horizontal
+        distribution = .fill
+
+        let titleLabel = UILabel().then {
+            $0.setContractTitleLabel(title: title)
+        }
+        let emptyView = UIView()
+        let contentLabel = UILabel().then {
+            $0.setContractPlaceHolderLabel(content: content)
+        }
+
+        addArrangedSubviews(titleLabel, emptyView, contentLabel)
+    }
+
     func contractLabelStackView(title: String, content: String) {
         axis = .horizontal
         distribution = .fill
