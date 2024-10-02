@@ -1,5 +1,5 @@
 //
-//  ResumeOptionModalViewController.swift
+//  CardDetailOptionModalViewController.swift
 //  Albaid
 //
 //  Created by 박지윤 on 9/30/24.
@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class ResumeOptionModalViewController: BaseViewController {
+final class CardDetailOptionModalViewController: BaseViewController {
 
     // MARK: UI Components
-    private let resumeOptionModalView = ResumeOptionModalView()
+    private let cardDetailOptionModalView = CardDetailOptionModalView()
 
     // MARK: Environment
     private let router = BaseRouter()
@@ -24,13 +24,14 @@ final class ResumeOptionModalViewController: BaseViewController {
     
     // MARK: Configuration
     override func configureSubviews() {
-        view.addSubview(resumeOptionModalView)
+        view.addSubview(cardDetailOptionModalView)
     }
     
     // MARK: Layout
     override func makeConstraints() {
-        resumeOptionModalView.snp.makeConstraints {
+        cardDetailOptionModalView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
 }
+

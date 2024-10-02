@@ -120,4 +120,9 @@ extension UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.albaidGray80.cgColor
     }
+
+    func setBorder70() {
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.albaidGray70.cgColor
+    }
 }

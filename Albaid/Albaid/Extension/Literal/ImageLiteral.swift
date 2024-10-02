@@ -20,6 +20,7 @@ public enum AlbaidImage {
     /// character
     public static var character0: UIImage { .load(name: "character0")}
     public static var character1: UIImage { .load(name: "character1")}
+    public static var cardCharacter: UIImage { .load(name: "card_character")}
 
     public static var ad: UIImage { .load(name: "ad")}
 
@@ -47,7 +48,8 @@ public enum AlbaidImage {
 
     public static var certification: UIImage { .load(name: "certification")}
     public static var calendar: UIImage { .load(name: "calendar2")}
-
+    public static var payment: UIImage { .load(name: "payments")}
+    public static var add: UIImage { .load(name: "add") }
 }
 
 public enum AlbaidButton {
@@ -78,6 +80,7 @@ public enum AlbaidButton {
     public static var share: UIImage { .load(name: "ic_menu_share") }
     public static var edit: UIImage { .load(name: "ic_menu_edit") }
     public static var delete: UIImage { .load(name: "ic_menu_delete") }
+    public static var end: UIImage { .load(name: "shut_down") }
 
     /// home
     public static var camera: UIImage { .load(name: "ic_home_camera") }
@@ -93,6 +96,8 @@ public enum AlbaidButton {
 
     public static var shoot: UIImage { .load(name: "shoot")}
     public static var magnifier: UIImage { .load(name: "magnifier")}
+    public static var guide: UIImage { .load(name: "guide")}
+    public static var file: UIImage { .load(name: "file")}
 }
 
 extension UIImage {

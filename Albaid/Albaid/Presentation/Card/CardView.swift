@@ -10,12 +10,17 @@ import UIKit
 final class CardView: BaseView {
 
     // MARK: UI Components
+    private(set) var cardCollectionView = CardCollectionView()
 
     // MARK: Configuration
     override func configureSubviews() {
+        addSubview(cardCollectionView)
     }
 
     // MARK: Layout
     override func makeConstraints() {
+        cardCollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }

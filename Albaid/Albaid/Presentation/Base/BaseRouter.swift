@@ -95,12 +95,38 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(resumeDetailViewController, animated: true)
     }
 
+    /// card
+    func presentCardDetailViewController() {
+        let cardDetailViewController = CardDetailViewController()
+        cardDetailViewController.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(cardDetailViewController, animated: true)
+    }
+
+    func presentCardGuideOptionModalViewController() {
+        let cardGuideOptionModalViewController = CardGuideOptionModalViewController()
+        cardGuideOptionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = cardGuideOptionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 190 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(cardGuideOptionModalViewController, animated: true, completion: nil)
+    }
+
+    func presentCardDetailOptionModalViewController() {
+        let cardDetailOptionModalViewController = CardDetailOptionModalViewController()
+        cardDetailOptionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = cardDetailOptionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 220 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(cardDetailOptionModalViewController, animated: true, completion: nil)
+    }
+
     func popViewController() {
         viewController?.navigationController?.popViewController(animated: true)
     }
 
     func dismissViewController() {
-//        viewController?.dismiss(animated: true)
-        viewController?.navigationController?.dismiss(animated: true)
+        viewController?.dismiss(animated: true)
     }
 }

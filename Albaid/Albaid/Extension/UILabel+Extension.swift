@@ -32,9 +32,15 @@ extension UILabel {
         font = UIFont(name: "Pretendard-Medium", size: 16)
     }
 
-    func setContractContentLabel(content: String) {
+    func setContractPlaceHolderLabel(content: String) {
         text = content
         textColor = .albaidGray60
+        font = UIFont(name: "Pretendard-SemiBold", size: 16)
+    }
+
+    func setContractContentLabel(content: String) {
+        text = content
+        textColor = .albaidGray20
         font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
 

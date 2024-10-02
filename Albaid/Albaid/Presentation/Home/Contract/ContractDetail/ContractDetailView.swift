@@ -155,8 +155,6 @@ final class ContractDetailView: BaseView {
             $0.bottom.equalToSuperview().inset(30)
         }
 
-        let buttonWidth = screenWidth/2 - 6.5
-
         nonScrollView.snp.makeConstraints {
             $0.top.equalTo(scrollView.snp.bottom)
             $0.width.equalToSuperview()
