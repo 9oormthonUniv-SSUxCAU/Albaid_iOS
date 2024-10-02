@@ -27,7 +27,7 @@ final class CardCollectionView: BaseView {
 
     // MARK: Properties
     var tapCell: (() -> Void)?
-    var tapOption: (() -> Void)?
+    var tapGuide: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -108,7 +108,9 @@ extension CardCollectionView: UICollectionViewDataSource, UICollectionViewDelega
                     ofKind: kind,
                     withReuseIdentifier: CardCollectionViewHeader.identifier,
                     for: indexPath) as? CardCollectionViewHeader else { return UICollectionReusableView() }
-                
+
+                header.tapGuide = self.tapGuide
+
                 return header
             } else {
                 return UICollectionReusableView()

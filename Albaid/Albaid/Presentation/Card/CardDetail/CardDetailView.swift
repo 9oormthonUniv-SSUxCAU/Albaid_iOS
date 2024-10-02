@@ -31,9 +31,13 @@ final class CardDetailView: BaseView {
                          backgroundColor: .albaidGray20)
     }
 
+    // MARK: Properties
+    var tapAddResume: (() -> Void)?
+
     // MARK: Configuration
     override func configureSubviews() {
         scrollView.backgroundColor = .albaidGreen10
+        addButtonEvent()
 
         addSubview(scrollView)
         scrollView.addSubview(entireView)
@@ -78,5 +82,15 @@ final class CardDetailView: BaseView {
             $0.height.equalTo(56)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        addResumeButton.addTarget(self, action: #selector(handleAddResumeButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleAddResumeButton() {
+        tapAddResume?()
     }
 }

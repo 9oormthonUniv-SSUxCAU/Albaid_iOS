@@ -41,12 +41,16 @@ final class CardCollectionViewHeader: UICollectionReusableView {
 
     private let dividerView = DividerView(dividerType: .thick)
 
+    // MARK: Properties
+    var tapGuide: (() -> Void)?
+
     // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         configureSubviews()
         makeConstraints()
+        addButtonEvent()
     }
 
     required init?(coder: NSCoder) {
@@ -99,5 +103,15 @@ final class CardCollectionViewHeader: UICollectionReusableView {
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        guideButton.addTarget(self, action: #selector(handleGuideButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleGuideButton() {
+        tapGuide?()
     }
 }

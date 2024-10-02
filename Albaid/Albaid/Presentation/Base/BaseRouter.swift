@@ -102,6 +102,16 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(cardDetailViewController, animated: true)
     }
 
+    func presentCardGuideOptionModalViewController() {
+        let cardGuideOptionModalViewController = CardGuideOptionModalViewController()
+        cardGuideOptionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = cardGuideOptionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 190 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(cardGuideOptionModalViewController, animated: true, completion: nil)
+    }
+
     func presentCardDetailOptionModalViewController() {
         let cardDetailOptionModalViewController = CardDetailOptionModalViewController()
         cardDetailOptionModalViewController.modalPresentationStyle = .pageSheet
@@ -117,6 +127,6 @@ final class BaseRouter {
     }
 
     func dismissViewController() {
-        viewController?.navigationController?.dismiss(animated: true)
+        viewController?.dismiss(animated: true)
     }
 }

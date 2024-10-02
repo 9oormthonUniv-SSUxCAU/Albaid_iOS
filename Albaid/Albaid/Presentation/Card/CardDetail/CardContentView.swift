@@ -43,9 +43,13 @@ final class CardContentView: BaseView {
         $0.contentInset = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
     }
 
+    // MARK: Properties
+    var tapContract: (() -> Void)?
+
     // MARK: Configuration
     override func configureSubviews() {
         setLayer()
+        addButtonEvent()
 
         addSubview(titleLabel)
         addSubview(categoryLabel)
@@ -96,5 +100,15 @@ final class CardContentView: BaseView {
         layer.cornerRadius = 20
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         backgroundColor = .albaidGray100
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        contractButton.addTarget(self, action: #selector(handleContractButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleContractButton() {
+        tapContract?()
     }
 }

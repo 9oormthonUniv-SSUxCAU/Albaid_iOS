@@ -37,6 +37,11 @@ class CardViewController: BaseViewController {
             guard let self else { return }
             router.presentCardDetailViewController()
         }
+
+        cardView.cardCollectionView.tapGuide = { [weak self] in
+            guard let self else { return }
+            router.presentCardGuideOptionModalViewController()
+        }
     }
 
     override func setNavigationItem() {

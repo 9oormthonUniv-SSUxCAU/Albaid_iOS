@@ -53,6 +53,16 @@ class CardDetailViewController: BaseViewController {
             guard let self else { return }
             router.presentCardDetailOptionModalViewController()
         }
+
+        cardDetailView.tapAddResume = { [weak self] in
+            guard let self else { return }
+            router.presentResumeViewController()
+        }
+
+        cardDetailView.cardContentView.tapContract = { [weak self] in
+            guard let self else { return }
+            router.presentContractDetailViewController()
+        }
     }
 
     // MARK: Navigation Item
