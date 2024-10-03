@@ -10,6 +10,8 @@ import UIKit
 final class NotificationView: BaseView {
 
     // MARK: UI Components
+    private(set) var notificationEmptyView = NotificationEmptyView()
+
     public lazy var notificationCollectionView: UICollectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
