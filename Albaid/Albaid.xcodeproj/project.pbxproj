@@ -69,6 +69,13 @@
 		959F91E12CAA586B0047C7B2 /* CardContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91E02CAA586B0047C7B2 /* CardContentDetailView.swift */; };
 		959F91E32CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91E22CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift */; };
 		959F91E52CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91E42CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift */; };
+		959F91E92CACDA020047C7B2 /* MyPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91E82CACDA020047C7B2 /* MyPageCollectionViewCell.swift */; };
+		959F91EB2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91EA2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift */; };
+		959F91ED2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91EC2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift */; };
+		959F91EF2CAE6EA30047C7B2 /* NotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91EE2CAE6EA30047C7B2 /* NotificationCollectionViewCell.swift */; };
+		959F91F12CAE70E00047C7B2 /* NotificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91F02CAE70E00047C7B2 /* NotificationDetailView.swift */; };
+		959F91F32CAE70E60047C7B2 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91F22CAE70E60047C7B2 /* NotificationDetailViewController.swift */; };
+		959F91F52CAE779D0047C7B2 /* NotificationEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91F42CAE779D0047C7B2 /* NotificationEmptyView.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -180,6 +187,13 @@
 		959F91E02CAA586B0047C7B2 /* CardContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentDetailView.swift; sourceTree = "<group>"; };
 		959F91E22CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGuideOptionModalView.swift; sourceTree = "<group>"; };
 		959F91E42CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGuideOptionModalViewController.swift; sourceTree = "<group>"; };
+		959F91E82CACDA020047C7B2 /* MyPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		959F91EA2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCollectionViewHeader.swift; sourceTree = "<group>"; };
+		959F91EC2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCollectionViewFooter.swift; sourceTree = "<group>"; };
+		959F91EE2CAE6EA30047C7B2 /* NotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionViewCell.swift; sourceTree = "<group>"; };
+		959F91F02CAE70E00047C7B2 /* NotificationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailView.swift; sourceTree = "<group>"; };
+		959F91F22CAE70E60047C7B2 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailViewController.swift; sourceTree = "<group>"; };
+		959F91F42CAE779D0047C7B2 /* NotificationEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEmptyView.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -401,6 +415,9 @@
 			children = (
 				9556DE4F2CA5D46500A43A78 /* MyPageView.swift */,
 				9556DE462CA5D2D200A43A78 /* MyPageViewController.swift */,
+				959F91E82CACDA020047C7B2 /* MyPageCollectionViewCell.swift */,
+				959F91EA2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift */,
+				959F91EC2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift */,
 				9556DEA62CA5D7A700A43A78 /* TotalWage */,
 				9556DEAB2CA5D7D300A43A78 /* Notification */,
 			);
@@ -599,7 +616,11 @@
 			isa = PBXGroup;
 			children = (
 				9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */,
+				959F91EE2CAE6EA30047C7B2 /* NotificationCollectionViewCell.swift */,
 				9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */,
+				959F91F42CAE779D0047C7B2 /* NotificationEmptyView.swift */,
+				959F91F02CAE70E00047C7B2 /* NotificationDetailView.swift */,
+				959F91F22CAE70E60047C7B2 /* NotificationDetailViewController.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -815,6 +836,7 @@
 				959F91D12CA9BD760047C7B2 /* CareerContentView.swift in Sources */,
 				9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */,
 				959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */,
+				959F91E92CACDA020047C7B2 /* MyPageCollectionViewCell.swift in Sources */,
 				959F91CD2CA9B7500047C7B2 /* DividerView.swift in Sources */,
 				95BF19BB2CA6A6A300CA53AC /* UIStackView+Extension.swift in Sources */,
 				95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */,
@@ -824,6 +846,7 @@
 				9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */,
 				959F91DF2CAA53260047C7B2 /* CardContentView.swift in Sources */,
 				95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */,
+				959F91EF2CAE6EA30047C7B2 /* NotificationCollectionViewCell.swift in Sources */,
 				9556DEA52CA5D78600A43A78 /* CardDetailViewController.swift in Sources */,
 				9556DE532CA5D48F00A43A78 /* LoginView.swift in Sources */,
 				9556DE902CA5D6FE00A43A78 /* ResumeEditView.swift in Sources */,
@@ -846,6 +869,7 @@
 				95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */,
 				9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */,
 				95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */,
+				959F91F12CAE70E00047C7B2 /* NotificationDetailView.swift in Sources */,
 				9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */,
 				9556DE3D2CA5D2B100A43A78 /* OnboardingViewController.swift in Sources */,
 				95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */,
@@ -863,6 +887,7 @@
 				95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */,
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
 				95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */,
+				959F91F32CAE70E60047C7B2 /* NotificationDetailViewController.swift in Sources */,
 				959F91E12CAA586B0047C7B2 /* CardContentDetailView.swift in Sources */,
 				95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */,
 				959F91D42CA9C6550047C7B2 /* CareerListStackView.swift in Sources */,
@@ -884,6 +909,7 @@
 				95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */,
 				9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */,
 				9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */,
+				959F91ED2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift in Sources */,
 				959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */,
 				959F91CF2CA9BCE60047C7B2 /* CareerListView.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
@@ -894,6 +920,7 @@
 				95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */,
 				959F91D62CA9D8920047C7B2 /* CardCollectionView.swift in Sources */,
 				9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */,
+				959F91F52CAE779D0047C7B2 /* NotificationEmptyView.swift in Sources */,
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
 				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
@@ -904,6 +931,7 @@
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
 				9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */,
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,
+				959F91EB2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift in Sources */,
 				9556DE5C2CA5D50200A43A78 /* ScanGuideView.swift in Sources */,
 				959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */,
 			);

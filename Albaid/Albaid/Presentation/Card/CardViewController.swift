@@ -32,7 +32,15 @@ class CardViewController: BaseViewController {
         cardView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
 
+    // MARK: Navigation Item
+    override func setNavigationItem() {
+        setDefaultNavigationItem(title: "알바 카드", leftBarButton: nil, rightBarButton: nil)
+    }
+
+    // MARK: View Transition
+    override func viewTransition() {
         cardView.cardCollectionView.tapCell = { [weak self] in
             guard let self else { return }
             router.presentCardDetailViewController()
@@ -42,9 +50,5 @@ class CardViewController: BaseViewController {
             guard let self else { return }
             router.presentCardGuideOptionModalViewController()
         }
-    }
-
-    override func setNavigationItem() {
-        setDefaultNavigationItem(title: "알바 카드", leftBarButton: nil, rightBarButton: nil)
     }
 }

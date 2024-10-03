@@ -49,6 +49,7 @@ class HomeViewController: BaseViewController {
         }
     }
 
+    // MARK: Navigation Item
     override func setNavigationItem() {
         setDefaultNavigationItem(title: nil, leftBarButton: nil, rightBarButton: notificationButton)
         navigationItem.title = nil

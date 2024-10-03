@@ -43,7 +43,6 @@ final class HomeCardCollectionView: BaseView {
     }
 
     func setData(data: User) {
-        
     }
 }
 

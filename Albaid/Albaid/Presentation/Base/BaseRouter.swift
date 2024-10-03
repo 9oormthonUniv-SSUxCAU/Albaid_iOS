@@ -122,6 +122,23 @@ final class BaseRouter {
         viewController?.present(cardDetailOptionModalViewController, animated: true, completion: nil)
     }
 
+    /// myPage
+    func presentNotificationViewController() {
+        let notificationViewController = NotificationViewController()
+        notificationViewController.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(notificationViewController, animated: true)
+    }
+
+    func presentMyPageContentViewController(section: Int, row: Int) {
+        let totalWageViewController = TotalWageViewController()
+        viewController?.navigationController?.pushViewController(totalWageViewController, animated: true)
+    }
+
+    func presentNotificationDetailViewController() {
+        let notificationDetailViewController = NotificationDetailViewController()
+        viewController?.navigationController?.pushViewController(notificationDetailViewController, animated: true)
+    }
+
     func popViewController() {
         viewController?.navigationController?.popViewController(animated: true)
     }

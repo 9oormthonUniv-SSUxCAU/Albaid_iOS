@@ -11,12 +11,12 @@ public enum AlbaidImage {
     public static var splash: UIImage { .load(name: "splash")}
     public static var logo: UIImage { .load(name: "logo")}
     public static var loginLogo: UIImage { .load(name: "login_logo")}
-
+    
     /// onboarding
     public static var onboarding1: UIImage { .load(name: "onboarding1")}
     public static var onboarding2: UIImage { .load(name: "onboarding2")}
     public static var onboarding3: UIImage { .load(name: "onboarding3")}
-
+    
     /// character
     public static var character0: UIImage { .load(name: "character0")}
     public static var character1: UIImage { .load(name: "character1")}
@@ -50,6 +50,12 @@ public enum AlbaidImage {
     public static var calendar: UIImage { .load(name: "calendar2")}
     public static var payment: UIImage { .load(name: "payments")}
     public static var add: UIImage { .load(name: "add") }
+
+    public static var profile: UIImage { .load(name: "profile") }
+    public static var user: UIImage { .load(name: "user") }
+    public static var service: UIImage { .load(name: "service") }
+
+    public static var noti: UIImage { .load(name: "noti") }
 }
 
 public enum AlbaidButton {
@@ -98,6 +104,7 @@ public enum AlbaidButton {
     public static var magnifier: UIImage { .load(name: "magnifier")}
     public static var guide: UIImage { .load(name: "guide")}
     public static var file: UIImage { .load(name: "file")}
+    public static var album: UIImage { .load(name: "album")}
 }
 
 extension UIImage {

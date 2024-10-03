@@ -1,20 +1,20 @@
 //
-//  TotalWageViewController.swift
+//  NotificationDetailViewController.swift
 //  Albaid
 //
-//  Created by 박지윤 on 9/27/24.
+//  Created by 박지윤 on 10/3/24.
 //
 
 import UIKit
 
-class TotalWageViewController: BaseViewController {
+class NotificationDetailViewController: BaseViewController {
 
     // MARK: UI Components
     private(set) var backButton = BaseButton().then {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
-    private let totalWageView = TotalWageView()
+    private let notificationDetailView = NotificationDetailView()
 
     // MARK: Environment
     private let router = BaseRouter()
@@ -28,19 +28,20 @@ class TotalWageViewController: BaseViewController {
 
     // MARK: Configuration
     override func configureSubviews() {
-        view.addSubview(totalWageView)
+        view.addSubview(notificationDetailView)
     }
 
     // MARK: Layout
     override func makeConstraints() {
-        totalWageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        notificationDetailView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.horizontalEdges.equalToSuperview()
         }
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "내 급여 총계", leftBarButton: backButton, rightBarButton: nil)
+        setDefaultNavigationItem(title: "알림", leftBarButton: backButton, rightBarButton: nil)
     }
 
     // MARK: View Transition
@@ -51,3 +52,4 @@ class TotalWageViewController: BaseViewController {
         }
     }
 }
+
