@@ -101,6 +101,11 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(calendarWeeklyViewController, animated: true)
     }
 
+    func presentCalendarDailyViewController() {
+        let calendarDailyViewController = CalendarDailyViewController()
+        viewController?.navigationController?.pushViewController(calendarDailyViewController, animated: true)
+    }
+
     /// card
     func presentCardDetailViewController() {
         let cardDetailViewController = CardDetailViewController()

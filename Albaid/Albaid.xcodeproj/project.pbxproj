@@ -46,8 +46,8 @@
 		9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE952CA5D71200A43A78 /* ResumeDetailViewController.swift */; };
 		9556DE9A2CA5D74E00A43A78 /* CalendarWeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE992CA5D74E00A43A78 /* CalendarWeeklyView.swift */; };
 		9556DE9C2CA5D75400A43A78 /* CalendarWeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9B2CA5D75400A43A78 /* CalendarWeeklyViewController.swift */; };
-		9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9D2CA5D75C00A43A78 /* CalendarCardView.swift */; };
-		9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9F2CA5D76200A43A78 /* CalendarCardViewController.swift */; };
+		9556DE9E2CA5D75C00A43A78 /* CalendarDailyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9D2CA5D75C00A43A78 /* CalendarDailyView.swift */; };
+		9556DEA02CA5D76200A43A78 /* CalendarDailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9F2CA5D76200A43A78 /* CalendarDailyViewController.swift */; };
 		9556DEA32CA5D78000A43A78 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEA22CA5D78000A43A78 /* CardDetailView.swift */; };
 		9556DEA52CA5D78600A43A78 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEA42CA5D78600A43A78 /* CardDetailViewController.swift */; };
 		9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEA72CA5D7B500A43A78 /* TotalWageView.swift */; };
@@ -82,6 +82,7 @@
 		959F920A2CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92092CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift */; };
 		959F920C2CAFF8410047C7B2 /* CalendarBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */; };
 		959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */; };
+		959F92102CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -170,8 +171,8 @@
 		9556DE952CA5D71200A43A78 /* ResumeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDetailViewController.swift; sourceTree = "<group>"; };
 		9556DE992CA5D74E00A43A78 /* CalendarWeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeeklyView.swift; sourceTree = "<group>"; };
 		9556DE9B2CA5D75400A43A78 /* CalendarWeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeeklyViewController.swift; sourceTree = "<group>"; };
-		9556DE9D2CA5D75C00A43A78 /* CalendarCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardView.swift; sourceTree = "<group>"; };
-		9556DE9F2CA5D76200A43A78 /* CalendarCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardViewController.swift; sourceTree = "<group>"; };
+		9556DE9D2CA5D75C00A43A78 /* CalendarDailyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDailyView.swift; sourceTree = "<group>"; };
+		9556DE9F2CA5D76200A43A78 /* CalendarDailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDailyViewController.swift; sourceTree = "<group>"; };
 		9556DEA22CA5D78000A43A78 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		9556DEA42CA5D78600A43A78 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		9556DEA72CA5D7B500A43A78 /* TotalWageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWageView.swift; sourceTree = "<group>"; };
@@ -205,6 +206,7 @@
 		959F92092CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeeklyViewCell.swift; sourceTree = "<group>"; };
 		959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBottomView.swift; sourceTree = "<group>"; };
 		959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
+		959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDailyCollectionViewCell.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -407,7 +409,7 @@
 				959F92052CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift */,
 				9556DE422CA5D2C600A43A78 /* CalendarViewController.swift */,
 				9556DE972CA5D72E00A43A78 /* CalendarWeekly */,
-				9556DE982CA5D73500A43A78 /* CalendarCard */,
+				9556DE982CA5D73500A43A78 /* CalendarDaily */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -599,13 +601,14 @@
 			path = CalendarWeekly;
 			sourceTree = "<group>";
 		};
-		9556DE982CA5D73500A43A78 /* CalendarCard */ = {
+		9556DE982CA5D73500A43A78 /* CalendarDaily */ = {
 			isa = PBXGroup;
 			children = (
-				9556DE9D2CA5D75C00A43A78 /* CalendarCardView.swift */,
-				9556DE9F2CA5D76200A43A78 /* CalendarCardViewController.swift */,
+				9556DE9D2CA5D75C00A43A78 /* CalendarDailyView.swift */,
+				959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */,
+				9556DE9F2CA5D76200A43A78 /* CalendarDailyViewController.swift */,
 			);
-			path = CalendarCard;
+			path = CalendarDaily;
 			sourceTree = "<group>";
 		};
 		9556DEA12CA5D77700A43A78 /* CardDetail */ = {
@@ -888,7 +891,7 @@
 				95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */,
 				959F91E52CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift in Sources */,
 				95BF198F2CA65B1300CA53AC /* BaseViewController.swift in Sources */,
-				9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */,
+				9556DE9E2CA5D75C00A43A78 /* CalendarDailyView.swift in Sources */,
 				95C733D72CA5CF9D00D454E8 /* AppDelegate.swift in Sources */,
 				959F91F12CAE70E00047C7B2 /* NotificationDetailView.swift in Sources */,
 				9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */,
@@ -928,9 +931,10 @@
 				9556DE552CA5D49700A43A78 /* LoginViewController.swift in Sources */,
 				95BCFFEF2CA974DF0001F339 /* ContractCollectionView.swift in Sources */,
 				9556DE602CA5D51500A43A78 /* ScanCameraView.swift in Sources */,
+				959F92102CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift in Sources */,
 				9556DE3F2CA5D2BA00A43A78 /* TabBarViewController.swift in Sources */,
 				95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */,
-				9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */,
+				9556DEA02CA5D76200A43A78 /* CalendarDailyViewController.swift in Sources */,
 				9556DE9C2CA5D75400A43A78 /* CalendarWeeklyViewController.swift in Sources */,
 				959F91ED2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift in Sources */,
 				959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */,

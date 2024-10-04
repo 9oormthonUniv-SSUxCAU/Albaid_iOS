@@ -1,5 +1,5 @@
 //
-//  CalendarCardViewController.swift
+//  CalendarDailyViewController.swift
 //  Albaid
 //
 //  Created by 박지윤 on 9/27/24.
@@ -7,12 +7,14 @@
 
 import UIKit
 
-class CalendarCardViewController: BaseViewController {
+class CalendarDailyViewController: BaseViewController {
 
     // MARK: UI Components
     private(set) var backButton = BaseButton().then {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
+
+    private let calendarDailyView = CalendarDailyView()
 
     // MARK: Environment
     private let router = BaseRouter()
@@ -26,15 +28,20 @@ class CalendarCardViewController: BaseViewController {
 
     // MARK: Configuration
     override func configureSubviews() {
+        view.addSubview(calendarDailyView)
     }
 
     // MARK: Layout
     override func makeConstraints() {
+        calendarDailyView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.bottom.equalToSuperview()
+        }
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "9월", leftBarButton: backButton, rightBarButton: nil)
+        setDefaultNavigationItem(title: nil, leftBarButton: backButton, rightBarButton: nil)
     }
 
     // MARK: View Transition

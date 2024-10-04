@@ -54,5 +54,10 @@ class CalendarWeeklyViewController: BaseViewController {
             guard let self else { return }
             router.popViewController()
         }
+
+        calendarWeeklyView.tapCell = { [weak self] in
+            guard let self else { return }
+            router.presentCalendarDailyViewController()
+        }
     }
 }

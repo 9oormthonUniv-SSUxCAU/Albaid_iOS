@@ -56,6 +56,7 @@ public enum AlbaidImage {
     public static var service: UIImage { .load(name: "service") }
 
     public static var noti: UIImage { .load(name: "noti") }
+    public static var cup: UIImage { .load(name: "cup") }
 }
 
 public enum AlbaidButton {

@@ -15,12 +15,14 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
     private(set) var dayTextLabel = UILabel().then {
         $0.text = "일"
         $0.textColor = .albaidGray50
+        $0.textAlignment = .center
         $0.font = UIFont(name: "Pretendard-Medium", size: 14)
     }
 
     private(set) var dayLabel = UILabel().then {
         $0.text = "22"
         $0.textColor = .albaidGray20
+        $0.textAlignment = .center
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
 
@@ -75,7 +77,8 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
     // MARK: Layout
     private func makeConstraints() {
         dayTextLabel.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
+            $0.top.equalToSuperview().inset(3)
+            $0.centerX.equalTo(dayLabel)
         }
 
         dayLabel.snp.makeConstraints {
@@ -86,7 +89,7 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
 
         cardView.snp.makeConstraints {
             $0.trailing.centerY.height.equalToSuperview()
-            $0.leading.equalTo(dayLabel.snp.trailing).offset(20)
+            $0.leading.equalTo(dayLabel.snp.trailing).offset(15)
         }
 
         labelStackView.snp.makeConstraints {
@@ -95,7 +98,8 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
         }
 
         detailButton.snp.makeConstraints {
-            $0.trailing.centerY.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
             $0.height.width.equalTo(24)
         }
     }
@@ -103,4 +107,3 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
     func setData(data: Card?) {
     }
 }
-
