@@ -50,5 +50,10 @@ class CalendarDailyViewController: BaseViewController {
             guard let self else { return }
             router.popViewController()
         }
+        
+        calendarDailyView.tapOption = { [weak self] in
+            guard let self else { return }
+            router.presentModalViewController()
+        }
     }
 }

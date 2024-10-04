@@ -38,11 +38,14 @@ final class CalendarDailyCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
 
-    private(set) var detailButton = BaseButton().then {
+    private(set) var optionButton = BaseButton().then {
         $0.setImage(AlbaidButton.menu.withTintColor(.albaidGray50), for: .normal)
     }
 
     private(set) var dividerView = DividerView(dividerType: .thin)
+
+    // MARK: Properties
+    var tapOption: (() -> Void)?
 
     // MARK: init
     override init(frame: CGRect) {
@@ -58,11 +61,13 @@ final class CalendarDailyCollectionViewCell: UICollectionViewCell {
 
     // MARK: Configuration
     private func configureSubviews() {
+        addButtonEvent()
+
         contentView.addSubview(imageBackgroundView)
         imageBackgroundView.addSubview(cupImageView)
         contentView.addSubview(labelStackView)
         labelStackView.addArrangedSubviews(titleLabel, contentLabel)
-        contentView.addSubview(detailButton)
+        contentView.addSubview(optionButton)
         contentView.addSubview(dividerView)
     }
 
@@ -83,7 +88,7 @@ final class CalendarDailyCollectionViewCell: UICollectionViewCell {
             $0.centerY.equalToSuperview()
         }
 
-        detailButton.snp.makeConstraints {
+        optionButton.snp.makeConstraints {
             $0.top.equalToSuperview().inset(25)
             $0.trailing.equalToSuperview()
             $0.height.width.equalTo(24)
@@ -95,6 +100,16 @@ final class CalendarDailyCollectionViewCell: UICollectionViewCell {
     }
 
     func setData(data: Card?) {
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        optionButton.addTarget(self, action: #selector(handleOptionButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleOptionButton() {
+        tapOption?()
     }
 }
 

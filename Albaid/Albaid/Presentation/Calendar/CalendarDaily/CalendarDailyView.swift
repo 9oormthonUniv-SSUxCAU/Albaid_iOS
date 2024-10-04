@@ -29,6 +29,7 @@ final class CalendarDailyView: BaseView {
 
     // MARK: Properties
     var tapCell: (() -> Void)?
+    var tapOption: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -72,6 +73,7 @@ extension CalendarDailyView: UICollectionViewDataSource, UICollectionViewDelegat
             cell.dividerView.isHidden = true
         }
 
+        cell.tapOption = self.tapOption
         cell.setData(data: User.dummyUser.card?[indexPath.row])
 
         return cell
