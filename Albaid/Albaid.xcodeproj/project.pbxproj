@@ -83,6 +83,7 @@
 		959F920C2CAFF8410047C7B2 /* CalendarBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */; };
 		959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */; };
 		959F92102CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */; };
+		959F92122CB0250C0047C7B2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92112CB0250C0047C7B2 /* OnboardingView.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -207,6 +208,7 @@
 		959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBottomView.swift; sourceTree = "<group>"; };
 		959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDailyCollectionViewCell.swift; sourceTree = "<group>"; };
+		959F92112CB0250C0047C7B2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 		9556DE342CA5D22100A43A78 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				959F92112CB0250C0047C7B2 /* OnboardingView.swift */,
 				9556DE3C2CA5D2B100A43A78 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
@@ -948,6 +951,7 @@
 				95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */,
 				959F91D62CA9D8920047C7B2 /* CardCollectionView.swift in Sources */,
 				9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */,
+				959F92122CB0250C0047C7B2 /* OnboardingView.swift in Sources */,
 				959F91F52CAE779D0047C7B2 /* NotificationEmptyView.swift in Sources */,
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,

@@ -12,6 +12,37 @@ final class BaseRouter {
     weak var viewController: UIViewController?
     
     // MARK: Routing
+    func presentOnboardingViewController(index: Int) {
+        switch index {
+        case 1:
+            let onboardingViewController = OnboardingViewController(progressBar: AlbaidImage.progress2,
+                                                                    title: AlbaidString.onboardingTitle2,
+                                                                    content: AlbaidString.onboardingContent2,
+                                                                    image: AlbaidImage.onboarding2,
+                                                                    skipHidden: false,
+                                                                    nextButton: "다음")
+            viewController?.navigationController?.pushViewController(onboardingViewController, animated: true)
+        case 2:
+            let onboardingViewController = OnboardingViewController(progressBar: AlbaidImage.progress3,
+                                                                    title: AlbaidString.onboardingTitle3,
+                                                                    content: AlbaidString.onboardingContent3,
+                                                                    image: AlbaidImage.onboarding3,
+                                                                    skipHidden: true,
+                                                                    nextButton: "시작하기")
+            viewController?.navigationController?.pushViewController(onboardingViewController, animated: true)
+        case 3:
+            let loginViewController = LoginViewController()
+            viewController?.navigationController?.pushViewController(loginViewController, animated: true)
+        default:
+            break
+        }
+    }
+
+    func presentLoginViewController() {
+        let loginViewController = LoginViewController()
+        viewController?.navigationController?.pushViewController(loginViewController, animated: true)
+    }
+
     func presentTabBarViewController() {
         let tabBarViewController = TabBarViewController()
         viewController?.navigationController?.pushViewController(tabBarViewController, animated: true)

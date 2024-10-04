@@ -13,10 +13,13 @@ public enum AlbaidImage {
     public static var loginLogo: UIImage { .load(name: "login_logo")}
     
     /// onboarding
+    public static var progress1: UIImage { .load(name: "progress_1") }
+    public static var progress2: UIImage { .load(name: "progress_2") }
+    public static var progress3: UIImage { .load(name: "progress_3") }
     public static var onboarding1: UIImage { .load(name: "onboarding1")}
     public static var onboarding2: UIImage { .load(name: "onboarding2")}
     public static var onboarding3: UIImage { .load(name: "onboarding3")}
-    
+
     /// character
     public static var character0: UIImage { .load(name: "character0")}
     public static var character1: UIImage { .load(name: "character1")}

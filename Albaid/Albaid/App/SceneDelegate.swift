@@ -32,12 +32,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func changeRootViewController() {
         guard let window = window else { return }
         if Storage.isFirstTime() {
-//            window.rootViewController = UINavigationController(rootViewController: OnboardingViewController())
+            window.rootViewController = UINavigationController(rootViewController:
+                                                                OnboardingViewController(progressBar: AlbaidImage.progress1,
+                                                                                         title: AlbaidString.onboardingTitle1,
+                                                                                         content: AlbaidString.onboardingContent1,
+                                                                                         image: AlbaidImage.onboarding1,
+                                                                                         skipHidden: false,
+                                                                                         nextButton: "다음"))
         } else {
-//            window.rootViewController = UINavigationController(rootViewController: LoginViewController())
+            window.rootViewController = UINavigationController(rootViewController: LoginViewController())
         }
-        // TODO: 
-        window.rootViewController = UINavigationController(rootViewController: LoginViewController())
         UIView.transition(with: window, duration: 0.2, options: [.transitionCrossDissolve], animations: nil)
      }
 
