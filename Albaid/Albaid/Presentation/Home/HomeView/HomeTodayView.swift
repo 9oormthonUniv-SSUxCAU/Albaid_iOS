@@ -13,6 +13,7 @@ final class HomeTodayView: BaseView {
     private(set) var userLabel = UILabel().then {
         $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.addUnderline()
     }
 
     private(set) var dateLabel = UILabel().then {

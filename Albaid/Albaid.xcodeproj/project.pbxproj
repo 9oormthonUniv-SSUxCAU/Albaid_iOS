@@ -44,8 +44,8 @@
 		9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE912CA5D70400A43A78 /* ResumeEditViewController.swift */; };
 		9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE932CA5D70D00A43A78 /* ResumeDetailView.swift */; };
 		9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE952CA5D71200A43A78 /* ResumeDetailViewController.swift */; };
-		9556DE9A2CA5D74E00A43A78 /* CalendarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE992CA5D74E00A43A78 /* CalendarDetailView.swift */; };
-		9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9B2CA5D75400A43A78 /* CalendarDetailViewController.swift */; };
+		9556DE9A2CA5D74E00A43A78 /* CalendarWeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE992CA5D74E00A43A78 /* CalendarWeeklyView.swift */; };
+		9556DE9C2CA5D75400A43A78 /* CalendarWeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9B2CA5D75400A43A78 /* CalendarWeeklyViewController.swift */; };
 		9556DE9E2CA5D75C00A43A78 /* CalendarCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9D2CA5D75C00A43A78 /* CalendarCardView.swift */; };
 		9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE9F2CA5D76200A43A78 /* CalendarCardViewController.swift */; };
 		9556DEA32CA5D78000A43A78 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEA22CA5D78000A43A78 /* CardDetailView.swift */; };
@@ -76,6 +76,12 @@
 		959F91F12CAE70E00047C7B2 /* NotificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91F02CAE70E00047C7B2 /* NotificationDetailView.swift */; };
 		959F91F32CAE70E60047C7B2 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91F22CAE70E60047C7B2 /* NotificationDetailViewController.swift */; };
 		959F91F52CAE779D0047C7B2 /* NotificationEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91F42CAE779D0047C7B2 /* NotificationEmptyView.swift */; };
+		959F91F82CAE7E920047C7B2 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 959F91F72CAE7E920047C7B2 /* FSCalendar */; };
+		959F92062CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92052CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift */; };
+		959F92082CAFC6DB0047C7B2 /* FSCalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92072CAFC6DB0047C7B2 /* FSCalendarViewCell.swift */; };
+		959F920A2CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92092CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift */; };
+		959F920C2CAFF8410047C7B2 /* CalendarBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */; };
+		959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -162,8 +168,8 @@
 		9556DE912CA5D70400A43A78 /* ResumeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeEditViewController.swift; sourceTree = "<group>"; };
 		9556DE932CA5D70D00A43A78 /* ResumeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDetailView.swift; sourceTree = "<group>"; };
 		9556DE952CA5D71200A43A78 /* ResumeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeDetailViewController.swift; sourceTree = "<group>"; };
-		9556DE992CA5D74E00A43A78 /* CalendarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailView.swift; sourceTree = "<group>"; };
-		9556DE9B2CA5D75400A43A78 /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		9556DE992CA5D74E00A43A78 /* CalendarWeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeeklyView.swift; sourceTree = "<group>"; };
+		9556DE9B2CA5D75400A43A78 /* CalendarWeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeeklyViewController.swift; sourceTree = "<group>"; };
 		9556DE9D2CA5D75C00A43A78 /* CalendarCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardView.swift; sourceTree = "<group>"; };
 		9556DE9F2CA5D76200A43A78 /* CalendarCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardViewController.swift; sourceTree = "<group>"; };
 		9556DEA22CA5D78000A43A78 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
@@ -194,6 +200,11 @@
 		959F91F02CAE70E00047C7B2 /* NotificationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailView.swift; sourceTree = "<group>"; };
 		959F91F22CAE70E60047C7B2 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailViewController.swift; sourceTree = "<group>"; };
 		959F91F42CAE779D0047C7B2 /* NotificationEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEmptyView.swift; sourceTree = "<group>"; };
+		959F92052CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		959F92072CAFC6DB0047C7B2 /* FSCalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarViewCell.swift; sourceTree = "<group>"; };
+		959F92092CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWeeklyViewCell.swift; sourceTree = "<group>"; };
+		959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBottomView.swift; sourceTree = "<group>"; };
+		959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -248,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C733EC2CA5D06800D454E8 /* Then in Frameworks */,
+				959F91F82CAE7E920047C7B2 /* FSCalendar in Frameworks */,
 				95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,8 +401,12 @@
 			isa = PBXGroup;
 			children = (
 				9556DE4B2CA5D45000A43A78 /* CalendarView.swift */,
+				959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */,
+				959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */,
+				959F92072CAFC6DB0047C7B2 /* FSCalendarViewCell.swift */,
+				959F92052CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift */,
 				9556DE422CA5D2C600A43A78 /* CalendarViewController.swift */,
-				9556DE972CA5D72E00A43A78 /* CalendarDetail */,
+				9556DE972CA5D72E00A43A78 /* CalendarWeekly */,
 				9556DE982CA5D73500A43A78 /* CalendarCard */,
 			);
 			path = Calendar;
@@ -573,13 +589,14 @@
 			path = ResumeDetail;
 			sourceTree = "<group>";
 		};
-		9556DE972CA5D72E00A43A78 /* CalendarDetail */ = {
+		9556DE972CA5D72E00A43A78 /* CalendarWeekly */ = {
 			isa = PBXGroup;
 			children = (
-				9556DE992CA5D74E00A43A78 /* CalendarDetailView.swift */,
-				9556DE9B2CA5D75400A43A78 /* CalendarDetailViewController.swift */,
+				9556DE992CA5D74E00A43A78 /* CalendarWeeklyView.swift */,
+				959F92092CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift */,
+				9556DE9B2CA5D75400A43A78 /* CalendarWeeklyViewController.swift */,
 			);
-			path = CalendarDetail;
+			path = CalendarWeekly;
 			sourceTree = "<group>";
 		};
 		9556DE982CA5D73500A43A78 /* CalendarCard */ = {
@@ -763,6 +780,7 @@
 			packageProductDependencies = (
 				95C733EB2CA5D06800D454E8 /* Then */,
 				95A6FDF92CA5D0F400D44B21 /* SnapKit */,
+				959F91F72CAE7E920047C7B2 /* FSCalendar */,
 			);
 			productName = Albaid;
 			productReference = 95C733D32CA5CF9D00D454E8 /* Albaid.app */;
@@ -796,6 +814,7 @@
 				95C733EA2CA5D06800D454E8 /* XCRemoteSwiftPackageReference "Then" */,
 				95A6FDF82CA5D0F400D44B21 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				9556DEB02CA5D80A00A43A78 /* XCRemoteSwiftPackageReference "Moya" */,
+				959F91F62CAE7E920047C7B2 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 95C733D42CA5CF9D00D454E8 /* Products */;
 			projectDirPath = "";
@@ -834,6 +853,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				959F91D12CA9BD760047C7B2 /* CareerContentView.swift in Sources */,
+				959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */,
 				9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */,
 				959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */,
 				959F91E92CACDA020047C7B2 /* MyPageCollectionViewCell.swift in Sources */,
@@ -843,6 +863,7 @@
 				9556DE432CA5D2C600A43A78 /* CalendarViewController.swift in Sources */,
 				95C733DB2CA5CF9D00D454E8 /* ViewController.swift in Sources */,
 				9556DE4C2CA5D45000A43A78 /* CalendarView.swift in Sources */,
+				959F92062CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift in Sources */,
 				9556DE962CA5D71200A43A78 /* ResumeDetailViewController.swift in Sources */,
 				959F91DF2CAA53260047C7B2 /* CardContentView.swift in Sources */,
 				95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */,
@@ -884,8 +905,10 @@
 				9556DE622CA5D51A00A43A78 /* ScanCameraViewController.swift in Sources */,
 				9556DE4E2CA5D45D00A43A78 /* CardView.swift in Sources */,
 				95BF19952CA65CD000CA53AC /* Storage.swift in Sources */,
+				959F92082CAFC6DB0047C7B2 /* FSCalendarViewCell.swift in Sources */,
 				95BF198D2CA65AE500CA53AC /* BaseView.swift in Sources */,
 				9556DE472CA5D2D200A43A78 /* MyPageViewController.swift in Sources */,
+				959F920A2CAFD73B0047C7B2 /* CalendarWeeklyViewCell.swift in Sources */,
 				95BF19992CA67B7600CA53AC /* SplashView.swift in Sources */,
 				959F91F32CAE70E60047C7B2 /* NotificationDetailViewController.swift in Sources */,
 				959F91E12CAA586B0047C7B2 /* CardContentDetailView.swift in Sources */,
@@ -908,10 +931,11 @@
 				9556DE3F2CA5D2BA00A43A78 /* TabBarViewController.swift in Sources */,
 				95BF19912CA65B2600CA53AC /* BaseButton.swift in Sources */,
 				9556DEA02CA5D76200A43A78 /* CalendarCardViewController.swift in Sources */,
-				9556DE9C2CA5D75400A43A78 /* CalendarDetailViewController.swift in Sources */,
+				9556DE9C2CA5D75400A43A78 /* CalendarWeeklyViewController.swift in Sources */,
 				959F91ED2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift in Sources */,
 				959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */,
 				959F91CF2CA9BCE60047C7B2 /* CareerListView.swift in Sources */,
+				959F920C2CAFF8410047C7B2 /* CalendarBottomView.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
 				95BCFFF32CA992B30001F339 /* OptionModalView.swift in Sources */,
@@ -925,7 +949,7 @@
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
 				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
 				95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */,
-				9556DE9A2CA5D74E00A43A78 /* CalendarDetailView.swift in Sources */,
+				9556DE9A2CA5D74E00A43A78 /* CalendarWeeklyView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
 				95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */,
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
@@ -1156,6 +1180,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		959F91F62CAE7E920047C7B2 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 		95A6FDF82CA5D0F400D44B21 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1175,6 +1207,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		959F91F72CAE7E920047C7B2 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 959F91F62CAE7E920047C7B2 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
 		95A6FDF92CA5D0F400D44B21 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 95A6FDF82CA5D0F400D44B21 /* XCRemoteSwiftPackageReference "SnapKit" */;

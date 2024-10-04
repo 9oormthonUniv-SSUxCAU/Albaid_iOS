@@ -105,6 +105,7 @@ public enum AlbaidButton {
     public static var guide: UIImage { .load(name: "guide")}
     public static var file: UIImage { .load(name: "file")}
     public static var album: UIImage { .load(name: "album")}
+    public static var more: UIImage { .load(name: "more")}
 }
 
 extension UIImage {
