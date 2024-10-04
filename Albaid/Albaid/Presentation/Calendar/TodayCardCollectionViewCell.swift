@@ -34,11 +34,14 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont(name: "Pretendard-Regular", size: 12)
     }
 
-    private(set) var detailButton = BaseButton().then {
+    private(set) var optionButton = BaseButton().then {
         $0.setImage(AlbaidButton.more.withTintColor(.albaidGray50), for: .normal)
     }
 
     private(set) var dividerView = DividerView(dividerType: .thin)
+
+    // MARK: Properties
+    var tapOption: (() -> Void)?
 
     // MARK: init
     override init(frame: CGRect) {
@@ -54,10 +57,12 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
 
     // MARK: Configuration
     private func configureSubviews() {
+        addButtonEvent()
+
         contentView.addSubview(colorView)
         contentView.addSubview(labelStackView)
         labelStackView.addArrangedSubviews(titleLabel, timeLabel)
-        contentView.addSubview(detailButton)
+        contentView.addSubview(optionButton)
         contentView.addSubview(dividerView)
     }
 
@@ -73,7 +78,7 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
             $0.leading.equalTo(colorView.snp.trailing).offset(10)
         }
 
-        detailButton.snp.makeConstraints {
+        optionButton.snp.makeConstraints {
             $0.trailing.centerY.equalToSuperview()
             $0.height.width.equalTo(24)
         }
@@ -84,6 +89,16 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
     }
 
     func setData(data: Card?) {
+    }
+
+    // MARK: Event
+    private func addButtonEvent() {
+        optionButton.addTarget(self, action: #selector(handleOptionButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleOptionButton() {
+        tapOption?()
     }
 }
 

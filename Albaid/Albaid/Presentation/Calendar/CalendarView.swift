@@ -21,7 +21,7 @@ final class CalendarView: BaseView {
     }
 
     private(set) var calendarView = FSCalendarView()
-    private let calendarBottomView = CalendarBottomView()
+    private(set) var calendarBottomView = CalendarBottomView()
 
     // MARK: Configuration
     override func configureSubviews() {

@@ -44,12 +44,18 @@ class CalendarViewController: BaseViewController {
     override func viewTransition() {
         addButton.tap = { [weak self] in
             guard let self else { return }
+            // TODO:
             router.presentModalViewController()
         }
 
         calendarView.calendarView.tapDay = { [weak self] in
             guard let self else { return }
             router.presentCalendarWeeklyViewController()
+        }
+
+        calendarView.calendarBottomView.tapOption = { [weak self] in
+            guard let self else { return }
+            router.presentModalViewController()
         }
     }
 

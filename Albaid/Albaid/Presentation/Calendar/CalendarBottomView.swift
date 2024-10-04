@@ -32,6 +32,9 @@ final class CalendarBottomView: BaseView {
         return layout
     }()
 
+    // MARK: Properties
+    var tapOption: (() -> Void)?
+
     // MARK: Configuration
     override func configureSubviews() {
         backgroundColor = .albaidGray100
@@ -73,6 +76,7 @@ extension CalendarBottomView: UICollectionViewDataSource, UICollectionViewDelega
             withReuseIdentifier: TodayCardCollectionViewCell.identifier,
             for: indexPath) as? TodayCardCollectionViewCell else { return UICollectionViewCell() }
 
+        cell.tapOption = self.tapOption
         cell.setData(data: User.dummyUser.card?[indexPath.row])
         if indexPath.row == 1 {
             cell.dividerView.isHidden = true
