@@ -34,6 +34,10 @@ final class ScanResultView: BaseView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
 
+    private(set) var dangerDetailButton = BaseButton().then {
+        $0.setImage(AlbaidButton.dangerDetail, for: .normal)
+    }
+
     private(set) var scanResultTopContentView = ScanResultTopContentView()
     
     private(set) var dividerView = UIView().then {
@@ -55,6 +59,7 @@ final class ScanResultView: BaseView {
 
     // MARK: Properties
     var tapRegister: (() -> Void)?
+    var tapDangerDetail: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -83,7 +88,6 @@ final class ScanResultView: BaseView {
         scanResultTipView.snp.makeConstraints {
             $0.top.equalTo(scanResultLabel.snp.bottom).offset(25)
             $0.width.equalToSuperview()
-            $0.height.equalTo(76)
         }
 
         safetyImageView.snp.makeConstraints {
@@ -134,10 +138,16 @@ final class ScanResultView: BaseView {
     // MARK: Event
     private func addButtonEvent() {
         registerButton.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
+        dangerDetailButton.addTarget(self, action: #selector(handleDangerDetailButton), for: .touchUpInside)
     }
 
     @objc
     private func handleRegisterButton() {
         tapRegister?()
+    }
+
+    @objc
+    private func handleDangerDetailButton() {
+        tapDangerDetail?()
     }
 }

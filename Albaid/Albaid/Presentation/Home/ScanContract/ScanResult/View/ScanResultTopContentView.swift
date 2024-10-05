@@ -15,29 +15,12 @@ final class ScanResultTopContentView: BaseView {
         $0.distribution = .fillEqually
     }
 
-    private(set) var workPlaceStackView = UIStackView().then {
-        $0.contractGuideLabelStackView(title: "근무지", content: "텍스트를 입력해주세요")
-    }
-
-    private(set) var contractDateStackView = UIStackView().then {
-        $0.contractButtonStackView(title: "계약기간", content: "날짜를 입력해주세요")
-    }
-
-    private(set) var workingTimeStackView = UIStackView().then {
-        $0.contractButtonStackView(title: "소정근로시간", content: "시간을 입력해주세요")
-    }
-
-    private(set) var workingDayStackView = UIStackView().then {
-        $0.contractButtonStackView(title: "근무 일자", content: "요일을 선택해주세요")
-    }
-
-    private(set) var hourlyWageStackView = UIStackView().then {
-        $0.contractButtonStackView(title: "시급", content: "텍스트를 입력해주세요")
-    }
-
-    private(set) var workingStackView = UIStackView().then {
-        $0.contractGuideLabelStackView(title: "업무 내용", content: "텍스트를 입력해주세요")
-    }
+    private(set) var workPlaceStackView = UIStackView()
+    private(set) var contractDateStackView = UIStackView()
+    private(set) var workingTimeStackView = UIStackView()
+    private(set) var workingDayStackView = UIStackView()
+    private(set) var hourlyWageStackView = UIStackView()
+    private(set) var workingStackView = UIStackView()
 
     // MARK: Properties
 

@@ -17,8 +17,8 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
 
-    private(set) var detailButton = BaseButton().then {
-        $0.setImage(AlbaidButton.detail.withTintColor(.white), for: .normal)
+    private(set) var detailButton = UIImageView().then {
+        $0.image = AlbaidButton.detail.withTintColor(.white)
     }
 
     private(set) var workplaceLabel = UILabel().then {
@@ -67,12 +67,12 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     private func configureSubviews() {
         contentView.layer.cornerRadius = 16
 
-        contentView.addSubview(indexLabel)
-        contentView.addSubview(detailButton)
-        contentView.addSubview(workplaceLabel)
-        contentView.addSubview(wageTextLabel)
-        contentView.addSubview(wageLabel)
-        contentView.addSubview(coffeeImageView)
+        addSubview(indexLabel)
+        addSubview(detailButton)
+        addSubview(workplaceLabel)
+        addSubview(wageTextLabel)
+        addSubview(wageLabel)
+        addSubview(coffeeImageView)
     }
 
     // MARK: Layout
@@ -131,7 +131,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func setaddCardCell() {
+    func setAddCardCell() {
         indexLabel.removeFromSuperview()
         detailButton.removeFromSuperview()
         workplaceLabel.removeFromSuperview()

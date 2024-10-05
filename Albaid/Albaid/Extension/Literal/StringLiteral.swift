@@ -43,6 +43,7 @@ struct AlbaidString {
                         주요 근로 조건들이 명시되어 있는 안전한
                         근로 계약서예요.
                         """
+    static let danger = "근로기준법 위반이 의심돼요!"
 
     /// scan complete
     static let completeGuide = """
@@ -63,4 +64,7 @@ struct AlbaidString {
                            나한테 맞춘 알바 관리,
                            원클릭으로 알바에이드에서 시작해 보세요!
                            """
+
+    /// url
+    static let dangerDetail = "https://www.moel.go.kr/mainpop2.do"
 }

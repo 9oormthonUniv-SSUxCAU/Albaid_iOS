@@ -73,7 +73,7 @@ extension CardCollectionView: UICollectionViewDataSource, UICollectionViewDelega
         if indexPath.row != 3 {
             cell.setData(data: User.dummyUser.card?[indexPath.row])
         } else {
-            cell.setaddCardCell()
+            cell.setAddCardCell()
         }
 
         return cell

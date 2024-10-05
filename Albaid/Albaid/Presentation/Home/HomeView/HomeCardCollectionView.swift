@@ -26,6 +26,9 @@ final class HomeCardCollectionView: BaseView {
         return layout
     }()
 
+    // MARK: Properties
+    var tapCell: (() -> Void)?
+
     // MARK: Configuration
     override func configureSubviews() {
         setCollectionView()
@@ -79,5 +82,9 @@ extension HomeCardCollectionView: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 172)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tapCell?()
     }
 }

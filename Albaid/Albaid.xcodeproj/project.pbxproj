@@ -84,6 +84,8 @@
 		959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */; };
 		959F92102CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */; };
 		959F92122CB0250C0047C7B2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92112CB0250C0047C7B2 /* OnboardingView.swift */; };
+		959F92142CB04FA40047C7B2 /* Resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92132CB04FA40047C7B2 /* Resume.swift */; };
+		959F92162CB05A760047C7B2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92152CB05A760047C7B2 /* UITextField+Extension.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
@@ -209,6 +211,8 @@
 		959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDailyCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F92112CB0250C0047C7B2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		959F92132CB04FA40047C7B2 /* Resume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resume.swift; sourceTree = "<group>"; };
+		959F92152CB05A760047C7B2 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 				95BCFFE02CA83AC70001F339 /* Int+Extension.swift */,
 				95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */,
 				95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */,
+				959F92152CB05A760047C7B2 /* UITextField+Extension.swift */,
 				95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */,
 				95BCFFE42CA863050001F339 /* UILabel+Extension.swift */,
 				9556DE2E2CA5D19B00A43A78 /* Literal */,
@@ -450,6 +455,7 @@
 			children = (
 				95BCFFCB2CA6E2060001F339 /* User.swift */,
 				95BF19892CA658B500CA53AC /* Contract.swift */,
+				959F92132CB04FA40047C7B2 /* Resume.swift */,
 				95BCFFDE2CA837060001F339 /* DummyData.swift */,
 			);
 			path = Model;
@@ -956,12 +962,14 @@
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
 				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
+				959F92142CB04FA40047C7B2 /* Resume.swift in Sources */,
 				95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */,
 				9556DE9A2CA5D74E00A43A78 /* CalendarWeeklyView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
 				95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */,
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
 				9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */,
+				959F92162CB05A760047C7B2 /* UITextField+Extension.swift in Sources */,
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,
 				959F91EB2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift in Sources */,
 				9556DE5C2CA5D50200A43A78 /* ScanGuideView.swift in Sources */,

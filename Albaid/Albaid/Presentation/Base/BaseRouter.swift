@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class BaseRouter {
     // MARK: Properties
@@ -68,8 +69,8 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(scanLoadingViewController, animated: true)
     }
 
-    func presentScanResultViewController() {
-        let scanResultViewController = ScanResultViewController()
+    func presentScanResultViewController(data: ContractInput) {
+        let scanResultViewController = ScanResultViewController(data: data)
         viewController?.navigationController?.pushViewController(scanResultViewController, animated: true)
     }
 
@@ -179,6 +180,12 @@ final class BaseRouter {
     func presentNotificationDetailViewController() {
         let notificationDetailViewController = NotificationDetailViewController()
         viewController?.navigationController?.pushViewController(notificationDetailViewController, animated: true)
+    }
+
+    func presentSafariViewController(url: String) {
+        guard let url = URL(string: url) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        viewController?.present(safariViewController, animated: true, completion: nil)
     }
 
     func popViewController() {

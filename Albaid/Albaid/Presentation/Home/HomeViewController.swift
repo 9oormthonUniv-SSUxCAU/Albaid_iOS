@@ -58,6 +58,16 @@ class HomeViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
+        notificationButton.tap = { [weak self] in
+            guard let self else { return }
+            router.presentNotificationViewController()
+        }
+
+        homeView.homeCardCollectionView.tapCell = { [weak self] in
+            guard let self else { return }
+            router.presentCardDetailViewController()
+        }
+
         homeView.homeMenuView.tapScan = { [weak self] in
             guard let self else { return }
             router.presentScanGuideViewController()
