@@ -43,7 +43,7 @@ class CardViewController: BaseViewController {
     override func viewTransition() {
         cardView.cardCollectionView.tapCell = { [weak self] in
             guard let self else { return }
-            router.presentCardDetailViewController()
+//            router.presentCardDetailViewController(index: <#Int#>)
         }
 
         cardView.cardCollectionView.tapGuide = { [weak self] in

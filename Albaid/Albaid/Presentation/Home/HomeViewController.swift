@@ -28,7 +28,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setData(data: User.dummyUser)
+        setUserData(data: User.dummyUser)
+        setData(data: Contract.dummyContract)
         router.viewController = self
     }
 
@@ -63,9 +64,8 @@ class HomeViewController: BaseViewController {
             router.presentNotificationViewController()
         }
 
-        homeView.homeCardCollectionView.tapCell = { [weak self] in
-            guard let self else { return }
-            router.presentCardDetailViewController()
+        homeView.homeCardCollectionView.tapCell  = { [self] id in
+            router.presentCardDetailViewController(id: id)
         }
 
         homeView.homeMenuView.tapScan = { [weak self] in
@@ -85,7 +85,8 @@ class HomeViewController: BaseViewController {
     }
 
     // MARK: data binding
-    private func setData(data: User) {
+    /// user
+    private func setUserData(data: User) {
         let today = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
@@ -100,8 +101,6 @@ class HomeViewController: BaseViewController {
         monthFormatter.locale = Locale(identifier: "ko_KR")
         let monthToString = monthFormatter.string(from: today)
 
-        homeView.homeCardCollectionView.setData(data: data)
-
         homeView.homeContentView.userLabel.text = data.name + "님을 위한 알바 내역"
         homeView.homeContentView.monthTotalWageTextLabel.text = monthToString + "월 월급 총계"
 
@@ -113,5 +112,9 @@ class HomeViewController: BaseViewController {
         let monthTotalWage = cards.reduce(0) { $0 + $1.monthWage }
 
         homeView.homeContentView.monthTotalWageLabel.text = monthTotalWage.toPriceFormat + "원"
+    }
+
+    private func setData(data: [Contract]) {
+        homeView.homeCardCollectionView.setData(data: data)
     }
 }

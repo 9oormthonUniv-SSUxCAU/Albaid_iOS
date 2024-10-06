@@ -23,6 +23,16 @@ class CardDetailViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Init
+    init(id: Int) {
+        super.init(nibName: nil, bundle: nil)
+        setView(data: Contract.dummyContract[id])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,5 +80,9 @@ class CardDetailViewController: BaseViewController {
         setDefaultNavigationItem(title: nil,
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+    }
+
+    private func setView(data: Contract?) {
+        cardDetailView.cardContentView.titleLabel.text = "알바 카드" + "\(data?.id ?? 0)"
     }
 }

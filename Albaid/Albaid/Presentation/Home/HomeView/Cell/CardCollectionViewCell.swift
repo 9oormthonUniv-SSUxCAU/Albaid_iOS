@@ -1,5 +1,5 @@
 //
-//  HomeCardCollectionViewCell.swift
+//  CardCollectionViewCell.swift
 //  Albaid
 //
 //  Created by 박지윤 on 9/28/24.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class HomeCardCollectionViewCell: UICollectionViewCell {
+final class CardCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = "HomeCardCollectionViewCell"
+    static let identifier = "CardCollectionViewCell"
 
     // MARK: UI Components
-    private(set) var indexLabel = UILabel().then {
+    private(set) var titleLabel = UILabel().then {
         $0.textColor = .albaidGray100
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
@@ -67,7 +67,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     private func configureSubviews() {
         contentView.layer.cornerRadius = 16
 
-        addSubview(indexLabel)
+        addSubview(titleLabel)
         addSubview(detailButton)
         addSubview(workplaceLabel)
         addSubview(wageTextLabel)
@@ -77,14 +77,14 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
 
     // MARK: Layout
     private func makeConstraints() {
-        indexLabel.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(15)
             $0.leading.equalToSuperview().inset(20)
         }
 
         detailButton.snp.makeConstraints {
-            $0.centerY.equalTo(indexLabel)
-            $0.leading.equalTo(indexLabel.snp.trailing).offset(5)
+            $0.centerY.equalTo(titleLabel)
+            $0.leading.equalTo(titleLabel.snp.trailing).offset(5)
             $0.width.height.equalTo(24)
         }
 
@@ -110,12 +110,27 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func setData(data: Card?) {
-        indexLabel.text = "알바 카드" + "\(data?.index ?? 0)"
-        workplaceLabel.text = data?.workPlace
-        wageLabel.text = (data?.monthWage.toPriceFormat ?? "nil") + "원"
+    func setData(data: Contract) {
+        titleLabel.text = data.title
+        workplaceLabel.text = data.workplace
+        
+        // TODO: 월급 계산
+        let timeDifferenceInSeconds = data.standardWorkingEndTime.timeIntervalSince(data.standardWorkingStartTime)
+        
+        let hours = Int(timeDifferenceInSeconds) / 3600
+        let minutes = (Int(timeDifferenceInSeconds) % 3600) / 60 / 60
+        let weeks = 4
+        var wage = 0
 
-        switch (data?.index ?? 0) % 3 {
+        if minutes == 0 {
+            wage = data.workingDays.count * hours * data.hourlyWage * weeks
+        } else {
+            wage = data.workingDays.count * hours * minutes * data.hourlyWage * weeks
+        }
+
+        wageLabel.text = (wage.toPriceFormat) + "원"
+        
+        switch (data.id) % 3 {
         case 0:
             contentView.backgroundColor = .albaidSubPink
             coffeeImageView.image = AlbaidImage.coffeePink
@@ -132,7 +147,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     }
 
     func setAddCardCell() {
-        indexLabel.removeFromSuperview()
+        titleLabel.removeFromSuperview()
         detailButton.removeFromSuperview()
         workplaceLabel.removeFromSuperview()
         wageTextLabel.removeFromSuperview()

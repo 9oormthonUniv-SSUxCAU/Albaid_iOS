@@ -139,8 +139,8 @@ final class BaseRouter {
     }
 
     /// card
-    func presentCardDetailViewController() {
-        let cardDetailViewController = CardDetailViewController()
+    func presentCardDetailViewController(id: Int) {
+        let cardDetailViewController = CardDetailViewController(id: id)
         cardDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(cardDetailViewController, animated: true)
     }

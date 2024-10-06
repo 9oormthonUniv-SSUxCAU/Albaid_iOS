@@ -14,8 +14,8 @@ struct Contract {
     let workplace: String
     let contractStartDate: String
     let contractEndDate: String?
-    let standardWorkingStartTime: String
-    let standardWorkingEndTime: String
+    let standardWorkingStartTime: Date
+    let standardWorkingEndTime: Date
     let workingDays: [String]
     let hourlyWage: Int
     let jobDescription: String
@@ -41,32 +41,32 @@ struct ContractInput {
 }
 
 extension Contract {
-    static let dummyContract = [Contract(id: 8,
+    static let dummyContract = [Contract(id: 1,
                                          url: "https://albaid-files",
-                                         title: "이력서 1",
-                                         workplace: "GS25 매장",
+                                         title: "알바 카드 1",
+                                         workplace: "투썸 플레이스 광교점",
                                          contractStartDate: "2024-07-23",
                                          contractEndDate: nil,
-                                         standardWorkingStartTime: "13:00:00",
-                                         standardWorkingEndTime: "18:00:00",
-                                         workingDays: ["MO", "TU"],
-                                         hourlyWage: 9860,
-                                         jobDescription: "상품 판매와 매장관리 및 관련부대 업무",
+                                         standardWorkingStartTime: "13:00".toTimeDate() ?? Date(),
+                                         standardWorkingEndTime: "18:00".toTimeDate() ?? Date(),
+                                         workingDays: ["MO", "TU", "WE"],
+                                         hourlyWage: 10000,
+                                         jobDescription: "음료 제조",
                                          isPaidAnnualLeave: false,
                                          isSocialInsurance: false,
                                          isContractDelivery: true,
                                          memo: "abc"),
-                                Contract(id: 9,
+                                Contract(id: 2,
                                          url: "https://albaid-files",
-                                         title: "이력서 2",
-                                         workplace: "GS25 매장",
+                                         title: "알바 카드 2",
+                                         workplace: "GS25 숭실대점",
                                          contractStartDate: "2024-07-23",
                                          contractEndDate: nil,
-                                         standardWorkingStartTime: "13:00:00",
-                                         standardWorkingEndTime: "18:00:00",
+                                         standardWorkingStartTime: "13:00".toTimeDate() ?? Date(),
+                                         standardWorkingEndTime: "18:00".toTimeDate() ?? Date(),
                                          workingDays: ["MO", "TU"],
                                          hourlyWage: 9860,
-                                         jobDescription: "상품 판매와 매장관리 및 관련부대 업무",
+                                         jobDescription: "상품 판매 및 매장관리",
                                          isPaidAnnualLeave: false,
                                          isSocialInsurance: false,
                                          isContractDelivery: true,

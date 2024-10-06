@@ -10,23 +10,23 @@ import UIKit
 final class CardContentView: BaseView {
 
     // MARK: UI Components
-    private let titleLabel = UILabel().then {
+    private(set) var titleLabel = UILabel().then {
         $0.text = "알바 카드1"
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 24)
     }
 
-    private let categoryLabel = UILabel().then {
+    private(set) var categoryLabel = UILabel().then {
         $0.text = "카페 아르바이트"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
 
-    private let contractButton = BaseButton().then {
+    private(set) var contractButton = BaseButton().then {
         $0.setImage(AlbaidButton.file, for: .normal)
     }
 
-    private let cardContentDetailView = CardContentDetailView()
+    private(set) var cardContentDetailView = CardContentDetailView()
 
     private(set) var memoLabel = UILabel().then {
         $0.text = "메모"
@@ -34,13 +34,19 @@ final class CardContentView: BaseView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
 
-    private(set) var memoTextView = UITextView().then {
+//    private(set) var memoTextView = UILabel().then {
+//        $0.text = "텍스트를 작성하면 이렇게 보입니다."
+//        $0.textColor = .albaidGray20
+//        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+//        $0.backgroundColor = .albaidGray95
+//        $0.layer.cornerRadius = 12
+//    }
+    private(set) var memoContentLabel = UILabel().then {
         $0.text = "텍스트를 작성하면 이렇게 보입니다."
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         $0.backgroundColor = .albaidGray95
         $0.layer.cornerRadius = 12
-        $0.contentInset = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
     }
 
     // MARK: Properties
@@ -56,7 +62,7 @@ final class CardContentView: BaseView {
         addSubview(contractButton)
         addSubview(cardContentDetailView)
         addSubview(memoLabel)
-        addSubview(memoTextView)
+        addSubview(memoContentLabel)
     }
 
     // MARK: Layout
@@ -88,7 +94,7 @@ final class CardContentView: BaseView {
             $0.leading.equalToSuperview().inset(20)
         }
 
-        memoTextView.snp.makeConstraints {
+        memoContentLabel.snp.makeConstraints {
             $0.top.equalTo(memoLabel.snp.bottom).offset(10)
             $0.height.equalTo(97)
             $0.horizontalEdges.equalToSuperview().inset(20)

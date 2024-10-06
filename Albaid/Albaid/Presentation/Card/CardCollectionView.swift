@@ -52,8 +52,8 @@ extension CardCollectionView: UICollectionViewDataSource, UICollectionViewDelega
     private func setCollectionView() {
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
-        cardCollectionView.register(HomeCardCollectionViewCell.self,
-                                    forCellWithReuseIdentifier: HomeCardCollectionViewCell.identifier)
+        cardCollectionView.register(CardCollectionViewCell.self,
+                                    forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
         cardCollectionView.register(CardCollectionViewHeader.self,
                                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                     withReuseIdentifier: CardCollectionViewHeader.identifier)
@@ -67,11 +67,11 @@ extension CardCollectionView: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HomeCardCollectionViewCell.identifier,
-            for: indexPath) as? HomeCardCollectionViewCell else { return UICollectionViewCell() }
+            withReuseIdentifier: CardCollectionViewCell.identifier,
+            for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         
         if indexPath.row != 3 {
-            cell.setData(data: User.dummyUser.card?[indexPath.row])
+            cell.setData(data: Contract.dummyContract[indexPath.row])
         } else {
             cell.setAddCardCell()
         }
