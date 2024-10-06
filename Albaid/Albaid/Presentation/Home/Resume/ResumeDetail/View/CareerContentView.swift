@@ -15,13 +15,11 @@ final class CareerContentView: BaseView {
     }
 
     private(set) var categoryLabel = UILabel().then {
-        $0.text = "카페 아르바이트"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Regular", size: 12)
     }
 
-    private(set) var workPlaceLabel = UILabel().then {
-        $0.text = "투썸 플레이스 광교점"
+    private(set) var workplaceLabel = UILabel().then {
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
@@ -31,13 +29,11 @@ final class CareerContentView: BaseView {
     }
 
     private(set) var periodLabel = UILabel().then {
-        $0.text = "24.09~24.12"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
 
     private(set) var periodTextLabel = UILabel().then {
-        $0.text = "4개월"
         $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
@@ -50,7 +46,7 @@ final class CareerContentView: BaseView {
 
         addSubview(companyImageView)
         addSubview(categoryLabel)
-        addSubview(workPlaceLabel)
+        addSubview(workplaceLabel)
         addSubview(calendarImageView)
         addSubview(periodLabel)
         addSubview(periodTextLabel)
@@ -70,17 +66,17 @@ final class CareerContentView: BaseView {
         }
 
         categoryLabel.snp.makeConstraints {
-            $0.bottom.equalTo(workPlaceLabel.snp.top).offset(-5)
+            $0.bottom.equalTo(workplaceLabel.snp.top).offset(-5)
             $0.leading.equalTo(companyImageView.snp.trailing).offset(20)
         }
 
-        workPlaceLabel.snp.makeConstraints {
+        workplaceLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalTo(companyImageView.snp.trailing).offset(20)
         }
 
         calendarImageView.snp.makeConstraints {
-            $0.top.equalTo(workPlaceLabel.snp.bottom).offset(5)
+            $0.top.equalTo(workplaceLabel.snp.bottom).offset(5)
             $0.leading.equalTo(companyImageView.snp.trailing).offset(20)
         }
 
@@ -98,5 +94,29 @@ final class CareerContentView: BaseView {
     private func setContentView() {
         backgroundColor = .albaidGray100
         layer.cornerRadius = 12
+    }
+
+    // MARK: Data binding
+    func setData(data: Career?) {
+        // TODO: fix
+        categoryLabel.text = "카페 아르바이트"
+        workplaceLabel.text = data?.companyName
+        let period = (data?.startDate.toDateString(format: "yy.MM") ?? "") + "~" + (data?.endDate.toDateString(format: "yy.MM") ?? "")
+        periodLabel.text = period
+
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.month, .day], from: data?.startDate ?? Date(), to: data?.endDate ?? Date())
+        let year = (components.month ?? 0) / 12
+        let month = (components.month ?? 0) % 12
+        let day = components.day
+
+        var periodText = "\(month)개월"
+        if year != 0 {
+            periodText = "\(year)년 " + periodText
+        }
+        if day != 0 {
+            periodText += " \(day ?? 0)일"
+        }
+        periodTextLabel.text = periodText
     }
 }

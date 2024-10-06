@@ -75,5 +75,7 @@ final class ResumeDetailViewController: BaseViewController {
     // MARK: Data binding
     private func setView(data: Resume) {
         resumeDetailView.setViewData(data: data)
+        resumeDetailView.careerListStackView.setViewData(data: data)
+        resumeDetailView.setCareerListStackView()
     }
 }

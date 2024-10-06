@@ -71,7 +71,6 @@ final class ResumeDetailView: BaseView {
     // MARK: Configuration
     override func configureSubviews() {
         backgroundColor = .albaidGray95
-        setCareerListStackView()
 
         addSubview(scrollView)
         scrollView.addSubview(entireView)
@@ -197,7 +196,7 @@ final class ResumeDetailView: BaseView {
         }
     }
 
-    private func setCareerListStackView() {
+    func setCareerListStackView() {
         careerListStackView.setData()
     }
 
