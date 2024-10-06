@@ -50,7 +50,7 @@ final class ScanResultTopContentView: BaseView {
     func setData(data: Contract) {
         workplaceStackView.contractLabelStackView(title: "근무지", content: data.workplace)
 
-        var workingDaysText = data.contractStartDate.toDateString()
+        var workingDaysText = data.contractStartDate.toDateString() + "~"
         if data.contractEndDate != nil {
             workingDaysText = data.contractStartDate.toDateString() + "~" + (data.contractEndDate?.toDateString() ?? "")
         }
