@@ -180,9 +180,4 @@ final class ScanResultViewController: BaseViewController {
             scanResultView.safetyLabel.textColor = .albaidSafetyRed
         }
     }
-
-    // MARK: Data binding
-    private func setData(data: Contract) {
-        scanResultView.scanResultTopContentView.setData(data: data)
-    }
 }

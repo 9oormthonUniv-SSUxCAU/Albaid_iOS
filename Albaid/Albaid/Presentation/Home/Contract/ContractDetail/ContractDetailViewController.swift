@@ -74,6 +74,8 @@ final class ContractDetailViewController: BaseViewController {
 
     // MARK: Data binding
     private func setView(data: Contract) {
+        contractDetailView.setData(data: data)
         contractDetailView.scanResultTopContentView.setData(data: data)
+        contractDetailView.scanResultBottomContentView.setData(data: data)
     }
 }
