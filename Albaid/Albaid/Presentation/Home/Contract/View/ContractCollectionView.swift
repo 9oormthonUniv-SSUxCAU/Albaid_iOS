@@ -57,6 +57,7 @@ final class ContractCollectionView: BaseView {
         }
     }
 
+    // MARK: Data binding
     func setData(data: [Contract]) {
         contract = data
         contractNumberLabel.text = "총 \(data.count)건"
@@ -83,7 +84,7 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
 
         // TODO: dummy data
         if let contract = contract?[indexPath.row] {
-            cell.setData(data: contract)
+            cell.setCellData(data: contract)
         }
         cell.tapOption = self.tapOption
 

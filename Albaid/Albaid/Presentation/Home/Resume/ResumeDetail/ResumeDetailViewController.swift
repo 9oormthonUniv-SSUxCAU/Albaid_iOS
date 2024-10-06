@@ -23,6 +23,16 @@ final class ResumeDetailViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Init
+    init(id: Int) {
+        super.init(nibName: nil, bundle: nil)
+        setView(data: Resume.dummyResume[id])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,5 +70,10 @@ final class ResumeDetailViewController: BaseViewController {
         setDefaultNavigationItem(title: "내 이력서",
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+    }
+
+    // MARK: Data binding
+    private func setView(data: Resume) {
+        resumeDetailView.setViewData(data: data)
     }
 }

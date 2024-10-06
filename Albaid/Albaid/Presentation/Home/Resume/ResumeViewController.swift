@@ -23,6 +23,7 @@ final class ResumeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setData(data: Resume.dummyResume)
         router.viewController = self
     }
     
@@ -45,9 +46,8 @@ final class ResumeViewController: BaseViewController {
             router.popViewController()
         }
 
-        resumeView.tapCell = { [weak self] in
-            guard let self else { return }
-            router.presentResumeDetailViewController()
+        resumeView.tapCell = { [self] id in
+            router.presentResumeDetailViewController(id: id)
         }
 
         resumeView.tapOption = { [weak self] in
@@ -61,5 +61,10 @@ final class ResumeViewController: BaseViewController {
         setDefaultNavigationItem(title: "이력서",
                                  leftBarButton: backButton,
                                  rightBarButton: nil)
+    }
+
+    // MARK: Data binding
+    private func setData(data: [Resume]) {
+        resumeView.setViewData(data: data)
     }
 }

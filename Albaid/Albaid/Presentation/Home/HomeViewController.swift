@@ -99,6 +99,7 @@ class HomeViewController: BaseViewController {
         homeView.homeContentView.monthTotalWageLabel.text = monthTotalWage.toPriceFormat + "원"
     }
 
+    // MARK: Data binding
     private func setData(data: [Contract]) {
         homeView.homeCardCollectionView.setData(data: data)
     }

@@ -18,59 +18,39 @@ final class ResumeDetailView: BaseView {
     private let entireView = UIView()
 
     private(set) var dateLabel = UILabel().then {
-        $0.text = "2024.09.22"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
 
     private(set) var titleLabel = UILabel().then {
-        $0.text = "[기본] 김알바1"
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 20)
     }
 
     private(set) var dividerView1 = DividerView(dividerType: .thin)
 
-    private(set) var infoLabel = UILabel().then {
+    private(set) var summaryLabel = UILabel().then {
         $0.text = "간단 소개글"
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
 
-    private(set) var infoContentLabel = UILabel().then {
-        $0.text = "안녕하세요. 성실한 알바생 김알바입니다."
+    private(set) var summaryContentLabel = UILabel().then {
         $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-Regular", size: 15)
     }
 
     private(set) var dividerView2 = DividerView(dividerType: .thin)
 
-    private(set) var phoneStackView = UIStackView().then {
-        $0.resumeDetailStackView(title: "휴대폰", content: "010-1234-5678")
-    }
-
-    private(set) var addressStackView = UIStackView().then {
-        $0.resumeDetailStackView(title: "주소", content: "경기도 수원시 영통구")
-    }
-
-    private(set) var emailStackView = UIStackView().then {
-        $0.resumeDetailStackView(title: "이메일", content: "albaid@email.com")
-    }
+    private(set) var phoneStackView = UIStackView()
+    private(set) var addressStackView = UIStackView()
+    private(set) var emailStackView = UIStackView()
 
     private(set) var dividerView3 = DividerView(dividerType: .thin)
 
-    private(set) var educationStackView = UIStackView().then {
-        $0.resumeDetailStackView(title: "최종학력", content: "대학(4년제)")
-    }
-
-    private(set) var careerStackView = UIStackView().then {
-        $0.resumeDetailStackView(title: "경력", content: "2년 1개월 16일")
-    }
-
-    private(set) var certificateStackView = UIStackView().then {
-        $0.resumeDetailStackView(title: "자격 • 능력", content: "자격증 1")
-    }
-
+    private(set) var educationStackView = UIStackView()
+    private(set) var careerStackView = UIStackView()
+    private(set) var certificateStackView = UIStackView()
     private(set) var dividerView4 = DividerView(dividerType: .thin)
 
     private(set) var careerLabel = UILabel().then {
@@ -80,7 +60,6 @@ final class ResumeDetailView: BaseView {
     }
 
     private(set) var careerContentLabel = UILabel().then {
-        $0.text = "2년 3개월 11일"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
@@ -100,8 +79,8 @@ final class ResumeDetailView: BaseView {
         entireView.addSubview(dateLabel)
         entireView.addSubview(titleLabel)
         entireView.addSubview(dividerView1)
-        entireView.addSubview(infoLabel)
-        entireView.addSubview(infoContentLabel)
+        entireView.addSubview(summaryLabel)
+        entireView.addSubview(summaryContentLabel)
         entireView.addSubview(dividerView2)
 
         entireView.addSubview(phoneStackView)
@@ -145,18 +124,18 @@ final class ResumeDetailView: BaseView {
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
 
-        infoLabel.snp.makeConstraints {
+        summaryLabel.snp.makeConstraints {
             $0.top.equalTo(dividerView1.snp.bottom).offset(30)
             $0.leading.equalToSuperview().inset(20)
         }
 
-        infoContentLabel.snp.makeConstraints {
-            $0.top.equalTo(infoLabel.snp.bottom).offset(13)
+        summaryContentLabel.snp.makeConstraints {
+            $0.top.equalTo(summaryLabel.snp.bottom).offset(13)
             $0.leading.equalToSuperview().inset(20)
         }
 
         dividerView2.snp.makeConstraints {
-            $0.top.equalTo(infoContentLabel.snp.bottom).offset(30)
+            $0.top.equalTo(summaryContentLabel.snp.bottom).offset(30)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
 
@@ -220,5 +199,25 @@ final class ResumeDetailView: BaseView {
 
     private func setCareerListStackView() {
         careerListStackView.setData()
+    }
+
+    // MARK: Data binding
+    func setViewData(data: Resume) {
+        // TODO: fix
+        dateLabel.text = "2024.09.22"
+        titleLabel.text = data.title
+        summaryContentLabel.text = data.summary
+
+        phoneStackView.resumeDetailStackView(title: "휴대폰", content: data.phone)
+        addressStackView.resumeDetailStackView(title: "주소", content: data.address)
+        emailStackView.resumeDetailStackView(title: "이메일", content: data.email)
+
+        educationStackView.resumeDetailStackView(title: "최종학력", content: data.finalEducation)
+        careerStackView.resumeDetailStackView(title: "경력", content: data.totalCareerDuration)
+        // TODO: fix
+        certificateStackView.resumeDetailStackView(title: "자격 • 능력", content: "자격증 1")
+
+        // TODO: fix
+        careerContentLabel.text = "2년 3개월 11일"
     }
 }

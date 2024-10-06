@@ -122,8 +122,8 @@ final class BaseRouter {
         viewController?.present(resumeOptionModalViewController, animated: true, completion: nil)
     }
 
-    func presentResumeDetailViewController() {
-        let resumeDetailViewController = ResumeDetailViewController()
+    func presentResumeDetailViewController(id: Int) {
+        let resumeDetailViewController = ResumeDetailViewController(id: id)
         viewController?.navigationController?.pushViewController(resumeDetailViewController, animated: true)
     }
 
