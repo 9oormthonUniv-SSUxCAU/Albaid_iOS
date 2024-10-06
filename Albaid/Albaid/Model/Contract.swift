@@ -12,8 +12,8 @@ struct Contract {
     let url: String
     let title: String
     let workplace: String
-    let contractStartDate: String
-    let contractEndDate: String?
+    let contractStartDate: Date
+    let contractEndDate: Date?
     let standardWorkingStartTime: Date
     let standardWorkingEndTime: Date
     let workingDays: [String]
@@ -41,42 +41,42 @@ struct ContractInput {
 }
 
 extension Contract {
-    static let dummyContract = [Contract(id: 1,
+    static let dummyContract = [Contract(id: 0,
                                          url: "https://albaid-files",
                                          title: "알바 카드 1",
                                          workplace: "투썸 플레이스 광교점",
-                                         contractStartDate: "2024-07-23",
+                                         contractStartDate: "2024.07.23".toDate(format: "yyyy.MM.dd") ?? Date(),
                                          contractEndDate: nil,
                                          standardWorkingStartTime: "13:00".toTimeDate() ?? Date(),
                                          standardWorkingEndTime: "18:00".toTimeDate() ?? Date(),
-                                         workingDays: ["MO", "TU", "WE"],
+                                         workingDays: ["월", "화", "수"],
                                          hourlyWage: 10000,
                                          jobDescription: "음료 제조",
                                          isPaidAnnualLeave: false,
                                          isSocialInsurance: false,
                                          isContractDelivery: true,
                                          memo: "abc"),
-                                Contract(id: 2,
+                                Contract(id: 1,
                                          url: "https://albaid-files",
                                          title: "알바 카드 2",
                                          workplace: "GS25 숭실대점",
-                                         contractStartDate: "2024-07-23",
-                                         contractEndDate: nil,
-                                         standardWorkingStartTime: "13:00".toTimeDate() ?? Date(),
-                                         standardWorkingEndTime: "18:00".toTimeDate() ?? Date(),
-                                         workingDays: ["MO", "TU"],
+                                         contractStartDate: "2024.07.23".toDate(format: "yyyy.MM.dd") ?? Date(),
+                                         contractEndDate: "2024.09.23".toDate(format: "yyyy.MM.dd") ?? Date(),
+                                         standardWorkingStartTime: "12:00".toTimeDate() ?? Date(),
+                                         standardWorkingEndTime: "14:30".toTimeDate() ?? Date(),
+                                         workingDays: ["목", "금"],
                                          hourlyWage: 9860,
                                          jobDescription: "상품 판매 및 매장관리",
                                          isPaidAnnualLeave: false,
                                          isSocialInsurance: false,
                                          isContractDelivery: true,
-                                         memo: "abc")]
+                                         memo: "테스트 메모")]
 }
 
 extension ContractInput {
     static let dummyContractInput = ContractInput(workplace: "투썸",
                                                   contractStartDate: "2024-07-23",
-                                                  contractEndDate: nil,
+                                                  contractEndDate: "2024-09-27",
                                                   standardWorkingStartTime: "13:00",
                                                   standardWorkingEndTime: "18:00",
                                                   workingDays: ["월", "화"],

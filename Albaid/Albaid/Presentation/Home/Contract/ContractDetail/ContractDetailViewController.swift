@@ -23,6 +23,16 @@ final class ContractDetailViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Init
+    init(id: Int) {
+        super.init(nibName: nil, bundle: nil)
+        setView(data: Contract.dummyContract[id])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,5 +70,10 @@ final class ContractDetailViewController: BaseViewController {
         setDefaultNavigationItem(title: "근로계약서1",
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+    }
+
+    // MARK: Data binding
+    private func setView(data: Contract) {
+        contractDetailView.scanResultTopContentView.setData(data: data)
     }
 }

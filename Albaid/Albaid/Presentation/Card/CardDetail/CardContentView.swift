@@ -11,13 +11,11 @@ final class CardContentView: BaseView {
 
     // MARK: UI Components
     private(set) var titleLabel = UILabel().then {
-        $0.text = "알바 카드1"
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 24)
     }
 
     private(set) var categoryLabel = UILabel().then {
-        $0.text = "카페 아르바이트"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
@@ -34,23 +32,20 @@ final class CardContentView: BaseView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
 
-//    private(set) var memoTextView = UILabel().then {
-//        $0.text = "텍스트를 작성하면 이렇게 보입니다."
-//        $0.textColor = .albaidGray20
-//        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-//        $0.backgroundColor = .albaidGray95
-//        $0.layer.cornerRadius = 12
-//    }
-    private(set) var memoContentLabel = UILabel().then {
-        $0.text = "텍스트를 작성하면 이렇게 보입니다."
-        $0.textColor = .albaidGray20
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+    private(set) var memoBackgroundView = UIView().then {
         $0.backgroundColor = .albaidGray95
         $0.layer.cornerRadius = 12
     }
 
+    private(set) var memoContentLabel = UILabel().then {
+        $0.textColor = .albaidGray20
+        $0.numberOfLines = 0
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+    }
+
     // MARK: Properties
-    var tapContract: (() -> Void)?
+    var tapContract: ((Int) -> Void)?
+    var contract: Contract?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -62,7 +57,8 @@ final class CardContentView: BaseView {
         addSubview(contractButton)
         addSubview(cardContentDetailView)
         addSubview(memoLabel)
-        addSubview(memoContentLabel)
+        addSubview(memoBackgroundView)
+        memoBackgroundView.addSubview(memoContentLabel)
     }
 
     // MARK: Layout
@@ -94,11 +90,16 @@ final class CardContentView: BaseView {
             $0.leading.equalToSuperview().inset(20)
         }
 
-        memoContentLabel.snp.makeConstraints {
+        memoBackgroundView.snp.makeConstraints {
             $0.top.equalTo(memoLabel.snp.bottom).offset(10)
             $0.height.equalTo(97)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(30)
+        }
+    
+        memoContentLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(12)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
     }
 
@@ -108,6 +109,14 @@ final class CardContentView: BaseView {
         backgroundColor = .albaidGray100
     }
 
+    // MARK: Data
+    func setData(data: Contract) {
+        contract = data
+        titleLabel.text = data.title
+        categoryLabel.text = data.jobDescription
+        memoContentLabel.text = data.memo
+    }
+
     // MARK: Event
     private func addButtonEvent() {
         contractButton.addTarget(self, action: #selector(handleContractButton), for: .touchUpInside)
@@ -115,6 +124,6 @@ final class CardContentView: BaseView {
 
     @objc
     private func handleContractButton() {
-        tapContract?()
+        tapContract?(contract?.id ?? 0)
     }
 }

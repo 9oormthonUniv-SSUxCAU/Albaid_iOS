@@ -32,7 +32,7 @@ final class ContractCollectionView: BaseView {
     }()
 
     // MARK: Properties
-    var tapCell: (() -> Void)?
+    var tapCell: ((Int) -> Void)?
     var tapOption: (() -> Void)?
 
     // MARK: Configuration
@@ -100,6 +100,6 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tapCell?()
+        tapCell?(indexPath.row)
     }
 }

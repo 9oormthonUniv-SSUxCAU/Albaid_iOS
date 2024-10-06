@@ -90,8 +90,8 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(contractViewController, animated: true)
     }
 
-    func presentContractDetailViewController() {
-        let contractDetailViewController = ContractDetailViewController()
+    func presentContractDetailViewController(id: Int) {
+        let contractDetailViewController = ContractDetailViewController(id: id)
         contractDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
     }

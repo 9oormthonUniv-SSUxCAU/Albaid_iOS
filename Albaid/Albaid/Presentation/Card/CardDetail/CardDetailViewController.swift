@@ -69,9 +69,8 @@ class CardDetailViewController: BaseViewController {
             router.presentResumeViewController()
         }
 
-        cardDetailView.cardContentView.tapContract = { [weak self] in
-            guard let self else { return }
-            router.presentContractDetailViewController()
+        cardDetailView.cardContentView.tapContract = { [self] id in
+            router.presentContractDetailViewController(id: id)
         }
     }
 
@@ -82,7 +81,9 @@ class CardDetailViewController: BaseViewController {
                                  rightBarButton: optionButton)
     }
 
-    private func setView(data: Contract?) {
-        cardDetailView.cardContentView.titleLabel.text = "알바 카드" + "\(data?.id ?? 0)"
+    // MARK: Data binding
+    private func setView(data: Contract) {
+        cardDetailView.cardContentView.setData(data: data)
+        cardDetailView.cardContentView.cardContentDetailView.setData(data: data)
     }
 }

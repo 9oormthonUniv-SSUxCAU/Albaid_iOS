@@ -117,20 +117,21 @@ final class CardCollectionViewCell: UICollectionViewCell {
         // TODO: 월급 계산
         let timeDifferenceInSeconds = data.standardWorkingEndTime.timeIntervalSince(data.standardWorkingStartTime)
         
-        let hours = Int(timeDifferenceInSeconds) / 3600
-        let minutes = (Int(timeDifferenceInSeconds) % 3600) / 60 / 60
-        let weeks = 4
-        var wage = 0
+        let hours = Double(Int(timeDifferenceInSeconds) / 3600)
+        var minutes = Double((Int(timeDifferenceInSeconds) % 3600) / 60)
+        let weeks = 4.0
+        var wage = 0.0
 
         if minutes == 0 {
-            wage = data.workingDays.count * hours * data.hourlyWage * weeks
+            wage = Double(data.workingDays.count) * hours * Double(data.hourlyWage) * weeks
         } else {
-            wage = data.workingDays.count * hours * minutes * data.hourlyWage * weeks
+            minutes /= 60
+            wage = Double(data.workingDays.count) * (hours + minutes) * Double(data.hourlyWage) * weeks
         }
 
-        wageLabel.text = (wage.toPriceFormat) + "원"
+        wageLabel.text = (Int(wage).toPriceFormat) + "원"
         
-        switch (data.id) % 3 {
+        switch (data.id+1) % 3 {
         case 0:
             contentView.backgroundColor = .albaidSubPink
             coffeeImageView.image = AlbaidImage.coffeePink

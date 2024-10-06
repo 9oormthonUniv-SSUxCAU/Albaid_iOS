@@ -45,9 +45,8 @@ final class ContractViewController: BaseViewController {
             router.popViewController()
         }
 
-        contractView.contractCollectionView.tapCell = { [weak self] in
-            guard let self else { return }
-            router.presentContractDetailViewController()
+        contractView.contractCollectionView.tapCell = { [self] id in
+            router.presentContractDetailViewController(id: id)
         }
 
         contractView.contractCollectionView.tapOption = { [weak self] in

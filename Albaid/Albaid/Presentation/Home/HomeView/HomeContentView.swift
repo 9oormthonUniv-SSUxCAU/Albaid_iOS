@@ -186,4 +186,16 @@ final class HomeContentView: BaseView {
         monthTotalWageView.layer.cornerRadius = 12
         yearTotalView.layer.cornerRadius = 12
     }
+
+    // MARK: Data
+    func setData(data: User) {
+        let today = Date()
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "M"
+        monthFormatter.locale = Locale(identifier: "ko_KR")
+        let monthToString = monthFormatter.string(from: today)
+
+        userLabel.text = data.name + "님을 위한 알바 내역"
+        monthTotalWageTextLabel.text = monthToString + "월 월급 총계"
+    }
 }

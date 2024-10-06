@@ -15,29 +15,12 @@ final class CardContentDetailView: BaseView {
         $0.distribution = .fillEqually
     }
 
-    private(set) var workPlaceStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "근무지", content: "투썸 플레이스 광교점")
-    }
-
-    private(set) var contractDateStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "계약기간", content: "2024.09.22~12.22")
-    }
-
-    private(set) var workingTimeStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "소정근로시간", content: "10:00 ~ 14:00 (4시간)")
-    }
-
-    private(set) var workingDayStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "근무 일자", content: "월 화 수")
-    }
-
-    private(set) var hourlyWageStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "시급", content: "9,860원")
-    }
-
-    private(set) var workingStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "업무 내용", content: "평일 미들 스텝")
-    }
+    private(set) var workPlaceStackView = UIStackView()
+    private(set) var contractDateStackView = UIStackView()
+    private(set) var workingTimeStackView = UIStackView()
+    private(set) var workingDayStackView = UIStackView()
+    private(set) var hourlyWageStackView = UIStackView()
+    private(set) var jobDescriptionStackView = UIStackView()
 
     private(set) var dividerView1 = DividerView(dividerType: .thin)
 
@@ -91,7 +74,7 @@ final class CardContentDetailView: BaseView {
                                             workingTimeStackView,
                                             workingDayStackView,
                                             hourlyWageStackView,
-                                            workingStackView)
+                                            jobDescriptionStackView)
 
         monthStackView.addArrangedSubviews(monthTimeStackView,
                                             monthWageStackView)
@@ -129,5 +112,47 @@ final class CardContentDetailView: BaseView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(102)
         }
+    }
+
+    // MARK: Data
+    func setData(data: Contract) {
+        workPlaceStackView.contractLabelStackView(title: "근무지", content: data.workplace)
+
+        var workingDaysText = data.contractStartDate.toDateString()
+        if data.contractEndDate != nil {
+            workingDaysText = data.contractStartDate.toDateString() + "~" + (data.contractEndDate?.toDateString() ?? "")
+        }
+
+        contractDateStackView.contractLabelStackView(title: "계약기간", content: workingDaysText)
+
+        let timeDifferenceInSeconds = data.standardWorkingEndTime.timeIntervalSince(data.standardWorkingStartTime)
+        let hours = Int(timeDifferenceInSeconds) / 3600
+        let minutes = (Int(timeDifferenceInSeconds) % 3600) / 60
+        let workingTimeText = data.standardWorkingStartTime.toTimeString() + "~" + data.standardWorkingEndTime.toTimeString()
+        var workingTotal = ""
+
+        if hours != 0 && minutes != 0 {
+            workingTotal = "\(hours)" + "시간 " + "\(minutes)" + "분"
+        } else if minutes == 0 {
+            workingTotal = "\(hours)" + "시간"
+        } else {
+            workingTotal = "\(minutes)" + "분"
+        }
+
+        workingTimeStackView.contractLabelStackView(title: "소정근로시간", content: workingTimeText + " (" + workingTotal + ")")
+
+        let days = data.workingDays.joined(separator: " ")
+        workingDayStackView.contractLabelStackView(title: "근무 일자", content: days)
+        hourlyWageStackView.contractLabelStackView(title: "시급", content: data.hourlyWage.toPriceFormat + "원")
+        jobDescriptionStackView.contractLabelStackView(title: "업무 내용", content: data.jobDescription)
+
+        setMonthData(data: data)
+        setTotalData(data: data)
+    }
+
+    private func setMonthData(data: Contract) {
+    }
+
+    private func setTotalData(data: Contract) {
     }
 }

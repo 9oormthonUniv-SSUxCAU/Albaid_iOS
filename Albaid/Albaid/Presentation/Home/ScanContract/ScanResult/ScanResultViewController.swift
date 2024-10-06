@@ -87,9 +87,9 @@ final class ScanResultViewController: BaseViewController {
         let topView = scanResultView.scanResultTopContentView
 
         if data.workplace != nil {
-            topView.workPlaceStackView.contractStackView(title: "근무지", content: data.workplace ?? "nil")
+            topView.workplaceStackView.contractStackView(title: "근무지", content: data.workplace ?? "nil")
         } else {
-            topView.workPlaceStackView.contractInputStackView(title: "근무지", content: "텍스트를 입력해주세요")
+            topView.workplaceStackView.contractInputStackView(title: "근무지", content: "텍스트를 입력해주세요")
         }
 
         if data.contractStartDate != nil && data.contractEndDate != nil {
@@ -119,9 +119,9 @@ final class ScanResultViewController: BaseViewController {
         }
 
         if data.jobDescription != nil {
-            topView.workingStackView.contractStackView(title: "업무 내용", content: data.jobDescription ?? "nil")
+            topView.jobDescriptionStackView.contractStackView(title: "업무 내용", content: data.jobDescription ?? "nil")
         } else {
-            topView.workingStackView.contractInputStackView(title: "업무 내용", content: "텍스트를 입력해주세요")
+            topView.jobDescriptionStackView.contractInputStackView(title: "업무 내용", content: "텍스트를 입력해주세요")
         }
 
         let bottomView = scanResultView.scanResultBottomContentView
@@ -179,5 +179,10 @@ final class ScanResultViewController: BaseViewController {
             scanResultView.safetyLabel.text = AlbaidString.danger
             scanResultView.safetyLabel.textColor = .albaidSafetyRed
         }
+    }
+
+    // MARK: Data binding
+    private func setData(data: Contract) {
+        scanResultView.scanResultTopContentView.setData(data: data)
     }
 }
