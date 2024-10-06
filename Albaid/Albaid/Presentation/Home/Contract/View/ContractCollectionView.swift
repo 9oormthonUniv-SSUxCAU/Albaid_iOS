@@ -11,7 +11,6 @@ final class ContractCollectionView: BaseView {
     
     // MARK: UI Components
     private(set) var contractNumberLabel = UILabel().then {
-        $0.text = "총 3건"
         $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
@@ -34,6 +33,7 @@ final class ContractCollectionView: BaseView {
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
     var tapOption: (() -> Void)?
+    var contract: [Contract]?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -56,6 +56,11 @@ final class ContractCollectionView: BaseView {
             $0.width.bottom.equalToSuperview()
         }
     }
+
+    func setData(data: [Contract]) {
+        contract = data
+        contractNumberLabel.text = "총 \(data.count)건"
+    }
 }
 
 extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -68,7 +73,7 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return contract?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,7 +81,10 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
             withReuseIdentifier: ContractCollectionViewCell.identifier,
             for: indexPath) as? ContractCollectionViewCell else { return UICollectionViewCell() }
 
-        cell.setData(data: User.dummyUser.card?[indexPath.row])
+        // TODO: dummy data
+        if let contract = contract?[indexPath.row] {
+            cell.setData(data: contract)
+        }
         cell.tapOption = self.tapOption
 
         return cell

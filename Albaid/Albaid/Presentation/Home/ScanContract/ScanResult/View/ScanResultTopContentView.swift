@@ -64,14 +64,14 @@ final class ScanResultTopContentView: BaseView {
         var workingTotal = ""
 
         if hours != 0 && minutes != 0 {
-            workingTotal = "\(hours)" + "시간 " + "\(minutes)" + "분"
+            workingTotal = "\(hours)시간 \(minutes)분"
         } else if minutes == 0 {
-            workingTotal = "\(hours)" + "시간"
+            workingTotal = "\(hours)시간"
         } else {
-            workingTotal = "\(minutes)" + "분"
+            workingTotal = "\(minutes)분"
         }
 
-        workingTimeStackView.contractLabelStackView(title: "소정근로시간", content: workingTimeText + " (" + workingTotal + ")")
+        workingTimeStackView.contractLabelStackView(title: "소정근로시간", content: workingTimeText + " (\(workingTotal))")
 
         let days = data.workingDays.joined(separator: " ")
         workingDayStackView.contractLabelStackView(title: "근무 일자", content: days)

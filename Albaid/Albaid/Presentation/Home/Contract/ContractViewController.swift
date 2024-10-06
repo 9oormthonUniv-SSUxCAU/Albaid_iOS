@@ -23,6 +23,7 @@ final class ContractViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setData(data: Contract.dummyContract)
         router.viewController = self
     }
     
@@ -60,5 +61,10 @@ final class ContractViewController: BaseViewController {
         setDefaultNavigationItem(title: "내 근로계약서",
                                  leftBarButton: backButton,
                                  rightBarButton: nil)
+    }
+
+    // MARK: Data binding
+    private func setData(data: [Contract]) {
+        contractView.contractCollectionView.setData(data: data)
     }
 }
