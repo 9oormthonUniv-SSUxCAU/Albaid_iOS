@@ -18,7 +18,7 @@ final class HomeCardCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var detailButton = UIImageView().then {
-        $0.image = AlbaidButton.detail.withTintColor(.white)
+        $0.image = AlbaidButton.detail.withTintColor(.albaidGray100)
     }
 
     private(set) var workplaceLabel = UILabel().then {

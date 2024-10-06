@@ -48,8 +48,8 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
         $0.font = UIFont(name: "Pretendard-Regular", size: 12)
     }
 
-    private(set) var detailButton = BaseButton().then {
-        $0.setImage(AlbaidButton.detail.withTintColor(.albaidGray100), for: .normal)
+    private(set) var detailButton = UIImageView().then {
+        $0.image = AlbaidButton.detail.withTintColor(.albaidGray100)
     }
 
     // MARK: init

@@ -18,8 +18,8 @@ final class MyPageCollectionViewCell: UICollectionViewCell {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
     }
 
-    private(set) var detailButton = BaseButton().then {
-        $0.setImage(AlbaidButton.detail.withTintColor(.albaidGray60), for: .normal)
+    private(set) var detailButton = UIImageView().then {
+        $0.image = AlbaidButton.detail.withTintColor(.albaidGray60)
     }
 
     // MARK: init
