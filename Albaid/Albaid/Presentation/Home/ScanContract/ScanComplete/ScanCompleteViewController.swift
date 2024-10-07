@@ -10,10 +10,6 @@ import UIKit
 final class ScanCompleteViewController: BaseViewController {
 
     // MARK: UI Components
-    private(set) var backButton = BaseButton().then {
-        $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
-    }
-
     private let scanCompleteView = ScanCompleteView()
 
     // MARK: Environment
@@ -41,11 +37,6 @@ final class ScanCompleteViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
-        backButton.tap = { [weak self] in
-            guard let self else { return }
-            router.popViewController()
-        }
-
         scanCompleteView.tapMemo = { [weak self] in
             guard let self else { return }
             router.presentScanMemoViewController()
@@ -55,7 +46,8 @@ final class ScanCompleteViewController: BaseViewController {
     // MARK: Navigation Item
     override func setNavigationItem() {
         setDefaultNavigationItem(title: nil,
-                                 leftBarButton: backButton,
+                                 leftBarButton: nil,
                                  rightBarButton: nil)
+        navigationItem.hidesBackButton = true
     }
 }

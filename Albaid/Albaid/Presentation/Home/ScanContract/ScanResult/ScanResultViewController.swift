@@ -10,10 +10,6 @@ import UIKit
 final class ScanResultViewController: BaseViewController {
 
     // MARK: UI Components
-    private(set) var backButton = BaseButton().then {
-        $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
-    }
-
     private(set) var closeButton = BaseButton().then {
         $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
     }
@@ -55,11 +51,6 @@ final class ScanResultViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
-        backButton.tap = { [weak self] in
-            guard let self else { return }
-            router.popViewController()
-        }
-
         closeButton.tap = { [weak self] in
             guard let self else { return }
             router.dismissViewController()
@@ -79,8 +70,9 @@ final class ScanResultViewController: BaseViewController {
     // MARK: Navigation Item
     override func setNavigationItem() {
         setDefaultNavigationItem(title: nil,
-                                 leftBarButton: backButton,
+                                 leftBarButton: nil,
                                  rightBarButton: closeButton)
+        navigationItem.hidesBackButton = true
     }
 
     private func setView(data: ContractInput) {
