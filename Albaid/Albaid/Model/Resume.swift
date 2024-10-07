@@ -62,9 +62,6 @@ extension Resume {
                                      totalCareerDuration: "2년 1개월 16일2",
                                      careers: [Career(companyName: "롯데리아 기흥점",
                                                       startDate: "23.08".toDate(format: "yy.MM") ?? Date(),
-                                                      endDate: "24.12".toDate(format: "yy.MM") ?? Date()),
-                                                Career(companyName: "CU 광교법원점",
-                                                       startDate: "24.09".toDate(format: "yy.MM") ?? Date(),
-                                                       endDate: "24.12".toDate(format: "yy.MM") ?? Date())
+                                                      endDate: "24.12".toDate(format: "yy.MM") ?? Date())
     ])]
 }

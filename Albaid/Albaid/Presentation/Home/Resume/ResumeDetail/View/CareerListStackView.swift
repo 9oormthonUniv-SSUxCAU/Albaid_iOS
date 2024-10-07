@@ -41,13 +41,18 @@ final class CareerListStackView: UIStackView {
                 let careerListView = CareerListView()
                 careerListView.careerContentView.setData(data: resume?.careers[i-1])
                 addArrangedSubview(careerListView)
-                
+
                 switch i {
-                case 1: careerListView.topLineView.removeFromSuperview()
+                case 1:
+                    careerListView.topLineView.removeFromSuperview()
                 case resume?.careers.count ?? 0:
                     careerListView.bottomLineView.removeFromSuperview()
                 default:
                     break
+                }
+
+                if resume?.careers.count == 1 {
+                    careerListView.bottomLineView.removeFromSuperview()
                 }
             }
         }
