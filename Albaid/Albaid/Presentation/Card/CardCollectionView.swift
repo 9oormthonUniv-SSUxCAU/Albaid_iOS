@@ -27,6 +27,7 @@ final class CardCollectionView: BaseView {
 
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
+    var tapAddCell: (() -> Void)?
     var tapGuide: (() -> Void)?
     var contract: [Contract]?
 
@@ -97,7 +98,11 @@ extension CardCollectionView: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tapCell?(indexPath.row)
+        if indexPath.row != contract?.count {
+            tapCell?(indexPath.row)
+        } else {
+            tapAddCell?()
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

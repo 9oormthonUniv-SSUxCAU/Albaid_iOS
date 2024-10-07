@@ -14,10 +14,24 @@ final class ContractViewController: BaseViewController {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
+    private(set) var closeButton = BaseButton().then {
+        $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
+    }
+
     private let contractView = ContractView()
 
     // MARK: Environment
     private let router = BaseRouter()
+
+    // MARK: Init
+    init(modal: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        setNavigationItem(modal: modal)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -46,6 +60,11 @@ final class ContractViewController: BaseViewController {
             router.popViewController()
         }
 
+        closeButton.tap = { [weak self] in
+            guard let self else { return }
+            router.dismissViewController()
+        }
+
         contractView.contractCollectionView.tapCell = { [self] id in
             router.presentContractDetailViewController(id: id)
         }
@@ -57,11 +76,16 @@ final class ContractViewController: BaseViewController {
     }
 
     // MARK: Navigation Item
-    override func setNavigationItem() {
-        setDefaultNavigationItem(title: "내 근로계약서",
-                                 leftBarButton: backButton,
-                                 rightBarButton: nil)
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    func setNavigationItem(modal: Bool) {
+        if !modal {
+            setDefaultNavigationItem(title: "내 근로계약서",
+                                     leftBarButton: backButton,
+                                     rightBarButton: nil)
+        } else {
+            setDefaultNavigationItem(title: "내 근로계약서",
+                                     leftBarButton: nil,
+                                     rightBarButton: closeButton)
+        }
     }
 
     // MARK: Data binding

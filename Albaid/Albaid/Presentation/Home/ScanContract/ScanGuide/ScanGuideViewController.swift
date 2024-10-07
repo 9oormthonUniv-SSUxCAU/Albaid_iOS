@@ -14,10 +14,24 @@ final class ScanGuideViewController: BaseViewController {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
+    private(set) var closeButton = BaseButton().then {
+        $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
+    }
+
     private let scanGuideView = ScanGuideView()
 
     // MARK: Environment
     private let router = BaseRouter()
+
+    // MARK: Init
+    init(modal: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        setNavigationItem(modal: modal)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -46,14 +60,24 @@ final class ScanGuideViewController: BaseViewController {
             router.popViewController()
         }
 
+        closeButton.tap = { [weak self] in
+            guard let self else { return }
+            router.dismissViewController()
+        }
+
         scanGuideView.tapCamera = { [weak self] in
             guard let self else { return }
             router.presentScanCameraViewController()
         }
     }
 
-    override func setNavigationItem() {
-        setDefaultNavigationItem(title: nil, leftBarButton: backButton, rightBarButton: nil)
+    // MARK: Navigation Item
+    func setNavigationItem(modal: Bool) {
+        if !modal {
+            setDefaultNavigationItem(title: nil, leftBarButton: backButton, rightBarButton: nil)
+        } else {
+            setDefaultNavigationItem(title: nil, leftBarButton: nil, rightBarButton: closeButton)
+        }
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 }

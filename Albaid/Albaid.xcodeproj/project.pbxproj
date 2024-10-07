@@ -54,6 +54,10 @@
 		9556DEAA2CA5D7BA00A43A78 /* TotalWageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */; };
 		9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */; };
 		9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */; };
+		956EC1772CB3C4530091C0B0 /* CardAddOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1762CB3C4530091C0B0 /* CardAddOptionModalViewController.swift */; };
+		956EC1792CB3C45C0091C0B0 /* CardAddOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */; };
+		956EC17B2CB3C4A90091C0B0 /* CardAddOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */; };
+		956EC17D2CB3D1800091C0B0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */; };
 		959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */; };
 		959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */; };
 		959F91CB2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */; };
@@ -183,6 +187,10 @@
 		9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWageViewController.swift; sourceTree = "<group>"; };
 		9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		956EC1762CB3C4530091C0B0 /* CardAddOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionModalViewController.swift; sourceTree = "<group>"; };
+		956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionModalView.swift; sourceTree = "<group>"; };
+		956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionView.swift; sourceTree = "<group>"; };
+		956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalView.swift; sourceTree = "<group>"; };
 		959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +440,7 @@
 				959F91D72CA9DA820047C7B2 /* CardCollectionViewHeader.swift */,
 				959F91D52CA9D8920047C7B2 /* CardCollectionView.swift */,
 				9556DE442CA5D2CC00A43A78 /* CardViewController.swift */,
+				956EC1752CB3C43C0091C0B0 /* Modal */,
 				959F91E22CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift */,
 				959F91E42CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift */,
 				9556DEA12CA5D77700A43A78 /* CardDetail */,
@@ -655,6 +664,17 @@
 				959F91F22CAE70E60047C7B2 /* NotificationDetailViewController.swift */,
 			);
 			path = Notification;
+			sourceTree = "<group>";
+		};
+		956EC1752CB3C43C0091C0B0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */,
+				956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */,
+				956EC1762CB3C4530091C0B0 /* CardAddOptionModalViewController.swift */,
+				956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		959F91C62CA9AA780047C7B2 /* Cell */ = {
@@ -916,6 +936,8 @@
 				959F91F12CAE70E00047C7B2 /* NotificationDetailView.swift in Sources */,
 				9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */,
 				9556DE3D2CA5D2B100A43A78 /* OnboardingViewController.swift in Sources */,
+				956EC1772CB3C4530091C0B0 /* CardAddOptionModalViewController.swift in Sources */,
+				956EC17D2CB3D1800091C0B0 /* GalleryViewController.swift in Sources */,
 				95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */,
 				9556DE4A2CA5D44A00A43A78 /* HomeView.swift in Sources */,
 				9556DE682CA5D54700A43A78 /* ScanResultView.swift in Sources */,
@@ -963,6 +985,7 @@
 				959F920C2CAFF8410047C7B2 /* CalendarBottomView.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
+				956EC17B2CB3C4A90091C0B0 /* CardAddOptionView.swift in Sources */,
 				95BCFFF32CA992B30001F339 /* OptionModalView.swift in Sources */,
 				95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */,
 				9556DE412CA5D2BF00A43A78 /* HomeViewController.swift in Sources */,
@@ -985,6 +1008,7 @@
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,
 				959F91EB2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift in Sources */,
 				9556DE5C2CA5D50200A43A78 /* ScanGuideView.swift in Sources */,
+				956EC1792CB3C45C0091C0B0 /* CardAddOptionModalView.swift in Sources */,
 				959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

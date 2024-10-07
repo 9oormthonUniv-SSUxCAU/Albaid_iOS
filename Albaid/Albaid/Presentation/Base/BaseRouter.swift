@@ -54,9 +54,16 @@ final class BaseRouter {
 
     /// scanContract
     func presentScanGuideViewController() {
-        let scanGuideViewController = ScanGuideViewController()
+        let scanGuideViewController = ScanGuideViewController(modal: false)
         scanGuideViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(scanGuideViewController, animated: true)
+    }
+
+    func presentScanGuideViewController2() {
+        let scanGuideViewController = ScanGuideViewController(modal: true)
+        let navigationController = UINavigationController(rootViewController: scanGuideViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
 
     func presentScanCameraViewController() {
@@ -67,6 +74,13 @@ final class BaseRouter {
     func presentScanLoadingViewController() {
         let scanLoadingViewController = ScanLoadingViewController()
         viewController?.navigationController?.pushViewController(scanLoadingViewController, animated: true)
+    }
+
+    func presentScanLoadingViewController2() {
+        let scanLoadingViewController = ScanLoadingViewController()
+        let navigationController = UINavigationController(rootViewController: scanLoadingViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
 
     func presentScanResultViewController(data: ContractInput) {
@@ -86,8 +100,15 @@ final class BaseRouter {
 
     /// scanContract
     func presentContractViewController() {
-        let contractViewController = ContractViewController()
+        let contractViewController = ContractViewController(modal: false)
         viewController?.navigationController?.pushViewController(contractViewController, animated: true)
+    }
+
+    func presentContractViewController2() {
+        let contractViewController = ContractViewController(modal: true)
+        let navigationController = UINavigationController(rootViewController: contractViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
 
     func presentContractDetailViewController(id: Int) {
@@ -155,6 +176,16 @@ final class BaseRouter {
         viewController?.present(cardGuideOptionModalViewController, animated: true, completion: nil)
     }
 
+    func presentCardAddOptionModalViewController() {
+        let cardAddOptionModalViewController = CardAddOptionModalViewController()
+        cardAddOptionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = cardAddOptionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 265 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(cardAddOptionModalViewController, animated: true, completion: nil)
+    }
+
     func presentCardDetailOptionModalViewController() {
         let cardDetailOptionModalViewController = CardDetailOptionModalViewController()
         cardDetailOptionModalViewController.modalPresentationStyle = .pageSheet
@@ -186,6 +217,12 @@ final class BaseRouter {
         guard let url = URL(string: url) else { return }
         let safariViewController = SFSafariViewController(url: url)
         viewController?.present(safariViewController, animated: true, completion: nil)
+    }
+
+    func presentGalleryViewController() {
+        let galleryViewController = GalleryViewController()
+        galleryViewController.modalPresentationStyle = .fullScreen
+        viewController?.present(galleryViewController, animated: true)
     }
 
     func popViewController() {

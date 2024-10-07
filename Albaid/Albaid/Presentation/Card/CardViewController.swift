@@ -46,6 +46,11 @@ class CardViewController: BaseViewController {
             router.presentCardDetailViewController(id: id)
         }
 
+        cardView.cardCollectionView.tapAddCell = { [weak self] in
+            guard let self else { return }
+            router.presentCardAddOptionModalViewController()
+        }
+
         cardView.cardCollectionView.tapGuide = { [weak self] in
             guard let self else { return }
             router.presentCardGuideOptionModalViewController()

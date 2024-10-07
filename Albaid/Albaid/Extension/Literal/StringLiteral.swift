@@ -65,6 +65,15 @@ struct AlbaidString {
                            원클릭으로 알바에이드에서 시작해 보세요!
                            """
 
+    /// add card option modal
+    static let addCardTitle1 = "근로계약서 촬영하기"
+    static let addCardTitle2 = "근로계약서 불러오기"
+    static let addCardTitle3 = "사진 불러오기"
+
+    static let addCardDescription1 = "스캔하면 정보 요약을 자동으로"
+    static let addCardDescription2 = "등록된 근로계약서로 쉽고 빠르게"
+    static let addCardDescription3 = "내 앨범에 있는 사진으로"
+
     /// url
     static let dangerDetail = "https://www.moel.go.kr/mainpop2.do"
 }
