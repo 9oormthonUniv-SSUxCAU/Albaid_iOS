@@ -71,6 +71,11 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(scanCameraViewController, animated: true)
     }
 
+    func presentScanCameraViewController2() {
+        let scanCameraViewController = ScanCameraViewController()
+        viewController?.navigationController?.pushViewController(scanCameraViewController, animated: true)
+    }
+
     func presentScanLoadingViewController() {
         let scanLoadingViewController = ScanLoadingViewController()
         viewController?.navigationController?.pushViewController(scanLoadingViewController, animated: true)
@@ -262,6 +267,10 @@ final class BaseRouter {
 
     func popViewController() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+
+    func popToRootViewController() {
+        viewController?.navigationController?.popToRootViewController(animated: true)
     }
 
     func dismissViewController() {

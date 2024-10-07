@@ -53,7 +53,12 @@ final class ScanResultViewController: BaseViewController {
     override func viewTransition() {
         closeButton.tap = { [weak self] in
             guard let self else { return }
-            router.dismissViewController()
+            router.popToRootViewController()
+        }
+
+        scanResultView.tapReScan = { [weak self] in
+            guard let self else { return }
+            router.presentScanCameraViewController2()
         }
 
         scanResultView.tapRegister = { [weak self] in

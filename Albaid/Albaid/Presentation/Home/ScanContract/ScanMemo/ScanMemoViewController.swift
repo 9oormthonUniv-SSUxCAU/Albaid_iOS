@@ -54,7 +54,7 @@ final class ScanMemoViewController: BaseViewController {
 
         confirmButton.tap = { [weak self] in
             guard let self else { return }
-            router.popViewController()
+            router.popToRootViewController()
         }
     }
 

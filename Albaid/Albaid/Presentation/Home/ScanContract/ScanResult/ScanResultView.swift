@@ -58,6 +58,7 @@ final class ScanResultView: BaseView {
     }
 
     // MARK: Properties
+    var tapReScan: (() -> Void)?
     var tapRegister: (() -> Void)?
     var tapDangerDetail: (() -> Void)?
 
@@ -137,8 +138,14 @@ final class ScanResultView: BaseView {
 
     // MARK: Event
     private func addButtonEvent() {
+        reScanButton.addTarget(self, action: #selector(handleReScanButton), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(handleRegisterButton), for: .touchUpInside)
         dangerDetailButton.addTarget(self, action: #selector(handleDangerDetailButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleReScanButton() {
+        tapReScan?()
     }
 
     @objc
