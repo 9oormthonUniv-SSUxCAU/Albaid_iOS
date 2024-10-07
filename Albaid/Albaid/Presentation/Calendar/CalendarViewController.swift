@@ -24,6 +24,7 @@ class CalendarViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setData(data: Contract.dummyContract)
         router.viewController = self
     }
 
@@ -48,9 +49,8 @@ class CalendarViewController: BaseViewController {
 //            router.presentModalViewController()
         }
 
-        calendarView.calendarView.tapDay = { [weak self] in
-            guard let self else { return }
-            router.presentCalendarWeeklyViewController()
+        calendarView.calendarView.tapDay  = { [self] month in
+            router.presentCalendarWeeklyViewController(month: month)
         }
 
         calendarView.calendarBottomView.tapOption = { [weak self] in
@@ -62,6 +62,13 @@ class CalendarViewController: BaseViewController {
     }
 
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "알바 캘린더", leftBarButton: nil, rightBarButton: addButton)
+        // TODO: fix
+        setDefaultNavigationItem(title: "알바 캘린더", leftBarButton: nil, rightBarButton: nil)
+    }
+
+    // MARK: Data binding
+    private func setData(data: [Contract]) {
+        calendarView.calendarBottomView.setData(data: data)
+        calendarView.setData(data: data)
     }
 }

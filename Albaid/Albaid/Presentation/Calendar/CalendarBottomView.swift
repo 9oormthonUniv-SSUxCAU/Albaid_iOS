@@ -34,12 +34,13 @@ final class CalendarBottomView: BaseView {
 
     // MARK: Properties
     var tapOption: (() -> Void)?
+    var contract: [Contract] = []
+    var todayContract: [Contract] = []
 
     // MARK: Configuration
     override func configureSubviews() {
         backgroundColor = .albaidGray100
         layer.cornerRadius = 12
-        setCollectionView()
 
         addSubview(todayLabel)
         addSubview(todayCardCollectionView)
@@ -57,6 +58,29 @@ final class CalendarBottomView: BaseView {
             $0.bottom.equalToSuperview().inset(5)
         }
     }
+
+    // MARK: Data binding
+    func setData(data: [Contract]) {
+        contract = data
+        getTodayContract()
+    }
+
+    func getTodayWeekday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "E"
+        return dateFormatter.string(from: Date())
+    }
+
+    func getTodayContract() {
+        let todayWeekday = getTodayWeekday()
+
+        todayContract = contract.filter { contract in
+            contract.workingDays.contains(todayWeekday)
+        }
+
+        setCollectionView()
+    }
 }
 
 extension CalendarBottomView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -68,7 +92,7 @@ extension CalendarBottomView: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return todayContract.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,10 +101,14 @@ extension CalendarBottomView: UICollectionViewDataSource, UICollectionViewDelega
             for: indexPath) as? TodayCardCollectionViewCell else { return UICollectionViewCell() }
 
         cell.tapOption = self.tapOption
-        cell.setData(data: User.dummyUser.card?[indexPath.row])
-        if indexPath.row == 1 {
-            cell.dividerView.isHidden = true
+        cell.setData(data: todayContract[indexPath.row])
+
+        if !todayContract.isEmpty {
+            if indexPath.row == todayContract.count - 1 {
+                cell.dividerView.isHidden = true
+            }
         }
+
         return cell
     }
 

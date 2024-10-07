@@ -28,12 +28,12 @@ final class CalendarWeeklyView: BaseView {
 
     // MARK: Properties
     var tapCell: (() -> Void)?
+    var year = 2024
+    var month = 0
 
     // MARK: Configuration
     override func configureSubviews() {
         backgroundColor = .albaidGray95
-
-        setCollectionView()
 
         addSubview(cardCollectionView)
     }
@@ -45,7 +45,24 @@ final class CalendarWeeklyView: BaseView {
         }
     }
 
-    func setData(data: User) {
+    func setData(month: Int, data: [Contract]) {
+        self.month = month
+        setCollectionView()
+    }
+
+    private func getNumberOfDaysInMonth(year: Int, month: Int) -> Int {
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: "ko_KR")
+        
+        let dateComponents = DateComponents(year: year, month: month)
+        
+        if let date = calendar.date(from: dateComponents) {
+            if let range = calendar.range(of: .day, in: .month, for: date) {
+                return range.count
+            }
+        }
+
+        return 0
     }
 }
 
@@ -63,7 +80,7 @@ extension CalendarWeeklyView: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return getNumberOfDaysInMonth(year: year, month: month)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,12 +88,18 @@ extension CalendarWeeklyView: UICollectionViewDataSource, UICollectionViewDelega
             withReuseIdentifier: CalendarWeeklyViewCell.identifier,
             for: indexPath) as? CalendarWeeklyViewCell else { return UICollectionViewCell() }
 
-        if indexPath.row != 0 {
-            cell.dayTextLabel.isHidden = true
+        let day = indexPath.section + 1
+        cell.dayLabel.text = "\(day)"
+
+        if indexPath.row == 0 {
+            cell.dayLabel.isHidden = false
+            cell.dayTextLabel.isHidden = false
+        } else {
             cell.dayLabel.isHidden = true
+            cell.dayTextLabel.isHidden = true
         }
 
-        cell.setData(data: User.dummyUser.card?[indexPath.row])
+//        cell.setData(data: contract)
 
         return cell
     }

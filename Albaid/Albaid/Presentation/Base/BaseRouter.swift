@@ -184,8 +184,8 @@ final class BaseRouter {
     }
 
     /// calendar
-    func presentCalendarWeeklyViewController() {
-        let calendarWeeklyViewController = CalendarWeeklyViewController()
+    func presentCalendarWeeklyViewController(month: Int) {
+        let calendarWeeklyViewController = CalendarWeeklyViewController(month: month)
         viewController?.navigationController?.pushViewController(calendarWeeklyViewController, animated: true)
     }
 

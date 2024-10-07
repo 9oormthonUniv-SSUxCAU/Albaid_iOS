@@ -104,6 +104,6 @@ final class CalendarWeeklyViewCell: UICollectionViewCell {
         }
     }
 
-    func setData(data: Card?) {
+    func setData(data: Contract) {
     }
 }

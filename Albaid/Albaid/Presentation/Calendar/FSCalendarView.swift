@@ -37,7 +37,7 @@ final class FSCalendarView: BaseView {
     }
 
     // MARK: Properties
-    var tapDay: (() -> Void)?
+    var tapDay: ((Int) -> Void)?
     var contract: [Contract] = []
     let dayMapping: [String: Int] = ["일": 1, "월": 2, "화": 3, "수": 4, "목": 5, "금": 6, "토": 7]
 
@@ -85,7 +85,6 @@ extension FSCalendarView: FSCalendarDelegate, FSCalendarDataSource {
 
         for con in contract {
             if con.workingDays.contains(weekday) {
-                print(con.workingDays)
                 var color: UIColor
                 var textColor: UIColor
 
@@ -121,7 +120,13 @@ extension FSCalendarView: FSCalendarDelegate, FSCalendarDataSource {
     }
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        tapDay?()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "M"
+        let string = dateFormatter.string(from: date)
+        let month = Int(string) ?? 0
+
+        tapDay?(month)
     }
 
     func getWeekday(from date: Date) -> String {

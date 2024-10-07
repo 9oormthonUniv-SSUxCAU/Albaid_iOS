@@ -23,6 +23,10 @@ final class CalendarView: BaseView {
     private(set) var calendarView = FSCalendarView()
     private(set) var calendarBottomView = CalendarBottomView()
 
+    // MARK: Properties
+    var contract: [Contract] = []
+    var todayContract: [Contract] = []
+
     // MARK: Configuration
     override func configureSubviews() {
         addSubview(scrollView)
@@ -57,12 +61,36 @@ final class CalendarView: BaseView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(620)
         }
+    }
+
+    // MARK: Data binding
+    func setData(data: [Contract]) {
+        contract = data
+        getTodayContract()
+    }
+
+    func getTodayWeekday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "E"
+        return dateFormatter.string(from: Date())
+    }
+
+    func getTodayContract() {
+        let todayWeekday = getTodayWeekday()
+
+        todayContract = contract.filter { contract in
+            contract.workingDays.contains(todayWeekday)
+        }
+
+        let cellHeight = 70
+        let cellCount = todayContract.count
 
         calendarBottomView.snp.makeConstraints {
             $0.top.equalTo(calendarView.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(20)
-            $0.height.equalTo(202)
+            $0.height.equalTo(62 + cellHeight * cellCount)
         }
     }
 }
