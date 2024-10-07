@@ -132,4 +132,92 @@ extension UIStackView {
 
         addArrangedSubviews(titleLabel, emptyView, isSuccessImageView)
     }
+
+    func setResumeTitle(title: String, isEssential: Bool, size: Int) {
+        axis = .horizontal
+        spacing = 1
+
+        let titleLabel = UILabel().then {
+            $0.text = title
+            $0.textColor = .albaidGray20
+            $0.font = UIFont(name: "Pretendard-SemiBold", size: CGFloat(size))
+        }
+
+        let isEssentialLabel = UILabel().then {
+            $0.text = "*"
+            $0.textColor = .albaidSubPink
+            $0.font = UIFont(name: "Pretendard-SemiBold", size: CGFloat(size))
+        }
+
+        let emptyView = UIView()
+
+        if isEssential {
+            addArrangedSubviews(titleLabel,
+                                isEssentialLabel,
+                                emptyView)
+        } else {
+            addArrangedSubviews(titleLabel)
+        }
+    }
+
+    func setResumeSubTitle(title: String, isEssential: Bool) {
+        axis = .horizontal
+        spacing = 1
+
+        let titleLabel = UILabel().then {
+            $0.text = title
+            $0.textColor = .albaidGray20
+            $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        }
+
+        let isEssentialLabel = UILabel().then {
+            $0.text = "*"
+            $0.textColor = .albaidSubPink
+            $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        }
+
+        let emptyView = UIView()
+
+        if isEssential {
+            addArrangedSubviews(titleLabel,
+                                isEssentialLabel,
+                                emptyView)
+        } else {
+            addArrangedSubviews(titleLabel)
+        }
+
+        snp.makeConstraints {
+            $0.width.equalTo(80)
+        }
+    }
+
+    func setResumeTitleWithTextField(title: String,
+                                     isEssential: Bool,
+                                     placeholder: String) {
+        axis = .horizontal
+        spacing = 20
+
+        let resumeSubTitleStackView = UIStackView().then {
+            $0.setResumeSubTitle(title: title, isEssential: isEssential)
+        }
+
+        let resumeTextField = UITextField().then {
+            $0.placeholder = placeholder
+            $0.backgroundColor = .albaidGray100
+            $0.layer.cornerRadius = 12
+            $0.addLeftPadding()
+            $0.customPlaceholder()
+        }
+
+        resumeTextField.snp.makeConstraints {
+            $0.height.equalTo(47)
+        }
+
+        snp.makeConstraints {
+            $0.height.equalTo(47)
+        }
+
+        addArrangedSubviews(resumeSubTitleStackView,
+                            resumeTextField)
+    }
 }

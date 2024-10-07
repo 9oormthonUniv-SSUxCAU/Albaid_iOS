@@ -34,8 +34,8 @@ final class GalleryViewController: BaseViewController {
     // MARK: Layout
     override func makeConstraints() {
         closeButton.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).inset(15)
-            $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(25)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(6)
+            $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
     }
 

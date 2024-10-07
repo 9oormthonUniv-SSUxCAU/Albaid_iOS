@@ -58,6 +58,8 @@
 		956EC1792CB3C45C0091C0B0 /* CardAddOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */; };
 		956EC17B2CB3C4A90091C0B0 /* CardAddOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */; };
 		956EC17D2CB3D1800091C0B0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */; };
+		956EC1802CB3E7480091C0B0 /* ResumeAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17F2CB3E7480091C0B0 /* ResumeAddView.swift */; };
+		956EC1822CB3E7530091C0B0 /* ResumeAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1812CB3E7530091C0B0 /* ResumeAddViewController.swift */; };
 		959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */; };
 		959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */; };
 		959F91CB2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */; };
@@ -191,6 +193,8 @@
 		956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionModalView.swift; sourceTree = "<group>"; };
 		956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionView.swift; sourceTree = "<group>"; };
 		956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		956EC17F2CB3E7480091C0B0 /* ResumeAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAddView.swift; sourceTree = "<group>"; };
+		956EC1812CB3E7530091C0B0 /* ResumeAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAddViewController.swift; sourceTree = "<group>"; };
 		959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalView.swift; sourceTree = "<group>"; };
 		959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalViewController.swift; sourceTree = "<group>"; };
@@ -586,6 +590,7 @@
 				9556DE8B2CA5D6ED00A43A78 /* ResumeView.swift */,
 				959F91C62CA9AA780047C7B2 /* Cell */,
 				9556DE8D2CA5D6F500A43A78 /* ResumeViewController.swift */,
+				956EC17E2CB3E73A0091C0B0 /* ResumeAdd */,
 				9556DE892CA5D6D900A43A78 /* ResumeEdit */,
 				9556DE8A2CA5D6DD00A43A78 /* ResumeDetail */,
 				959F91C72CA9B1DE0047C7B2 /* Modal */,
@@ -675,6 +680,15 @@
 				956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		956EC17E2CB3E73A0091C0B0 /* ResumeAdd */ = {
+			isa = PBXGroup;
+			children = (
+				956EC17F2CB3E7480091C0B0 /* ResumeAddView.swift */,
+				956EC1812CB3E7530091C0B0 /* ResumeAddViewController.swift */,
+			);
+			path = ResumeAdd;
 			sourceTree = "<group>";
 		};
 		959F91C62CA9AA780047C7B2 /* Cell */ = {
@@ -998,11 +1012,13 @@
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
 				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
 				959F92142CB04FA40047C7B2 /* Resume.swift in Sources */,
+				956EC1802CB3E7480091C0B0 /* ResumeAddView.swift in Sources */,
 				95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */,
 				9556DE9A2CA5D74E00A43A78 /* CalendarWeeklyView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
 				95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */,
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
+				956EC1822CB3E7530091C0B0 /* ResumeAddViewController.swift in Sources */,
 				9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */,
 				959F92162CB05A760047C7B2 /* UITextField+Extension.swift in Sources */,
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,

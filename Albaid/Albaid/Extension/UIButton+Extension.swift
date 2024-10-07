@@ -127,6 +127,40 @@ extension UIButton {
         }
     }
 
+    func setAddButton(title: String) {
+        layer.cornerRadius = 12
+
+        let componentStackView = UIStackView().then {
+            $0.axis = .horizontal
+        }
+
+        let optionImageView = UIImageView().then {
+            $0.image = AlbaidButton.add.withTintColor(.albaidGray60)
+        }
+
+        let optionTitleLabel = UILabel().then {
+            $0.text = title
+            $0.textColor = .albaidGray50
+            $0.font = UIFont(name: "Pretendard-Medium", size: 15)
+        }
+
+        addSubview(componentStackView)
+        componentStackView.addArrangedSubviews(optionImageView,
+                                               optionTitleLabel)
+
+        snp.makeConstraints {
+            $0.height.equalTo(48)
+        }
+
+        componentStackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+
+        optionImageView.snp.makeConstraints {
+            $0.height.width.equalTo(24)
+        }
+    }
+
     func setBorder() {
         layer.borderWidth = 1
         layer.borderColor = UIColor.albaidGray80.cgColor

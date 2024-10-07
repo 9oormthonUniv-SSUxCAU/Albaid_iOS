@@ -133,6 +133,14 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(resumeViewController, animated: true)
     }
 
+    func presentResumeAddViewController() {
+        let resumeAddViewController = ResumeAddViewController()
+        resumeAddViewController.modalPresentationStyle = .fullScreen
+//        resumeAddViewController.hidesBottomBarWhenPushed = true
+        viewController?.present(resumeAddViewController, animated: true, completion: nil)
+//        viewController?.navigationController?.pushViewController(resumeAddViewController, animated: true)
+    }
+
     func presentResumeOptionModalViewController() {
         let resumeOptionModalViewController = ResumeOptionModalViewController()
         resumeOptionModalViewController.modalPresentationStyle = .pageSheet
