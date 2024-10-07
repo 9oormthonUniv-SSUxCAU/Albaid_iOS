@@ -70,6 +70,7 @@ final class ResumeDetailViewController: BaseViewController {
         setDefaultNavigationItem(title: "내 이력서",
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: Data binding

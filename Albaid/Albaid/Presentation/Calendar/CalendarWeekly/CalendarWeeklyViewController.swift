@@ -46,6 +46,7 @@ class CalendarWeeklyViewController: BaseViewController {
     // MARK: Navigation Item
     override func setNavigationItem() {
         setDefaultNavigationItem(title: "9월", leftBarButton: backButton, rightBarButton: addButton)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: View Transition

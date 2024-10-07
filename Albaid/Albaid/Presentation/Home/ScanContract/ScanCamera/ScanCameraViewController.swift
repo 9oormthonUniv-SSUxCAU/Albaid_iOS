@@ -57,5 +57,6 @@ final class ScanCameraViewController: BaseViewController {
                                  leftBarButton: nil,
                                  rightBarButton: closeButton)
         navigationItem.hidesBackButton = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 }

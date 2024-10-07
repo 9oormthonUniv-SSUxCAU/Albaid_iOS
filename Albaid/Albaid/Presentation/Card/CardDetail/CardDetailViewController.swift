@@ -79,6 +79,7 @@ class CardDetailViewController: BaseViewController {
         setDefaultNavigationItem(title: nil,
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: Data binding

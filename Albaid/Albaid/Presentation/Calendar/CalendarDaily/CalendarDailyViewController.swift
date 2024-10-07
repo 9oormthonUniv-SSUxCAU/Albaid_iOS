@@ -42,6 +42,7 @@ class CalendarDailyViewController: BaseViewController {
     // MARK: Navigation Item
     override func setNavigationItem() {
         setDefaultNavigationItem(title: nil, leftBarButton: backButton, rightBarButton: nil)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: View Transition

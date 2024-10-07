@@ -54,5 +54,6 @@ final class ScanGuideViewController: BaseViewController {
 
     override func setNavigationItem() {
         setDefaultNavigationItem(title: nil, leftBarButton: backButton, rightBarButton: nil)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 }

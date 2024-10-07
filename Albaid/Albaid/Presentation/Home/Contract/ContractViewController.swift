@@ -61,6 +61,7 @@ final class ContractViewController: BaseViewController {
         setDefaultNavigationItem(title: "내 근로계약서",
                                  leftBarButton: backButton,
                                  rightBarButton: nil)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: Data binding
