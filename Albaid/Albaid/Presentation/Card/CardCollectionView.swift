@@ -114,6 +114,7 @@ extension CardCollectionView: UICollectionViewDataSource, UICollectionViewDelega
                     withReuseIdentifier: CardCollectionViewHeader.identifier,
                     for: indexPath) as? CardCollectionViewHeader else { return UICollectionReusableView() }
 
+                header.setData(data: User.dummyUser)
                 header.tapGuide = self.tapGuide
 
                 return header

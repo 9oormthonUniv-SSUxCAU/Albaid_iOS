@@ -18,7 +18,6 @@ final class CardCollectionViewHeader: UICollectionReusableView {
     }
 
     private let monthLabel = UILabel().then {
-        $0.text = "9월 월급 총계"
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
@@ -28,7 +27,6 @@ final class CardCollectionViewHeader: UICollectionReusableView {
     }
 
     private let userWageLabel = UILabel().then {
-        $0.text = "김알바님의 이번 달 월급"
         $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Regular", size: 14)
     }
@@ -113,5 +111,17 @@ final class CardCollectionViewHeader: UICollectionReusableView {
     @objc
     private func handleGuideButton() {
         tapGuide?()
+    }
+
+    // MARK: Data
+    func setData(data: User) {
+        let today = Date()
+        let monthFormatter = DateFormatter()
+        monthFormatter.dateFormat = "M"
+        monthFormatter.locale = Locale(identifier: "ko_KR")
+        let monthToString = monthFormatter.string(from: today)
+
+        userWageLabel.text = data.name + "님을 위한 알바 내역"
+        monthLabel.text = monthToString + "월 월급 총계"
     }
 }
