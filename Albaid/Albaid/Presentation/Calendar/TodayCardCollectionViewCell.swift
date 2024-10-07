@@ -13,7 +13,6 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
 
     // MARK: UI Components
     private(set) var colorView = UIView().then {
-        $0.backgroundColor = .albaidMainGreen
         $0.layer.cornerRadius = 2
     }
 
@@ -23,13 +22,11 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var titleLabel = UILabel().then {
-        $0.text = "알바 카드1"
         $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-Medium", size: 15)
     }
 
     private(set) var timeLabel = UILabel().then {
-        $0.text = "10:00 - 14:00"
         $0.textColor = .albaidGray50
         $0.font = UIFont(name: "Pretendard-Regular", size: 12)
     }
@@ -88,7 +85,26 @@ final class TodayCardCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func setData(data: Card?) {
+    func setData(data: Contract) {
+        var color: UIColor
+
+        switch (data.id + 1) % 3 {
+        case 0:
+            color = .albaidSubPink
+        case 1:
+            color = .albaidMainGreen
+        case 2:
+            color = .albaidSubBlue
+        default:
+            color = .albaidMainGreen
+        }
+
+        colorView.backgroundColor = color
+        titleLabel.text = "알바 카드\(data.id + 1)"
+        timeLabel.text = data.standardWorkingStartTime.toTimeString() + " - " + data.standardWorkingEndTime.toTimeString()
+
+        // TODO: Fix
+        optionButton.isHidden = true
     }
 
     // MARK: Event

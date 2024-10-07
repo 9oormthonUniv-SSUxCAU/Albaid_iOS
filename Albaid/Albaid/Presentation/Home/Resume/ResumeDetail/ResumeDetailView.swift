@@ -67,6 +67,7 @@ final class ResumeDetailView: BaseView {
     private(set) var careerListStackView = CareerListStackView()
 
     // MARK: Properties
+    var careers: [Career] = []
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -187,13 +188,6 @@ final class ResumeDetailView: BaseView {
             $0.top.equalTo(careerLabel.snp.bottom).offset(3)
             $0.leading.equalToSuperview().inset(20)
         }
-
-        careerListStackView.snp.makeConstraints {
-            $0.top.equalTo(careerContentLabel.snp.bottom).offset(7)
-            $0.height.equalTo(327)
-            $0.leading.equalToSuperview().inset(20)
-            $0.bottom.equalToSuperview().inset(40)
-        }
     }
 
     func setCareerListStackView() {
@@ -218,5 +212,19 @@ final class ResumeDetailView: BaseView {
 
         // TODO: fix
         careerContentLabel.text = "2년 3개월 11일"
+
+        careers = data.careers
+
+        let cellHeight = 94
+        let cellCount = careers.count
+        let spacing = 15
+        print(cellCount)
+
+        careerListStackView.snp.makeConstraints {
+            $0.top.equalTo(careerContentLabel.snp.bottom).offset(7)
+            $0.height.equalTo(cellHeight * cellCount + spacing * (cellCount - 1))
+            $0.leading.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(40)
+        }
     }
 }

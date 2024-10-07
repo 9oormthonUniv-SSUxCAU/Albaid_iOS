@@ -1,16 +1,16 @@
 //
-//  OptionModalViewController.swift
+//  DeletePopUpViewController.swift
 //  Albaid
 //
-//  Created by 박지윤 on 9/29/24.
+//  Created by 박지윤 on 10/8/24.
 //
 
 import UIKit
 
-final class OptionModalViewController: BaseViewController {
+final class DeletePopUpViewController: BaseViewController {
 
     // MARK: UI Components
-    private let optionModalView = OptionModalView()
+    private let deletePopUpView = DeletePopUpView()
 
     // MARK: Environment
     private let router = BaseRouter()
@@ -22,6 +22,7 @@ final class OptionModalViewController: BaseViewController {
     init(id: Int) {
         self.id = id
         super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = .clear
     }
 
     required init?(coder: NSCoder) {
@@ -36,26 +37,27 @@ final class OptionModalViewController: BaseViewController {
     
     // MARK: Configuration
     override func configureSubviews() {
-        view.addSubview(optionModalView)
+
+        view.addSubview(deletePopUpView)
     }
     
     // MARK: Layout
     override func makeConstraints() {
-        optionModalView.snp.makeConstraints {
+        deletePopUpView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
 
     // MARK: View Transition
     override func viewTransition() {
-        optionModalView.tapEdit = { [weak self] in
+        deletePopUpView.tapCancel = { [weak self] in
             guard let self else { return }
-            router.presentContractEditViewController(id: id)
+            router.dismissViewControllerWithoutAnimated()
         }
 
-        optionModalView.tapDelete = { [weak self] in
+        deletePopUpView.tapDelete = { [weak self] in
             guard let self else { return }
-            router.presentDeletePopUpViewController(id: id)
+            deleteContract(id: id)
         }
     }
 
@@ -63,7 +65,9 @@ final class OptionModalViewController: BaseViewController {
     override func setNavigationItem() {
     }
 
-    func dismissView() {
-        dismiss(animated: true)
+    // MARK: Network
+    private func deleteContract(id: Int) {
+        // if success
+        router.dismissViewControllerWithoutAnimated()
     }
 }

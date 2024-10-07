@@ -41,11 +41,14 @@ extension Resume {
                                      desiredJob: "베이커리, 카페, 편의점1",
                                      totalCareerDuration: "2년 1개월 16일1",
                                      careers: [Career(companyName: "투썸 플레이스 광교점",
-                                                     startDate: "24.09".toDate(format: "yy.MM") ?? Date(),
-                                                     endDate: "24.12".toDate(format: "yy.MM") ?? Date()),
+                                                     startDate: "23.01".toDate(format: "yy.MM") ?? Date(),
+                                                     endDate: "23.12".toDate(format: "yy.MM") ?? Date()),
                                                Career(companyName: "CU 광교호수공원점",
                                                                startDate: "24.01".toDate(format: "yy.MM") ?? Date(),
-                                                               endDate: "24.08".toDate(format: "yy.MM") ?? Date())]),
+                                                               endDate: "24.07".toDate(format: "yy.MM") ?? Date()),
+                                               Career(companyName: "GS 숭실대점",
+                                                               startDate: "24.8".toDate(format: "yy.MM") ?? Date(),
+                                                               endDate: "24.09".toDate(format: "yy.MM") ?? Date())]),
                               Resume(id: 1,
                                     name: "김알바",
                                      title: "[기본] 김알바12",
@@ -59,9 +62,6 @@ extension Resume {
                                      totalCareerDuration: "2년 1개월 16일2",
                                      careers: [Career(companyName: "롯데리아 기흥점",
                                                       startDate: "23.08".toDate(format: "yy.MM") ?? Date(),
-                                                      endDate: "24.12".toDate(format: "yy.MM") ?? Date()),
-                                                Career(companyName: "CU 광교법원점",
-                                                       startDate: "24.09".toDate(format: "yy.MM") ?? Date(),
-                                                       endDate: "24.12".toDate(format: "yy.MM") ?? Date())
+                                                      endDate: "24.12".toDate(format: "yy.MM") ?? Date())
     ])]
 }

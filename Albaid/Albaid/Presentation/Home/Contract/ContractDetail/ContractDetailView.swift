@@ -58,16 +58,6 @@ final class ContractDetailView: BaseView {
 
     private(set) var nonScrollView = UIView()
 
-    private(set) var buttonStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.spacing = 13
-        $0.distribution = .fillEqually
-    }
-
-    private(set) var registerContractButton = BaseButton().then {
-        $0.setTextButton(title: "이력서 등록하기", titleColor: .albaidGray20, backgroundColor: .albaidGray95)
-    }
-
     private(set) var registerCardButton = BaseButton().then {
         $0.setTextButton(title: "알바 카드 등록하기", titleColor: .albaidGray100, backgroundColor: .albaidGray20)
     }
@@ -91,9 +81,7 @@ final class ContractDetailView: BaseView {
         memoBackgroundView.addSubview(memoContentLabel)
 
         addSubview(nonScrollView)
-        nonScrollView.addSubview(buttonStackView)
-        buttonStackView.addArrangedSubviews(registerContractButton,
-                                            registerCardButton)
+        nonScrollView.addSubview(registerCardButton)
     }
     
     // MARK: Layout
@@ -169,9 +157,8 @@ final class ContractDetailView: BaseView {
             $0.bottom.equalToSuperview()
         }
 
-        buttonStackView.snp.makeConstraints {
+        registerCardButton.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(56)
         }
     }
 

@@ -117,8 +117,26 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
     }
 
-    func presentModalViewController() {
-        let optionModalViewController = OptionModalViewController()
+    func presentContractEditViewController(id: Int) {
+        let contractEditViewController = ContractEditViewController(id: id)
+        let navigationController = UINavigationController(rootViewController: contractEditViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
+    }
+
+    func presentDeletePopUpViewController(id: Int) {
+        let deletePopUpViewController = DeletePopUpViewController(id: id)
+        deletePopUpViewController.modalPresentationStyle = .overFullScreen
+        viewController?.present(deletePopUpViewController, animated: false)
+
+//        let deletePopUpViewController = DeletePopUpViewController(id: id)
+//        let navigationController = UINavigationController(rootViewController: deletePopUpViewController)
+//        navigationController.modalPresentationStyle = .fullScreen
+//        viewController?.present(navigationController, animated: true, completion: nil)
+    }
+
+    func presentModalViewController(id: Int) {
+        let optionModalViewController = OptionModalViewController(id: id)
         optionModalViewController.modalPresentationStyle = .pageSheet
         if let sheet = optionModalViewController.sheetPresentationController {
             sheet.detents = [.custom(resolver: { _ in 180 })]
@@ -127,10 +145,27 @@ final class BaseRouter {
         viewController?.present(optionModalViewController, animated: true, completion: nil)
     }
 
+    /// contract
+    func presentContractAddModalViewController() {
+        let contractAddModalViewController = ContractAddModalViewController()
+        contractAddModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = contractAddModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 265 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(contractAddModalViewController, animated: true, completion: nil)
+    }
+
     /// resume
     func presentResumeViewController() {
         let resumeViewController = ResumeViewController()
         viewController?.navigationController?.pushViewController(resumeViewController, animated: true)
+    }
+
+    func presentResumeAddViewController() {
+        let resumeAddViewController = ResumeAddViewController()
+        resumeAddViewController.modalPresentationStyle = .fullScreen
+        viewController?.present(resumeAddViewController, animated: true, completion: nil)
     }
 
     func presentResumeOptionModalViewController() {
@@ -149,8 +184,8 @@ final class BaseRouter {
     }
 
     /// calendar
-    func presentCalendarWeeklyViewController() {
-        let calendarWeeklyViewController = CalendarWeeklyViewController()
+    func presentCalendarWeeklyViewController(month: Int) {
+        let calendarWeeklyViewController = CalendarWeeklyViewController(month: month)
         viewController?.navigationController?.pushViewController(calendarWeeklyViewController, animated: true)
     }
 
@@ -231,5 +266,9 @@ final class BaseRouter {
 
     func dismissViewController() {
         viewController?.dismiss(animated: true)
+    }
+
+    func dismissViewControllerWithoutAnimated() {
+        viewController?.dismiss(animated: false)
     }
 }

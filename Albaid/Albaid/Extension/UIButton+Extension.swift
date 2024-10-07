@@ -40,8 +40,22 @@ extension UIButton {
 
     func setTextButton(title: String, titleColor: UIColor, backgroundColor: UIColor) {
         layer.cornerRadius = 12
+
         snp.makeConstraints {
             $0.height.equalTo(56)
+        }
+
+        setTitle(title, for: .normal)
+        setTitleColor(titleColor, for: .normal)
+        titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        self.backgroundColor = backgroundColor
+    }
+
+    func setPopUpButton(title: String, titleColor: UIColor, backgroundColor: UIColor) {
+        layer.cornerRadius = 12
+
+        snp.makeConstraints {
+            $0.height.equalTo(50)
         }
 
         setTitle(title, for: .normal)
@@ -123,6 +137,40 @@ extension UIButton {
 
         detailImageView.snp.makeConstraints {
             $0.centerY.trailing.equalToSuperview()
+            $0.height.width.equalTo(24)
+        }
+    }
+
+    func setAddButton(title: String) {
+        layer.cornerRadius = 12
+
+        let componentStackView = UIStackView().then {
+            $0.axis = .horizontal
+        }
+
+        let optionImageView = UIImageView().then {
+            $0.image = AlbaidButton.add.withTintColor(.albaidGray60)
+        }
+
+        let optionTitleLabel = UILabel().then {
+            $0.text = title
+            $0.textColor = .albaidGray50
+            $0.font = UIFont(name: "Pretendard-Medium", size: 15)
+        }
+
+        addSubview(componentStackView)
+        componentStackView.addArrangedSubviews(optionImageView,
+                                               optionTitleLabel)
+
+        snp.makeConstraints {
+            $0.height.equalTo(48)
+        }
+
+        componentStackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
+
+        optionImageView.snp.makeConstraints {
             $0.height.width.equalTo(24)
         }
     }

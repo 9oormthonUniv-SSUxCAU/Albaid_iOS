@@ -32,7 +32,7 @@ final class ContractCollectionView: BaseView {
 
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
-    var tapOption: (() -> Void)?
+    var tapOption: ((Int) -> Void)?
     var contract: [Contract]?
 
     // MARK: Configuration
@@ -86,8 +86,12 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
         if let contract = contract?[indexPath.row] {
             cell.setCellData(data: contract)
         }
-        cell.tapOption = self.tapOption
 
+        cell.index = indexPath.row
+        cell.tapOption = { [weak self] index in
+            guard let self = self else { return }
+            self.tapOption?(index)
+        }
         return cell
     }
 

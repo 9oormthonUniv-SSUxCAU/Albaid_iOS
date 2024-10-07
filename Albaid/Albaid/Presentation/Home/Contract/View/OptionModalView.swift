@@ -34,9 +34,13 @@ final class OptionModalView: BaseView {
     }
 
     // MARK: Properties
+    var tapEdit: (() -> Void)?
+    var tapDelete: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
+        addButtonEvent()
+
         addSubview(modalDividerView)
         addSubview(optionTitleLabel)
         addSubview(dividerView)
@@ -73,5 +77,20 @@ final class OptionModalView: BaseView {
             $0.top.equalTo(editButton.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
+    }
+
+    private func addButtonEvent() {
+        editButton.addTarget(self, action: #selector(handleEditButton), for: .touchUpInside)
+        deleteButton.addTarget(self, action: #selector(handleDeleteButton), for: .touchUpInside)
+    }
+
+    @objc
+    private func handleEditButton() {
+        tapEdit?()
+    }
+
+    @objc
+    private func handleDeleteButton() {
+        tapDelete?()
     }
 }

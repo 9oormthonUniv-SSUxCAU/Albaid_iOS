@@ -23,6 +23,10 @@ final class CalendarView: BaseView {
     private(set) var calendarView = FSCalendarView()
     private(set) var calendarBottomView = CalendarBottomView()
 
+    // MARK: Properties
+    var contract: [Contract] = []
+    var todayContract: [Contract] = []
+
     // MARK: Configuration
     override func configureSubviews() {
         addSubview(scrollView)
@@ -33,7 +37,6 @@ final class CalendarView: BaseView {
         calendarBackgroundView.addSubview(calendarView)
 
         entireView.addSubview(calendarBottomView)
-        calendarView.backgroundColor = .yellow
         backgroundColor = .albaidGray95
     }
 
@@ -50,20 +53,44 @@ final class CalendarView: BaseView {
 
         calendarBackgroundView.snp.makeConstraints {
             $0.top.width.equalToSuperview()
-            $0.height.equalTo(645)
+            $0.height.equalTo(630)
         }
 
         calendarView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(25)
+            $0.top.equalToSuperview().inset(10)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(620)
         }
+    }
+
+    // MARK: Data binding
+    func setData(data: [Contract]) {
+        contract = data
+        getTodayContract()
+    }
+
+    func getTodayWeekday() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "E"
+        return dateFormatter.string(from: Date())
+    }
+
+    func getTodayContract() {
+        let todayWeekday = getTodayWeekday()
+
+        todayContract = contract.filter { contract in
+            contract.workingDays.contains(todayWeekday)
+        }
+
+        let cellHeight = 70
+        let cellCount = todayContract.count
 
         calendarBottomView.snp.makeConstraints {
             $0.top.equalTo(calendarView.snp.bottom).offset(20)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(20)
-            $0.height.equalTo(202)
+            $0.height.equalTo(62 + cellHeight * cellCount)
         }
     }
 }

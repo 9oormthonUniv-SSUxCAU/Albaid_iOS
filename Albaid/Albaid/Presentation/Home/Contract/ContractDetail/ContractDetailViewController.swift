@@ -65,7 +65,7 @@ final class ContractDetailViewController: BaseViewController {
 
         optionButton.tap = { [weak self] in
             guard let self else { return }
-            router.presentModalViewController()
+            router.presentModalViewController(id: id)
         }
     }
 

@@ -14,6 +14,10 @@ final class ResumeViewController: BaseViewController {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
+    private let addButton = BaseButton().then {
+        $0.setImage(AlbaidButton.add, for: .normal)
+    }
+
     private let resumeView = ResumeView()
 
     // MARK: Environment
@@ -46,6 +50,11 @@ final class ResumeViewController: BaseViewController {
             router.popViewController()
         }
 
+        addButton.tap = { [weak self] in
+            guard let self else { return }
+            router.presentResumeAddViewController()
+        }
+
         resumeView.tapCell = { [self] id in
             router.presentResumeDetailViewController(id: id)
         }
@@ -60,7 +69,7 @@ final class ResumeViewController: BaseViewController {
     override func setNavigationItem() {
         setDefaultNavigationItem(title: "이력서",
                                  leftBarButton: backButton,
-                                 rightBarButton: nil)
+                                 rightBarButton: addButton)
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
