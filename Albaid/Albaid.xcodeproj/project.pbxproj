@@ -64,6 +64,8 @@
 		956EC18B2CB431BD0091C0B0 /* ContractAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC18A2CB431BD0091C0B0 /* ContractAddViewController.swift */; };
 		956EC18E2CB4323F0091C0B0 /* ContractAddModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC18D2CB4323F0091C0B0 /* ContractAddModalView.swift */; };
 		956EC1902CB432460091C0B0 /* ContractAddModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC18F2CB432460091C0B0 /* ContractAddModalViewController.swift */; };
+		956EC1922CB43A9E0091C0B0 /* DeletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */; };
+		956EC1942CB43AB60091C0B0 /* DeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */; };
 		959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */; };
 		959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */; };
 		959F91CB2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */; };
@@ -203,6 +205,8 @@
 		956EC18A2CB431BD0091C0B0 /* ContractAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAddViewController.swift; sourceTree = "<group>"; };
 		956EC18D2CB4323F0091C0B0 /* ContractAddModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAddModalView.swift; sourceTree = "<group>"; };
 		956EC18F2CB432460091C0B0 /* ContractAddModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAddModalViewController.swift; sourceTree = "<group>"; };
+		956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpViewController.swift; sourceTree = "<group>"; };
+		956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpView.swift; sourceTree = "<group>"; };
 		959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalView.swift; sourceTree = "<group>"; };
 		959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalViewController.swift; sourceTree = "<group>"; };
@@ -800,6 +804,8 @@
 				95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */,
 				95BCFFF22CA992B30001F339 /* OptionModalView.swift */,
 				95BCFFF62CA99E100001F339 /* OptionModalViewController.swift */,
+				956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */,
+				956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1037,6 +1043,7 @@
 				95BCFFEA2CA86BBF0001F339 /* ScanResultTopContentView.swift in Sources */,
 				959F91D62CA9D8920047C7B2 /* CardCollectionView.swift in Sources */,
 				9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */,
+				956EC1922CB43A9E0091C0B0 /* DeletePopUpViewController.swift in Sources */,
 				959F92122CB0250C0047C7B2 /* OnboardingView.swift in Sources */,
 				959F91F52CAE779D0047C7B2 /* NotificationEmptyView.swift in Sources */,
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
@@ -1058,6 +1065,7 @@
 				9556DE5C2CA5D50200A43A78 /* ScanGuideView.swift in Sources */,
 				956EC1792CB3C45C0091C0B0 /* CardAddOptionModalView.swift in Sources */,
 				959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */,
+				956EC1942CB43AB60091C0B0 /* DeletePopUpView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

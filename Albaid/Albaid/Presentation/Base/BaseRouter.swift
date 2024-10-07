@@ -124,6 +124,17 @@ final class BaseRouter {
         viewController?.present(navigationController, animated: true, completion: nil)
     }
 
+    func presentDeletePopUpViewController(id: Int) {
+        let deletePopUpViewController = DeletePopUpViewController(id: id)
+        deletePopUpViewController.modalPresentationStyle = .overFullScreen
+        viewController?.present(deletePopUpViewController, animated: false)
+
+//        let deletePopUpViewController = DeletePopUpViewController(id: id)
+//        let navigationController = UINavigationController(rootViewController: deletePopUpViewController)
+//        navigationController.modalPresentationStyle = .fullScreen
+//        viewController?.present(navigationController, animated: true, completion: nil)
+    }
+
     func presentModalViewController(id: Int) {
         let optionModalViewController = OptionModalViewController(id: id)
         optionModalViewController.modalPresentationStyle = .pageSheet
@@ -255,5 +266,9 @@ final class BaseRouter {
 
     func dismissViewController() {
         viewController?.dismiss(animated: true)
+    }
+
+    func dismissViewControllerWithoutAnimated() {
+        viewController?.dismiss(animated: false)
     }
 }

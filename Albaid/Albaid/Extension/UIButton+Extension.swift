@@ -40,8 +40,22 @@ extension UIButton {
 
     func setTextButton(title: String, titleColor: UIColor, backgroundColor: UIColor) {
         layer.cornerRadius = 12
+
         snp.makeConstraints {
             $0.height.equalTo(56)
+        }
+
+        setTitle(title, for: .normal)
+        setTitleColor(titleColor, for: .normal)
+        titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        self.backgroundColor = backgroundColor
+    }
+
+    func setPopUpButton(title: String, titleColor: UIColor, backgroundColor: UIColor) {
+        layer.cornerRadius = 12
+
+        snp.makeConstraints {
+            $0.height.equalTo(50)
         }
 
         setTitle(title, for: .normal)
