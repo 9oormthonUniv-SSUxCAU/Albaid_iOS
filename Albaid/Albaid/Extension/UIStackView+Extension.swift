@@ -207,6 +207,7 @@ extension UIStackView {
             $0.layer.cornerRadius = 12
             $0.addLeftPadding()
             $0.customPlaceholder()
+            $0.font = UIFont(name: "Pretendard-Medium", size: 15)
         }
 
         resumeTextField.snp.makeConstraints {

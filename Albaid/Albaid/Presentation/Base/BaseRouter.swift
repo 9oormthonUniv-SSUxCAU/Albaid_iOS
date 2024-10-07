@@ -117,14 +117,32 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
     }
 
-    func presentModalViewController() {
-        let optionModalViewController = OptionModalViewController()
+    func presentContractEditViewController(id: Int) {
+        let contractEditViewController = ContractEditViewController(id: id)
+        let navigationController = UINavigationController(rootViewController: contractEditViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
+    }
+
+    func presentModalViewController(id: Int) {
+        let optionModalViewController = OptionModalViewController(id: id)
         optionModalViewController.modalPresentationStyle = .pageSheet
         if let sheet = optionModalViewController.sheetPresentationController {
             sheet.detents = [.custom(resolver: { _ in 180 })]
             sheet.preferredCornerRadius = 12
         }
         viewController?.present(optionModalViewController, animated: true, completion: nil)
+    }
+
+    /// contract
+    func presentContractAddModalViewController() {
+        let contractAddModalViewController = ContractAddModalViewController()
+        contractAddModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = contractAddModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 265 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(contractAddModalViewController, animated: true, completion: nil)
     }
 
     /// resume
@@ -136,9 +154,7 @@ final class BaseRouter {
     func presentResumeAddViewController() {
         let resumeAddViewController = ResumeAddViewController()
         resumeAddViewController.modalPresentationStyle = .fullScreen
-//        resumeAddViewController.hidesBottomBarWhenPushed = true
         viewController?.present(resumeAddViewController, animated: true, completion: nil)
-//        viewController?.navigationController?.pushViewController(resumeAddViewController, animated: true)
     }
 
     func presentResumeOptionModalViewController() {

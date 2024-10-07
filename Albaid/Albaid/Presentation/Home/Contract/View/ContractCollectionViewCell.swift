@@ -34,7 +34,8 @@ final class ContractCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: Properties
-    var tapOption: (() -> Void)?
+    var tapOption: ((Int) -> Void)?
+    var index: Int = 0
 
     // MARK: init
     override init(frame: CGRect) {
@@ -96,6 +97,6 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     @objc
     private func handleOptionButton() {
-        tapOption?()
+        tapOption?(index)
     }
 }

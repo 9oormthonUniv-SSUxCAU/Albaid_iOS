@@ -37,6 +37,7 @@ final class ResumeAddView: BaseView {
         $0.layer.cornerRadius = 12
         $0.addLeftPadding()
         $0.customPlaceholder()
+        $0.font = UIFont(name: "Pretendard-Medium", size: 15)
     }
 
     private(set) var dividerView1 = DividerView(dividerType: .thin)
@@ -48,6 +49,11 @@ final class ResumeAddView: BaseView {
     private(set) var summaryTextView = UITextView().then {
         $0.backgroundColor = .albaidGray100
         $0.layer.cornerRadius = 12
+        $0.font = UIFont(name: "Pretendard-Medium", size: 15)
+        $0.text = "간단한 소개글을 입력해 주세요"
+        $0.backgroundColor = .albaidGray100
+        $0.textColor = .albaidGray60
+        $0.contentInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     }
 
     private(set) var dividerView2 = DividerView(dividerType: .thin)
@@ -135,6 +141,7 @@ final class ResumeAddView: BaseView {
     override func configureSubviews() {
         setData()
         addButtonEvent()
+        setTextView()
 
         addSubview(closeButton)
         addSubview(scrollView)
@@ -319,5 +326,24 @@ final class ResumeAddView: BaseView {
     @objc
     private func handleCloseButton() {
         tapClose?()
+    }
+}
+
+extension ResumeAddView: UITextViewDelegate {
+    private func setTextView() {
+        summaryTextView.delegate = self
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard textView.textColor == .albaidGray60 else { return }
+        textView.textColor = .label
+        textView.text = nil
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "간단한 소개글을 입력해 주세요"
+            textView.textColor = .albaidGray60
+        }
     }
 }

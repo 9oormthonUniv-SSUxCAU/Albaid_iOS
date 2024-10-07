@@ -14,6 +14,10 @@ final class ContractViewController: BaseViewController {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
+    private(set) var addButton = BaseButton().then {
+        $0.setImage(AlbaidButton.add.withTintColor(.albaidGray30), for: .normal)
+    }
+
     private(set) var closeButton = BaseButton().then {
         $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
     }
@@ -60,6 +64,12 @@ final class ContractViewController: BaseViewController {
             router.popViewController()
         }
 
+        // TODO: fix
+        addButton.tap = { [weak self] in
+            guard let self else { return }
+            router.presentContractAddModalViewController()
+        }
+
         closeButton.tap = { [weak self] in
             guard let self else { return }
             router.dismissViewController()
@@ -69,9 +79,8 @@ final class ContractViewController: BaseViewController {
             router.presentContractDetailViewController(id: id)
         }
 
-        contractView.contractCollectionView.tapOption = { [weak self] in
-            guard let self else { return }
-            router.presentModalViewController()
+        contractView.contractCollectionView.tapOption = { [self] id in
+            router.presentModalViewController(id: id)
         }
     }
 
