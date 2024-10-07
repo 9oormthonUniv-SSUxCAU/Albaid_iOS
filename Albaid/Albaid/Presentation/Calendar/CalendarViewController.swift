@@ -57,6 +57,8 @@ class CalendarViewController: BaseViewController {
             guard let self else { return }
 //            router.presentModalViewController()
         }
+
+        calendarView.calendarView.setData(data: Contract.dummyContract)
     }
 
     override func setNavigationItem() {

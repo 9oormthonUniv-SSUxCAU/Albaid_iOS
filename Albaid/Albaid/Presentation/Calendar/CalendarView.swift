@@ -33,7 +33,6 @@ final class CalendarView: BaseView {
         calendarBackgroundView.addSubview(calendarView)
 
         entireView.addSubview(calendarBottomView)
-        calendarView.backgroundColor = .yellow
         backgroundColor = .albaidGray95
     }
 
@@ -50,11 +49,11 @@ final class CalendarView: BaseView {
 
         calendarBackgroundView.snp.makeConstraints {
             $0.top.width.equalToSuperview()
-            $0.height.equalTo(645)
+            $0.height.equalTo(630)
         }
 
         calendarView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(25)
+            $0.top.equalToSuperview().inset(10)
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(620)
         }

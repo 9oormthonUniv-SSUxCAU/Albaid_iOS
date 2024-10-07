@@ -66,6 +66,7 @@
 		956EC1902CB432460091C0B0 /* ContractAddModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC18F2CB432460091C0B0 /* ContractAddModalViewController.swift */; };
 		956EC1922CB43A9E0091C0B0 /* DeletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */; };
 		956EC1942CB43AB60091C0B0 /* DeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */; };
+		956EC1982CB44B0D0091C0B0 /* CalendarCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1972CB44B0D0091C0B0 /* CalendarCardView.swift */; };
 		959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */; };
 		959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */; };
 		959F91CB2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */; };
@@ -207,6 +208,7 @@
 		956EC18F2CB432460091C0B0 /* ContractAddModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAddModalViewController.swift; sourceTree = "<group>"; };
 		956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpViewController.swift; sourceTree = "<group>"; };
 		956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpView.swift; sourceTree = "<group>"; };
+		956EC1972CB44B0D0091C0B0 /* CalendarCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardView.swift; sourceTree = "<group>"; };
 		959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalView.swift; sourceTree = "<group>"; };
 		959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				959F920B2CAFF8410047C7B2 /* CalendarBottomView.swift */,
 				959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */,
 				959F92072CAFC6DB0047C7B2 /* FSCalendarViewCell.swift */,
+				956EC1972CB44B0D0091C0B0 /* CalendarCardView.swift */,
 				959F92052CAF9A050047C7B2 /* TodayCardCollectionViewCell.swift */,
 				9556DE422CA5D2C600A43A78 /* CalendarViewController.swift */,
 				9556DE972CA5D72E00A43A78 /* CalendarWeekly */,
@@ -1019,6 +1022,7 @@
 				959F91DD2CAA3EE00047C7B2 /* CardDetailOptionModalViewController.swift in Sources */,
 				9556DE702CA5D58200A43A78 /* ScanMemoView.swift in Sources */,
 				9556DEAA2CA5D7BA00A43A78 /* TotalWageViewController.swift in Sources */,
+				956EC1982CB44B0D0091C0B0 /* CalendarCardView.swift in Sources */,
 				9556DE552CA5D49700A43A78 /* LoginViewController.swift in Sources */,
 				95BCFFEF2CA974DF0001F339 /* ContractCollectionView.swift in Sources */,
 				9556DE602CA5D51500A43A78 /* ScanCameraView.swift in Sources */,

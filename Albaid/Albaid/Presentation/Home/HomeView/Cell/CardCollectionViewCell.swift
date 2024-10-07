@@ -130,8 +130,8 @@ final class CardCollectionViewCell: UICollectionViewCell {
         }
 
         wageLabel.text = (Int(wage).toPriceFormat) + "원"
-        
-        switch (data.id+1) % 3 {
+
+        switch (data.id + 1) % 3 {
         case 0:
             contentView.backgroundColor = .albaidSubPink
             coffeeImageView.image = AlbaidImage.coffeePink

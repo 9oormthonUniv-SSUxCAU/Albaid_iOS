@@ -64,7 +64,7 @@ extension Contract {
                                          contractEndDate: "2024.09.23".toDate(format: "yyyy.MM.dd") ?? Date(),
                                          standardWorkingStartTime: "12:00".toTimeDate() ?? Date(),
                                          standardWorkingEndTime: "14:30".toTimeDate() ?? Date(),
-                                         workingDays: ["목", "금"],
+                                         workingDays: ["수", "목", "금"],
                                          hourlyWage: 9860,
                                          jobDescription: "상품 판매 및 매장관리",
                                          isPaidAnnualLeave: false,
