@@ -14,15 +14,30 @@ final class ContractViewController: BaseViewController {
         $0.setImage(AlbaidButton.back.withTintColor(.albaidGray30), for: .normal)
     }
 
+    private(set) var closeButton = BaseButton().then {
+        $0.setImage(AlbaidButton.close.withTintColor(.albaidGray30), for: .normal)
+    }
+
     private let contractView = ContractView()
 
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Init
+    init(modal: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        setNavigationItem(modal: modal)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setData(data: Contract.dummyContract)
         router.viewController = self
     }
     
@@ -45,9 +60,13 @@ final class ContractViewController: BaseViewController {
             router.popViewController()
         }
 
-        contractView.contractCollectionView.tapCell = { [weak self] in
+        closeButton.tap = { [weak self] in
             guard let self else { return }
-            router.presentContractDetailViewController()
+            router.dismissViewController()
+        }
+
+        contractView.contractCollectionView.tapCell = { [self] id in
+            router.presentContractDetailViewController(id: id)
         }
 
         contractView.contractCollectionView.tapOption = { [weak self] in
@@ -57,9 +76,20 @@ final class ContractViewController: BaseViewController {
     }
 
     // MARK: Navigation Item
-    override func setNavigationItem() {
-        setDefaultNavigationItem(title: "내 근로계약서",
-                                 leftBarButton: backButton,
-                                 rightBarButton: nil)
+    func setNavigationItem(modal: Bool) {
+        if !modal {
+            setDefaultNavigationItem(title: "내 근로계약서",
+                                     leftBarButton: backButton,
+                                     rightBarButton: nil)
+        } else {
+            setDefaultNavigationItem(title: "내 근로계약서",
+                                     leftBarButton: nil,
+                                     rightBarButton: closeButton)
+        }
+    }
+
+    // MARK: Data binding
+    private func setData(data: [Contract]) {
+        contractView.contractCollectionView.setData(data: data)
     }
 }

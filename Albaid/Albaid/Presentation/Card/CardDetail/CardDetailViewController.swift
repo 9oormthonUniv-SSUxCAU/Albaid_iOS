@@ -23,6 +23,16 @@ class CardDetailViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Init
+    init(id: Int) {
+        super.init(nibName: nil, bundle: nil)
+        setView(data: Contract.dummyContract[id])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +69,8 @@ class CardDetailViewController: BaseViewController {
             router.presentResumeViewController()
         }
 
-        cardDetailView.cardContentView.tapContract = { [weak self] in
-            guard let self else { return }
-            router.presentContractDetailViewController()
+        cardDetailView.cardContentView.tapContract = { [self] id in
+            router.presentContractDetailViewController(id: id)
         }
     }
 
@@ -70,5 +79,12 @@ class CardDetailViewController: BaseViewController {
         setDefaultNavigationItem(title: nil,
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
+
+    // MARK: Data binding
+    private func setView(data: Contract) {
+        cardDetailView.cardContentView.setData(data: data)
+        cardDetailView.cardContentView.cardContentDetailView.setData(data: data)
     }
 }

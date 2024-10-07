@@ -8,6 +8,17 @@
 import UIKit.UIButton
 
 extension UIButton {
+    func setUnderline() {
+        guard let title = title(for: .normal) else { return }
+        
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(.underlineStyle,
+                                      value: NSUnderlineStyle.single.rawValue,
+                                      range: NSRange(location: 0, length: title.count)
+        )
+        setAttributedTitle(attributedString, for: .normal)
+    }
+
     func setLoginButton(image: UIImage, title: String, titleColor: UIColor, backgroundColor: UIColor) {
         layer.cornerRadius = 12
         snp.makeConstraints {

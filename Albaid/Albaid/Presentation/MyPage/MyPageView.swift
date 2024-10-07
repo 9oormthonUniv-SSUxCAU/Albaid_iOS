@@ -34,7 +34,6 @@ final class MyPageView: BaseView {
 
     // MARK: Properties
     var tapAlbum: (() -> Void)?
-    var tapDetail: (() -> Void)?
     var tapCell: ((Int, Int) -> Void)?
 
     // MARK: Configuration
@@ -155,7 +154,6 @@ extension MyPageView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
                 header.titleImageView.image = headerImage[indexPath.section]
                 header.titleLabel.text = headerTitle[indexPath.section]
                 header.tapAlbum = self.tapAlbum
-                header.tapDetail = self.tapDetail
 
                 return header
             } else {

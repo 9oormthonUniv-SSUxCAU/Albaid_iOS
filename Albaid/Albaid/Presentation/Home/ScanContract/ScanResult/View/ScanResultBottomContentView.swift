@@ -15,17 +15,9 @@ final class ScanResultBottomContentView: BaseView {
         $0.distribution = .fillEqually
     }
 
-    private(set) var vacationStackView = UIStackView().then {
-        $0.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.success)
-    }
-
-    private(set) var insuranceStackView = UIStackView().then {
-        $0.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.success)
-    }
-
-    private(set) var employmentStackView = UIStackView().then {
-        $0.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.success)
-    }
+    private(set) var isPaidAnnualLeaveStackView = UIStackView()
+    private(set) var isSocialInsuranceStackView = UIStackView()
+    private(set) var isContractDeliveryStackView = UIStackView()
 
     // MARK: Properties
 
@@ -36,9 +28,9 @@ final class ScanResultBottomContentView: BaseView {
 
         addSubview(resultStackView)
 
-        resultStackView.addArrangedSubviews(vacationStackView,
-                                            insuranceStackView,
-                                            employmentStackView)
+        resultStackView.addArrangedSubviews(isPaidAnnualLeaveStackView,
+                                            isSocialInsuranceStackView,
+                                            isContractDeliveryStackView)
     }
     
     // MARK: Layout
@@ -46,6 +38,27 @@ final class ScanResultBottomContentView: BaseView {
         resultStackView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.verticalEdges.equalToSuperview().inset(15)
+        }
+    }
+
+    // MARK: Data binding
+    func setData(data: Contract) {
+        if data.isPaidAnnualLeave {
+            isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.success)
+        } else {
+            isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.failure)
+        }
+
+        if data.isSocialInsurance {
+            isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.success)
+        } else {
+            isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.failure)
+        }
+
+        if data.isContractDelivery {
+            isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.success)
+        } else {
+            isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.failure)
         }
     }
 }

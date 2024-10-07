@@ -42,6 +42,7 @@ class NotificationDetailViewController: BaseViewController {
     // MARK: Navigation Item
     override func setNavigationItem() {
         setDefaultNavigationItem(title: "알림", leftBarButton: backButton, rightBarButton: nil)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: View Transition

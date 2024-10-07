@@ -28,7 +28,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setData(data: User.dummyUser)
+        setUserData(data: User.dummyUser)
+        setData(data: Contract.dummyContract)
         router.viewController = self
     }
 
@@ -58,6 +59,15 @@ class HomeViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
+        notificationButton.tap = { [weak self] in
+            guard let self else { return }
+            router.presentNotificationViewController()
+        }
+
+        homeView.homeCardCollectionView.tapCell = { [self] id in
+            router.presentCardDetailViewController(id: id)
+        }
+
         homeView.homeMenuView.tapScan = { [weak self] in
             guard let self else { return }
             router.presentScanGuideViewController()
@@ -74,26 +84,10 @@ class HomeViewController: BaseViewController {
         }
     }
 
-    // MARK: data binding
-    private func setData(data: User) {
-        let today = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        dateFormatter.locale = Locale(identifier: "ko_KR")
-        let dateToString = dateFormatter.string(from: today)
-
-        homeView.homeTodayView.dateLabel.text = dateToString
-        homeView.homeTodayView.userLabel.text = data.name + "님 오늘도 파이팅!"
-
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "M"
-        monthFormatter.locale = Locale(identifier: "ko_KR")
-        let monthToString = monthFormatter.string(from: today)
-
-        homeView.homeCardCollectionView.setData(data: data)
-
-        homeView.homeContentView.userLabel.text = data.name + "님을 위한 알바 내역"
-        homeView.homeContentView.monthTotalWageTextLabel.text = monthToString + "월 월급 총계"
+    // MARK: Data binding
+    private func setUserData(data: User) {
+        homeView.homeTodayView.setData(data: data)
+        homeView.homeContentView.setData(data: data)
 
         guard let cards = data.card else {
             print("카드 정보가 없습니다.")
@@ -103,5 +97,10 @@ class HomeViewController: BaseViewController {
         let monthTotalWage = cards.reduce(0) { $0 + $1.monthWage }
 
         homeView.homeContentView.monthTotalWageLabel.text = monthTotalWage.toPriceFormat + "원"
+    }
+
+    // MARK: Data binding
+    private func setData(data: [Contract]) {
+        homeView.homeCardCollectionView.setData(data: data)
     }
 }

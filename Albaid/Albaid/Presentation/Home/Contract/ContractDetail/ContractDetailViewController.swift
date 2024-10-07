@@ -20,8 +20,22 @@ final class ContractDetailViewController: BaseViewController {
 
     private let contractDetailView = ContractDetailView()
 
+    // MARK: Properties
+    private let id: Int
+
     // MARK: Environment
     private let router = BaseRouter()
+
+    // MARK: Init
+    init(id: Int) {
+        self.id = id
+        super.init(nibName: nil, bundle: nil)
+        setView(data: Contract.dummyContract[id])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -57,8 +71,16 @@ final class ContractDetailViewController: BaseViewController {
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "근로계약서1",
+        setDefaultNavigationItem(title: "근로계약서" + "\(id + 1)",
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
+
+    // MARK: Data binding
+    private func setView(data: Contract) {
+        contractDetailView.setData(data: data)
+        contractDetailView.scanResultTopContentView.setData(data: data)
+        contractDetailView.scanResultBottomContentView.setData(data: data)
     }
 }

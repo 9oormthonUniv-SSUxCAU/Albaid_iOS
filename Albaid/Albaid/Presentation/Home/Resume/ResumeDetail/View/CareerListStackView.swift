@@ -9,6 +9,9 @@ import UIKit
 
 final class CareerListStackView: UIStackView {
 
+    // MARK: Properties
+    var resume: Resume?
+
     // MARK: Init
     init() {
         super.init(frame: .zero)
@@ -33,17 +36,25 @@ final class CareerListStackView: UIStackView {
     }
 
     func setData() {
-        for i in 0...2 {
-            let careerListView = CareerListView()
-            addArrangedSubview(careerListView)
-
-            switch i {
-            case 0: careerListView.topLineView.removeFromSuperview()
-            case 2:
-                careerListView.bottomLineView.removeFromSuperview()
-            default:
-                break
+        if resume?.careers.count != 0 {
+            for i in 1...(resume?.careers.count ?? 0) {
+                let careerListView = CareerListView()
+                careerListView.careerContentView.setData(data: resume?.careers[i-1])
+                addArrangedSubview(careerListView)
+                
+                switch i {
+                case 1: careerListView.topLineView.removeFromSuperview()
+                case resume?.careers.count ?? 0:
+                    careerListView.bottomLineView.removeFromSuperview()
+                default:
+                    break
+                }
             }
         }
+    }
+
+    // MARK: Data binding
+    func setViewData(data: Resume) {
+        resume = data
     }
 }

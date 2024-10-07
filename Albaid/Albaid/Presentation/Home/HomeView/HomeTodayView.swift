@@ -51,4 +51,16 @@ final class HomeTodayView: BaseView {
             $0.height.equalTo(80)
         }
     }
+
+    // MARK: Data
+    func setData(data: User) {
+        let today = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        let dateToString = dateFormatter.string(from: today)
+
+        dateLabel.text = dateToString
+        userLabel.text = data.name + "님 오늘도 파이팅!"
+    }
 }

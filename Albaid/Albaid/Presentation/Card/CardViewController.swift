@@ -19,6 +19,7 @@ class CardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setData(data: Contract.dummyContract)
         router.viewController = self
     }
 
@@ -41,14 +42,23 @@ class CardViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
-        cardView.cardCollectionView.tapCell = { [weak self] in
+        cardView.cardCollectionView.tapCell = { [self] id in
+            router.presentCardDetailViewController(id: id)
+        }
+
+        cardView.cardCollectionView.tapAddCell = { [weak self] in
             guard let self else { return }
-            router.presentCardDetailViewController()
+            router.presentCardAddOptionModalViewController()
         }
 
         cardView.cardCollectionView.tapGuide = { [weak self] in
             guard let self else { return }
             router.presentCardGuideOptionModalViewController()
         }
+    }
+
+    // MARK: Data
+    private func setData(data: [Contract]) {
+        cardView.cardCollectionView.setData(data: data)
     }
 }

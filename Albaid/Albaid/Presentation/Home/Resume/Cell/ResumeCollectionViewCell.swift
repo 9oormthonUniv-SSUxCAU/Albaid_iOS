@@ -22,24 +22,17 @@ final class ResumeCollectionViewCell: UICollectionViewCell {
     }
 
     private(set) var resumeTitleLabel = UILabel().then {
-        $0.text = "[기본] 김알바1"
         $0.textColor = .albaidGray20
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
 
     private(set) var resumeDateLabel = UILabel().then {
-        $0.text = "2024.09.22"
         $0.textColor = .albaidGray60
         $0.font = UIFont(name: "Pretendard-Regular", size: 13)
     }
 
-    private(set) var areaStackView = UIStackView().then {
-        $0.resumeLabelStackView(title: "희망지역", content: "서울 강남구")
-    }
-
-    private(set) var occupationStackView = UIStackView().then {
-        $0.resumeLabelStackView(title: "희망직종", content: "베이커리, 카페")
-    }
+    private(set) var desiredLocationStackView = UIStackView()
+    private(set) var desiredJobStackView = UIStackView()
 
     // MARK: Properties
     var tapOption: (() -> Void)?
@@ -66,8 +59,8 @@ final class ResumeCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(optionButton)
         contentView.addSubview(resumeTitleLabel)
         contentView.addSubview(resumeDateLabel)
-        contentView.addSubview(areaStackView)
-        contentView.addSubview(occupationStackView)
+        contentView.addSubview(desiredLocationStackView)
+        contentView.addSubview(desiredJobStackView)
     }
 
     // MARK: Layout
@@ -94,12 +87,12 @@ final class ResumeCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().inset(20)
         }
 
-        areaStackView.snp.makeConstraints {
-            $0.bottom.equalTo(occupationStackView.snp.top).offset(-8)
+        desiredLocationStackView.snp.makeConstraints {
+            $0.bottom.equalTo(desiredJobStackView.snp.top).offset(-8)
             $0.leading.equalToSuperview().inset(20)
         }
 
-        occupationStackView.snp.makeConstraints {
+        desiredJobStackView.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(20)
         }
@@ -110,7 +103,13 @@ final class ResumeCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 12
     }
 
-    func setData(data: Card?) {
+    // MARK: Data binding
+    func setData(data: Resume) {
+        resumeTitleLabel.text = data.title
+        // TODO: fix
+        resumeDateLabel.text = "2024.09.22"
+        desiredLocationStackView.resumeLabelStackView(title: "희망지역", content: data.desiredLocation)
+        desiredJobStackView.resumeLabelStackView(title: "희망직종", content: data.desiredJob)
     }
 
     // MARK: Event

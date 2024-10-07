@@ -29,8 +29,8 @@ final class MyPageCollectionViewHeader: UICollectionReusableView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 22)
     }
 
-    private let detailButton = BaseButton().then {
-        $0.setImage(AlbaidButton.detail, for: .normal)
+    private(set) var detailButton = UIImageView().then {
+        $0.image = AlbaidButton.detail.withTintColor(.albaidGray60)
     }
 
     private(set) var membershipLabel = UILabel().then {
@@ -53,7 +53,6 @@ final class MyPageCollectionViewHeader: UICollectionReusableView {
 
     // MARK: Properties
     var tapAlbum: (() -> Void)?
-    var tapDetail: (() -> Void)?
 
     // MARK: init
     override init(frame: CGRect) {
@@ -139,17 +138,11 @@ final class MyPageCollectionViewHeader: UICollectionReusableView {
     // MARK: Event
     private func addButtonEvent() {
         albumButton.addTarget(self, action: #selector(handleAlbumButton), for: .touchUpInside)
-        detailButton.addTarget(self, action: #selector(handleDetailButton), for: .touchUpInside)
     }
 
     @objc
     private func handleAlbumButton() {
         tapAlbum?()
-    }
-
-    @objc
-    private func handleDetailButton() {
-        tapDetail?()
     }
 }
 

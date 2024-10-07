@@ -84,8 +84,9 @@ final class ContractCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func setData(data: Card?) {
-        contractNameLabel.text = "근로계약서" + "\(data?.index ?? 0)"
+    // MARK: Data binding
+    func setCellData(data: Contract) {
+        contractNameLabel.text = "근로계약서\(data.id + 1)"
     }
 
     // MARK: Event

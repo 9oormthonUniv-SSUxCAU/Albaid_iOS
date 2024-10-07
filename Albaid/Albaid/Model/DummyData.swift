@@ -8,7 +8,10 @@
 import Foundation
 
 extension User {
-    static let dummyUser = User(name: "김알바", card: [Card.dummyCard1, Card.dummyCard2, Card.dummyCard3])
+    static let dummyUser = User(name: "김알바",
+                                card: [Card.dummyCard1,
+                                       Card.dummyCard2,
+                                       Card.dummyCard3])
 }
 
 extension Card {

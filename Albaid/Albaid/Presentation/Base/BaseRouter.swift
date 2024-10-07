@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 final class BaseRouter {
     // MARK: Properties
@@ -53,9 +54,16 @@ final class BaseRouter {
 
     /// scanContract
     func presentScanGuideViewController() {
-        let scanGuideViewController = ScanGuideViewController()
+        let scanGuideViewController = ScanGuideViewController(modal: false)
         scanGuideViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(scanGuideViewController, animated: true)
+    }
+
+    func presentScanGuideViewController2() {
+        let scanGuideViewController = ScanGuideViewController(modal: true)
+        let navigationController = UINavigationController(rootViewController: scanGuideViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
     }
 
     func presentScanCameraViewController() {
@@ -68,8 +76,15 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(scanLoadingViewController, animated: true)
     }
 
-    func presentScanResultViewController() {
-        let scanResultViewController = ScanResultViewController()
+    func presentScanLoadingViewController2() {
+        let scanLoadingViewController = ScanLoadingViewController()
+        let navigationController = UINavigationController(rootViewController: scanLoadingViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
+    }
+
+    func presentScanResultViewController(data: ContractInput) {
+        let scanResultViewController = ScanResultViewController(data: data)
         viewController?.navigationController?.pushViewController(scanResultViewController, animated: true)
     }
 
@@ -85,12 +100,19 @@ final class BaseRouter {
 
     /// scanContract
     func presentContractViewController() {
-        let contractViewController = ContractViewController()
+        let contractViewController = ContractViewController(modal: false)
         viewController?.navigationController?.pushViewController(contractViewController, animated: true)
     }
 
-    func presentContractDetailViewController() {
-        let contractDetailViewController = ContractDetailViewController()
+    func presentContractViewController2() {
+        let contractViewController = ContractViewController(modal: true)
+        let navigationController = UINavigationController(rootViewController: contractViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        viewController?.present(navigationController, animated: true, completion: nil)
+    }
+
+    func presentContractDetailViewController(id: Int) {
+        let contractDetailViewController = ContractDetailViewController(id: id)
         contractDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
     }
@@ -121,8 +143,8 @@ final class BaseRouter {
         viewController?.present(resumeOptionModalViewController, animated: true, completion: nil)
     }
 
-    func presentResumeDetailViewController() {
-        let resumeDetailViewController = ResumeDetailViewController()
+    func presentResumeDetailViewController(id: Int) {
+        let resumeDetailViewController = ResumeDetailViewController(id: id)
         viewController?.navigationController?.pushViewController(resumeDetailViewController, animated: true)
     }
 
@@ -138,8 +160,8 @@ final class BaseRouter {
     }
 
     /// card
-    func presentCardDetailViewController() {
-        let cardDetailViewController = CardDetailViewController()
+    func presentCardDetailViewController(id: Int) {
+        let cardDetailViewController = CardDetailViewController(id: id)
         cardDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(cardDetailViewController, animated: true)
     }
@@ -152,6 +174,16 @@ final class BaseRouter {
             sheet.preferredCornerRadius = 12
         }
         viewController?.present(cardGuideOptionModalViewController, animated: true, completion: nil)
+    }
+
+    func presentCardAddOptionModalViewController() {
+        let cardAddOptionModalViewController = CardAddOptionModalViewController()
+        cardAddOptionModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = cardAddOptionModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 265 })]
+            sheet.preferredCornerRadius = 12
+        }
+        viewController?.present(cardAddOptionModalViewController, animated: true, completion: nil)
     }
 
     func presentCardDetailOptionModalViewController() {
@@ -179,6 +211,18 @@ final class BaseRouter {
     func presentNotificationDetailViewController() {
         let notificationDetailViewController = NotificationDetailViewController()
         viewController?.navigationController?.pushViewController(notificationDetailViewController, animated: true)
+    }
+
+    func presentSafariViewController(url: String) {
+        guard let url = URL(string: url) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        viewController?.present(safariViewController, animated: true, completion: nil)
+    }
+
+    func presentGalleryViewController() {
+        let galleryViewController = GalleryViewController()
+        galleryViewController.modalPresentationStyle = .fullScreen
+        viewController?.present(galleryViewController, animated: true)
     }
 
     func popViewController() {

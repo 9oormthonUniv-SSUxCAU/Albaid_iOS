@@ -45,13 +45,15 @@ final class ContractDetailView: BaseView {
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 18)
     }
 
-    private(set) var memoTextView = UITextView().then {
-        $0.text = "텍스트를 작성하면 이렇게 보입니다."
-        $0.textColor = .albaidGray20
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
+    private(set) var memoBackgroundView = UIView().then {
         $0.backgroundColor = .albaidGray95
         $0.layer.cornerRadius = 12
-        $0.contentInset = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
+    }
+
+    private(set) var memoContentLabel = UILabel().then {
+        $0.textColor = .albaidGray20
+        $0.numberOfLines = 0
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
 
     private(set) var nonScrollView = UIView()
@@ -85,7 +87,8 @@ final class ContractDetailView: BaseView {
         contractEntireView.addSubview(dividerView2)
         contractEntireView.addSubview(scanResultBottomContentView)
         contractEntireView.addSubview(memoLabel)
-        contractEntireView.addSubview(memoTextView)
+        contractEntireView.addSubview(memoBackgroundView)
+        memoBackgroundView.addSubview(memoContentLabel)
 
         addSubview(nonScrollView)
         nonScrollView.addSubview(buttonStackView)
@@ -148,11 +151,16 @@ final class ContractDetailView: BaseView {
             $0.leading.equalToSuperview()
         }
 
-        memoTextView.snp.makeConstraints {
+        memoBackgroundView.snp.makeConstraints {
             $0.top.equalTo(memoLabel.snp.bottom).offset(10)
-            $0.width.equalToSuperview()
             $0.height.equalTo(97)
+            $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview().inset(30)
+        }
+
+        memoContentLabel.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(12)
+            $0.horizontalEdges.equalToSuperview().inset(20)
         }
 
         nonScrollView.snp.makeConstraints {
@@ -165,5 +173,9 @@ final class ContractDetailView: BaseView {
             $0.top.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(56)
         }
+    }
+
+    func setData(data: Contract) {
+        memoContentLabel.text = data.memo
     }
 }

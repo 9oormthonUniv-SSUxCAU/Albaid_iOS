@@ -47,7 +47,12 @@ final class ScanLoadingViewController: BaseViewController {
 
     private func postScan() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
-            router.presentScanResultViewController()
+            scanSuccess()
         }
+    }
+
+    private func scanSuccess() {
+        let data = ContractInput.dummyContractInput
+        router.presentScanResultViewController(data: data)
     }
 }

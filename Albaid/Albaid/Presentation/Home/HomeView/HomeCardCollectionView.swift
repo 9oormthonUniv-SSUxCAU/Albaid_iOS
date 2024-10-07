@@ -26,6 +26,10 @@ final class HomeCardCollectionView: BaseView {
         return layout
     }()
 
+    // MARK: Properties
+    var tapCell: ((Int) -> Void)?
+    var contract: [Contract]?
+
     // MARK: Configuration
     override func configureSubviews() {
         setCollectionView()
@@ -42,7 +46,8 @@ final class HomeCardCollectionView: BaseView {
         }
     }
 
-    func setData(data: User) {
+    func setData(data: [Contract]) {
+        contract = data
     }
 }
 
@@ -50,21 +55,26 @@ extension HomeCardCollectionView: UICollectionViewDataSource, UICollectionViewDe
     private func setCollectionView() {
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
-        cardCollectionView.register(HomeCardCollectionViewCell.self, forCellWithReuseIdentifier: HomeCardCollectionViewCell.identifier)
+        cardCollectionView.register(CardCollectionViewCell.self,
+                                    forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
         cardCollectionView.isPagingEnabled = false
         cardCollectionView.showsHorizontalScrollIndicator = false
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        // TODO: dummy data
+        return contract?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: HomeCardCollectionViewCell.identifier,
-            for: indexPath) as? HomeCardCollectionViewCell else { return UICollectionViewCell() }
+            withReuseIdentifier: CardCollectionViewCell.identifier,
+            for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
 
-        cell.setData(data: User.dummyUser.card?[indexPath.row])
+        // TODO: dummy data
+        if let contract = contract?[indexPath.row] {
+            cell.setData(data: contract)
+        }
 
         return cell
     }
@@ -79,5 +89,9 @@ extension HomeCardCollectionView: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 40, height: 172)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        tapCell?(indexPath.row)
     }
 }

@@ -12,7 +12,6 @@ final class ResumeView: BaseView {
     
     // MARK: UI Components
     private(set) var contractNumberLabel = UILabel().then {
-        $0.text = "총 2건"
         $0.textColor = .albaidGray30
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
     }
@@ -34,8 +33,9 @@ final class ResumeView: BaseView {
     }()
 
     // MARK: Properties
-    var tapCell: (() -> Void)?
+    var tapCell: ((Int) -> Void)?
     var tapOption: (() -> Void)?
+    var resume: [Resume]?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -59,6 +59,12 @@ final class ResumeView: BaseView {
             $0.bottom.equalToSuperview()
         }
     }
+
+    // MARK: Data binding
+    func setViewData(data: [Resume]) {
+        resume = data
+        contractNumberLabel.text = "총 \(data.count)건"
+    }
 }
 
 extension ResumeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -71,7 +77,7 @@ extension ResumeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return resume?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -79,7 +85,10 @@ extension ResumeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
             withReuseIdentifier: ResumeCollectionViewCell.identifier,
             for: indexPath) as? ResumeCollectionViewCell else { return UICollectionViewCell() }
 
-        cell.setData(data: User.dummyUser.card?[indexPath.row])
+        // TODO: dummy data
+        if let resume = resume?[indexPath.row] {
+            cell.setData(data: resume)
+        }
         cell.tapOption = self.tapOption
 
         return cell
@@ -94,6 +103,6 @@ extension ResumeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tapCell?()
+        tapCell?(indexPath.row)
     }
 }

@@ -54,6 +54,10 @@
 		9556DEAA2CA5D7BA00A43A78 /* TotalWageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */; };
 		9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */; };
 		9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */; };
+		956EC1772CB3C4530091C0B0 /* CardAddOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1762CB3C4530091C0B0 /* CardAddOptionModalViewController.swift */; };
+		956EC1792CB3C45C0091C0B0 /* CardAddOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */; };
+		956EC17B2CB3C4A90091C0B0 /* CardAddOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */; };
+		956EC17D2CB3D1800091C0B0 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */; };
 		959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */; };
 		959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */; };
 		959F91CB2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */; };
@@ -84,11 +88,14 @@
 		959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */; };
 		959F92102CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */; };
 		959F92122CB0250C0047C7B2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92112CB0250C0047C7B2 /* OnboardingView.swift */; };
+		959F92142CB04FA40047C7B2 /* Resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92132CB04FA40047C7B2 /* Resume.swift */; };
+		959F92162CB05A760047C7B2 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92152CB05A760047C7B2 /* UITextField+Extension.swift */; };
+		959F92182CB2BC0B0047C7B2 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F92172CB2BC0B0047C7B2 /* DateFormatter.swift */; };
 		95A6FDFA2CA5D0F400D44B21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95A6FDF92CA5D0F400D44B21 /* SnapKit */; };
 		95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */; };
 		95BCFFCC2CA6E2060001F339 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCB2CA6E2060001F339 /* User.swift */; };
 		95BCFFCE2CA713160001F339 /* HomeCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */; };
-		95BCFFD02CA7131B0001F339 /* HomeCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */; };
+		95BCFFD02CA7131B0001F339 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFCF2CA7131B0001F339 /* CardCollectionViewCell.swift */; };
 		95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD12CA7132C0001F339 /* HomeAdView.swift */; };
 		95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD32CA718C80001F339 /* HomeMenuView.swift */; };
 		95BCFFD62CA71A330001F339 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BCFFD52CA71A330001F339 /* HomeContentView.swift */; };
@@ -180,6 +187,10 @@
 		9556DEA92CA5D7BA00A43A78 /* TotalWageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalWageViewController.swift; sourceTree = "<group>"; };
 		9556DEAC2CA5D7E100A43A78 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9556DEAE2CA5D7E700A43A78 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		956EC1762CB3C4530091C0B0 /* CardAddOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionModalViewController.swift; sourceTree = "<group>"; };
+		956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionModalView.swift; sourceTree = "<group>"; };
+		956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddOptionView.swift; sourceTree = "<group>"; };
+		956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalView.swift; sourceTree = "<group>"; };
 		959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalViewController.swift; sourceTree = "<group>"; };
@@ -209,10 +220,13 @@
 		959F920D2CAFF86B0047C7B2 /* FSCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendarView.swift; sourceTree = "<group>"; };
 		959F920F2CAFFC080047C7B2 /* CalendarDailyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDailyCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F92112CB0250C0047C7B2 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		959F92132CB04FA40047C7B2 /* Resume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resume.swift; sourceTree = "<group>"; };
+		959F92152CB05A760047C7B2 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		959F92172CB2BC0B0047C7B2 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		95BCFFC32CA6DDD40001F339 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 		95BCFFCB2CA6E2060001F339 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		95BCFFCD2CA713160001F339 /* HomeCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionView.swift; sourceTree = "<group>"; };
-		95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		95BCFFCF2CA7131B0001F339 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		95BCFFD12CA7132C0001F339 /* HomeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdView.swift; sourceTree = "<group>"; };
 		95BCFFD32CA718C80001F339 /* HomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
 		95BCFFD52CA71A330001F339 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
@@ -295,10 +309,12 @@
 				95BCFFE02CA83AC70001F339 /* Int+Extension.swift */,
 				95BF19BE2CA6D8C000CA53AC /* UIViewController+Extension.swift */,
 				95BF19BA2CA6A6A300CA53AC /* UIStackView+Extension.swift */,
+				959F92152CB05A760047C7B2 /* UITextField+Extension.swift */,
 				95BF19A62CA68C2000CA53AC /* UIButton+Extension.swift */,
 				95BCFFE42CA863050001F339 /* UILabel+Extension.swift */,
 				9556DE2E2CA5D19B00A43A78 /* Literal */,
 				959F91CC2CA9B7500047C7B2 /* DividerView.swift */,
+				959F92192CB2BC120047C7B2 /* Format */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -424,6 +440,7 @@
 				959F91D72CA9DA820047C7B2 /* CardCollectionViewHeader.swift */,
 				959F91D52CA9D8920047C7B2 /* CardCollectionView.swift */,
 				9556DE442CA5D2CC00A43A78 /* CardViewController.swift */,
+				956EC1752CB3C43C0091C0B0 /* Modal */,
 				959F91E22CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift */,
 				959F91E42CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift */,
 				9556DEA12CA5D77700A43A78 /* CardDetail */,
@@ -448,8 +465,9 @@
 		9556DE482CA5D42C00A43A78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				95BCFFCB2CA6E2060001F339 /* User.swift */,
 				95BF19892CA658B500CA53AC /* Contract.swift */,
+				959F92132CB04FA40047C7B2 /* Resume.swift */,
+				95BCFFCB2CA6E2060001F339 /* User.swift */,
 				95BCFFDE2CA837060001F339 /* DummyData.swift */,
 			);
 			path = Model;
@@ -648,6 +666,17 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		956EC1752CB3C43C0091C0B0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				956EC17A2CB3C4A90091C0B0 /* CardAddOptionView.swift */,
+				956EC1782CB3C45C0091C0B0 /* CardAddOptionModalView.swift */,
+				956EC1762CB3C4530091C0B0 /* CardAddOptionModalViewController.swift */,
+				956EC17C2CB3D1800091C0B0 /* GalleryViewController.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		959F91C62CA9AA780047C7B2 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +713,14 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		959F92192CB2BC120047C7B2 /* Format */ = {
+			isa = PBXGroup;
+			children = (
+				959F92172CB2BC0B0047C7B2 /* DateFormatter.swift */,
+			);
+			path = Format;
+			sourceTree = "<group>";
+		};
 		95BCFFC22CA6DD840001F339 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,7 +737,7 @@
 		95BCFFD72CA81F1C0001F339 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				95BCFFCF2CA7131B0001F339 /* HomeCardCollectionViewCell.swift */,
+				95BCFFCF2CA7131B0001F339 /* CardCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -899,6 +936,8 @@
 				959F91F12CAE70E00047C7B2 /* NotificationDetailView.swift in Sources */,
 				9556DEAD2CA5D7E100A43A78 /* NotificationView.swift in Sources */,
 				9556DE3D2CA5D2B100A43A78 /* OnboardingViewController.swift in Sources */,
+				956EC1772CB3C4530091C0B0 /* CardAddOptionModalViewController.swift in Sources */,
+				956EC17D2CB3D1800091C0B0 /* GalleryViewController.swift in Sources */,
 				95C733D92CA5CF9D00D454E8 /* SceneDelegate.swift in Sources */,
 				9556DE4A2CA5D44A00A43A78 /* HomeView.swift in Sources */,
 				9556DE682CA5D54700A43A78 /* ScanResultView.swift in Sources */,
@@ -907,7 +946,7 @@
 				9556DE502CA5D46500A43A78 /* MyPageView.swift in Sources */,
 				9556DE6C2CA5D57200A43A78 /* ScanCompleteView.swift in Sources */,
 				95BCFFDF2CA837060001F339 /* DummyData.swift in Sources */,
-				95BCFFD02CA7131B0001F339 /* HomeCardCollectionViewCell.swift in Sources */,
+				95BCFFD02CA7131B0001F339 /* CardCollectionViewCell.swift in Sources */,
 				9556DE622CA5D51A00A43A78 /* ScanCameraViewController.swift in Sources */,
 				9556DE4E2CA5D45D00A43A78 /* CardView.swift in Sources */,
 				95BF19952CA65CD000CA53AC /* Storage.swift in Sources */,
@@ -942,9 +981,11 @@
 				959F91ED2CAD265B0047C7B2 /* MyPageCollectionViewFooter.swift in Sources */,
 				959F91DB2CAA3ED80047C7B2 /* CardDetailOptionModalView.swift in Sources */,
 				959F91CF2CA9BCE60047C7B2 /* CareerListView.swift in Sources */,
+				959F92182CB2BC0B0047C7B2 /* DateFormatter.swift in Sources */,
 				959F920C2CAFF8410047C7B2 /* CalendarBottomView.swift in Sources */,
 				95BCFFE12CA83AC70001F339 /* Int+Extension.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
+				956EC17B2CB3C4A90091C0B0 /* CardAddOptionView.swift in Sources */,
 				95BCFFF32CA992B30001F339 /* OptionModalView.swift in Sources */,
 				95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */,
 				9556DE412CA5D2BF00A43A78 /* HomeViewController.swift in Sources */,
@@ -956,15 +997,18 @@
 				9556DE812CA5D67600A43A78 /* ContractEditView.swift in Sources */,
 				9556DE832CA5D67D00A43A78 /* ContractEditViewController.swift in Sources */,
 				95BF19A72CA68C2000CA53AC /* UIButton+Extension.swift in Sources */,
+				959F92142CB04FA40047C7B2 /* Resume.swift in Sources */,
 				95BCFFD22CA7132C0001F339 /* HomeAdView.swift in Sources */,
 				9556DE9A2CA5D74E00A43A78 /* CalendarWeeklyView.swift in Sources */,
 				9556DE852CA5D68500A43A78 /* ContractDetailView.swift in Sources */,
 				95BF19BD2CA6AE4C00CA53AC /* BaseRouter.swift in Sources */,
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
 				9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */,
+				959F92162CB05A760047C7B2 /* UITextField+Extension.swift in Sources */,
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,
 				959F91EB2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift in Sources */,
 				9556DE5C2CA5D50200A43A78 /* ScanGuideView.swift in Sources */,
+				956EC1792CB3C45C0091C0B0 /* CardAddOptionModalView.swift in Sources */,
 				959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1035,7 +1079,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1092,7 +1136,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

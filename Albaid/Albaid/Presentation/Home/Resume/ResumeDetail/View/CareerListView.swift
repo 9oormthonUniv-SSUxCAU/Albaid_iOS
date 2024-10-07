@@ -43,22 +43,27 @@ final class CareerListView: BaseView {
             $0.bottom.equalTo(circleView.snp.top)
             $0.width.equalTo(1)
         }
-    
+        
         circleView.snp.makeConstraints {
             $0.centerY.leading.equalToSuperview()
             $0.height.width.equalTo(20)
         }
-
+        
         bottomLineView.snp.makeConstraints {
             $0.top.equalTo(circleView.snp.bottom)
             $0.bottom.equalToSuperview()
             $0.leading.equalToSuperview().inset(10)
             $0.width.equalTo(1)
         }
-
+        
         careerContentView.snp.makeConstraints {
             $0.leading.equalTo(circleView.snp.trailing).offset(20)
             $0.centerY.equalToSuperview()
         }
     }
+
+//    // MARK: Data binding
+//    func setData(data: Career?) {
+//        
+//    }
 }

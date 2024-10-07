@@ -61,7 +61,7 @@ final class CardDetailView: BaseView {
         }
 
         cardCharacterImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(111)
+            $0.top.equalToSuperview().inset(20)
             $0.centerX.equalToSuperview()
             $0.height.equalTo(226)
         }

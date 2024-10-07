@@ -29,9 +29,9 @@ final class NotificationDetailView: BaseView {
         $0.textColor = .albaidGray30
         $0.numberOfLines = 0
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.setLineSpacing(lineSpacing: 6)
     }
 
-    
     // MARK: Configuration
     override func configureSubviews() {
         addSubview(titleLabel)
