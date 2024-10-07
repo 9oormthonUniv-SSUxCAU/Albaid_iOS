@@ -37,6 +37,7 @@ final class OnboardingView: BaseView {
         $0.setTitle("건너뛰기", for: .normal)
         $0.setTitleColor(.albaidGray50, for: .normal)
         $0.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.setUnderline()
     }
 
     private(set) var nextButton = BaseButton().then {
