@@ -23,37 +23,25 @@ final class CardDetailView: BaseView {
 
     private(set) var cardContentView = CardContentView()
 
-    private(set) var nonScrollView = UIView()
-
-    private(set) var addResumeButton = BaseButton().then {
-        $0.setTextButton(title: "이력서에 추가하기",
-                         titleColor: .albaidGray100,
-                         backgroundColor: .albaidGray20)
-    }
-
     // MARK: Properties
     var tapAddResume: (() -> Void)?
 
     // MARK: Configuration
     override func configureSubviews() {
         scrollView.backgroundColor = .albaidGreen10
-        addButtonEvent()
 
         addSubview(scrollView)
         scrollView.addSubview(entireView)
 
         entireView.addSubview(cardCharacterImageView)
         entireView.addSubview(cardContentView)
-
-        addSubview(nonScrollView)
-        nonScrollView.addSubview(addResumeButton)
     }
 
     // MARK: Layout
     override func makeConstraints() {
         scrollView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(121)
+            $0.bottom.equalToSuperview()
         }
 
         entireView.snp.makeConstraints {
@@ -70,27 +58,5 @@ final class CardDetailView: BaseView {
             $0.top.equalTo(cardCharacterImageView.snp.bottom)
             $0.horizontalEdges.bottom.equalToSuperview()
         }
-
-        nonScrollView.snp.makeConstraints {
-            $0.top.equalTo(scrollView.snp.bottom)
-            $0.width.equalToSuperview()
-            $0.bottom.equalToSuperview()
-        }
-
-        addResumeButton.snp.makeConstraints {
-            $0.top.horizontalEdges.equalToSuperview().inset(20)
-            $0.height.equalTo(56)
-            $0.horizontalEdges.equalToSuperview().inset(20)
-        }
-    }
-
-    // MARK: Event
-    private func addButtonEvent() {
-        addResumeButton.addTarget(self, action: #selector(handleAddResumeButton), for: .touchUpInside)
-    }
-
-    @objc
-    private func handleAddResumeButton() {
-        tapAddResume?()
     }
 }

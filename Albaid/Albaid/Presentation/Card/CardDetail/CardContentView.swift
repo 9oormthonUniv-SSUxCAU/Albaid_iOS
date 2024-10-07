@@ -67,7 +67,7 @@ final class CardContentView: BaseView {
             $0.top.equalToSuperview().inset(30)
             $0.leading.equalToSuperview().inset(20)
         }
-        
+
         categoryLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(5)
             $0.leading.equalToSuperview().inset(20)
@@ -96,7 +96,7 @@ final class CardContentView: BaseView {
             $0.horizontalEdges.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(30)
         }
-    
+
         memoContentLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
             $0.horizontalEdges.equalToSuperview().inset(20)
