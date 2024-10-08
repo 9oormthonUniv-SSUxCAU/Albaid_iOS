@@ -19,8 +19,14 @@ final class ScanResultViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Properties
+    var data: ContractInput
+    var onModalDismiss: (([String]) -> Void)?
+    var selectedDays: [String] = []
+
     // MARK: Init
     init(data: ContractInput) {
+        self.data = data
         super.init(nibName: nil, bundle: nil)
         setView(data: data)
     }
@@ -53,7 +59,12 @@ final class ScanResultViewController: BaseViewController {
     override func viewTransition() {
         closeButton.tap = { [weak self] in
             guard let self else { return }
-            router.dismissViewController()
+            router.popToRootViewController()
+        }
+
+        scanResultView.tapReScan = { [weak self] in
+            guard let self else { return }
+            router.presentScanCameraViewController2()
         }
 
         scanResultView.tapRegister = { [weak self] in
@@ -65,6 +76,16 @@ final class ScanResultViewController: BaseViewController {
             guard let self else { return }
             router.presentSafariViewController(url: AlbaidString.dangerDetail)
         }
+
+        scanResultView.scanResultTopContentView.tapLabel = { [weak self] in
+            guard let self else { return }
+            router.presentDayModalViewController(data: data)
+        }
+
+        // TODO: fix
+//        onModalDismiss = { [weak self] receivedData in
+//            print("Data received in MainViewController: \(receivedData)")
+//        }
     }
 
     // MARK: Navigation Item
@@ -99,9 +120,9 @@ final class ScanResultViewController: BaseViewController {
         if data.workingDays != nil {
             let days = data.workingDays?.joined(separator: " ")
 
-            topView.workingDayStackView.contractStackView(title: "근무 일자", content: days ?? "nil")
+            topView.dayContentLabel.text = days
         } else {
-            topView.workingDayStackView.contractInputStackView(title: "근무 일자", content: "요일을 선택해주세요")
+            topView.dayContentLabel.text = "요일을 선택해주세요"
         }
 
         if data.hourlyWage != nil {

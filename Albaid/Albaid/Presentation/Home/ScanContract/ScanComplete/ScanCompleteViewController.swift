@@ -37,6 +37,11 @@ final class ScanCompleteViewController: BaseViewController {
 
     // MARK: View Transition
     override func viewTransition() {
+        scanCompleteView.tapConfirm = { [weak self] in
+            guard let self else { return }
+            router.popToRootViewController()
+        }
+
         scanCompleteView.tapMemo = { [weak self] in
             guard let self else { return }
             router.presentScanMemoViewController()

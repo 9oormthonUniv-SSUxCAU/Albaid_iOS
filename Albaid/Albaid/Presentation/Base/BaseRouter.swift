@@ -71,6 +71,11 @@ final class BaseRouter {
         viewController?.navigationController?.pushViewController(scanCameraViewController, animated: true)
     }
 
+    func presentScanCameraViewController2() {
+        let scanCameraViewController = ScanCameraViewController()
+        viewController?.navigationController?.pushViewController(scanCameraViewController, animated: true)
+    }
+
     func presentScanLoadingViewController() {
         let scanLoadingViewController = ScanLoadingViewController()
         viewController?.navigationController?.pushViewController(scanLoadingViewController, animated: true)
@@ -154,6 +159,24 @@ final class BaseRouter {
             sheet.preferredCornerRadius = 12
         }
         viewController?.present(contractAddModalViewController, animated: true, completion: nil)
+    }
+
+    func presentDayModalViewController(data: ContractInput) {
+        let dayModalViewController = DayModalViewController(data: data)
+        dayModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = dayModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 170 })]
+            sheet.preferredCornerRadius = 12
+        }
+        let scanResultViewController = ScanResultViewController(data: data)
+
+        // TODO: fix
+        dayModalViewController.onDismiss = { [weak self] receivedData in
+            print("Received data: \(receivedData)")
+            scanResultViewController.onModalDismiss?(receivedData)
+        }
+
+        viewController?.present(dayModalViewController, animated: true, completion: nil)
     }
 
     /// resume
@@ -262,6 +285,10 @@ final class BaseRouter {
 
     func popViewController() {
         viewController?.navigationController?.popViewController(animated: true)
+    }
+
+    func popToRootViewController() {
+        viewController?.navigationController?.popToRootViewController(animated: true)
     }
 
     func dismissViewController() {
