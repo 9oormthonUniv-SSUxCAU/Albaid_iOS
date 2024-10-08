@@ -161,6 +161,24 @@ final class BaseRouter {
         viewController?.present(contractAddModalViewController, animated: true, completion: nil)
     }
 
+    func presentDayModalViewController(data: ContractInput) {
+        let dayModalViewController = DayModalViewController(data: data)
+        dayModalViewController.modalPresentationStyle = .pageSheet
+        if let sheet = dayModalViewController.sheetPresentationController {
+            sheet.detents = [.custom(resolver: { _ in 170 })]
+            sheet.preferredCornerRadius = 12
+        }
+        let scanResultViewController = ScanResultViewController(data: data)
+
+        // TODO: fix
+        dayModalViewController.onDismiss = { [weak self] receivedData in
+            print("Received data: \(receivedData)")
+            scanResultViewController.onModalDismiss?(receivedData)
+        }
+
+        viewController?.present(dayModalViewController, animated: true, completion: nil)
+    }
+
     /// resume
     func presentResumeViewController() {
         let resumeViewController = ResumeViewController()

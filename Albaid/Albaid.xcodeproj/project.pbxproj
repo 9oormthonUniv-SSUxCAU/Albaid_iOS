@@ -67,6 +67,8 @@
 		956EC1922CB43A9E0091C0B0 /* DeletePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */; };
 		956EC1942CB43AB60091C0B0 /* DeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */; };
 		956EC1982CB44B0D0091C0B0 /* CalendarCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC1972CB44B0D0091C0B0 /* CalendarCardView.swift */; };
+		956EC19B2CB46B880091C0B0 /* DayModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC19A2CB46B880091C0B0 /* DayModalView.swift */; };
+		956EC19D2CB46B8E0091C0B0 /* DayModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956EC19C2CB46B8E0091C0B0 /* DayModalViewController.swift */; };
 		959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */; };
 		959F91C92CA9B1ED0047C7B2 /* ResumeOptionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */; };
 		959F91CB2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */; };
@@ -209,6 +211,8 @@
 		956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpViewController.swift; sourceTree = "<group>"; };
 		956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpView.swift; sourceTree = "<group>"; };
 		956EC1972CB44B0D0091C0B0 /* CalendarCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCardView.swift; sourceTree = "<group>"; };
+		956EC19A2CB46B880091C0B0 /* DayModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModalView.swift; sourceTree = "<group>"; };
+		956EC19C2CB46B8E0091C0B0 /* DayModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModalViewController.swift; sourceTree = "<group>"; };
 		959F91C42CA9AA760047C7B2 /* ResumeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCollectionViewCell.swift; sourceTree = "<group>"; };
 		959F91C82CA9B1ED0047C7B2 /* ResumeOptionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalView.swift; sourceTree = "<group>"; };
 		959F91CA2CA9B1F70047C7B2 /* ResumeOptionModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeOptionModalViewController.swift; sourceTree = "<group>"; };
@@ -556,6 +560,7 @@
 			children = (
 				9556DE6B2CA5D57200A43A78 /* ScanCompleteView.swift */,
 				9556DE6D2CA5D57800A43A78 /* ScanCompleteViewController.swift */,
+				956EC1992CB46B7E0091C0B0 /* Modal */,
 			);
 			path = ScanComplete;
 			sourceTree = "<group>";
@@ -722,6 +727,15 @@
 			children = (
 				956EC18D2CB4323F0091C0B0 /* ContractAddModalView.swift */,
 				956EC18F2CB432460091C0B0 /* ContractAddModalViewController.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		956EC1992CB46B7E0091C0B0 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				956EC19A2CB46B880091C0B0 /* DayModalView.swift */,
+				956EC19C2CB46B8E0091C0B0 /* DayModalViewController.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -947,6 +961,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				959F91D12CA9BD760047C7B2 /* CareerContentView.swift in Sources */,
+				956EC19D2CB46B8E0091C0B0 /* DayModalViewController.swift in Sources */,
 				959F920E2CAFF86B0047C7B2 /* FSCalendarView.swift in Sources */,
 				9556DE942CA5D70D00A43A78 /* ResumeDetailView.swift in Sources */,
 				959F91C52CA9AA760047C7B2 /* ResumeCollectionViewCell.swift in Sources */,
@@ -1063,6 +1078,7 @@
 				9556DE5E2CA5D50900A43A78 /* ScanGuideViewController.swift in Sources */,
 				956EC1822CB3E7530091C0B0 /* ResumeAddViewController.swift in Sources */,
 				9556DE922CA5D70400A43A78 /* ResumeEditViewController.swift in Sources */,
+				956EC19B2CB46B880091C0B0 /* DayModalView.swift in Sources */,
 				959F92162CB05A760047C7B2 /* UITextField+Extension.swift in Sources */,
 				9556DE7B2CA5D63400A43A78 /* ContractView.swift in Sources */,
 				959F91EB2CACDA170047C7B2 /* MyPageCollectionViewHeader.swift in Sources */,

@@ -27,6 +27,24 @@ extension UIStackView {
         addArrangedSubviews(titleLabel, emptyView, contentTextField)
     }
 
+    func contractStackView2(title: String, content: String) {
+        axis = .horizontal
+        distribution = .fill
+
+        let titleLabel = UILabel().then {
+            $0.setContractTitleLabel(title: title)
+        }
+        let emptyView = UIView()
+        let contentLabel = UILabel().then {
+            $0.text = content
+            $0.textColor = .albaidGray20
+            $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+            $0.isUserInteractionEnabled = true
+        }
+
+        addArrangedSubviews(titleLabel, emptyView, contentLabel)
+    }
+
     func contractInputStackView(title: String, content: String) {
         axis = .horizontal
         distribution = .fill
