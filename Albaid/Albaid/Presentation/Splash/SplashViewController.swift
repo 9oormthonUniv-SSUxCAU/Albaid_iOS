@@ -20,9 +20,14 @@ class SplashViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.8) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
-            sceneDelegate?.changeRootViewController()
+
+//            if UserDefaultHandler.loginStatus == true {
+//                sceneDelegate?.changeRootViewToTabBarViewController()
+//            } else {
+                sceneDelegate?.changeRootViewController()
+//            }
         }
     }
 

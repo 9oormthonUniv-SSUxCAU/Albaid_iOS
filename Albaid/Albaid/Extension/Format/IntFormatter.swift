@@ -1,5 +1,5 @@
 //
-//  Int+Extension.swift
+//  IntFormatter.swift
 //  Albaid
 //
 //  Created by 박지윤 on 9/28/24.
