@@ -16,8 +16,7 @@ enum URLConst {
     static let failure = "/auth/failure"
 
     // MARK: - Contract
-    static let gulbis = "/gulbis"
+    static let contract = "/contract"
 
     // MARK: - Resume
-    static let weeklyStats = "/members/weekly"
 }

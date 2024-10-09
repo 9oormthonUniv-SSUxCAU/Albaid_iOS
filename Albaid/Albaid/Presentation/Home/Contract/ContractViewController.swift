@@ -27,6 +27,9 @@ final class ContractViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Properties
+    var contractList: [ContractGet] = []
+
     // MARK: Init
     init(modal: Bool) {
         super.init(nibName: nil, bundle: nil)
@@ -38,10 +41,14 @@ final class ContractViewController: BaseViewController {
     }
 
     // MARK: Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        getContract()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setData(data: Contract.dummyContract)
+        setData(data: contractList)
         router.viewController = self
     }
     
@@ -98,7 +105,33 @@ final class ContractViewController: BaseViewController {
     }
 
     // MARK: Data binding
-    private func setData(data: [Contract]) {
+    private func setData(data: [ContractGet]) {
         contractView.contractCollectionView.setData(data: data)
+    }
+}
+
+// MARK: Networking
+extension ContractViewController {
+    private func getContract() {
+        print("🔔 getContract called")
+        NetworkService.shared.contract.getContract() {
+            [self] result in
+            switch result {
+            case .success(let response):
+                guard let data = response as? ContractResponse else { return }
+                print("🎯 getContract success: " + "\(data)")
+                contractList = data.result
+            case .requestErr(let errorResponse):
+                dump(errorResponse)
+                guard let data = errorResponse as? ErrorResponse else { return }
+                print(data)
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .pathErr:
+                print("pathErr")
+            }
+        }
     }
 }

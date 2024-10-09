@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95094BC32CB66A5E006055C3 /* ContractAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BC22CB66A5E006055C3 /* ContractAPI.swift */; };
+		95094BC52CB66A64006055C3 /* ContractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BC42CB66A64006055C3 /* ContractService.swift */; };
+		95094BC72CB66A69006055C3 /* ContractResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BC62CB66A69006055C3 /* ContractResponse.swift */; };
 		9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE3A2CA5D2A700A43A78 /* SplashViewController.swift */; };
 		9556DE3D2CA5D2B100A43A78 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE3C2CA5D2B100A43A78 /* OnboardingViewController.swift */; };
 		9556DE3F2CA5D2BA00A43A78 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE3E2CA5D2BA00A43A78 /* TabBarViewController.swift */; };
@@ -165,6 +168,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95094BC22CB66A5E006055C3 /* ContractAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAPI.swift; sourceTree = "<group>"; };
+		95094BC42CB66A64006055C3 /* ContractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractService.swift; sourceTree = "<group>"; };
+		95094BC62CB66A69006055C3 /* ContractResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractResponse.swift; sourceTree = "<group>"; };
 		9556DE3A2CA5D2A700A43A78 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9556DE3C2CA5D2B100A43A78 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9556DE3E2CA5D2BA00A43A78 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -795,6 +801,9 @@
 		956EC1AE2CB4E36E0091C0B0 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
+				95094BC22CB66A5E006055C3 /* ContractAPI.swift */,
+				95094BC42CB66A64006055C3 /* ContractService.swift */,
+				95094BC62CB66A69006055C3 /* ContractResponse.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -1074,6 +1083,7 @@
 				95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */,
 				9556DE6E2CA5D57800A43A78 /* ScanCompleteViewController.swift in Sources */,
 				9556DE722CA5D58A00A43A78 /* ScanMemoViewController.swift in Sources */,
+				95094BC72CB66A69006055C3 /* ContractResponse.swift in Sources */,
 				956EC1892CB431B60091C0B0 /* ContractAddView.swift in Sources */,
 				95BCFFF72CA99E100001F339 /* OptionModalViewController.swift in Sources */,
 				9556DEAF2CA5D7E700A43A78 /* NotificationViewController.swift in Sources */,
@@ -1081,6 +1091,7 @@
 				95BF19932CA65CB000CA53AC /* AppDependency.swift in Sources */,
 				9556DE662CA5D53000A43A78 /* ScanLoadingViewController.swift in Sources */,
 				9556DE872CA5D68A00A43A78 /* ContractDetailViewController.swift in Sources */,
+				95094BC52CB66A64006055C3 /* ContractService.swift in Sources */,
 				9556DE642CA5D52700A43A78 /* ScanLoadingView.swift in Sources */,
 				9556DE8E2CA5D6F500A43A78 /* ResumeViewController.swift in Sources */,
 				959F91E32CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift in Sources */,
@@ -1158,6 +1169,7 @@
 				95BCFFE12CA83AC70001F339 /* IntFormatter.swift in Sources */,
 				956EC1B42CB4E3830091C0B0 /* AuthService.swift in Sources */,
 				9556DEA82CA5D7B500A43A78 /* TotalWageView.swift in Sources */,
+				95094BC32CB66A5E006055C3 /* ContractAPI.swift in Sources */,
 				956EC17B2CB3C4A90091C0B0 /* CardAddOptionView.swift in Sources */,
 				95BCFFF32CA992B30001F339 /* OptionModalView.swift in Sources */,
 				95BCFFEC2CA86BCA0001F339 /* ScanResultBottomContentView.swift in Sources */,

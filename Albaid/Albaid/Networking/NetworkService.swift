@@ -11,6 +11,6 @@ final class NetworkService {
     private init() { }
     
     let auth = AuthService()
-//    let contract = ContractService()
+    let contract = ContractService()
 //    let resume = ResumeService()
 }

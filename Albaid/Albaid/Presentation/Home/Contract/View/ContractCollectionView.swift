@@ -33,7 +33,7 @@ final class ContractCollectionView: BaseView {
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
     var tapOption: ((Int) -> Void)?
-    var contract: [Contract]?
+    var contract: [ContractGet]?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -58,7 +58,7 @@ final class ContractCollectionView: BaseView {
     }
 
     // MARK: Data binding
-    func setData(data: [Contract]) {
+    func setData(data: [ContractGet]) {
         contract = data
         contractNumberLabel.text = "총 \(data.count)건"
     }
