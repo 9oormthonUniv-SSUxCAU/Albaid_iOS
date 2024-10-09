@@ -17,6 +17,7 @@ enum URLConst {
 
     // MARK: - Contract
     static let contract = "/contract"
+    static let contractUpload = "/contract/upload"
 
     // MARK: - Resume
 }

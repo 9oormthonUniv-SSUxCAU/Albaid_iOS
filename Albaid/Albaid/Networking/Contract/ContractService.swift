@@ -13,7 +13,24 @@ final class ContractService {
     private var contractProvider = MoyaProvider<ContractAPI>(plugins: [MoyaLoggerPlugin()])
 
     private enum ResponseData {
+        case postContractUpload(contractImage: Data)
         case getContract
+    }
+
+    public func postContractUpload(contractImage: Data, completion: @escaping (NetworkResult<Any>) -> Void) {
+        contractProvider.request(.postContractUpload(contractImage: contractImage)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .postContractUpload(contractImage: contractImage))
+                completion(networkResult)
+
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     public func getContract(completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -38,7 +55,7 @@ final class ContractService {
         switch statusCode {
         case 200..<300:
             switch responseData {
-            case .getContract:
+            case .getContract, .postContractUpload:
                 return isValidData(data: data, responseData: responseData)
             }
         case 400..<500:
@@ -58,7 +75,10 @@ final class ContractService {
 
         switch responseData {
         case .getContract:
-            let decodedData = try? decoder.decode(ContractResponse.self, from: data)
+            let decodedData = try? decoder.decode(ContractListResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .postContractUpload:
+            let decodedData = try? decoder.decode(ContractUploadResponse.self, from: data)
             return .success(decodedData ?? "success")
         }
     }

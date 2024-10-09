@@ -118,7 +118,7 @@ extension ContractViewController {
             [self] result in
             switch result {
             case .success(let response):
-                guard let data = response as? ContractResponse else { return }
+                guard let data = response as? ContractListResponse else { return }
                 print("🎯 getContract success: " + "\(data)")
                 contractList = data.result
             case .requestErr(let errorResponse):

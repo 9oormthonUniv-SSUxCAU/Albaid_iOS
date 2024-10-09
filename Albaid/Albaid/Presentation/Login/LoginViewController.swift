@@ -47,7 +47,9 @@ final class LoginViewController: BaseViewController {
             getLogin(provider: "kakao")
         }
     }
+}
 
+extension LoginViewController {
     // MARK: Networking
     private func getLogin(provider: String) {
         print("🔔 getLogin called")
