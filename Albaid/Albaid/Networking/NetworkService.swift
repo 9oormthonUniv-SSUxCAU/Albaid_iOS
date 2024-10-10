@@ -12,5 +12,5 @@ final class NetworkService {
     
     let auth = AuthService()
     let contract = ContractService()
-//    let resume = ResumeService()
+    let resume = ResumeService()
 }

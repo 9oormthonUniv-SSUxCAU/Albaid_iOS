@@ -10,6 +10,9 @@
 		95094BC32CB66A5E006055C3 /* ContractAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BC22CB66A5E006055C3 /* ContractAPI.swift */; };
 		95094BC52CB66A64006055C3 /* ContractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BC42CB66A64006055C3 /* ContractService.swift */; };
 		95094BC72CB66A69006055C3 /* ContractResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BC62CB66A69006055C3 /* ContractResponse.swift */; };
+		95094BCF2CB82165006055C3 /* ResumeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BCE2CB82165006055C3 /* ResumeAPI.swift */; };
+		95094BD12CB8216D006055C3 /* ResumeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BD02CB8216D006055C3 /* ResumeService.swift */; };
+		95094BD32CB82176006055C3 /* ResumeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95094BD22CB82176006055C3 /* ResumeResponse.swift */; };
 		9556DE3B2CA5D2A700A43A78 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE3A2CA5D2A700A43A78 /* SplashViewController.swift */; };
 		9556DE3D2CA5D2B100A43A78 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE3C2CA5D2B100A43A78 /* OnboardingViewController.swift */; };
 		9556DE3F2CA5D2BA00A43A78 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556DE3E2CA5D2BA00A43A78 /* TabBarViewController.swift */; };
@@ -171,6 +174,9 @@
 		95094BC22CB66A5E006055C3 /* ContractAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractAPI.swift; sourceTree = "<group>"; };
 		95094BC42CB66A64006055C3 /* ContractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractService.swift; sourceTree = "<group>"; };
 		95094BC62CB66A69006055C3 /* ContractResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractResponse.swift; sourceTree = "<group>"; };
+		95094BCE2CB82165006055C3 /* ResumeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAPI.swift; sourceTree = "<group>"; };
+		95094BD02CB8216D006055C3 /* ResumeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeService.swift; sourceTree = "<group>"; };
+		95094BD22CB82176006055C3 /* ResumeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeResponse.swift; sourceTree = "<group>"; };
 		9556DE3A2CA5D2A700A43A78 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9556DE3C2CA5D2B100A43A78 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9556DE3E2CA5D2BA00A43A78 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -794,6 +800,9 @@
 		956EC1AD2CB4E3690091C0B0 /* Resume */ = {
 			isa = PBXGroup;
 			children = (
+				95094BCE2CB82165006055C3 /* ResumeAPI.swift */,
+				95094BD02CB8216D006055C3 /* ResumeService.swift */,
+				95094BD22CB82176006055C3 /* ResumeResponse.swift */,
 			);
 			path = Resume;
 			sourceTree = "<group>";
@@ -1081,6 +1090,7 @@
 				956EC1B22CB4E37D0091C0B0 /* AuthResponse.swift in Sources */,
 				9556DE902CA5D6FE00A43A78 /* ResumeEditView.swift in Sources */,
 				95BCFFD42CA718C80001F339 /* HomeMenuView.swift in Sources */,
+				95094BD12CB8216D006055C3 /* ResumeService.swift in Sources */,
 				9556DE6E2CA5D57800A43A78 /* ScanCompleteViewController.swift in Sources */,
 				9556DE722CA5D58A00A43A78 /* ScanMemoViewController.swift in Sources */,
 				95094BC72CB66A69006055C3 /* ContractResponse.swift in Sources */,
@@ -1096,6 +1106,7 @@
 				9556DE8E2CA5D6F500A43A78 /* ResumeViewController.swift in Sources */,
 				959F91E32CAA7F9A0047C7B2 /* CardGuideOptionModalView.swift in Sources */,
 				95BCFFE52CA863050001F339 /* UILabel+Extension.swift in Sources */,
+				95094BCF2CB82165006055C3 /* ResumeAPI.swift in Sources */,
 				95BF19BF2CA6D8C000CA53AC /* UIViewController+Extension.swift in Sources */,
 				95BCFFC42CA6DDD40001F339 /* HomeTodayView.swift in Sources */,
 				959F91E52CAA7FA10047C7B2 /* CardGuideOptionModalViewController.swift in Sources */,
@@ -1133,6 +1144,7 @@
 				959F91E12CAA586B0047C7B2 /* CardContentDetailView.swift in Sources */,
 				95BF199B2CA67CF200CA53AC /* ImageLiteral.swift in Sources */,
 				959F91D42CA9C6550047C7B2 /* CareerListStackView.swift in Sources */,
+				95094BD32CB82176006055C3 /* ResumeResponse.swift in Sources */,
 				956EC1BF2CB523F00091C0B0 /* UserDefaultHandler.swift in Sources */,
 				9556DE7D2CA5D63D00A43A78 /* ContractViewController.swift in Sources */,
 				959F91D82CA9DA820047C7B2 /* CardCollectionViewHeader.swift in Sources */,

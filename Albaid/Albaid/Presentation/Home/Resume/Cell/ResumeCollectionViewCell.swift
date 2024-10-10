@@ -104,10 +104,9 @@ final class ResumeCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: Data binding
-    func setData(data: Resume) {
+    func setCellData(data: ResumeList) {
         resumeTitleLabel.text = data.title
-        // TODO: fix
-        resumeDateLabel.text = "2024.09.22"
+        resumeDateLabel.text = data.createdAt
         desiredLocationStackView.resumeLabelStackView(title: "희망지역", content: data.desiredLocation)
         desiredJobStackView.resumeLabelStackView(title: "희망직종", content: data.desiredJob)
     }

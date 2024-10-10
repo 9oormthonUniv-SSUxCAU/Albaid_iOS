@@ -34,7 +34,7 @@ final class ResumeView: BaseView {
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
     var tapOption: (() -> Void)?
-    var resume: [Resume]?
+    var resume: [ResumeList]?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -60,7 +60,7 @@ final class ResumeView: BaseView {
     }
 
     // MARK: Data binding
-    func setViewData(data: [Resume]) {
+    func setViewData(data: [ResumeList]) {
         resume = data
         contractNumberLabel.text = "총 \(data.count)건"
     }
@@ -84,9 +84,8 @@ extension ResumeView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
             withReuseIdentifier: ResumeCollectionViewCell.identifier,
             for: indexPath) as? ResumeCollectionViewCell else { return UICollectionViewCell() }
 
-        // TODO: dummy data
         if let resume = resume?[indexPath.row] {
-            cell.setData(data: resume)
+            cell.setCellData(data: resume)
         }
         cell.tapOption = self.tapOption
 

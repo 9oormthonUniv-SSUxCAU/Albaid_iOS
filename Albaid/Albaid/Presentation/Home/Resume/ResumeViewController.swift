@@ -23,11 +23,14 @@ final class ResumeViewController: BaseViewController {
     // MARK: Environment
     private let router = BaseRouter()
 
+    // MARK: Properties
+    var resumeList: [ResumeList] = []
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setData(data: Resume.dummyResume)
+        setData(data: resumeList)
         router.viewController = self
     }
     
@@ -74,7 +77,33 @@ final class ResumeViewController: BaseViewController {
     }
 
     // MARK: Data binding
-    private func setData(data: [Resume]) {
+    private func setData(data: [ResumeList]) {
         resumeView.setViewData(data: data)
+    }
+}
+
+extension ResumeViewController {
+    // MARK: Networking
+    private func getResume() {
+        print("🔔 getResume called")
+        NetworkService.shared.resume.getResume() {
+            [self] result in
+            switch result {
+            case .success(let response):
+                guard let data = response as? ResumeListResponse else { return }
+                print("🎯 getResume success: " + "\(data)")
+                resumeList = data.result
+            case .requestErr(let errorResponse):
+                dump(errorResponse)
+                guard let data = errorResponse as? ErrorResponse else { return }
+                print(data)
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .pathErr:
+                print("pathErr")
+            }
+        }
     }
 }
