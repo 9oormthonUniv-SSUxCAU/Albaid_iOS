@@ -20,7 +20,8 @@ extension UITextField {
             .foregroundColor: UIColor.albaidGray60,
             .font: UIFont(name: "Pretendard-SemiBold", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .semibold)
         ]
-        
+        textAlignment = .right
+
         attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
     }
     

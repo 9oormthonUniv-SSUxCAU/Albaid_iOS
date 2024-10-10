@@ -12,6 +12,11 @@ extension UIStackView {
         views.forEach { addArrangedSubview($0) }
     }
 
+    func contractDefaultStackView() {
+        axis = .horizontal
+        distribution = .fill
+    }
+
     func contractStackView(title: String, content: String) {
         axis = .horizontal
         distribution = .fill
