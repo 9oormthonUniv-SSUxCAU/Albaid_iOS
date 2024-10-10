@@ -18,3 +18,10 @@ extension Int {
         return "\(self)월"
     }
 }
+
+extension String {
+    var revertPriceFormat: Int {
+        let priceInt = self.replacingOccurrences(of: ",", with: "")
+        return Int(priceInt) ?? 0
+    }
+}
