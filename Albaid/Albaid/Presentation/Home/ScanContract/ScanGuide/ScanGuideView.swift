@@ -77,7 +77,7 @@ final class ScanGuideView: BaseView {
         }
 
         cameraButton.snp.makeConstraints {
-            $0.top.equalTo(cameraGuideDetailLabel.snp.bottom).offset(40)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(30)
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview()
         }

@@ -14,7 +14,7 @@ final class ContractService {
 
     private enum ResponseData {
         case postContractUpload(contractImage: Data)
-        case postContract(contractImage: Data, request: ContractRequest)
+        case postContract(contractImage: Data, request: ContractInput)
         case getContract
     }
 
@@ -34,7 +34,7 @@ final class ContractService {
         }
     }
 
-    public func postContract(contractImage: Data, request: ContractRequest, completion: @escaping (NetworkResult<Any>) -> Void) {
+    public func postContract(contractImage: Data, request: ContractInput, completion: @escaping (NetworkResult<Any>) -> Void) {
         contractProvider.request(.postContract(contractImage: contractImage, request: request)) { result in
             switch result {
             case .success(let response):

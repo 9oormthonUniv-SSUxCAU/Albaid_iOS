@@ -22,8 +22,6 @@ final class ScanCameraViewController: BaseViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let image = AlbaidImage.dummyContract2.pngData()!
-        postContractUpload(contractImage: image)
 
         router.viewController = self
     }
@@ -60,30 +58,5 @@ final class ScanCameraViewController: BaseViewController {
                                  rightBarButton: closeButton)
         navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.delegate = self
-    }
-}
-
-extension ScanCameraViewController {
-    // MARK: Networking
-    private func postContractUpload(contractImage: Data) {
-        print("🔔 postContractUpload called")
-        NetworkService.shared.contract.postContractUpload(contractImage: contractImage) {
-            [self] result in
-            switch result {
-            case .success(let response):
-                guard let data = response as? ContractUploadResponse else { return }
-                print("🎯 postContractUpload success: " + "\(data)")
-            case .requestErr(let errorResponse):
-                dump(errorResponse)
-                guard let data = errorResponse as? ErrorResponse else { return }
-                print(data)
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            case .pathErr:
-                print("pathErr")
-            }
-        }
     }
 }

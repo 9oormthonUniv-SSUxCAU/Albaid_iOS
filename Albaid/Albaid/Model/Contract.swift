@@ -7,6 +7,22 @@
 
 import Foundation
 
+struct ContractInput {
+    var title: String
+    var workplace: String
+    var contractStartDate: String
+    var contractEndDate: String?
+    var standardWorkingStartTime: String
+    var standardWorkingEndTime: String
+    var workingDays: [String]
+    var hourlyWage: Int
+    var jobDescription: String
+    var isPaidAnnualLeave: Bool
+    var isSocialInsurance: Bool
+    var isContractDelivery: Bool
+    var memo: String?
+}
+
 struct Contract {
     let id: Int
     let url: String
@@ -22,21 +38,6 @@ struct Contract {
     let isPaidAnnualLeave: Bool
     let isSocialInsurance: Bool
     let isContractDelivery: Bool
-    let memo: String?
-}
-
-struct ContractInput {
-    let workplace: String?
-    let contractStartDate: String?
-    let contractEndDate: String?
-    let standardWorkingStartTime: String?
-    let standardWorkingEndTime: String?
-    let workingDays: [String]?
-    let hourlyWage: Int?
-    let jobDescription: String?
-    let isPaidAnnualLeave: Bool?
-    let isSocialInsurance: Bool?
-    let isContractDelivery: Bool?
     let memo: String?
 }
 
@@ -71,19 +72,4 @@ extension Contract {
                                          isSocialInsurance: false,
                                          isContractDelivery: true,
                                          memo: "테스트 메모")]
-}
-
-extension ContractInput {
-    static let dummyContractInput = ContractInput(workplace: "투썸",
-                                                  contractStartDate: "2024-07-23",
-                                                  contractEndDate: "2024-09-27",
-                                                  standardWorkingStartTime: "13:00",
-                                                  standardWorkingEndTime: "18:00",
-                                                  workingDays: ["월", "화"],
-                                                  hourlyWage: nil,
-                                                  jobDescription: "상품 판매와 매장관리 및 관련부대 업무",
-                                                  isPaidAnnualLeave: false,
-                                                  isSocialInsurance: false,
-                                                  isContractDelivery: true,
-                                                  memo: "abc")
 }
