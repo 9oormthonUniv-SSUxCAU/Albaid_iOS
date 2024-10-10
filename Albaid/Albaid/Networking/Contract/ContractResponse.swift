@@ -10,10 +10,10 @@ import Foundation
 struct ContractListResponse: Codable {
     let isSuccess: Bool
     let message: String
-    let result: [ContractGet]
+    let result: [ContractList]
 }
 
-struct ContractGet: Codable {
+struct ContractList: Codable {
     let id: Int
     let url: URL
     let title: String
@@ -22,19 +22,47 @@ struct ContractGet: Codable {
 struct ContractUploadResponse: Codable {
     let isSuccess: Bool
     let message: String
-    let result: [ContractUpload]
+    let result: ContractUpload
 }
 
 struct ContractUpload: Codable {
+    let workplace: String?
+    let occupation: String?
+    let contractStartDate: String?
+    let contractEndDate: String?
+    let standardWorkingStartTime: String?
+    let standardWorkingEndTime: String?
+    let workingDays: [String]?
+    let hourlyWage: Int?
+    let jobDescription: String?
+    let isPaidAnnualLeave: Bool
+    let isSocialInsurance: Bool
+    let isContractDelivery: Bool
+    let isSafe: Bool
+}
+
+
+struct ContractRequestResponse: Codable {
+    let isSuccess: Bool
+    let message: String
+    let result: ContractRequest
+}
+
+struct ContractRequest: Codable {
+    let id: Int
+    let url: String
+    let title: String
     let workplace: String
-    let contractStartDate: Date
-    let contractEndDate: Date?
-    let standardWorkingStartTime: Date
-    let standardWorkingEndTime: Date
+    let occupation: String
+    let contractStartDate: String
+    let contractEndDate: String?
+    let standardWorkingStartTime: String
+    let standardWorkingEndTime: String
     let workingDays: [String]
     let hourlyWage: Int
     let jobDescription: String
     let isPaidAnnualLeave: Bool
     let isSocialInsurance: Bool
     let isContractDelivery: Bool
+    let memo: String?
 }

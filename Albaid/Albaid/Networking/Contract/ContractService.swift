@@ -14,6 +14,7 @@ final class ContractService {
 
     private enum ResponseData {
         case postContractUpload(contractImage: Data)
+        case postContract(contractImage: Data, request: ContractRequest)
         case getContract
     }
 
@@ -25,6 +26,22 @@ final class ContractService {
                 let data = response.data
 
                 let networkResult = self.judgeStatus(by: statusCode, data, responseData: .postContractUpload(contractImage: contractImage))
+                completion(networkResult)
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    public func postContract(contractImage: Data, request: ContractRequest, completion: @escaping (NetworkResult<Any>) -> Void) {
+        contractProvider.request(.postContract(contractImage: contractImage, request: request)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .postContract(contractImage: contractImage, request: request))
                 completion(networkResult)
 
             case .failure(let error):
@@ -55,7 +72,7 @@ final class ContractService {
         switch statusCode {
         case 200..<300:
             switch responseData {
-            case .getContract, .postContractUpload:
+            case .postContractUpload, .postContract, .getContract:
                 return isValidData(data: data, responseData: responseData)
             }
         case 400..<500:
@@ -79,6 +96,9 @@ final class ContractService {
             return .success(decodedData ?? "success")
         case .postContractUpload:
             let decodedData = try? decoder.decode(ContractUploadResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .postContract:
+            let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
             return .success(decodedData ?? "success")
         }
     }

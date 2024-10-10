@@ -10,6 +10,7 @@ import Foundation
 
 enum ContractAPI {
     case postContractUpload(contractImage: Data)
+    case postContract(contractImage: Data, request: ContractRequest)
     case getContract
 }
 
@@ -18,14 +19,14 @@ extension ContractAPI: TargetType {
         switch self {
         case .postContractUpload:
             return URLConst.contractUpload
-        case .getContract:
+        case .postContract, .getContract:
             return URLConst.contract
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .postContractUpload:
+        case .postContractUpload, .postContract:
             return .post
         case .getContract:
             return .get
@@ -37,6 +38,18 @@ extension ContractAPI: TargetType {
         case .postContractUpload(let contractImage):
             let formData = MultipartFormData(provider: .data(contractImage), name: "contractImage", fileName: "album@3x.png", mimeType: "image/png")
             return .uploadMultipart([formData])
+        case .postContract(let contractImage, let request):
+            var formData = [MultipartFormData]()
+            
+            let imageData = MultipartFormData(provider: .data(contractImage), name: "contractImage", fileName: "album@3x.png", mimeType: "image/png")
+            formData.append(imageData)
+            
+            if let jsonData = try? JSONSerialization.data(withJSONObject: request, options: []) {
+                let jsonFormData = MultipartFormData(provider: .data(jsonData), name: "metadata", fileName: "metadata.json", mimeType: "application/json")
+                formData.append(jsonFormData)
+            }
+            
+            return .uploadMultipart(formData)
         case .getContract:
             return .requestPlain
         }
@@ -44,7 +57,7 @@ extension ContractAPI: TargetType {
 
     var headers: [String : String]? {
         switch self {
-        case .postContractUpload:
+        case .postContractUpload, .postContract:
             let header = [
                 "Content-Type": "multipart/form-data",
                 "Authorization": "Bearer \(UserDefaultHandler.accessToken)"
