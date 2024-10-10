@@ -16,7 +16,7 @@ extension ResumeAPI: TargetType {
     var path: String {
         switch self {
         case .getResume:
-            return URLConst.success
+            return URLConst.resume
         }
     }
     

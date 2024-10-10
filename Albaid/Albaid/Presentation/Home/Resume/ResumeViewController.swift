@@ -27,6 +27,10 @@ final class ResumeViewController: BaseViewController {
     var resumeList: [ResumeList] = []
 
     // MARK: Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        getResume()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
