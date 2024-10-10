@@ -28,7 +28,7 @@ final class ContractViewController: BaseViewController {
     private let router = BaseRouter()
 
     // MARK: Properties
-    var contractList: [ContractGet] = []
+    var contractList: [ContractList] = []
 
     // MARK: Init
     init(modal: Bool) {
@@ -105,7 +105,7 @@ final class ContractViewController: BaseViewController {
     }
 
     // MARK: Data binding
-    private func setData(data: [ContractGet]) {
+    private func setData(data: [ContractList]) {
         contractView.contractCollectionView.setData(data: data)
     }
 }

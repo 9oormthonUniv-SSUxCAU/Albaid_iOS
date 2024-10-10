@@ -10,7 +10,7 @@ import Foundation
 
 enum ContractAPI {
     case postContractUpload(contractImage: Data)
-    case postContract(contractImage: Data, request: ContractRequest)
+    case postContract(contractImage: Data, request: ContractInput)
     case getContract
 }
 
