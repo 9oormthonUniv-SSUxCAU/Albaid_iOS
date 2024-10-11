@@ -62,5 +62,5 @@ struct ContractRequest: Codable {
     let isPaidAnnualLeave: Bool
     let isSocialInsurance: Bool
     let isContractDelivery: Bool
-    let memo: String?
+    let memo: String
 }
