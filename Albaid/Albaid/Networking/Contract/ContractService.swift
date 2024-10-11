@@ -17,7 +17,7 @@ final class ContractService {
         case postContract(contractImage: Data, request: ContractInput)
         case getContract
         case getContractId(contractId: Int)
-        case putContractId(contractId: Int)
+        case putContractId(contractId: Int, request: ContractInput)
     }
 
     public func postContractUpload(contractImage: Data, completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -85,13 +85,13 @@ final class ContractService {
     }
 
     public func putContractId(contractId: Int, request: ContractInput, completion: @escaping (NetworkResult<Any>) -> Void) {
-        contractProvider.request(.putContractId(contractId: contractId)) { result in
+        contractProvider.request(.putContractId(contractId: contractId, request: request)) { result in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
 
-                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .putContractId(contractId: contractId))
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .putContractId(contractId: contractId, request: request))
                 completion(networkResult)
 
             case .failure(let error):

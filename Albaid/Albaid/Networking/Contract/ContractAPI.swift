@@ -13,7 +13,7 @@ enum ContractAPI {
     case postContract(contractImage: Data, request: ContractInput)
     case getContract
     case getContractId(contractId: Int)
-    case putContractId(contractId: Int)
+    case putContractId(contractId: Int, request: ContractInput)
 }
 
 extension ContractAPI: TargetType {
@@ -23,7 +23,9 @@ extension ContractAPI: TargetType {
             return URLConst.contractUpload
         case .postContract, .getContract:
             return URLConst.contract
-        case .getContractId(let contractId), .putContractId(let contractId):
+        case .getContractId(let contractId):
+            return URLConst.contract + "/\(contractId)"
+        case .putContractId(let contractId, _):
             return URLConst.contract + "/\(contractId)"
         }
     }
@@ -56,10 +58,9 @@ extension ContractAPI: TargetType {
             return .requestParameters(parameters: [
                 "contractId": contractId
             ], encoding: URLEncoding.default)
-        case .putContractId(let contractId):
-            return .requestParameters(parameters: [
-                "contractId": contractId
-            ], encoding: URLEncoding.default)
+        case .putContractId(_, let request):
+            let requestData = try! JSONEncoder().encode(request)
+            return .requestCompositeData(bodyData: requestData, urlParameters: [:])
         }
     }
 

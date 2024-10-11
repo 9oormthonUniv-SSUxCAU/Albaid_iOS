@@ -13,13 +13,13 @@ final class ContractEditViewController: BaseViewController {
     private(set) var closeButton = BaseButton().then {
         $0.setTitle("닫기", for: .normal)
         $0.setTitleColor(.albaidGray30, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 16)
     }
 
     private(set) var confirmButton = BaseButton().then {
         $0.setTitle("완료", for: .normal)
         $0.setTitleColor(.albaidGray30, for: .normal)
-        $0.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 20)
+        $0.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 18)
     }
 
     private let contractEditView = ContractEditView()
@@ -27,6 +27,19 @@ final class ContractEditViewController: BaseViewController {
     // MARK: Properties
     private let id: Int
     private var contractDetail: ContractRequest?
+    private var contractInput = ContractInput(title: "",
+                                              workplace: "",
+                                              contractStartDate: "",
+                                              contractEndDate: nil,
+                                              standardWorkingStartTime: "",
+                                              standardWorkingEndTime: "",
+                                              workingDays: [],
+                                              hourlyWage: 0,
+                                              jobDescription: "",
+                                              isPaidAnnualLeave: false,
+                                              isSocialInsurance: false,
+                                              isContractDelivery: false,
+                                              memo: "")
 
     // MARK: Environment
     private let router = BaseRouter()
@@ -70,13 +83,48 @@ final class ContractEditViewController: BaseViewController {
 
         confirmButton.tap = { [weak self] in
             guard let self else { return }
-            router.dismissViewController()
+            let view = contractEditView.scanResultTopContentView
+            contractInput.title = view.workplaceTextField.text ?? ""
+            contractInput.workplace = view.workplaceTextField.text ?? ""
+
+            let startDate = view.contractStartDateTextField.text?.toDate(format: "yyyy-MM-dd")
+            let startDateString = startDate?.toDateString(format: "yyyy-MM-dd")
+            contractInput.contractStartDate = startDateString ?? ""
+
+            let endDate = view.contractEndDateTextField.text?.toDate(format: "yyyy-MM-dd")
+            let endDateString = endDate?.toDateString(format: "yyyy-MM-dd")
+            contractInput.contractEndDate = endDateString ?? ""
+
+            contractInput.standardWorkingStartTime = view.workingStartTimeTextField.text ?? ""
+            contractInput.standardWorkingEndTime = view.workingEndTimeTextField.text ?? ""
+
+            let workingDays = view.workingDayContentLabel.text
+            let reverseDayMapping: [String: String] = [
+                "월": "MO",
+                "화": "TU",
+                "수": "WE",
+                "목": "TH",
+                "금": "FR",
+                "토": "SA",
+                "일": "SU"
+            ]
+
+            let ENGDays = workingDays?.split(separator: " ").compactMap { reverseDayMapping[String($0)] }
+            contractInput.workingDays = ENGDays ?? []
+
+            let hourlyWage = view.hourlyWageTextField.text
+            contractInput.hourlyWage = hourlyWage?.revertPriceFormat ?? 0
+            contractInput.jobDescription = view.jobDescriptionTextField.text ?? ""
+
+            contractInput.memo = contractEditView.memoTextField.text ?? ""
+
+            putContractId(contractId: id, request: contractInput)
         }
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "근로계약서" + "\(id)",
+        setDefaultNavigationItem(title: contractDetail?.title,
                                  leftBarButton: closeButton,
                                  rightBarButton: confirmButton)
         navigationItem.hidesBackButton = true
@@ -88,13 +136,28 @@ final class ContractEditViewController: BaseViewController {
         contractEditView.scanResultTopContentView.setEditData(data: data)
         contractEditView.scanResultBottomContentView.setDetailData(data: data)
     }
+
+    private func convertDataType(data: ContractRequest) {
+        contractInput.title = data.title
+        contractInput.workplace = data.workplace
+        contractInput.contractStartDate = data.contractStartDate
+        contractInput.contractEndDate = data.contractEndDate
+        contractInput.standardWorkingStartTime = data.standardWorkingStartTime
+        contractInput.standardWorkingEndTime = data.standardWorkingEndTime
+        contractInput.workingDays = data.workingDays
+        contractInput.hourlyWage = data.hourlyWage
+        contractInput.jobDescription = data.jobDescription
+        contractInput.isPaidAnnualLeave = data.isPaidAnnualLeave
+        contractInput.isSocialInsurance = data.isSocialInsurance
+        contractInput.isContractDelivery = data.isContractDelivery
+        contractInput.memo = data.memo
+    }
 }
 
 // MARK: Networking
 extension ContractEditViewController {
     private func getContractId(contractId: Int) {
         print("🔔 getContractId called - edit")
-        print(contractId)
         NetworkService.shared.contract.getContractId(contractId: contractId) {
             [self] result in
             switch result {
@@ -103,6 +166,31 @@ extension ContractEditViewController {
                 print("🎯 getContractId success: " + "\(data)")
                 contractDetail = data.result
                 setView(data: data.result)
+                convertDataType(data: data.result)
+            case .requestErr(let errorResponse):
+                dump(errorResponse)
+                guard let data = errorResponse as? ErrorResponse else { return }
+                print(data)
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .pathErr:
+                print("pathErr")
+            }
+        }
+    }
+
+    private func putContractId(contractId: Int, request: ContractInput) {
+        print("🔔 putContractId called")
+        print(contractId)
+        print(request)
+        NetworkService.shared.contract.putContractId(contractId: contractId, request: contractInput) {
+            [self] result in
+            switch result {
+            case .success(let response):
+                guard let data = response as? ContractRequestResponse else { return }
+                print("🎯 putContractId success: " + "\(data)")
             case .requestErr(let errorResponse):
                 dump(errorResponse)
                 guard let data = errorResponse as? ErrorResponse else { return }
