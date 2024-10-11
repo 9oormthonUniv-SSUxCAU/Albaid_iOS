@@ -33,7 +33,7 @@ final class ContractCollectionView: BaseView {
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
     var tapOption: ((Int) -> Void)?
-    var contract: [Contract]?
+    var contract: [ContractList]?
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -58,7 +58,7 @@ final class ContractCollectionView: BaseView {
     }
 
     // MARK: Data binding
-    func setData(data: [Contract]) {
+    func setData(data: [ContractList]) {
         contract = data
         contractNumberLabel.text = "총 \(data.count)건"
     }
@@ -82,7 +82,6 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
             withReuseIdentifier: ContractCollectionViewCell.identifier,
             for: indexPath) as? ContractCollectionViewCell else { return UICollectionViewCell() }
 
-        // TODO: dummy data
         if let contract = contract?[indexPath.row] {
             cell.setCellData(data: contract)
         }

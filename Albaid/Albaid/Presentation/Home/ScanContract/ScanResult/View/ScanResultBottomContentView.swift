@@ -32,7 +32,7 @@ final class ScanResultBottomContentView: BaseView {
                                             isSocialInsuranceStackView,
                                             isContractDeliveryStackView)
     }
-    
+
     // MARK: Layout
     override func makeConstraints() {
         resultStackView.snp.makeConstraints {
@@ -42,23 +42,9 @@ final class ScanResultBottomContentView: BaseView {
     }
 
     // MARK: Data binding
-    func setData(data: Contract) {
-        if data.isPaidAnnualLeave {
-            isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.success)
-        } else {
-            isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.failure)
-        }
-
-        if data.isSocialInsurance {
-            isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.success)
-        } else {
-            isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.failure)
-        }
-
-        if data.isContractDelivery {
-            isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.success)
-        } else {
-            isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.failure)
-        }
+    func setData(data: ContractUpload) {
+        isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: data.isPaidAnnualLeave ? AlbaidImage.success : AlbaidImage.failure)
+        isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: data.isSocialInsurance ? AlbaidImage.success : AlbaidImage.failure)
+        isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: data.isContractDelivery ? AlbaidImage.success : AlbaidImage.failure)
     }
 }

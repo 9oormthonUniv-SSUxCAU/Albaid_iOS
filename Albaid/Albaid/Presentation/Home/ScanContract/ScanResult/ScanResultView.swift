@@ -49,6 +49,12 @@ final class ScanResultView: BaseView {
         $0.backgroundColor = .albaidGray95
     }
 
+    private(set) var buttonStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.spacing = 13
+        $0.distribution = .fillEqually
+    }
+
     private(set) var reScanButton = BaseButton().then {
         $0.setTextButton(title: "다시 촬영하기", titleColor: .albaidGray20, backgroundColor: .albaidGray95)
     }
@@ -59,8 +65,22 @@ final class ScanResultView: BaseView {
 
     // MARK: Properties
     var tapReScan: (() -> Void)?
-    var tapRegister: (() -> Void)?
+    var tapRegister: ((ContractInput) -> Void)?
     var tapDangerDetail: (() -> Void)?
+    var contratScanData: ContractUpload?
+    var contractInput = ContractInput(title: "",
+                                      workplace: "",
+                                      contractStartDate: "",
+                                      contractEndDate: "",
+                                      standardWorkingStartTime: "",
+                                      standardWorkingEndTime: "",
+                                      workingDays: [""],
+                                      hourlyWage: 0,
+                                      jobDescription: "",
+                                      isPaidAnnualLeave: false,
+                                      isSocialInsurance: false,
+                                      isContractDelivery: false,
+                                      memo: "")
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -73,8 +93,8 @@ final class ScanResultView: BaseView {
         addSubview(scanResultTopContentView)
         addSubview(dividerView)
         addSubview(scanResultBottomContentView)
-        addSubview(reScanButton)
-        addSubview(registerButton)
+        addSubview(buttonStackView)
+        buttonStackView.addArrangedSubviews(reScanButton, registerButton)
 
         addButtonEvent()
     }
@@ -120,19 +140,9 @@ final class ScanResultView: BaseView {
             $0.height.equalTo(142)
         }
 
-        let screenWidth = UIScreen.main.bounds.width - 40
-        let buttonWidth = screenWidth/2 - 6.5
-
-        reScanButton.snp.makeConstraints {
-            $0.top.equalTo(scanResultBottomContentView.snp.bottom).offset(56)
-            $0.leading.equalToSuperview()
-            $0.width.equalTo(buttonWidth)
-        }
-
-        registerButton.snp.makeConstraints {
-            $0.top.equalTo(scanResultBottomContentView.snp.bottom).offset(56)
-            $0.trailing.equalToSuperview()
-            $0.width.equalTo(buttonWidth)
+        buttonStackView.snp.makeConstraints {
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(30)
+            $0.horizontalEdges.equalToSuperview()
         }
     }
 
@@ -150,11 +160,85 @@ final class ScanResultView: BaseView {
 
     @objc
     private func handleRegisterButton() {
-        tapRegister?()
+        let view = scanResultTopContentView
+        contractInput.title = view.workplaceTextField.text ?? ""
+
+        // TODO: TBD
+//        contractInput.occupation = view.workplaceTextField.text ?? ""
+
+        contractInput.workplace = view.workplaceTextField.text ?? ""
+
+        let startDate = view.contractStartDateTextField.text?.toDate(format: "yyyy-MM-dd")
+        let startDateString = startDate?.toDateString(format: "yyyy-MM-dd")
+        contractInput.contractStartDate = startDateString ?? ""
+        let endDate = view.contractEndDateTextField.text?.toDate(format: "yyyy-MM-dd")
+        let endDateString = endDate?.toDateString(format: "yyyy-MM-dd")
+        contractInput.contractEndDate = endDateString ?? ""
+
+        contractInput.standardWorkingStartTime = view.workingStartTimeTextField.text ?? ""
+        contractInput.standardWorkingEndTime = view.workingEndTimeTextField.text ?? ""
+
+        let workingDays = view.workingDayContentLabel.text
+        let reverseDayMapping: [String: String] = [
+            "월": "MO",
+            "화": "TU",
+            "수": "WE",
+            "목": "TH",
+            "금": "FR",
+            "토": "SA",
+            "일": "SU"
+        ]
+
+        let ENGDays = workingDays?.split(separator: " ").compactMap { reverseDayMapping[String($0)] }
+
+        contractInput.workingDays = ENGDays ?? []
+        let hourlyWage = view.hourlyWageTextField.text
+        contractInput.hourlyWage = hourlyWage?.revertPriceFormat ?? 0
+        contractInput.jobDescription = view.jobDescriptionTextField.text ?? ""
+
+        tapRegister?(contractInput)
     }
 
     @objc
     private func handleDangerDetailButton() {
         tapDangerDetail?()
+    }
+
+    func setData(data: ContractUpload) {
+        contractInput.isPaidAnnualLeave = data.isPaidAnnualLeave
+        contractInput.isSocialInsurance = data.isSocialInsurance
+        contractInput.isContractDelivery = data.isContractDelivery
+
+        setToolTip(isSafe: data.isSafe)
+    }
+
+    private func setToolTip(isSafe: Bool) {
+        if isSafe {
+            scanResultTipView.backgroundColor = .albaidLightGreen
+            scanResultTipView.snp.makeConstraints {
+                $0.height.equalTo(76)
+            }
+            safetyImageView.image = AlbaidImage.safety
+            safetyLabel.text = AlbaidString.safety
+            safetyLabel.textColor = .albaidSafetyGreen
+        } else {
+            scanResultTipView.backgroundColor = .albaidLightRed
+            scanResultTipView.snp.makeConstraints {
+                $0.height.equalTo(57)
+            }
+            safetyImageView.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+            }
+            scanResultTipView.addSubview(dangerDetailButton)
+            dangerDetailButton.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.trailing.equalToSuperview().inset(16)
+                $0.height.equalTo(29)
+                $0.width.equalTo(72)
+            }
+            safetyImageView.image = AlbaidImage.danger
+            safetyLabel.text = AlbaidString.danger
+            safetyLabel.textColor = .albaidSafetyRed
+        }
     }
 }

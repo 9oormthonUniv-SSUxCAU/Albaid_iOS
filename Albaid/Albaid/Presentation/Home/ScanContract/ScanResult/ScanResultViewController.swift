@@ -20,12 +20,12 @@ final class ScanResultViewController: BaseViewController {
     private let router = BaseRouter()
 
     // MARK: Properties
-    var data: ContractInput
+    var data: ContractUpload
     var onModalDismiss: (([String]) -> Void)?
     var selectedDays: [String] = []
 
     // MARK: Init
-    init(data: ContractInput) {
+    init(data: ContractUpload) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
         setView(data: data)
@@ -67,9 +67,10 @@ final class ScanResultViewController: BaseViewController {
             router.presentScanCameraViewController2()
         }
 
-        scanResultView.tapRegister = { [weak self] in
-            guard let self else { return }
-            router.presentScanCompleteViewController()
+        scanResultView.tapRegister = { [self] contractInput in
+            let image = AlbaidImage.dummyContract.pngData()!
+            print("🛟\n\(contractInput)")
+            postContract(contractImage: image, request: contractInput)
         }
 
         scanResultView.tapDangerDetail = { [weak self] in
@@ -77,15 +78,25 @@ final class ScanResultViewController: BaseViewController {
             router.presentSafariViewController(url: AlbaidString.dangerDetail)
         }
 
-        scanResultView.scanResultTopContentView.tapLabel = { [weak self] in
-            guard let self else { return }
-            router.presentDayModalViewController(data: data)
-        }
+        scanResultView.scanResultTopContentView.tapDayLabel = { [self] days in
+            let dayModalViewController = DayModalViewController(data: days)
+            dayModalViewController.modalPresentationStyle = .pageSheet
+            if let sheet = dayModalViewController.sheetPresentationController {
+                sheet.detents = [.custom(resolver: { _ in 170 })]
+                sheet.preferredCornerRadius = 12
+            }
 
-        // TODO: fix
-//        onModalDismiss = { [weak self] receivedData in
-//            print("Data received in MainViewController: \(receivedData)")
-//        }
+            dayModalViewController.onDismiss = { [self] receivedData in
+                if receivedData.isEmpty {
+                    scanResultView.scanResultTopContentView.workingDayContentLabel.text = "요일을 선택해주세요"
+                    scanResultView.scanResultTopContentView.workingDayContentLabel.textColor = .albaidGray60
+                } else {
+                    scanResultView.scanResultTopContentView.workingDayContentLabel.text = receivedData.joined(separator: " ")
+                    scanResultView.scanResultTopContentView.workingDayContentLabel.textColor = .albaidGray20
+                }
+            }
+            present(dayModalViewController, animated: true, completion: nil)
+        }
     }
 
     // MARK: Navigation Item
@@ -96,101 +107,36 @@ final class ScanResultViewController: BaseViewController {
         navigationItem.hidesBackButton = true
     }
 
-    private func setView(data: ContractInput) {
-        let topView = scanResultView.scanResultTopContentView
-
-        if data.workplace != nil {
-            topView.workplaceStackView.contractStackView(title: "근무지", content: data.workplace ?? "nil")
-        } else {
-            topView.workplaceStackView.contractInputStackView(title: "근무지", content: "텍스트를 입력해주세요")
-        }
-
-        if data.contractStartDate != nil && data.contractEndDate != nil {
-            topView.contractDateStackView.contractStackView(title: "계약기간", content: (data.contractStartDate ?? "nil") + "~" + (data.contractEndDate ?? "nil"))
-        } else {
-            topView.contractDateStackView.contractInputStackView(title: "계약기간", content: "날짜를 입력해주세요")
-        }
-
-        if data.standardWorkingStartTime != nil && data.standardWorkingEndTime != nil {
-            topView.workingTimeStackView.contractStackView(title: "소정근로시간", content: (data.standardWorkingStartTime ?? "nil") + "~" + (data.standardWorkingEndTime ?? "nil"))
-        } else {
-            topView.workingTimeStackView.contractInputStackView(title: "소정근로시간", content: "시간을 입력해주세요")
-        }
-
-        if data.workingDays != nil {
-            let days = data.workingDays?.joined(separator: " ")
-
-            topView.dayContentLabel.text = days
-        } else {
-            topView.dayContentLabel.text = "요일을 선택해주세요"
-        }
-
-        if data.hourlyWage != nil {
-            topView.hourlyWageStackView.contractStackView(title: "시급", content: "\(data.hourlyWage ?? 0)")
-        } else {
-            topView.hourlyWageStackView.contractInputStackView(title: "시급", content: "텍스트를 입력해주세요")
-        }
-
-        if data.jobDescription != nil {
-            topView.jobDescriptionStackView.contractStackView(title: "업무 내용", content: data.jobDescription ?? "nil")
-        } else {
-            topView.jobDescriptionStackView.contractInputStackView(title: "업무 내용", content: "텍스트를 입력해주세요")
-        }
-
-        let bottomView = scanResultView.scanResultBottomContentView
-
-        if data.isPaidAnnualLeave ?? false {
-            bottomView.isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.success)
-        } else {
-            bottomView.isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: AlbaidImage.failure)
-        }
-
-        if data.isSocialInsurance ?? false {
-            bottomView.isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.success)
-        } else {
-            bottomView.isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: AlbaidImage.failure)
-        }
-
-        if data.isContractDelivery ?? false {
-            bottomView.isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.success)
-        } else {
-            bottomView.isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: AlbaidImage.failure)
-        }
-
-        setToolTip(isPaidAnnualLeave: data.isPaidAnnualLeave ?? false,
-                   isSocialInsurance: data.isSocialInsurance ?? false,
-                   isContractDelivery: data.isContractDelivery ?? false)
+    // MARK: Data binding
+    private func setView(data: ContractUpload) {
+        scanResultView.setData(data: data)
+        scanResultView.scanResultTopContentView.setData(data: data)
+        scanResultView.scanResultBottomContentView.setData(data: data)
     }
+}
 
-    private func setToolTip(isPaidAnnualLeave: Bool,
-                            isSocialInsurance: Bool,
-                            isContractDelivery: Bool) {
-        if isPaidAnnualLeave && isSocialInsurance && isContractDelivery {
-            scanResultView.scanResultTipView.backgroundColor = .albaidLightGreen
-            scanResultView.scanResultTipView.snp.makeConstraints {
-                $0.height.equalTo(76)
+extension ScanResultViewController {
+    // MARK: Networking
+    private func postContract(contractImage: Data, request: ContractInput) {
+        print("🔔 postContract called")
+        NetworkService.shared.contract.postContract(contractImage: contractImage, request: request) {
+            [self] result in
+            switch result {
+            case .success(let response):
+                guard let data = response as? ContractRequestResponse else { return }
+                print("🎯 postContract success: " + "\(data)")
+                router.presentScanCompleteViewController(contractImage: contractImage, request: request)
+            case .requestErr(let errorResponse):
+                dump(errorResponse)
+                guard let data = errorResponse as? ErrorResponse else { return }
+                print(data)
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .pathErr:
+                print("pathErr")
             }
-            scanResultView.safetyImageView.image = AlbaidImage.safety
-            scanResultView.safetyLabel.text = AlbaidString.safety
-            scanResultView.safetyLabel.textColor = .albaidSafetyGreen
-        } else {
-            scanResultView.scanResultTipView.backgroundColor = .albaidLightRed
-            scanResultView.scanResultTipView.snp.makeConstraints {
-                $0.height.equalTo(57)
-            }
-            scanResultView.safetyImageView.snp.makeConstraints {
-                $0.centerY.equalToSuperview()
-            }
-            scanResultView.scanResultTipView.addSubview(scanResultView.dangerDetailButton)
-            scanResultView.dangerDetailButton.snp.makeConstraints {
-                $0.centerY.equalToSuperview()
-                $0.trailing.equalToSuperview().inset(16)
-                $0.height.equalTo(29)
-                $0.width.equalTo(72)
-            }
-            scanResultView.safetyImageView.image = AlbaidImage.danger
-            scanResultView.safetyLabel.text = AlbaidString.danger
-            scanResultView.safetyLabel.textColor = .albaidSafetyRed
         }
     }
 }

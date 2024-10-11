@@ -88,18 +88,18 @@ final class BaseRouter {
         viewController?.present(navigationController, animated: true, completion: nil)
     }
 
-    func presentScanResultViewController(data: ContractInput) {
+    func presentScanResultViewController(data: ContractUpload) {
         let scanResultViewController = ScanResultViewController(data: data)
         viewController?.navigationController?.pushViewController(scanResultViewController, animated: true)
     }
 
-    func presentScanCompleteViewController() {
-        let scanCompleteViewController = ScanCompleteViewController()
+    func presentScanCompleteViewController(contractImage: Data, request: ContractInput) {
+        let scanCompleteViewController = ScanCompleteViewController(contractImage: contractImage, request: request)
         viewController?.navigationController?.pushViewController(scanCompleteViewController, animated: true)
     }
 
-    func presentScanMemoViewController() {
-        let scanMemoViewController = ScanMemoViewController()
+    func presentScanMemoViewController(contractImage: Data, request: ContractInput) {
+        let scanMemoViewController = ScanMemoViewController(contractImage: contractImage, request: request)
         viewController?.navigationController?.pushViewController(scanMemoViewController, animated: true)
     }
 
@@ -159,24 +159,6 @@ final class BaseRouter {
             sheet.preferredCornerRadius = 12
         }
         viewController?.present(contractAddModalViewController, animated: true, completion: nil)
-    }
-
-    func presentDayModalViewController(data: ContractInput) {
-        let dayModalViewController = DayModalViewController(data: data)
-        dayModalViewController.modalPresentationStyle = .pageSheet
-        if let sheet = dayModalViewController.sheetPresentationController {
-            sheet.detents = [.custom(resolver: { _ in 170 })]
-            sheet.preferredCornerRadius = 12
-        }
-        let scanResultViewController = ScanResultViewController(data: data)
-
-        // TODO: fix
-        dayModalViewController.onDismiss = { [weak self] receivedData in
-            print("Received data: \(receivedData)")
-            scanResultViewController.onModalDismiss?(receivedData)
-        }
-
-        viewController?.present(dayModalViewController, animated: true, completion: nil)
     }
 
     /// resume

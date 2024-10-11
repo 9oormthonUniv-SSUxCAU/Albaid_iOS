@@ -72,7 +72,7 @@ final class ContractEditViewController: BaseViewController {
     // MARK: Data binding
     private func setView(data: Contract) {
         contractEditView.setData(data: data)
-        contractEditView.scanResultTopContentView.setData(data: data)
-        contractEditView.scanResultBottomContentView.setData(data: data)
+//        contractEditView.scanResultTopContentView.setData(data: data)
+//        contractEditView.scanResultBottomContentView.setData(data: data)
     }
 }

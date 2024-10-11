@@ -25,7 +25,6 @@ final class ScanMemoView: BaseView {
     }
 
     private(set) var memoTextView = UITextView().then {
-        $0.text = "10분 전에 미리 도착하기"
         $0.textColor = .albaidGray20
         $0.textAlignment = .center
         $0.font = UIFont(name: "Pretendard-Medium", size: 16)
@@ -60,6 +59,37 @@ final class ScanMemoView: BaseView {
             $0.centerX.equalToSuperview()
             $0.width.equalToSuperview().inset(26)
             $0.height.equalTo(100)
+        }
+    }
+
+    // MARK: Data Binding
+    func setData(data: ContractInput) {
+        setTextView()
+
+        if data.memo == "" {
+            memoTextView.text = "메모를 입력하세요"
+            memoTextView.textColor = .albaidGray60
+        } else {
+            memoTextView.text = data.memo
+        }
+    }
+}
+
+extension ScanMemoView: UITextViewDelegate {
+    private func setTextView() {
+        memoTextView.delegate = self
+    }
+
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        guard textView.textColor == .albaidGray60 else { return }
+        textView.textColor = .label
+        textView.text = nil
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "메모를 입력하세요"
+            textView.textColor = .albaidGray60
         }
     }
 }

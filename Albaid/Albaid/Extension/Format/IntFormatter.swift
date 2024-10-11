@@ -1,5 +1,5 @@
 //
-//  Int+Extension.swift
+//  IntFormatter.swift
 //  Albaid
 //
 //  Created by 박지윤 on 9/28/24.
@@ -16,5 +16,12 @@ extension Int {
 
     var toMonthFormat: String {
         return "\(self)월"
+    }
+}
+
+extension String {
+    var revertPriceFormat: Int {
+        let priceInt = self.replacingOccurrences(of: ",", with: "")
+        return Int(priceInt) ?? 0
     }
 }
