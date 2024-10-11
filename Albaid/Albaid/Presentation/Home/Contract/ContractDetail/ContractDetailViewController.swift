@@ -22,6 +22,7 @@ final class ContractDetailViewController: BaseViewController {
 
     // MARK: Properties
     private let id: Int
+    private var contractDetail: ContractRequest?
 
     // MARK: Environment
     private let router = BaseRouter()
@@ -96,6 +97,7 @@ extension ContractDetailViewController {
             case .success(let response):
                 guard let data = response as? ContractRequestResponse else { return }
                 print("🎯 getContractId success: " + "\(data)")
+                contractDetail = data.result
                 setView(data: data.result)
             case .requestErr(let errorResponse):
                 dump(errorResponse)
