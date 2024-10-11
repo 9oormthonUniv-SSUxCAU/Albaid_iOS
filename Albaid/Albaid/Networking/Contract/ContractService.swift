@@ -17,6 +17,7 @@ final class ContractService {
         case postContract(contractImage: Data, request: ContractInput)
         case getContract
         case getContractId(contractId: Int)
+        case putContractId(contractId: Int)
     }
 
     public func postContractUpload(contractImage: Data, completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -83,13 +84,29 @@ final class ContractService {
         }
     }
 
+    public func putContractId(contractId: Int, request: ContractInput, completion: @escaping (NetworkResult<Any>) -> Void) {
+        contractProvider.request(.putContractId(contractId: contractId)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .putContractId(contractId: contractId))
+                completion(networkResult)
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
 
         switch statusCode {
         case 200..<300:
             switch responseData {
-            case .postContractUpload, .postContract, .getContract, .getContractId:
+            case .postContractUpload, .postContract, .getContract, .getContractId, .putContractId:
                 return isValidData(data: data, responseData: responseData)
             }
         case 400..<500:
@@ -118,6 +135,9 @@ final class ContractService {
             let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
             return .success(decodedData ?? "success")
         case .getContractId:
+            let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .putContractId:
             let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
             return .success(decodedData ?? "success")
         }
