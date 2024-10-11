@@ -74,5 +74,6 @@ extension ScanLoadingViewController {
 
     private func scanSuccess(data: ContractUpload) {
         router.presentScanResultViewController(data: data)
+//        router.presentScanResultViewController(data: ContractUpload(workplace: "aa", contractStartDate: "2024-03-26", contractEndDate: "2024-09-33", standardWorkingStartTime: "13:00", standardWorkingEndTime: "21:00", workingDays: nil, hourlyWage: 29999, jobDescription: "dd", isPaidAnnualLeave: true, isSocialInsurance: true, isContractDelivery: true, isSafe: true))
     }
 }

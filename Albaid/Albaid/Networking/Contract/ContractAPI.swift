@@ -39,17 +39,12 @@ extension ContractAPI: TargetType {
             let formData = MultipartFormData(provider: .data(contractImage), name: "contractImage", fileName: "album@3x.png", mimeType: "image/png")
             return .uploadMultipart([formData])
         case .postContract(let contractImage, let request):
-            var formData = [MultipartFormData]()
-            
-            let imageData = MultipartFormData(provider: .data(contractImage), name: "contractImage", fileName: "album@3x.png", mimeType: "image/png")
-            formData.append(imageData)
-            
-            if let jsonData = try? JSONSerialization.data(withJSONObject: request, options: []) {
-                let jsonFormData = MultipartFormData(provider: .data(jsonData), name: "metadata", fileName: "metadata.json", mimeType: "application/json")
-                formData.append(jsonFormData)
-            }
-            
-            return .uploadMultipart(formData)
+            let jsonData = try! JSONEncoder().encode(request)
+            let jsonMultipart = MultipartFormData(provider: .data(jsonData), name: "request", fileName: "request.json", mimeType: "application/json")
+            let imageMultipart = MultipartFormData(provider: .data(contractImage), name: "contractImage", fileName: "contract.jpg", mimeType: "image/jpeg")
+            let multipartData = [jsonMultipart, imageMultipart]
+
+            return .uploadMultipart(multipartData)
         case .getContract:
             return .requestPlain
         }

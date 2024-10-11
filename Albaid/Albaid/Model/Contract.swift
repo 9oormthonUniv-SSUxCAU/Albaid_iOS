@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContractInput {
+struct ContractInput: Encodable {
     var title: String
     var workplace: String
     var contractStartDate: String
@@ -20,7 +20,7 @@ struct ContractInput {
     var isPaidAnnualLeave: Bool
     var isSocialInsurance: Bool
     var isContractDelivery: Bool
-    var memo: String?
+    var memo: String
 }
 
 struct Contract {

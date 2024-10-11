@@ -20,8 +20,9 @@ final class DayModalViewController: BaseViewController {
     private let router = BaseRouter()
 
     // MARK: Init
-    init(data: ContractInput) {
+    init(data: [String]) {
         super.init(nibName: nil, bundle: nil)
+        setData(data: data)
     }
 
     required init?(coder: NSCoder) {
@@ -32,7 +33,6 @@ final class DayModalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setData()
         router.viewController = self
     }
 
@@ -53,7 +53,11 @@ final class DayModalViewController: BaseViewController {
     }
 
     // MARK: Data binding
-    private func setData() {
+    private func setData(data: [String]) {
+        print("💡")
+        print(data)
+        selectedDays = data
+        dayModalView.setData(data: data)
         dayModalView.onDismiss = { [self] data in
             selectedDays = data
         }

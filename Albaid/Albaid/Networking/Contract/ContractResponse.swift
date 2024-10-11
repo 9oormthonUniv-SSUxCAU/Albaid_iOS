@@ -27,7 +27,6 @@ struct ContractUploadResponse: Codable {
 
 struct ContractUpload: Codable {
     let workplace: String?
-    let occupation: String?
     let contractStartDate: String?
     let contractEndDate: String?
     let standardWorkingStartTime: String?
@@ -53,7 +52,6 @@ struct ContractRequest: Codable {
     let url: String
     let title: String
     let workplace: String
-    let occupation: String
     let contractStartDate: String
     let contractEndDate: String?
     let standardWorkingStartTime: String

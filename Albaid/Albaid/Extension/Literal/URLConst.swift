@@ -7,7 +7,7 @@
 
 enum URLConst {
     // MARK: - baseURL
-    static let base = "http://15.165.56.192/api"
+    static let base = "http://13.125.40.17/api"
     
     // MARK: - Auth
     static let refresh = "/auth/refesh"

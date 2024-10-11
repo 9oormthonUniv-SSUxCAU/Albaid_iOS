@@ -14,6 +14,19 @@ final class ScanCompleteViewController: BaseViewController {
 
     // MARK: Environment
     private let router = BaseRouter()
+    private let contractImage: Data
+    private let request: ContractInput
+
+    // MARK: Init
+    init(contractImage: Data, request: ContractInput) {
+        self.contractImage = contractImage
+        self.request = request
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -44,7 +57,7 @@ final class ScanCompleteViewController: BaseViewController {
 
         scanCompleteView.tapMemo = { [weak self] in
             guard let self else { return }
-            router.presentScanMemoViewController()
+            router.presentScanMemoViewController(contractImage: contractImage, request: request)
         }
     }
 

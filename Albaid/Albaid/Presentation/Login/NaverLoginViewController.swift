@@ -48,7 +48,7 @@ class NaverLoginViewController: BaseViewController, WKNavigationDelegate {
             return
         }
 
-        if urlString.hasPrefix("http://15.165.56.192/api/auth/success") {
+        if urlString.hasPrefix("\(URLConst.base)\(URLConst.success)") {
             print("Matched URL: \(url)")
             if let queryParams = extractQueryParams(from: url) {
                 if let type = queryParams["type"],

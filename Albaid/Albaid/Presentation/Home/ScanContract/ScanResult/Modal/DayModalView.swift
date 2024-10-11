@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DayModalView: BaseView {
+final class DayModalView: UIInputView {
     
     // MARK: UI Components
     private(set) var modalDividerView = UIView().then {
@@ -31,13 +31,26 @@ final class DayModalView: BaseView {
 
     // MARK: Properties
     let days = ["월", "화", "수", "목", "금", "토", "일"]
+    let dayOrder = ["월": 0, "화": 1, "수": 2, "목": 3, "금": 4, "토": 5, "일": 6]
+
     var selectedDays: [String] = []
     var onDismiss: (([String]) -> Void)?
     var onSelectedDays: (([String]) -> Void)?
 
+    // MARK: Initializer
+    override init(frame: CGRect, inputViewStyle: UIInputView.Style) {
+        super.init(frame: frame, inputViewStyle: inputViewStyle)
+        configureSubviews()
+        makeConstraints()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     // MARK: Configuration
-    override func configureSubviews() {
-        setButtonStackView()
+    func configureSubviews() {
+        backgroundColor = .albaidGray100
 
         addSubview(modalDividerView)
         addSubview(titleLabel)
@@ -46,14 +59,18 @@ final class DayModalView: BaseView {
     }
     
     // MARK: Layout
-    override func makeConstraints() {
+    func makeConstraints() {
         modalDividerView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(38)
             $0.height.equalTo(6)
         }
-    
+
+        snp.makeConstraints {
+            $0.height.equalTo(190)
+        }
+
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(modalDividerView.snp.bottom).offset(10)
             $0.horizontalEdges.equalToSuperview().inset(20)
@@ -72,6 +89,11 @@ final class DayModalView: BaseView {
     }
 
     private func setButtonStackView() {
+        if selectedDays.count > 1 {
+            selectedDays.sort { dayOrder[$0]! < dayOrder[$1]! }
+        }
+        updateData(data: selectedDays)
+        print("👀 \(selectedDays)")
         for day in days {
             let button = BaseButton().then {
                 $0.setTitle(day, for: .normal)
@@ -79,15 +101,32 @@ final class DayModalView: BaseView {
                 $0.setTitleColor(.albaidGray100, for: .selected)
                 $0.layer.cornerRadius = 12
                 $0.backgroundColor = .albaidGray95
+                $0.isSelected = false
+            }
+
+            if selectedDays.contains(day) {
+                print(day)
+                toggleButtonStatus(button)
             }
 
             button.snp.makeConstraints {
                 $0.height.equalTo(44)
             }
-            
+
+            button.accessibilityIdentifier = day
             button.addTarget(self, action: #selector(dayButtonTapped), for: .touchUpInside)
 
             dayStackView.addArrangedSubview(button)
+        }
+    }
+
+    private func toggleButtonStatus(_ button: BaseButton) {
+        button.isSelected.toggle()
+
+        if button.isSelected {
+            button.backgroundColor = .albaidGray20
+        } else {
+            button.backgroundColor = .albaidGray95
         }
     }
 
@@ -95,14 +134,18 @@ final class DayModalView: BaseView {
     @objc func dayButtonTapped(_ sender: UIButton) {
         if let day = sender.currentTitle {
             if selectedDays.contains(day) {
+                toggleButtonStatus(sender as! BaseButton)
                 selectedDays.removeAll { $0 == day }
-                sender.isSelected.toggle()
-                sender.backgroundColor = .albaidGray95
+                if selectedDays.count > 1 {
+                    selectedDays.sort { dayOrder[$0]! < dayOrder[$1]! }
+                }
                 updateData(data: selectedDays)
             } else {
+                toggleButtonStatus(sender as! BaseButton)
                 selectedDays.append(day)
-                sender.isSelected.toggle()
-                sender.backgroundColor = .albaidGray20
+                if selectedDays.count > 1 {
+                    selectedDays.sort { dayOrder[$0]! < dayOrder[$1]! }
+                }
                 updateData(data: selectedDays)
             }
         }
@@ -110,5 +153,10 @@ final class DayModalView: BaseView {
 
     func updateData(data: [String]) {
         onDismiss?(data)
+    }
+
+    func setData(data: [String]) {
+        selectedDays = data
+        setButtonStackView()
     }
 }

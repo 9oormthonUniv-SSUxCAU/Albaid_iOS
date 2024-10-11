@@ -596,8 +596,9 @@
 			isa = PBXGroup;
 			children = (
 				9556DE672CA5D54700A43A78 /* ScanResultView.swift */,
-				95BCFFE62CA86BA10001F339 /* View */,
 				9556DE692CA5D54F00A43A78 /* ScanResultViewController.swift */,
+				95BCFFE62CA86BA10001F339 /* View */,
+				956EC1992CB46B7E0091C0B0 /* Modal */,
 			);
 			path = ScanResult;
 			sourceTree = "<group>";
@@ -607,7 +608,6 @@
 			children = (
 				9556DE6B2CA5D57200A43A78 /* ScanCompleteView.swift */,
 				9556DE6D2CA5D57800A43A78 /* ScanCompleteViewController.swift */,
-				956EC1992CB46B7E0091C0B0 /* Modal */,
 			);
 			path = ScanComplete;
 			sourceTree = "<group>";
