@@ -461,6 +461,61 @@ final class ScanResultTopContentView: BaseView {
     }
 }
 
+extension ScanResultTopContentView {
+    func setDetailData(data: ContractRequest) {
+        workplaceTextField.isEnabled = false
+        workplaceTextField.setContractText(content: data.workplace)
+
+        contractStartDateTextField.isEnabled = false
+        let contractStartDate = data.contractStartDate.toDate(format: "yyyy.MM.dd")
+        contractStartDateTextField.text = contractStartDate?.toDateString(format: "yyyy.MM.dd")
+
+        contractEndDateTextField.isEnabled = false
+        if data.contractEndDate != nil {
+            let contractEndDate = data.contractEndDate?.toDate(format: "yyyy.MM.dd")
+            contractEndDateTextField.text = contractEndDate?.toDateString(format: "yyyy.MM.dd")
+        }
+
+        workingStartTimeTextField.isEnabled = false
+        let startTime = String(data.standardWorkingStartTime.dropLast(3))
+        workingStartTimeTextField.text = startTime
+
+        workingEndTimeTextField.isEnabled = false
+        let endTime = String(data.standardWorkingEndTime.dropLast(3))
+        workingEndTimeTextField.text = endTime
+
+        workingDayContentLabel.isUserInteractionEnabled = false
+        let dayString = data.workingDays.map { dayMapping[$0] ?? $0 }
+        let days = dayString.joined(separator: " ")
+        workingDayContentLabel.text = days
+        workingDayContentLabel.textColor = .albaidGray20
+        workingDayContentLabel.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+
+        hourlyWageTextField.isEnabled = false
+        let hourlyWage = data.hourlyWage.toPriceFormat
+        hourlyWageTextField.setContractText(content: "\(hourlyWage)")
+
+        jobDescriptionTextField.isEnabled = false
+        jobDescriptionTextField.setContractText(content: data.jobDescription)
+
+        //        let timeDifferenceInSeconds = data.standardWorkingEndTime.timeIntervalSince(data.standardWorkingStartTime)
+        //        let hours = Int(timeDifferenceInSeconds) / 3600
+        //        let minutes = (Int(timeDifferenceInSeconds) % 3600) / 60
+        //        let workingTimeText = data.standardWorkingStartTime.toTimeString() + "~" + data.standardWorkingEndTime.toTimeString()
+        //        var workingTotal = ""
+        //
+        //        if hours != 0 && minutes != 0 {
+        //            workingTotal = "\(hours)시간 \(minutes)분"
+        //        } else if minutes == 0 {
+        //            workingTotal = "\(hours)시간"
+        //        } else {
+        //            workingTotal = "\(minutes)분"
+        //        }
+        //
+        //        workingTimeStackView.contractLabelStackView(title: "소정근로시간", content: workingTimeText + " (\(workingTotal))")
+    }
+}
+
 extension ScanResultTopContentView: UITextFieldDelegate {
     private func setTextFieldDelegate() {
         hourlyWageTextField.delegate = self

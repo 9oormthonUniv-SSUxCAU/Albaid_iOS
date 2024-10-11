@@ -47,4 +47,10 @@ final class ScanResultBottomContentView: BaseView {
         isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: data.isSocialInsurance ? AlbaidImage.success : AlbaidImage.failure)
         isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: data.isContractDelivery ? AlbaidImage.success : AlbaidImage.failure)
     }
+
+    func setDetailData(data: ContractRequest) {
+        isPaidAnnualLeaveStackView.contractIsSuccessStackView(title: "연차 유급휴가 내용", isSuccess: data.isPaidAnnualLeave ? AlbaidImage.success : AlbaidImage.failure)
+        isSocialInsuranceStackView.contractIsSuccessStackView(title: "사회보험 적용", isSuccess: data.isSocialInsurance ? AlbaidImage.success : AlbaidImage.failure)
+        isContractDeliveryStackView.contractIsSuccessStackView(title: "근로계약서 교부", isSuccess: data.isContractDelivery ? AlbaidImage.success : AlbaidImage.failure)
+    }
 }

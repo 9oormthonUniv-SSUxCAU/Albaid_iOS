@@ -33,7 +33,7 @@ final class ContractCollectionView: BaseView {
     // MARK: Properties
     var tapCell: ((Int) -> Void)?
     var tapOption: ((Int) -> Void)?
-    var contract: [ContractList]?
+    var contract: [ContractList] = []
 
     // MARK: Configuration
     override func configureSubviews() {
@@ -73,7 +73,7 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contract?.count ?? 0
+        return contract.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,14 +81,11 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
             withReuseIdentifier: ContractCollectionViewCell.identifier,
             for: indexPath) as? ContractCollectionViewCell else { return UICollectionViewCell() }
 
-        if let contract = contract?[indexPath.row] {
-            cell.setCellData(data: contract)
-        }
-
-        cell.index = indexPath.row
-        cell.tapOption = { [weak self] index in
+        cell.setCellData(data: contract[indexPath.row])
+        cell.id = contract[indexPath.row].id
+        cell.tapOption = { [weak self] id in
             guard let self = self else { return }
-            self.tapOption?(index)
+            self.tapOption?(id)
         }
         return cell
     }
@@ -111,6 +108,6 @@ extension ContractCollectionView: UICollectionViewDataSource, UICollectionViewDe
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        tapCell?(indexPath.row)
+        tapCell?(contract[indexPath.row].id)
     }
 }

@@ -105,7 +105,6 @@ final class ContractViewController: BaseViewController {
 
     // MARK: Data binding
     private func setData(data: [ContractList]) {
-        print("📈\(data)")
         contractView.contractCollectionView.setData(data: data)
     }
 }

@@ -35,7 +35,7 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     // MARK: Properties
     var tapOption: ((Int) -> Void)?
-    var index: Int = 0
+    var id: Int = 0
 
     // MARK: init
     override init(frame: CGRect) {
@@ -87,7 +87,7 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     // MARK: Data binding
     func setCellData(data: ContractList) {
-        contractNameLabel.text = "근로계약서\(data.id + 1)"
+        contractNameLabel.text = "근로계약서\(data.id)"
     }
 
     // MARK: Event
@@ -97,6 +97,6 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     @objc
     private func handleOptionButton() {
-        tapOption?(index)
+        tapOption?(id)
     }
 }
