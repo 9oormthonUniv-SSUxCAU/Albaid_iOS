@@ -48,7 +48,6 @@ final class ContractViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setData(data: contractList)
         router.viewController = self
     }
     
@@ -106,6 +105,7 @@ final class ContractViewController: BaseViewController {
 
     // MARK: Data binding
     private func setData(data: [ContractList]) {
+        print("📈\(data)")
         contractView.contractCollectionView.setData(data: data)
     }
 }
@@ -121,6 +121,7 @@ extension ContractViewController {
                 guard let data = response as? ContractListResponse else { return }
                 print("🎯 getContract success: " + "\(data)")
                 contractList = data.result
+                setData(data: data.result)
             case .requestErr(let errorResponse):
                 dump(errorResponse)
                 guard let data = errorResponse as? ErrorResponse else { return }

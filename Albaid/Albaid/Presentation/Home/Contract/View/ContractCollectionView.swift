@@ -37,8 +37,6 @@ final class ContractCollectionView: BaseView {
 
     // MARK: Configuration
     override func configureSubviews() {
-        setCollectionView()
-
         addSubview(contractNumberLabel)
         addSubview(contractCollectionView)
 
@@ -61,6 +59,7 @@ final class ContractCollectionView: BaseView {
     func setData(data: [ContractList]) {
         contract = data
         contractNumberLabel.text = "총 \(data.count)건"
+        setCollectionView()
     }
 }
 
