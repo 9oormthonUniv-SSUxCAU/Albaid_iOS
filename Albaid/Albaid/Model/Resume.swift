@@ -7,6 +7,19 @@
 
 import Foundation
 
+struct ResumeInput: Encodable {
+    var title: String
+    var summary: String
+    var phone: String
+    var address: String
+    var email: String
+    var finalEducation: String
+    var desiredLocation: String
+    var desiredJob: String
+    var careers: [Careers]
+    var qualifications: String
+}
+
 struct Resume {
     let id: Int
     let name: String

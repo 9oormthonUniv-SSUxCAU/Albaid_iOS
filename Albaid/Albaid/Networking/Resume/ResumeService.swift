@@ -13,7 +13,11 @@ final class ResumeService {
     private var resumeProvider = MoyaProvider<ResumeAPI>(plugins: [MoyaLoggerPlugin()])
 
     private enum ResponseData {
+        case postResume(request: ResumeInput)
         case getResume
+        case getResumeId(id: Int)
+        case putResumeId(id: Int, request: ContractInput)
+        case deleteResumeId(id: Int)
     }
 
     public func getResume(completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -38,7 +42,7 @@ final class ResumeService {
         switch statusCode {
         case 200..<300:
             switch responseData {
-            case .getResume:
+            case .getResume, .postResume, .getResumeId, .putResumeId, .deleteResumeId:
                 return isValidData(data: data, responseData: responseData)
             }
         case 400..<500:
@@ -58,6 +62,18 @@ final class ResumeService {
 
         switch responseData {
         case .getResume:
+            let decodedData = try? decoder.decode(ResumeListResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .postResume(request: let request):
+            let decodedData = try? decoder.decode(ResumeListResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .getResumeId(id: let id):
+            let decodedData = try? decoder.decode(ResumeListResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .putResumeId(id: let id, request: let request):
+            let decodedData = try? decoder.decode(ResumeListResponse.self, from: data)
+            return .success(decodedData ?? "success")
+        case .deleteResumeId(id: let id):
             let decodedData = try? decoder.decode(ResumeListResponse.self, from: data)
             return .success(decodedData ?? "success")
         }

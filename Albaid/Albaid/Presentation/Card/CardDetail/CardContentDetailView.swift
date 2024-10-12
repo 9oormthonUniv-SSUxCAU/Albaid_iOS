@@ -30,7 +30,7 @@ final class CardContentDetailView: BaseView {
     }
 
     private(set) var monthTimeStackView = UIStackView().then {
-        $0.contractLabelStackView(title: "이번 달 일한 시간", content: "48시간")
+        $0.contractLabelStackView(title: "이번 달 소정근로시간", content: "48시간")
     }
 
     private(set) var monthWageStackView = UIStackView().then {
