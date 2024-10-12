@@ -539,6 +539,7 @@ extension ScanResultTopContentView {
         workingDayContentLabel.text = days
         workingDayContentLabel.textColor = .albaidGray20
         workingDayContentLabel.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        workingDayContentLabel.isUserInteractionEnabled = true
 
         let hourlyWage = data.hourlyWage.toPriceFormat
         hourlyWageTextField.setContractText(content: "\(hourlyWage)")

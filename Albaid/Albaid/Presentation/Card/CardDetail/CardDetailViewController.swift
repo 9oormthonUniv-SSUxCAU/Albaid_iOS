@@ -70,7 +70,7 @@ class CardDetailViewController: BaseViewController {
         }
 
         cardDetailView.cardContentView.tapContract = { [self] id in
-            router.presentContractDetailViewController(id: id)
+//            router.presentContractDetailViewController(id: id)
         }
     }
 

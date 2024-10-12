@@ -25,7 +25,7 @@ final class ContractEditViewController: BaseViewController {
     private let contractEditView = ContractEditView()
 
     // MARK: Properties
-    private let id: Int
+    private let contractList: ContractList
     private var contractDetail: ContractRequest?
     private var contractInput = ContractInput(title: "",
                                               workplace: "",
@@ -45,10 +45,10 @@ final class ContractEditViewController: BaseViewController {
     private let router = BaseRouter()
 
     // MARK: Init
-    init(id: Int) {
-        self.id = id
+    init(contractList: ContractList) {
+        self.contractList = contractList
         super.init(nibName: nil, bundle: nil)
-        getContractId(contractId: id)
+        getContractId(contractId: contractList.id)
     }
 
     required init?(coder: NSCoder) {
@@ -79,6 +79,26 @@ final class ContractEditViewController: BaseViewController {
         closeButton.tap = { [weak self] in
             guard let self else { return }
             router.dismissViewController()
+        }
+
+        contractEditView.scanResultTopContentView.tapDayLabel = { [self] days in
+            let dayModalViewController = DayModalViewController(data: days)
+            dayModalViewController.modalPresentationStyle = .pageSheet
+            if let sheet = dayModalViewController.sheetPresentationController {
+                sheet.detents = [.custom(resolver: { _ in 170 })]
+                sheet.preferredCornerRadius = 12
+            }
+
+            dayModalViewController.onDismiss = { [self] receivedData in
+                if receivedData.isEmpty {
+                    contractEditView.scanResultTopContentView.workingDayContentLabel.text = "요일을 선택해주세요"
+                    contractEditView.scanResultTopContentView.workingDayContentLabel.textColor = .albaidGray60
+                } else {
+                    contractEditView.scanResultTopContentView.workingDayContentLabel.text = receivedData.joined(separator: " ")
+                    contractEditView.scanResultTopContentView.workingDayContentLabel.textColor = .albaidGray20
+                }
+            }
+            present(dayModalViewController, animated: true, completion: nil)
         }
 
         confirmButton.tap = { [weak self] in
@@ -118,13 +138,13 @@ final class ContractEditViewController: BaseViewController {
 
             contractInput.memo = contractEditView.memoTextField.text ?? ""
 
-            putContractId(contractId: id, request: contractInput)
+            putContractId(contractId: contractList.id, request: contractInput)
         }
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: contractDetail?.title,
+        setDefaultNavigationItem(title: contractList.title,
                                  leftBarButton: closeButton,
                                  rightBarButton: confirmButton)
         navigationItem.hidesBackButton = true
@@ -191,6 +211,7 @@ extension ContractEditViewController {
             case .success(let response):
                 guard let data = response as? ContractRequestResponse else { return }
                 print("🎯 putContractId success: " + "\(data)")
+                router.dismissViewController()
             case .requestErr(let errorResponse):
                 dump(errorResponse)
                 guard let data = errorResponse as? ErrorResponse else { return }

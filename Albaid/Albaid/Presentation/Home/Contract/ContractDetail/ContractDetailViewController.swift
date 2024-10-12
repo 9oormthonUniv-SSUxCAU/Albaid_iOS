@@ -21,17 +21,17 @@ final class ContractDetailViewController: BaseViewController {
     private let contractDetailView = ContractDetailView()
 
     // MARK: Properties
-    private let id: Int
+    private let contractList: ContractList
     private var contractDetail: ContractRequest?
 
     // MARK: Environment
     private let router = BaseRouter()
 
     // MARK: Init
-    init(id: Int) {
-        self.id = id
+    init(contractList: ContractList) {
+        self.contractList = contractList
         super.init(nibName: nil, bundle: nil)
-        getContractId(contractId: id)
+        getContractId(contractId: contractList.id)
     }
 
     required init?(coder: NSCoder) {
@@ -66,13 +66,13 @@ final class ContractDetailViewController: BaseViewController {
 
         optionButton.tap = { [weak self] in
             guard let self else { return }
-            router.presentModalViewController(id: id)
+            router.presentModalViewController(contractList: contractList)
         }
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "근로계약서" + "\(id)",
+        setDefaultNavigationItem(title: contractList.title,
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
         navigationController?.interactivePopGestureRecognizer?.delegate = self

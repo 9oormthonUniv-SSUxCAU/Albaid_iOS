@@ -16,11 +16,11 @@ final class OptionModalViewController: BaseViewController {
     private let router = BaseRouter()
 
     // MARK: Properties
-    let id: Int
+    let contractList: ContractList
 
     // MARK: Init
-    init(id: Int) {
-        self.id = id
+    init(contractList: ContractList) {
+        self.contractList = contractList
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -50,13 +50,13 @@ final class OptionModalViewController: BaseViewController {
     override func viewTransition() {
         optionModalView.tapEdit = { [weak self] in
             guard let self else { return }
-            router.presentContractEditViewController(id: id)
+            router.presentContractEditViewController(contractList: contractList)
         }
 
-        optionModalView.tapDelete = { [weak self] in
-            guard let self else { return }
-            router.presentDeletePopUpViewController(id: id)
-        }
+//        optionModalView.tapDelete = { [weak self] in
+//            guard let self else { return }
+//            router.presentDeletePopUpViewController(id: contractList)
+//        }
     }
 
     // MARK: Navigation Item
