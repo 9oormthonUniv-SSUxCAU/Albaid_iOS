@@ -38,7 +38,6 @@ final class ResumeView: BaseView {
 
     // MARK: Configuration
     override func configureSubviews() {
-        setCollectionView()
         backgroundColor = .albaidGray95
 
         addSubview(contractNumberLabel)
@@ -63,6 +62,7 @@ final class ResumeView: BaseView {
     func setViewData(data: [ResumeList]) {
         resume = data
         contractNumberLabel.text = "총 \(data.count)건"
+        setCollectionView()
     }
 }
 

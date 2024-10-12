@@ -17,8 +17,8 @@ struct ResumeList: Codable {
     let id: Int
     let createdAt: String
     let title: String
-    let desiredJob: String
-    let desiredLocation: String
+    let desiredJob: String?
+    let desiredLocation: String?
 }
 
 struct ResumeRequestResponse: Codable {

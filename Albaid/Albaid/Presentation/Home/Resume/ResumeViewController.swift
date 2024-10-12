@@ -97,6 +97,8 @@ extension ResumeViewController {
                 guard let data = response as? ResumeListResponse else { return }
                 print("🎯 getResume success: " + "\(data)")
                 resumeList = data.result
+                setData(data: data.result)
+                resumeView.resumeCollectionView.reloadData()
             case .requestErr(let errorResponse):
                 dump(errorResponse)
                 guard let data = errorResponse as? ErrorResponse else { return }
