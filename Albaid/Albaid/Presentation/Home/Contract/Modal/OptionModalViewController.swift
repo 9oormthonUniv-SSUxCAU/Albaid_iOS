@@ -1,28 +1,27 @@
 //
-//  DeletePopUpViewController.swift
+//  OptionModalViewController.swift
 //  Albaid
 //
-//  Created by 박지윤 on 10/8/24.
+//  Created by 박지윤 on 9/29/24.
 //
 
 import UIKit
 
-final class DeletePopUpViewController: BaseViewController {
+final class OptionModalViewController: BaseViewController {
 
     // MARK: UI Components
-    private let deletePopUpView = DeletePopUpView()
+    private let optionModalView = OptionModalView()
 
     // MARK: Environment
     private let router = BaseRouter()
 
     // MARK: Properties
-    let id: Int
+    let contractList: ContractList
 
     // MARK: Init
-    init(id: Int) {
-        self.id = id
+    init(contractList: ContractList) {
+        self.contractList = contractList
         super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .clear
     }
 
     required init?(coder: NSCoder) {
@@ -37,27 +36,26 @@ final class DeletePopUpViewController: BaseViewController {
     
     // MARK: Configuration
     override func configureSubviews() {
-
-        view.addSubview(deletePopUpView)
+        view.addSubview(optionModalView)
     }
     
     // MARK: Layout
     override func makeConstraints() {
-        deletePopUpView.snp.makeConstraints {
+        optionModalView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
 
     // MARK: View Transition
     override func viewTransition() {
-        deletePopUpView.tapCancel = { [weak self] in
+        optionModalView.tapEdit = { [weak self] in
             guard let self else { return }
-            router.dismissViewControllerWithoutAnimated()
+            router.presentContractEditViewController(contractList: contractList)
         }
 
-        deletePopUpView.tapDelete = { [weak self] in
+        optionModalView.tapDelete = { [weak self] in
             guard let self else { return }
-            deleteContract(id: id)
+            router.presentDeletePopUpViewController(id: contractList.id)
         }
     }
 
@@ -65,9 +63,7 @@ final class DeletePopUpViewController: BaseViewController {
     override func setNavigationItem() {
     }
 
-    // MARK: Network
-    private func deleteContract(id: Int) {
-        // if success
-        router.dismissViewControllerWithoutAnimated()
+    func dismissView() {
+        dismiss(animated: true)
     }
 }

@@ -50,12 +50,12 @@ final class ContractViewController: BaseViewController {
 
         router.viewController = self
     }
-    
+
     // MARK: Configuration
     override func configureSubviews() {
         view.addSubview(contractView)
     }
-    
+
     // MARK: Layout
     override func makeConstraints() {
         contractView.snp.makeConstraints {
