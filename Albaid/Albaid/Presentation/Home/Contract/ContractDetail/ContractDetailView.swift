@@ -162,7 +162,7 @@ final class ContractDetailView: BaseView {
         }
     }
 
-    func setData(data: Contract) {
+    func setData(data: ContractRequest) {
         memoContentLabel.text = data.memo
     }
 }

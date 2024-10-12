@@ -116,14 +116,14 @@ final class BaseRouter {
         viewController?.present(navigationController, animated: true, completion: nil)
     }
 
-    func presentContractDetailViewController(id: Int) {
-        let contractDetailViewController = ContractDetailViewController(id: id)
+    func presentContractDetailViewController(contractList: ContractList) {
+        let contractDetailViewController = ContractDetailViewController(contractList: contractList)
         contractDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(contractDetailViewController, animated: true)
     }
 
-    func presentContractEditViewController(id: Int) {
-        let contractEditViewController = ContractEditViewController(id: id)
+    func presentContractEditViewController(contractList: ContractList) {
+        let contractEditViewController = ContractEditViewController(contractList: contractList)
         let navigationController = UINavigationController(rootViewController: contractEditViewController)
         navigationController.modalPresentationStyle = .fullScreen
         viewController?.present(navigationController, animated: true, completion: nil)
@@ -133,15 +133,10 @@ final class BaseRouter {
         let deletePopUpViewController = DeletePopUpViewController(id: id)
         deletePopUpViewController.modalPresentationStyle = .overFullScreen
         viewController?.present(deletePopUpViewController, animated: false)
-
-//        let deletePopUpViewController = DeletePopUpViewController(id: id)
-//        let navigationController = UINavigationController(rootViewController: deletePopUpViewController)
-//        navigationController.modalPresentationStyle = .fullScreen
-//        viewController?.present(navigationController, animated: true, completion: nil)
     }
 
-    func presentModalViewController(id: Int) {
-        let optionModalViewController = OptionModalViewController(id: id)
+    func presentModalViewController(contractList: ContractList) {
+        let optionModalViewController = OptionModalViewController(contractList: contractList)
         optionModalViewController.modalPresentationStyle = .pageSheet
         if let sheet = optionModalViewController.sheetPresentationController {
             sheet.detents = [.custom(resolver: { _ in 180 })]

@@ -12,6 +12,9 @@ enum ContractAPI {
     case postContractUpload(contractImage: Data)
     case postContract(contractImage: Data, request: ContractInput)
     case getContract
+    case getContractId(contractId: Int)
+    case putContractId(contractId: Int, request: ContractInput)
+    case deleteContractId(contractId: Int)
 }
 
 extension ContractAPI: TargetType {
@@ -21,6 +24,12 @@ extension ContractAPI: TargetType {
             return URLConst.contractUpload
         case .postContract, .getContract:
             return URLConst.contract
+        case .getContractId(let contractId):
+            return URLConst.contract + "/\(contractId)"
+        case .putContractId(let contractId, _):
+            return URLConst.contract + "/\(contractId)"
+        case .deleteContractId(let contractId):
+            return URLConst.contract + "/\(contractId)"
         }
     }
 
@@ -28,8 +37,12 @@ extension ContractAPI: TargetType {
         switch self {
         case .postContractUpload, .postContract:
             return .post
-        case .getContract:
+        case .getContract, .getContractId:
             return .get
+        case .putContractId:
+            return .put
+        case .deleteContractId:
+            return .delete
         }
     }
 
@@ -43,10 +56,20 @@ extension ContractAPI: TargetType {
             let jsonMultipart = MultipartFormData(provider: .data(jsonData), name: "request", fileName: "request.json", mimeType: "application/json")
             let imageMultipart = MultipartFormData(provider: .data(contractImage), name: "contractImage", fileName: "contract.jpg", mimeType: "image/jpeg")
             let multipartData = [jsonMultipart, imageMultipart]
-
             return .uploadMultipart(multipartData)
         case .getContract:
             return .requestPlain
+        case .getContractId(let contractId):
+            return .requestParameters(parameters: [
+                "contractId": contractId
+            ], encoding: URLEncoding.default)
+        case .putContractId(_, let request):
+            let requestData = try! JSONEncoder().encode(request)
+            return .requestCompositeData(bodyData: requestData, urlParameters: [:])
+        case .deleteContractId(let contractId):
+            return .requestParameters(parameters: [
+                "contractId": contractId
+            ], encoding: URLEncoding.default)
         }
     }
 
@@ -58,7 +81,7 @@ extension ContractAPI: TargetType {
                 "Authorization": "Bearer \(UserDefaultHandler.accessToken)"
             ]
             return header
-        case .getContract:
+        case .getContract, .getContractId, .putContractId, .deleteContractId:
             let header = [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserDefaultHandler.accessToken)"

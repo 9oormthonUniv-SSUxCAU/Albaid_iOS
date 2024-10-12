@@ -774,6 +774,10 @@
 			children = (
 				956EC18D2CB4323F0091C0B0 /* ContractAddModalView.swift */,
 				956EC18F2CB432460091C0B0 /* ContractAddModalViewController.swift */,
+				95BCFFF22CA992B30001F339 /* OptionModalView.swift */,
+				95BCFFF62CA99E100001F339 /* OptionModalViewController.swift */,
+				956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */,
+				956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -926,10 +930,6 @@
 			children = (
 				95BCFFEE2CA974DF0001F339 /* ContractCollectionView.swift */,
 				95BCFFF02CA974E60001F339 /* ContractCollectionViewCell.swift */,
-				95BCFFF22CA992B30001F339 /* OptionModalView.swift */,
-				95BCFFF62CA99E100001F339 /* OptionModalViewController.swift */,
-				956EC1932CB43AB60091C0B0 /* DeletePopUpView.swift */,
-				956EC1912CB43A9E0091C0B0 /* DeletePopUpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

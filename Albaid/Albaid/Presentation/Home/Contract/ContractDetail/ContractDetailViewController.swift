@@ -21,16 +21,17 @@ final class ContractDetailViewController: BaseViewController {
     private let contractDetailView = ContractDetailView()
 
     // MARK: Properties
-    private let id: Int
+    private let contractList: ContractList
+    private var contractDetail: ContractRequest?
 
     // MARK: Environment
     private let router = BaseRouter()
 
     // MARK: Init
-    init(id: Int) {
-        self.id = id
+    init(contractList: ContractList) {
+        self.contractList = contractList
         super.init(nibName: nil, bundle: nil)
-        setView(data: Contract.dummyContract[id])
+        getContractId(contractId: contractList.id)
     }
 
     required init?(coder: NSCoder) {
@@ -65,22 +66,50 @@ final class ContractDetailViewController: BaseViewController {
 
         optionButton.tap = { [weak self] in
             guard let self else { return }
-            router.presentModalViewController(id: id)
+            router.presentModalViewController(contractList: contractList)
         }
     }
 
     // MARK: Navigation Item
     override func setNavigationItem() {
-        setDefaultNavigationItem(title: "근로계약서" + "\(id + 1)",
+        setDefaultNavigationItem(title: contractList.title,
                                  leftBarButton: backButton,
                                  rightBarButton: optionButton)
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     // MARK: Data binding
-    private func setView(data: Contract) {
+    private func setView(data: ContractRequest) {
         contractDetailView.setData(data: data)
-//        contractDetailView.scanResultTopContentView.setData(data: data)
-//        contractDetailView.scanResultBottomContentView.setData(data: data)
+        contractDetailView.scanResultTopContentView.setDetailData(data: data)
+        contractDetailView.scanResultBottomContentView.setDetailData(data: data)
+    }
+}
+
+// MARK: Networking
+extension ContractDetailViewController {
+    private func getContractId(contractId: Int) {
+        print("🔔 getContractId called")
+        print(contractId)
+        NetworkService.shared.contract.getContractId(contractId: contractId) {
+            [self] result in
+            switch result {
+            case .success(let response):
+                guard let data = response as? ContractRequestResponse else { return }
+                print("🎯 getContractId success: " + "\(data)")
+                contractDetail = data.result
+                setView(data: data.result)
+            case .requestErr(let errorResponse):
+                dump(errorResponse)
+                guard let data = errorResponse as? ErrorResponse else { return }
+                print(data)
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            case .pathErr:
+                print("pathErr")
+            }
+        }
     }
 }

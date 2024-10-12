@@ -50,9 +50,8 @@ final class ContractEditView: BaseView {
         $0.layer.cornerRadius = 12
     }
 
-    private(set) var memoContentLabel = UILabel().then {
+    private(set) var memoTextField = UITextField().then {
         $0.textColor = .albaidGray20
-        $0.numberOfLines = 0
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
     }
 
@@ -78,7 +77,7 @@ final class ContractEditView: BaseView {
         contractEntireView.addSubview(scanResultBottomContentView)
         contractEntireView.addSubview(memoLabel)
         contractEntireView.addSubview(memoBackgroundView)
-        memoBackgroundView.addSubview(memoContentLabel)
+        memoBackgroundView.addSubview(memoTextField)
     }
     
     // MARK: Layout
@@ -143,13 +142,13 @@ final class ContractEditView: BaseView {
             $0.bottom.equalToSuperview().inset(30)
         }
 
-        memoContentLabel.snp.makeConstraints {
+        memoTextField.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
             $0.horizontalEdges.equalToSuperview().inset(20)
         }
     }
 
-    func setData(data: Contract) {
-        memoContentLabel.text = data.memo
+    func setData(data: ContractRequest) {
+        memoTextField.text = data.memo
     }
 }

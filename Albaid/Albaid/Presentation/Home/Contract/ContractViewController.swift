@@ -42,21 +42,22 @@ final class ContractViewController: BaseViewController {
 
     // MARK: Life Cycle
     override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
         getContract()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
 
-        setData(data: contractList)
         router.viewController = self
     }
-    
+
     // MARK: Configuration
     override func configureSubviews() {
         view.addSubview(contractView)
     }
-    
+
     // MARK: Layout
     override func makeConstraints() {
         contractView.snp.makeConstraints {
@@ -82,12 +83,12 @@ final class ContractViewController: BaseViewController {
             router.dismissViewController()
         }
 
-        contractView.contractCollectionView.tapCell = { [self] id in
-            router.presentContractDetailViewController(id: id)
+        contractView.contractCollectionView.tapCell = { [self] contractList in
+            router.presentContractDetailViewController(contractList: contractList)
         }
 
-        contractView.contractCollectionView.tapOption = { [self] id in
-            router.presentModalViewController(id: id)
+        contractView.contractCollectionView.tapOption = { [self] contractList in
+            router.presentModalViewController(contractList: contractList)
         }
     }
 
@@ -121,6 +122,8 @@ extension ContractViewController {
                 guard let data = response as? ContractListResponse else { return }
                 print("🎯 getContract success: " + "\(data)")
                 contractList = data.result
+                setData(data: data.result)
+                contractView.contractCollectionView.contractCollectionView.reloadData()
             case .requestErr(let errorResponse):
                 dump(errorResponse)
                 guard let data = errorResponse as? ErrorResponse else { return }

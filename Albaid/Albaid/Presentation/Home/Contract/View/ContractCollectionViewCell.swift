@@ -34,8 +34,9 @@ final class ContractCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: Properties
-    var tapOption: ((Int) -> Void)?
-    var index: Int = 0
+    var tapOption: ((ContractList) -> Void)?
+    var contractList: ContractList?
+    var id: Int = 0
 
     // MARK: init
     override init(frame: CGRect) {
@@ -76,6 +77,7 @@ final class ContractCollectionViewCell: UICollectionViewCell {
         contractNameLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalTo(optionButton.snp.leading).offset(-20)
         }
 
         optionButton.snp.makeConstraints {
@@ -87,7 +89,8 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     // MARK: Data binding
     func setCellData(data: ContractList) {
-        contractNameLabel.text = "근로계약서\(data.id + 1)"
+        contractNameLabel.text = data.title
+        contractList = data
     }
 
     // MARK: Event
@@ -97,6 +100,7 @@ final class ContractCollectionViewCell: UICollectionViewCell {
 
     @objc
     private func handleOptionButton() {
-        tapOption?(index)
+        guard let contractList = contractList else { return }
+        tapOption?(contractList)
     }
 }
