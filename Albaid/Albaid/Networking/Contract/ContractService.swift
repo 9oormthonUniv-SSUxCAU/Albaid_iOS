@@ -18,6 +18,7 @@ final class ContractService {
         case getContract
         case getContractId(contractId: Int)
         case putContractId(contractId: Int, request: ContractInput)
+        case deleteContractId(contractId: Int)
     }
 
     public func postContractUpload(contractImage: Data, completion: @escaping (NetworkResult<Any>) -> Void) {
@@ -100,13 +101,29 @@ final class ContractService {
         }
     }
 
+    public func deleteContractId(contractId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        contractProvider.request(.deleteContractId(contractId: contractId)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+
+                let networkResult = self.judgeStatus(by: statusCode, data, responseData: .deleteContractId(contractId: contractId))
+                completion(networkResult)
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
     private func judgeStatus(by statusCode: Int, _ data: Data, responseData: ResponseData) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
 
         switch statusCode {
         case 200..<300:
             switch responseData {
-            case .postContractUpload, .postContract, .getContract, .getContractId, .putContractId:
+            case .postContractUpload, .postContract, .getContract, .getContractId, .putContractId, .deleteContractId:
                 return isValidData(data: data, responseData: responseData)
             }
         case 400..<500:
@@ -131,14 +148,11 @@ final class ContractService {
         case .postContractUpload:
             let decodedData = try? decoder.decode(ContractUploadResponse.self, from: data)
             return .success(decodedData ?? "success")
-        case .postContract:
+        case .postContract, .getContractId, .putContractId:
             let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
             return .success(decodedData ?? "success")
-        case .getContractId:
-            let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
-            return .success(decodedData ?? "success")
-        case .putContractId:
-            let decodedData = try? decoder.decode(ContractRequestResponse.self, from: data)
+        case .deleteContractId:
+            let decodedData = try? decoder.decode(ContractDeleteResponse.self, from: data)
             return .success(decodedData ?? "success")
         }
     }

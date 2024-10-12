@@ -64,3 +64,9 @@ struct ContractRequest: Codable {
     let isContractDelivery: Bool
     let memo: String
 }
+
+struct ContractDeleteResponse: Codable {
+    let isSuccess: Bool
+    let message: String
+    let result: BlankDataResponse?
+}

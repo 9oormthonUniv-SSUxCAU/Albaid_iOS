@@ -14,6 +14,7 @@ enum ContractAPI {
     case getContract
     case getContractId(contractId: Int)
     case putContractId(contractId: Int, request: ContractInput)
+    case deleteContractId(contractId: Int)
 }
 
 extension ContractAPI: TargetType {
@@ -27,6 +28,8 @@ extension ContractAPI: TargetType {
             return URLConst.contract + "/\(contractId)"
         case .putContractId(let contractId, _):
             return URLConst.contract + "/\(contractId)"
+        case .deleteContractId(let contractId):
+            return URLConst.contract + "/\(contractId)"
         }
     }
 
@@ -38,6 +41,8 @@ extension ContractAPI: TargetType {
             return .get
         case .putContractId:
             return .put
+        case .deleteContractId:
+            return .delete
         }
     }
 
@@ -61,6 +66,10 @@ extension ContractAPI: TargetType {
         case .putContractId(_, let request):
             let requestData = try! JSONEncoder().encode(request)
             return .requestCompositeData(bodyData: requestData, urlParameters: [:])
+        case .deleteContractId(let contractId):
+            return .requestParameters(parameters: [
+                "contractId": contractId
+            ], encoding: URLEncoding.default)
         }
     }
 
@@ -72,7 +81,7 @@ extension ContractAPI: TargetType {
                 "Authorization": "Bearer \(UserDefaultHandler.accessToken)"
             ]
             return header
-        case .getContract, .getContractId, .putContractId:
+        case .getContract, .getContractId, .putContractId, .deleteContractId:
             let header = [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserDefaultHandler.accessToken)"
