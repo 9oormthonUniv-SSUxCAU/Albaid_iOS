@@ -42,11 +42,13 @@ final class ContractViewController: BaseViewController {
 
     // MARK: Life Cycle
     override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppear")
         getContract()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
 
         router.viewController = self
     }
@@ -121,6 +123,7 @@ extension ContractViewController {
                 print("🎯 getContract success: " + "\(data)")
                 contractList = data.result
                 setData(data: data.result)
+                contractView.contractCollectionView.contractCollectionView.reloadData()
             case .requestErr(let errorResponse):
                 dump(errorResponse)
                 guard let data = errorResponse as? ErrorResponse else { return }

@@ -133,11 +133,6 @@ final class BaseRouter {
         let deletePopUpViewController = DeletePopUpViewController(id: id)
         deletePopUpViewController.modalPresentationStyle = .overFullScreen
         viewController?.present(deletePopUpViewController, animated: false)
-
-//        let deletePopUpViewController = DeletePopUpViewController(id: id)
-//        let navigationController = UINavigationController(rootViewController: deletePopUpViewController)
-//        navigationController.modalPresentationStyle = .fullScreen
-//        viewController?.present(navigationController, animated: true, completion: nil)
     }
 
     func presentModalViewController(contractList: ContractList) {
